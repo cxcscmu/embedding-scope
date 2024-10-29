@@ -9,3 +9,4 @@ dependencies:
   - python=3.12
   - pytorch=2.4.0
   - pytorch-cuda=12.4
+  - pylint
