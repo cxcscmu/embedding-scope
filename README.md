@@ -1,5 +1,7 @@
 # Embedding Scope
 
+- [Getting Started](#getting-started)
+
 ## Getting Started
 
 1. **Install Conda**:
@@ -18,6 +20,19 @@
 
     ```sh
     conda activate scope
+    ```
+
+4. **Configure Workspace**:
+
+    To configure the workspace where the datasets and trained checkpoints are stored, update the `src/__init__.py` file with the desired path.
+
+    For example:
+
+    ```python
+    from pathlib import Path
+
+    workspace = Path("/your/path/to/workspace")
+    workspace.mkdir(mode=0o770, parents=True, exist_ok=True)
     ```
 
 You're all set to begin!
