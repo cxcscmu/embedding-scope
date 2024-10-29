@@ -1,5 +1,9 @@
 # Embedding Scope
 
+![example workflow](https://github.com/cxcscmu/embedding-scope//actions/workflows/pylint.yml/badge.svg)
+
+## Table of Contents
+
 - [Getting Started](#getting-started)
 
 ## Getting Started
