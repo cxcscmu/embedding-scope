@@ -3,9 +3,10 @@ Specifies the dataset interface.
 """
 
 from abc import ABC, abstractmethod
-from typing import List, Tuple
+from typing import List, Tuple, Type
 import numpy as np
 from numpy.typing import NDArray
+from source.interface.embedding import TextEmbedding
 
 
 class Dataset(ABC):
@@ -34,10 +35,13 @@ class TextRetrievalDataset(Dataset):
         raise NotImplementedError
 
     @abstractmethod
-    def getPassageEmbeddings(self) -> List[Tuple[str, NDArray[np.float32]]]:
+    def getPassageEmbeddings(
+        self, embedding: Type[TextEmbedding]
+    ) -> List[Tuple[str, NDArray[np.float32]]]:
         """
         Get the embeddings of the passages in the dataset.
 
+        :param embedding: The embedding to use.
         :return: List of passage IDs and embeddings.
         """
         raise NotImplementedError
@@ -54,12 +58,13 @@ class TextRetrievalDataset(Dataset):
 
     @abstractmethod
     def getQueryEmbeddings(
-        self, partition: str
+        self, partition: str, embedding: Type[TextEmbedding]
     ) -> List[Tuple[str, NDArray[np.float32]]]:
         """
         Get the embeddings of the queries in the dataset.
 
-        :param partition: The partition to get query embeddings from.
+        :param partition: The partition to get queries from.
+        :param embedding: The embedding to use.
         :return: List of query IDs and embeddings.
         """
         raise NotImplementedError
@@ -71,5 +76,22 @@ class TextRetrievalDataset(Dataset):
 
         :param queryId: The ID of the query.
         :return: List of passage IDs and relevance labels.
+        """
+        raise NotImplementedError
+
+    @abstractmethod
+    def getNeighborPassages(
+        self, queryId: str, embedding: Type[TextEmbedding], k: int
+    ) -> List[str]:
+        """
+        Get the neighbor passages for the given query. This is similar to
+        getRelevancePassages, but instead of passages based on the relevance
+        labels collected by the dataset, this method returns the k-nearest
+        neighbors based on the embedding.
+
+        :param queryId: The ID of the query.
+        :param embedding: The embedding to use.
+        :param k: The number of neighbors to return.
+        :return: List of passage IDs.
         """
         raise NotImplementedError
