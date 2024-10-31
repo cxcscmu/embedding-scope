@@ -1,5 +1,5 @@
 """
-Specify the interface for embeddings.
+Specify the embedding interface.
 """
 
 from abc import ABC, abstractmethod
