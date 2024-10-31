@@ -15,12 +15,10 @@ class Embedding(ABC):
     Attributes:
         name: The name of the embedding.
         size: The size of the embedding vector.
-        type: The data type of the embedding.
     """
 
     name: str
     size: int
-    type: np.dtype
 
 
 class TextEmbedding(Embedding):
@@ -38,11 +36,11 @@ class TextEmbedding(Embedding):
         raise NotImplementedError
 
     @abstractmethod
-    def forward(self, documents: List[str]) -> NDArray[np.float32 | np.float16]:
+    def forward(self, texts: List[str]) -> NDArray[np.float32]:
         """
         Compute the embeddings for the given documents.
 
-        :param documents: List of documents to embed.
-        :return: The embeddings for the documents.
+        :param texts: List of texts to embed.
+        :return: The embeddings for the given texts.
         """
         raise NotImplementedError

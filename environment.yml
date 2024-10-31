@@ -7,9 +7,14 @@ channels:
 
 dependencies:
   - python=3.12
+  - pip
   - pytorch=2.4.0
   - pytorch-cuda=12.4
   - numpy==2.1.2
   - transformers=4.46.1
+  - protobuf==5.27.5
+  - sentencepiece==0.2.0
   - pylint
   - pytest
+  - pip:
+    - flash-attn==2.6.3
