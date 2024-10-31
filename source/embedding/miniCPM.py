@@ -7,7 +7,6 @@ import torch
 import numpy as np
 import torch.nn as nn
 import torch.nn.functional as F
-from torch import Tensor
 from numpy.typing import NDArray
 from transformers import AutoModel, AutoTokenizer
 from source.interface import TextEmbedding

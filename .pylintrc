@@ -11,6 +11,5 @@ attr-naming-style=camelCase
 [MESSAGES CONTROL]
 
 # Disable specific messages
-disable=
-consider-using-from-import,
-too-few-public-methods,
+disable=consider-using-from-import,
+    too-few-public-methods,
