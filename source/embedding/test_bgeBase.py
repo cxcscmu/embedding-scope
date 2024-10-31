@@ -4,8 +4,8 @@ Unit tests for the BgeBase class.
 
 import pytest
 import numpy as np
-from src.interface import TextEmbedding
-from src.embedding.bgeBase import BgeBase
+from source.interface import TextEmbedding
+from source.embedding.bgeBase import BgeBase
 
 
 def test_bgeBase_getName():

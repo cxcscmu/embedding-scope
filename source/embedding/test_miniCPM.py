@@ -4,8 +4,8 @@ Unit tests for the MiniCPM class.
 
 import pytest
 import numpy as np
-from src.interface import TextEmbedding
-from src.embedding.miniCPM import MiniCPM
+from source.interface import TextEmbedding
+from source.embedding.miniCPM import MiniCPM
 
 
 def test_miniCPM_getName():

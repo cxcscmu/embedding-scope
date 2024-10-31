@@ -10,7 +10,7 @@ import torch.nn.functional as F
 from torch import Tensor
 from numpy.typing import NDArray
 from transformers import AutoModel, AutoTokenizer
-from src.interface import TextEmbedding
+from source.interface import TextEmbedding
 
 
 class MiniCPM(TextEmbedding):
@@ -38,12 +38,6 @@ class MiniCPM(TextEmbedding):
         model = model.eval().to(devices[0])
         self.model = nn.DataParallel(model, devices)
 
-    def mean_pooling(self, hidden: Tensor, attention_mask: Tensor) -> Tensor:
-        s = torch.sum(hidden * attention_mask.unsqueeze(-1).float(), dim=1)
-        d = attention_mask.sum(dim=1, keepdim=True).float()
-        reps = s / d
-        return reps
-
     @torch.no_grad()
     def forward(self, texts: List[str]) -> NDArray[np.float32]:
         kwargs = {
@@ -57,6 +51,7 @@ class MiniCPM(TextEmbedding):
         outputs = self.model(**batch_dict)
         attention_mask = batch_dict["attention_mask"]
         hidden = outputs.last_hidden_state
-        reps = self.mean_pooling(hidden, attention_mask)
-        embeddings = F.normalize(reps, p=2, dim=1)
+        s = torch.sum(hidden * attention_mask.unsqueeze(-1).float(), dim=1)
+        d = attention_mask.sum(dim=1, keepdim=True).float()
+        embeddings = F.normalize(s / d, p=2, dim=1)
         return embeddings.detach().cpu().numpy()

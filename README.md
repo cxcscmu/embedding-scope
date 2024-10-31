@@ -26,7 +26,7 @@
 
 4. **Configure Workspace**:
 
-    To configure the workspace where the datasets and trained checkpoints are stored, update the `src/__init__.py` file with the desired path.
+    To configure the workspace where the datasets and trained checkpoints are stored, update the `source/__init__.py` file with the desired path.
 
     For example:
 

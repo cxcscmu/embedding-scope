@@ -10,12 +10,15 @@ import torch.nn.functional as F
 from numpy.typing import NDArray
 from transformers import AutoModel, AutoTokenizer
 from transformers.modeling_outputs import BaseModelOutputWithPoolingAndCrossAttentions
-from src.interface import TextEmbedding
+from source.interface import TextEmbedding
 
 
 class BgeBase(TextEmbedding):
     """
     Implementation of BAAI/bge-base-en-v1.5.
+
+    References:
+        https://huggingface.co/BAAI/bge-base-en-v1.5
     """
 
     name = "BgeBase"
