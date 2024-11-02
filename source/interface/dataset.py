@@ -3,7 +3,10 @@ Specify the dataset interface.
 """
 
 from abc import ABC, abstractmethod
-from typing import Iterator, Tuple, Literal
+from typing import Iterator, Tuple, Literal, Type
+import numpy as np
+from numpy import ndarray as NDArray
+from source.interface import TextEmbedding
 
 
 class Dataset(ABC):
@@ -42,3 +45,28 @@ class TextRetrievalDataset(Dataset):
         :return: Iterator over query IDs and texts.
         """
         raise NotImplementedError
+
+    # @abstractmethod
+    # def getPassageEmbeddings(
+    #     self, embedding: Type[TextEmbedding]
+    # ) -> Iterator[Tuple[str, NDArray[np.float32]]]:
+    #     """
+    #     Get the embeddings of the passages in the dataset.
+
+    #     :param embedding: The embedding to use.
+    #     :return: Iterator over passage IDs and embeddings.
+    #     """
+    #     raise NotImplementedError
+
+    # @abstractmethod
+    # def getQueryEmbeddings(
+    #     self, partition: PartitionType, embedding: Type[TextEmbedding]
+    # ) -> Iterator[Tuple[str, NDArray[np.float32]]]:
+    #     """
+    #     Get the embeddings of the queries in the dataset.
+
+    #     :param partition: The partition to get queries from.
+    #     :param embedding: The embedding to use.
+    #     :return: Iterator over query IDs and embeddings.
+    #     """
+    #     raise NotImplementedError

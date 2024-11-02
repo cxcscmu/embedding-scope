@@ -10,10 +10,14 @@ from hashlib import md5
 import requests
 import pyarrow as pa
 import pyarrow.parquet as pq
+import torch.cuda as cuda
+import numpy as np
 from source import console
-from source.interface import PartitionType, TextRetrievalDataset
+from source.interface import PartitionType, TextRetrievalDataset, TextEmbedding
 from source.dataset import workspace
 from source.dataset.utilities import textRetrievalGetPassages, textRetrievalGetQueries
+from source.embedding.miniCPM import MiniCPM
+from source.embedding.bgeBase import BgeBase
 
 
 class MsMarco(TextRetrievalDataset):
@@ -27,14 +31,12 @@ class MsMarco(TextRetrievalDataset):
         pass
 
     def getPassages(self) -> Iterator[Tuple[str, str]]:
-        N = GetPassagesInit.N
         base = GetPassagesInit.base
-        return textRetrievalGetPassages(base, N)
+        return textRetrievalGetPassages(base)
 
     def getQueries(self, partition: PartitionType) -> Iterator[Tuple[str, str]]:
-        N = GetQueriesInit.N
-        base = Path(GetQueriesInit.base, partition)
-        return textRetrievalGetQueries(base, N)
+        base = GetQueriesInit.base
+        return textRetrievalGetQueries(base / partition)
 
 
 class GetPassagesInit:
@@ -46,10 +48,10 @@ class GetPassagesInit:
         base: The base path for the passages.
     """
 
-    N = 2
-    base = Path(workspace, f"{MsMarco.name}/passages")
+    base = Path(workspace, "MsMarco/passages")
 
-    def __init__(self) -> None:
+    def __init__(self, numPartitions: int) -> None:
+        self.numPartitions = numPartitions
         self.base.mkdir(mode=0o770, parents=True, exist_ok=True)
         self.dispatch()
 
@@ -84,16 +86,17 @@ class GetPassagesInit:
         Dispatch the partitioning of the passages.
         """
         console.log("Partitioning the passages")
-        ids: List[List[str]] = [[] for _ in range(self.N)]
-        texts: List[List[str]] = [[] for _ in range(self.N)]
+        N = self.numPartitions
+        ids: List[List[str]] = [[] for _ in range(N)]
+        texts: List[List[str]] = [[] for _ in range(N)]
         path = Path(self.base, "collection.tsv")
         with path.open("r", encoding="utf-8") as file:
             for line in file:
                 x0, x1 = [p.strip() for p in line.split("\t")]
-                i = int(md5(x0.encode()).hexdigest(), 16) % self.N
+                i = int(md5(x0.encode()).hexdigest(), 16) % N
                 ids[i].append(x0)
                 texts[i].append(x1)
-        for i in range(self.N):
+        for i in range(N):
             table = pa.Table.from_pydict({"id": ids[i], "text": texts[i]})
             pq.write_table(table, Path(self.base, f"partition-{i:08d}.parquet"))
         Path(self.base, "collection.tsv").unlink()
@@ -112,14 +115,13 @@ class GetQueriesInit:
     Prepare the queries in the dataset.
 
     Attributes:
-        N: The number of partitions.
         base: The base path for the queries.
     """
 
-    N = 1
-    base = Path(workspace, f"{MsMarco.name}/queries")
+    base = Path(workspace, "MsMarco/queries")
 
-    def __init__(self) -> None:
+    def __init__(self, numPartitions: int) -> None:
+        self.numPartitions = numPartitions
         self.base.mkdir(mode=0o770, parents=True, exist_ok=True)
         self.dispatch()
 
@@ -155,20 +157,21 @@ class GetQueriesInit:
         Dispatch the partitioning of the queries.
         """
         console.log("Partitioning the queries")
+        N = self.numPartitions
         choices: List[PartitionType] = ["train", "dev"]
         for partition in choices:
             base = Path(self.base, partition)
             base.mkdir(mode=0o770, exist_ok=True)
-            ids: List[List[str]] = [[] for _ in range(self.N)]
-            texts: List[List[str]] = [[] for _ in range(self.N)]
+            ids: List[List[str]] = [[] for _ in range(N)]
+            texts: List[List[str]] = [[] for _ in range(N)]
             path = Path(self.base, f"queries.{partition}.tsv")
             with path.open("r", encoding="utf-8") as file:
                 for line in file:
                     x0, x1 = [p.strip() for p in line.split("\t")]
-                    i = int(md5(x0.encode()).hexdigest(), 16) % self.N
+                    i = int(md5(x0.encode()).hexdigest(), 16) % N
                     ids[i].append(x0)
                     texts[i].append(x1)
-            for i in range(self.N):
+            for i in range(N):
                 table = pa.Table.from_pydict({"id": ids[i], "text": texts[i]})
                 pq.write_table(table, Path(base, f"partition-{i:08d}.parquet"))
             path.unlink()
@@ -182,13 +185,100 @@ class GetQueriesInit:
         self.step3()
 
 
-if __name__ == "__main__":
+class GetPassageEmbeddingsInit:
+    """
+    Prepare the embeddings of the passages in the dataset.
+
+    Attributes:
+        base: The base path for the embeddings.
+    """
+
+    N = 16
+    base = Path(workspace, f"{MsMarco.name}/passageEmbeddings")
+
+    def __init__(
+        self,
+        embedding: TextEmbedding,
+        numPartitions: int,
+        partitionIndex: int,
+        batchSize: int,
+    ) -> None:
+        self.embedding = embedding
+        self.numPartitions = numPartitions
+        self.partitionIndex = partitionIndex
+        self.batchSize = batchSize
+        self.base.mkdir(mode=0o770, parents=True, exist_ok=True)
+        self.dispatch()
+
+    def dispatch(self) -> None:
+        """
+        Dispatch the steps.
+        """
+        console.log("Loading the passages")
+        passages = list(MsMarco().getPassages())
+        I, N = self.partitionIndex, self.numPartitions
+        M = len(passages) // N
+        s = I * M
+        t = len(passages) if I == N - 1 else (I + 1) * M
+        passages = passages[s:t]
+
+        console.log("Embedding the passages")
+        ids = np.empty((len(passages),), dtype="U16")
+        vectors = np.empty((len(passages), self.embedding.size), dtype=np.float32)
+        B = self.batchSize
+        for i in range(0, len(passages), B):
+            console.log(f"Progress: {i}/{len(passages)}")
+            parts = passages[i : i + B]
+            batchIDs, batchTexts = zip(*parts)
+            batchVectors = self.embedding.forward(list(batchTexts))
+            ids[i : i + B] = batchIDs
+            vectors[i : i + B] = batchVectors
+        np.savez_compressed(
+            Path(self.base, f"partition-{I:08d}.npz"),
+            ids=ids,
+            vectors=vectors,
+        )
+
+
+def main() -> None:
+    """
+    The entry point.
+    """
     parser = argparse.ArgumentParser()
-    parser.add_argument("type", type=str, choices=["getPassages", "getQueries"])
-    parser.add_argument("params", nargs=argparse.REMAINDER)
-    args = parser.parse_args()
-    match args.type:
+    subparsers = parser.add_subparsers(dest="command")
+
+    getPassages = subparsers.add_parser("getPassages")
+    getPassages.add_argument("--numPartitions", type=int, required=True)
+    getQueries = subparsers.add_parser("getQueries")
+    getQueries.add_argument("--numPartitions", type=int, required=True)
+    getPassageEmbeddings = subparsers.add_parser("getPassageEmbeddings")
+    getPassageEmbeddings.add_argument("--embedding", type=str, required=True)
+    getPassageEmbeddings.add_argument("--numPartitions", type=int, required=True)
+    getPassageEmbeddings.add_argument("--partitionIndex", type=int, required=True)
+    getPassageEmbeddings.add_argument("--batchSize", type=int, required=True)
+
+    parsed = parser.parse_args()
+    match parsed.command:
         case "getPassages":
-            GetPassagesInit()
+            GetPassagesInit(parsed.numPartitions)
         case "getQueries":
-            GetQueriesInit()
+            GetQueriesInit(parsed.numPartitions)
+        case "getPassageEmbeddings":
+            devices = list(range(cuda.device_count()))
+            match parsed.embedding:
+                case "MiniCPM":
+                    embedding = MiniCPM(devices)
+                case "BgeBase":
+                    embedding = BgeBase(devices)
+                case _:
+                    raise NotImplementedError(parsed.embedding)
+            GetPassageEmbeddingsInit(
+                embedding,
+                parsed.numPartitions,
+                parsed.partitionIndex,
+                parsed.batchSize,
+            )
+
+
+if __name__ == "__main__":
+    main()
