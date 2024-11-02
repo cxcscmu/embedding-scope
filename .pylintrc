@@ -1,13 +1,5 @@
 [BASIC]
 
-# Naming conventions
-method-naming-style=camelCase
-function-naming-style=camelCase
-module-naming-style=camelCase
-variable-naming-style=camelCase
-argument-naming-style=camelCase
-attr-naming-style=camelCase
-
 [MESSAGES CONTROL]
 
 # Disable specific messages

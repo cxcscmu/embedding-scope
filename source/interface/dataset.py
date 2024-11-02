@@ -3,7 +3,7 @@ Specify the dataset interface.
 """
 
 from abc import ABC, abstractmethod
-from typing import Iterable, Tuple, Literal
+from typing import Iterator, Tuple, Literal
 
 
 class Dataset(ABC):
@@ -26,19 +26,19 @@ class TextRetrievalDataset(Dataset):
     """
 
     @abstractmethod
-    def getPassages(self) -> Iterable[Tuple[str, str]]:
+    def getPassages(self) -> Iterator[Tuple[str, str]]:
         """
         Get the passages in the dataset.
 
-        :return: Iterable of passage IDs and texts.
+        :return: Iterator over passage IDs and texts.
         """
 
     @abstractmethod
-    def getQueries(self, partition: PartitionType) -> Iterable[Tuple[str, str]]:
+    def getQueries(self, partition: PartitionType) -> Iterator[Tuple[str, str]]:
         """
         Get the queries in the dataset.
 
         :param partition: The partition to get queries from.
-        :return: Iterable of query IDs and texts.
+        :return: Iterator over query IDs and texts.
         """
         raise NotImplementedError

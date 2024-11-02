@@ -19,5 +19,6 @@ dependencies:
   - pylint
   - pytest
   - mypy
+  - types-requests
   - pip:
       - flash-attn==2.6.3

@@ -5,7 +5,7 @@ Implementation of the MS MARCO dataset.
 import argparse
 import subprocess
 from pathlib import Path
-from typing import Iterable, Tuple, List
+from typing import Iterator, Tuple, List
 from hashlib import md5
 import requests
 import pyarrow as pa
@@ -26,12 +26,12 @@ class MsMarco(TextRetrievalDataset):
     def __init__(self) -> None:
         pass
 
-    def getPassages(self) -> Iterable[Tuple[str, str]]:
+    def getPassages(self) -> Iterator[Tuple[str, str]]:
         N = GetPassagesInit.N
         base = GetPassagesInit.base
         return textRetrievalGetPassages(base, N)
 
-    def getQueries(self, partition: PartitionType) -> Iterable[Tuple[str]]:
+    def getQueries(self, partition: PartitionType) -> Iterator[Tuple[str, str]]:
         N = GetQueriesInit.N
         base = Path(GetQueriesInit.base, partition)
         return textRetrievalGetQueries(base, N)
@@ -53,7 +53,7 @@ class GetPassagesInit:
         self.base.mkdir(mode=0o770, parents=True, exist_ok=True)
         self.dispatch()
 
-    def step1(self):
+    def step1(self) -> None:
         """
         Dispatch the download of the passages.
         """
@@ -65,7 +65,7 @@ class GetPassagesInit:
                 for chunk in response.iter_content(chunk_size=8192):
                     file.write(chunk)
 
-    def step2(self):
+    def step2(self) -> None:
         """
         Dispatch the extraction of the passages.
         """
@@ -79,7 +79,7 @@ class GetPassagesInit:
         )
         Path(self.base, "collection.tar.gz").unlink()
 
-    def step3(self):
+    def step3(self) -> None:
         """
         Dispatch the partitioning of the passages.
         """
@@ -98,7 +98,7 @@ class GetPassagesInit:
             pq.write_table(table, Path(self.base, f"partition-{i:08d}.parquet"))
         Path(self.base, "collection.tsv").unlink()
 
-    def dispatch(self):
+    def dispatch(self) -> None:
         """
         Dispatch the steps.
         """
@@ -123,7 +123,7 @@ class GetQueriesInit:
         self.base.mkdir(mode=0o770, parents=True, exist_ok=True)
         self.dispatch()
 
-    def step1(self):
+    def step1(self) -> None:
         """
         Dispatch the download of the queries.
         """
@@ -135,7 +135,7 @@ class GetQueriesInit:
                 for chunk in response.iter_content(chunk_size=8192):
                     file.write(chunk)
 
-    def step2(self):
+    def step2(self) -> None:
         """
         Dispatch the extraction of the queries.
         """
@@ -150,7 +150,7 @@ class GetQueriesInit:
         Path(self.base, "queries.tar.gz").unlink()
         Path(self.base, "queries.eval.tsv").unlink()
 
-    def step3(self):
+    def step3(self) -> None:
         """
         Dispatch the partitioning of the queries.
         """
@@ -173,7 +173,7 @@ class GetQueriesInit:
                 pq.write_table(table, Path(base, f"partition-{i:08d}.parquet"))
             path.unlink()
 
-    def dispatch(self):
+    def dispatch(self) -> None:
         """
         Dispatch the steps.
         """

@@ -10,6 +10,7 @@ import numpy as np
 from numpy.typing import NDArray
 from transformers import AutoModel, AutoTokenizer
 from source.interface import TextEmbedding
+from source.embedding import tokenizerKwargs
 
 
 class MiniCPM(TextEmbedding):
@@ -40,16 +41,13 @@ class MiniCPM(TextEmbedding):
     @torch.no_grad()
     def forward(self, texts: List[str]) -> NDArray[np.float32]:
         kwargs = {
-            "max_length": 512,
-            "padding": True,
-            "truncation": True,
-            "return_tensors": "pt",
+            **tokenizerKwargs,
             "return_attention_mask": True,
         }
         encoded = self.tokenizer(texts, **kwargs)
         encoded = encoded.to(self.devices[0])
+        attention_mask = encoded.attention_mask
         outputs = self.model(**encoded)
-        attention_mask = outputs.attention_mask
         last_hidden_state = outputs.last_hidden_state
         s = torch.sum(last_hidden_state * attention_mask.unsqueeze(-1).float(), dim=1)
         d = attention_mask.sum(dim=1, keepdim=True).float()

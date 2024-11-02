@@ -3,17 +3,17 @@ Utilities for dataset module.
 """
 
 from pathlib import Path
-from typing import Iterable, Tuple
+from typing import Iterator, Tuple
 import pyarrow.parquet as pq
 
 
-def textRetrievalGetPassages(base: Path, N: int) -> Iterable[Tuple[str, str]]:
+def textRetrievalGetPassages(base: Path, N: int) -> Iterator[Tuple[str, str]]:
     """
     Getting passages from a text retrieval dataset.
 
     :param base: The base path for the passages.
     :param N: The number of partitions.
-    :return: Iterable of passage IDs and texts.
+    :return: Iterator over passage IDs and texts.
     """
     for i in range(N):
         name = f"partition-{i:08d}.parquet"
@@ -23,12 +23,12 @@ def textRetrievalGetPassages(base: Path, N: int) -> Iterable[Tuple[str, str]]:
                 yield x.as_py(), y.as_py()
 
 
-def textRetrievalGetQueries(base: Path, N: int) -> Iterable[Tuple[str, str]]:
+def textRetrievalGetQueries(base: Path, N: int) -> Iterator[Tuple[str, str]]:
     """
     Getting queries from a text retrieval dataset.
 
     :param base: The base path for the queries.
     :param N: The number of partitions.
-    :return: Iterable of query IDs and texts.
+    :return: Iterator over query IDs and texts.
     """
     return textRetrievalGetPassages(base, N)
