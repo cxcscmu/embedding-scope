@@ -3,10 +3,7 @@ Specify the dataset interface.
 """
 
 from abc import ABC, abstractmethod
-from typing import Iterable, Tuple, Type
-import numpy as np
-from numpy.typing import NDArray
-from source.interface.embedding import TextEmbedding
+from typing import Iterable, Tuple, Literal
 
 
 class Dataset(ABC):
@@ -18,6 +15,9 @@ class Dataset(ABC):
     """
 
     name: str
+
+
+PartitionType = Literal["train", "dev"]
 
 
 class TextRetrievalDataset(Dataset):
@@ -34,7 +34,7 @@ class TextRetrievalDataset(Dataset):
         """
 
     @abstractmethod
-    def getQueries(self, partition: str) -> Iterable[Tuple[str, str]]:
+    def getQueries(self, partition: PartitionType) -> Iterable[Tuple[str, str]]:
         """
         Get the queries in the dataset.
 
