@@ -4,9 +4,9 @@ Implementation of BAAI/bge-base-en-v1.5.
 
 from typing import List
 import torch
-import numpy as np
 import torch.nn as nn
 import torch.nn.functional as F
+import numpy as np
 from numpy.typing import NDArray
 from transformers import AutoModel, AutoTokenizer
 from source.interface import TextEmbedding
@@ -32,6 +32,7 @@ class BgeBase(TextEmbedding):
         model = model.eval().to(devices[0])
         self.model = nn.DataParallel(model, devices)
 
+    @torch.no_grad()
     def forward(self, texts: List[str]) -> NDArray[np.float32]:
         kwargs = {
             "max_length": 512,
@@ -40,7 +41,8 @@ class BgeBase(TextEmbedding):
             "return_tensors": "pt",
         }
         encoded = self.tokenizer(texts, **kwargs)
-        outputs = self.model.forward(**encoded.to(self.devices[0]))
+        encoded = encoded.to(self.devices[0])
+        outputs = self.model.forward(**encoded)
         hiddens = outputs.last_hidden_state
         hiddens = F.normalize(hiddens[:, 0], p=2, dim=1)
         return hiddens.detach().cpu().numpy()

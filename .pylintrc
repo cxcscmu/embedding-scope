@@ -13,3 +13,4 @@ attr-naming-style=camelCase
 # Disable specific messages
 disable=consider-using-from-import,
     too-few-public-methods,
+    invalid-name,

@@ -4,9 +4,9 @@ Implementation of openbmb/MiniCPM-Embedding.
 
 from typing import List
 import torch
-import numpy as np
 import torch.nn as nn
 import torch.nn.functional as F
+import numpy as np
 from numpy.typing import NDArray
 from transformers import AutoModel, AutoTokenizer
 from source.interface import TextEmbedding
@@ -46,11 +46,12 @@ class MiniCPM(TextEmbedding):
             "return_tensors": "pt",
             "return_attention_mask": True,
         }
-        batch_dict = self.tokenizer(texts, **kwargs).to(self.devices[0])
-        outputs = self.model(**batch_dict)
-        attention_mask = batch_dict["attention_mask"]
-        hidden = outputs.last_hidden_state
-        s = torch.sum(hidden * attention_mask.unsqueeze(-1).float(), dim=1)
+        encoded = self.tokenizer(texts, **kwargs)
+        encoded = encoded.to(self.devices[0])
+        outputs = self.model(**encoded)
+        attention_mask = outputs.attention_mask
+        last_hidden_state = outputs.last_hidden_state
+        s = torch.sum(last_hidden_state * attention_mask.unsqueeze(-1).float(), dim=1)
         d = attention_mask.sum(dim=1, keepdim=True).float()
         embeddings = F.normalize(s / d, p=2, dim=1)
         return embeddings.detach().cpu().numpy()
