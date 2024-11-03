@@ -46,6 +46,12 @@ class MsMarco(TextRetrievalDataset):
         base = GetPassageEmbeddingsInit.base
         return textRetrievalGetPassageEmbeddings(base / embedding.name)
 
+    def getQueryEmbeddings(
+        self, partition: PartitionType, embedding: Type[TextEmbedding]
+    ) -> Iterator[Tuple[str, NDArray[np.float32]]]:
+        base = GetQueryEmbeddingsInit.base
+        return textRetrievalGetPassageEmbeddings(base / partition / embedding.name)
+
 
 class GetPassagesInit:
     """
@@ -201,7 +207,6 @@ class GetPassageEmbeddingsInit:
         base: The base path for the embeddings.
     """
 
-    N = 16
     base = Path(workspace, f"{MsMarco.name}/passageEmbeddings")
 
     def __init__(
@@ -250,6 +255,64 @@ class GetPassageEmbeddingsInit:
         )
 
 
+class GetQueryEmbeddingsInit:
+    """
+    Prepare the embeddings of the queries in the dataset.
+
+    Attributes:
+        base: The base path for the embeddings.
+    """
+
+    base = Path(workspace, f"{MsMarco.name}/queryEmbeddings")
+
+    def __init__(
+        self,
+        embedding: TextEmbedding,
+        numPartitions: int,
+        partitionIndex: int,
+        batchSize: int,
+    ) -> None:
+        self.embedding = embedding
+        self.numPartitions = numPartitions
+        self.partitionIndex = partitionIndex
+        self.batchSize = batchSize
+        self.base.mkdir(mode=0o770, parents=True, exist_ok=True)
+        self.dispatch()
+
+    def dispatch(self) -> None:
+        """
+        Dispatch the steps.
+        """
+        choices: List[PartitionType] = ["train", "dev"]
+        for partition in choices:
+            console.log(f"Loading the queries from {partition}")
+            base = Path(self.base, partition, self.embedding.name)
+            base.mkdir(mode=0o770, parents=True, exist_ok=True)
+            queries = list(MsMarco().getQueries(partition))
+            I, N = self.partitionIndex, self.numPartitions
+            M = len(queries) // N
+            s = I * M
+            t = len(queries) if I == N - 1 else (I + 1) * M
+            queries = queries[s:t]
+
+            console.log(f"Embedding the queries from {partition}")
+            ids = np.empty((len(queries),), dtype="U16")
+            vectors = np.empty((len(queries), self.embedding.size), dtype=np.float32)
+            B = self.batchSize
+            for i in range(0, len(queries), B):
+                console.log(f"Progress: {i}/{len(queries)}")
+                parts = queries[i : i + B]
+                batchIDs, batchTexts = zip(*parts)
+                batchVectors = self.embedding.forward(list(batchTexts))
+                ids[i : i + B] = batchIDs
+                vectors[i : i + B] = batchVectors
+            np.savez_compressed(
+                Path(base, f"partition-{I:08d}.npz"),
+                ids=ids,
+                vectors=vectors,
+            )
+
+
 def main() -> None:
     """
     The entry point.
@@ -266,6 +329,11 @@ def main() -> None:
     getPassageEmbeddings.add_argument("--numPartitions", type=int, required=True)
     getPassageEmbeddings.add_argument("--partitionIndex", type=int, required=True)
     getPassageEmbeddings.add_argument("--batchSize", type=int, required=True)
+    getQueryEmbeddings = subparsers.add_parser("getQueryEmbeddings")
+    getQueryEmbeddings.add_argument("--embedding", type=str, required=True)
+    getQueryEmbeddings.add_argument("--numPartitions", type=int, required=True)
+    getQueryEmbeddings.add_argument("--partitionIndex", type=int, required=True)
+    getQueryEmbeddings.add_argument("--batchSize", type=int, required=True)
 
     parsed = parser.parse_args()
     match parsed.command:
@@ -283,6 +351,21 @@ def main() -> None:
                 case _:
                     raise NotImplementedError(parsed.embedding)
             GetPassageEmbeddingsInit(
+                embedding,
+                parsed.numPartitions,
+                parsed.partitionIndex,
+                parsed.batchSize,
+            )
+        case "getQueryEmbeddings":
+            devices = list(range(cuda.device_count()))
+            match parsed.embedding:
+                case "MiniCPM":
+                    embedding = MiniCPM(devices)
+                case "BgeBase":
+                    embedding = BgeBase(devices)
+                case _:
+                    raise NotImplementedError(parsed.embedding)
+            GetQueryEmbeddingsInit(
                 embedding,
                 parsed.numPartitions,
                 parsed.partitionIndex,

@@ -58,15 +58,15 @@ class TextRetrievalDataset(Dataset):
         """
         raise NotImplementedError
 
-    # @abstractmethod
-    # def getQueryEmbeddings(
-    #     self, partition: PartitionType, embedding: Type[TextEmbedding]
-    # ) -> Iterator[Tuple[str, NDArray[np.float32]]]:
-    #     """
-    #     Get the embeddings of the queries in the dataset.
+    @abstractmethod
+    def getQueryEmbeddings(
+        self, partition: PartitionType, embedding: Type[TextEmbedding]
+    ) -> Iterator[Tuple[str, NDArray[np.float32]]]:
+        """
+        Get the embeddings of the queries in the dataset.
 
-    #     :param partition: The partition to get queries from.
-    #     :param embedding: The embedding to use.
-    #     :return: Iterator over query IDs and embeddings.
-    #     """
-    #     raise NotImplementedError
+        :param partition: The partition to get queries from.
+        :param embedding: The embedding to use.
+        :return: Iterator over query IDs and embeddings.
+        """
+        raise NotImplementedError
