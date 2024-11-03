@@ -207,7 +207,7 @@ class GetPassageEmbeddingsInit:
         base: The base path for the embeddings.
     """
 
-    base = Path(workspace, f"{MsMarco.name}/passageEmbeddings")
+    base = Path(workspace, "MsMarco/passageEmbeddings")
 
     def __init__(
         self,
@@ -263,7 +263,7 @@ class GetQueryEmbeddingsInit:
         base: The base path for the embeddings.
     """
 
-    base = Path(workspace, f"{MsMarco.name}/queryEmbeddings")
+    base = Path(workspace, "MsMarco/queryEmbeddings")
 
     def __init__(
         self,
