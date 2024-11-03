@@ -46,17 +46,17 @@ class TextRetrievalDataset(Dataset):
         """
         raise NotImplementedError
 
-    # @abstractmethod
-    # def getPassageEmbeddings(
-    #     self, embedding: Type[TextEmbedding]
-    # ) -> Iterator[Tuple[str, NDArray[np.float32]]]:
-    #     """
-    #     Get the embeddings of the passages in the dataset.
+    @abstractmethod
+    def getPassageEmbeddings(
+        self, embedding: Type[TextEmbedding]
+    ) -> Iterator[Tuple[str, NDArray[np.float32]]]:
+        """
+        Get the embeddings of the passages in the dataset.
 
-    #     :param embedding: The embedding to use.
-    #     :return: Iterator over passage IDs and embeddings.
-    #     """
-    #     raise NotImplementedError
+        :param embedding: The embedding to use.
+        :return: Iterator over passage IDs and embeddings.
+        """
+        raise NotImplementedError
 
     # @abstractmethod
     # def getQueryEmbeddings(

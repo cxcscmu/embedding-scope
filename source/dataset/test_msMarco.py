@@ -3,8 +3,9 @@ Unit tests for the MsMarco class.
 """
 
 import pytest
-from source.interface import TextRetrievalDataset
+import numpy as np
 from source.dataset.msMarco import MsMarco
+from source.embedding.miniCPM import MiniCPM
 
 
 def test_msMarco_name():
@@ -22,7 +23,7 @@ def setup_fixture():
     return MsMarco()
 
 
-def test_msMarco_getPassages(setup: TextRetrievalDataset):
+def test_msMarco_getPassages(setup: MsMarco):
     """
     Test the getPassages method of the MsMarco class.
     """
@@ -34,7 +35,7 @@ def test_msMarco_getPassages(setup: TextRetrievalDataset):
     assert passageText.endswith("innocent lives obliterated.")
 
 
-def test_msMarco_getQueries(setup: TextRetrievalDataset):
+def test_msMarco_getQueries(setup: MsMarco):
     """
     Test the getQueries method of the MsMarco class.
     """
@@ -48,3 +49,14 @@ def test_msMarco_getQueries(setup: TextRetrievalDataset):
     assert queryID == "1048578"
     assert isinstance(queryText, str)
     assert queryText == "cost of endless pools/swim spa"
+
+
+def test_msMarco_getPassageEmbeddings(setup: MsMarco):
+    """
+    Test the getPassageEmbeddings method of the MsMarco class.
+    """
+    passageID, passageEmbedding = next(setup.getPassageEmbeddings(MiniCPM))
+    assert isinstance(passageID, str)
+    assert passageID == "0"
+    assert isinstance(passageEmbedding, np.ndarray)
+    assert passageEmbedding.shape == (MiniCPM.size,)

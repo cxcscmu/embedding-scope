@@ -5,8 +5,9 @@ Implementation of the MS MARCO dataset.
 import argparse
 import subprocess
 from pathlib import Path
-from typing import Iterator, Tuple, List
+from typing import Iterator, Tuple, List, Type
 from hashlib import md5
+from numpy import ndarray as NDArray
 import requests
 import pyarrow as pa
 import pyarrow.parquet as pq
@@ -16,6 +17,7 @@ from source import console
 from source.interface import PartitionType, TextRetrievalDataset, TextEmbedding
 from source.dataset import workspace
 from source.dataset.utilities import textRetrievalGetPassages, textRetrievalGetQueries
+from source.dataset.utilities import textRetrievalGetPassageEmbeddings
 from source.embedding.miniCPM import MiniCPM
 from source.embedding.bgeBase import BgeBase
 
@@ -37,6 +39,12 @@ class MsMarco(TextRetrievalDataset):
     def getQueries(self, partition: PartitionType) -> Iterator[Tuple[str, str]]:
         base = GetQueriesInit.base
         return textRetrievalGetQueries(base / partition)
+
+    def getPassageEmbeddings(
+        self, embedding: Type[TextEmbedding]
+    ) -> Iterator[Tuple[str, NDArray[np.float32]]]:
+        base = GetPassageEmbeddingsInit.base
+        return textRetrievalGetPassageEmbeddings(base / embedding.name)
 
 
 class GetPassagesInit:
@@ -215,6 +223,8 @@ class GetPassageEmbeddingsInit:
         Dispatch the steps.
         """
         console.log("Loading the passages")
+        base = Path(self.base, self.embedding.name)
+        base.mkdir(mode=0o770, exist_ok=True)
         passages = list(MsMarco().getPassages())
         I, N = self.partitionIndex, self.numPartitions
         M = len(passages) // N
@@ -234,7 +244,7 @@ class GetPassageEmbeddingsInit:
             ids[i : i + B] = batchIDs
             vectors[i : i + B] = batchVectors
         np.savez_compressed(
-            Path(self.base, f"partition-{I:08d}.npz"),
+            Path(base, f"partition-{I:08d}.npz"),
             ids=ids,
             vectors=vectors,
         )

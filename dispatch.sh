@@ -18,7 +18,7 @@ conda activate scope
 ##############################################################################
 
 # python3 -m source.dataset.msMarco getPassages --numPartitions 2
-python3 -m source.dataset.msMarco getPassageEmbeddings --embedding MiniCPM --numPartitions 16 --partitionIndex 0 --batchSize 128
+# python3 -m source.dataset.msMarco getPassageEmbeddings --embedding MiniCPM --numPartitions 16 --partitionIndex 0 --batchSize 128
 # python3 -m source.dataset.msMarco getPassageEmbeddings --embedding MiniCPM --numPartitions 16 --partitionIndex 1 --batchSize 128
 # python3 -m source.dataset.msMarco getPassageEmbeddings --embedding MiniCPM --numPartitions 16 --partitionIndex 2 --batchSize 128
 # python3 -m source.dataset.msMarco getPassageEmbeddings --embedding MiniCPM --numPartitions 16 --partitionIndex 3 --batchSize 128

@@ -5,6 +5,8 @@ Utilities for dataset module.
 from pathlib import Path
 from typing import Iterator, Tuple
 import pyarrow.parquet as pq
+import numpy as np
+from numpy import ndarray as NDArray
 
 
 def textRetrievalGetPassages(base: Path) -> Iterator[Tuple[str, str]]:
@@ -29,3 +31,18 @@ def textRetrievalGetQueries(base: Path) -> Iterator[Tuple[str, str]]:
     :return: Iterator over query IDs and texts.
     """
     return textRetrievalGetPassages(base)
+
+
+def textRetrievalGetPassageEmbeddings(
+    base: Path,
+) -> Iterator[Tuple[str, NDArray[np.float32]]]:
+    """
+    Getting passage embeddings from a text retrieval dataset.
+
+    :param base: The base path for the embeddings.
+    :return: Iterator over passage IDs and embeddings.
+    """
+    for path in sorted(base.iterdir()):
+        data = np.load(path)
+        for x, y in zip(data["ids"], data["vectors"]):
+            yield str(x), y
