@@ -1,0 +1,29 @@
+digraph {
+graph [
+  nodesep=0.25,
+  ranksep=0.3,
+  splines=line
+];
+node [
+  style=filled,
+  fillcolor=lightblue,
+  shape=circle
+];
+edge [
+  arrowsize=0.8,
+  color=black
+];
+
+94165189569744 [
+  label=""
+];
+94165189609096 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+94165189569744 -> 94165189609096 [
+
+];
+}

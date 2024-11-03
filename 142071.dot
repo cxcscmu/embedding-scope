@@ -1,0 +1,1331 @@
+digraph {
+graph [
+  nodesep=0.25,
+  ranksep=0.3,
+  splines=line
+];
+node [
+  style=filled,
+  fillcolor=lightblue,
+  shape=circle
+];
+edge [
+  arrowsize=0.8,
+  color=black
+];
+
+94165189569744 [
+  label=""
+];
+94165189609096 [
+  label="*"
+];
+140291433441744 [
+  label="*"
+];
+140291433446256 [
+  label="*"
+];
+140291433445872 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433443040 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433447168 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433445776 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434340592 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434343408 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434346544 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434343984 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434342000 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434347632 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434347824 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434346352 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434334384 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434338160 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434339440 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434343024 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434339376 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">********************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434336496 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*********************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434347760 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**********************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434338032 [
+  label="*"
+];
+140289730782160 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">************************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140289730782640 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*************************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140289730776800 [
+  label="*"
+];
+140289730782000 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***************************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140289730782320 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****************************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140289730783120 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****************************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140289730781040 [
+  label="*"
+];
+140289730783920 [
+  label="*"
+];
+140289730785360 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">********************************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140289730780480 [
+  label="*"
+];
+140289730783760 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**********************************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140289730777840 [
+  label="*"
+];
+140289730777760 [
+  label="*"
+];
+140289730780800 [
+  label="*"
+];
+140289730775920 [
+  label="*"
+];
+140289730781680 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***************************************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291954684784 [
+  label="##°"
+];
+140291954618528 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*********##°*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434339696 [
+  label="sunshine"
+];
+140291434339312 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">********sunshine*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434345264 [
+  label="climate"
+];
+140291434346608 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******climate*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434336240 [
+  label="precipitation"
+];
+140291434347888 [
+  label="*"
+];
+140291434348080 [
+  label="*"
+];
+140291434340336 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****precipitation***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434333936 [
+  label="weather"
+];
+140291434342192 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****weather*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434339120 [
+  label="city"
+];
+140291434339056 [
+  label="*"
+];
+140291434341680 [
+  label="*"
+];
+140291434342640 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****city***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434341296 [
+  label="##°"
+];
+140291434347120 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***##°*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434344048 [
+  label="summer"
+];
+140291434342896 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***summer*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433445440 [
+  label="live"
+];
+140291434337968 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***live*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434345392 [
+  label="night"
+];
+140294400129712 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***night*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140294388864496 [
+  label="summers"
+];
+140291953319024 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**summers*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291953322160 [
+  label="cities"
+];
+140294034734384 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**cities*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433439824 [
+  label="side"
+];
+140291433439680 [
+  label="*"
+];
+140291953442480 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**side**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291953437360 [
+  label="diversity"
+];
+140291953431152 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**diversity*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291953427440 [
+  label="uncommon"
+];
+140291968849904 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**uncommon*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291968848624 [
+  label="climate"
+];
+140291433174576 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**climate*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433182960 [
+  label="sunshine"
+];
+140291433172976 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**sunshine*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433180592 [
+  label="popular"
+];
+140291433184112 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**popular*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433442368 [
+  label="rain"
+];
+140291433435168 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**rain*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433446880 [
+  label="snowy"
+];
+140291433179248 [
+  label="*"
+];
+140291433181424 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**snowy**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433181168 [
+  label="weather"
+];
+140291433172016 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**weather*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433179888 [
+  label="naples"
+];
+140291433182384 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**naples*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434829200 [
+  label="[SEP]"
+];
+140290928940432 [
+  label="*"
+];
+140290928941104 [
+  label="*"
+];
+140291433177008 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433180912 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433177648 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433180400 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]******</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433170480 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*******</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433170160 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433173104 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433178544 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]**********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433174192 [
+  label="*"
+];
+140291433169648 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433171632 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433173616 [
+  label="*"
+];
+140291433181360 [
+  label="*"
+];
+140291433177584 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]****************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433178800 [
+  label="*"
+];
+140291433177200 [
+  label="*"
+];
+140289730776080 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*******************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140289730777920 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]********************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291954617888 [
+  label="precipitation"
+];
+140291954608368 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]************precipitation*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433175664 [
+  label="weather"
+];
+140291433170672 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]**********weather*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291954616448 [
+  label="precipitation"
+];
+140291954612608 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]********precipitation*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433176304 [
+  label="weather"
+];
+140291433183600 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*******weather*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433184624 [
+  label="rainfall"
+];
+140291433184304 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*****rainfall*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433172720 [
+  label="temperate"
+];
+140291433176176 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*****temperate*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433181552 [
+  label="seasons"
+];
+140291433174896 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*****seasons*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433175920 [
+  label="cooler"
+];
+140291433170736 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]****cooler*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140294642664512 [
+  label="##°"
+];
+140291954685584 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]***##°*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433174000 [
+  label="##nh"
+];
+140291433175408 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]***##nh*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433183920 [
+  label="climate"
+];
+140291433184944 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]***climate*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433184048 [
+  label="not"
+];
+140291433177328 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]***not*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433176688 [
+  label="##nh"
+];
+140291433175984 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]**##nh*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291954354624 [
+  label="##°"
+];
+140291954681904 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]**##°*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433174960 [
+  label="cooler"
+];
+140291433174256 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]**cooler*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433171504 [
+  label="weather"
+];
+140291433178224 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]**weather*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433170992 [
+  label="sunny"
+];
+140291433174448 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]**sunny*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433175216 [
+  label="round"
+];
+140291433176624 [
+  label="*"
+];
+140291433174768 [
+  label="year"
+];
+140291433171312 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*round*year*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433176240 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*round**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433180528 [
+  label="weather"
+];
+140291433175856 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*weather*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433181872 [
+  label="colder"
+];
+140291433184560 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*colder*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433172400 [
+  label="sunny"
+];
+140291433176432 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*sunny*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433184368 [
+  label="sunshine"
+];
+140291433174384 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*sunshine*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433176752 [
+  label="london"
+];
+140291433178096 [
+  label="*"
+];
+140291433182256 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*london**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433172336 [
+  label="respectively"
+];
+140291433175280 [
+  label="*"
+];
+140291433181488 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*respectively**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291433171184 [
+  label="climate"
+];
+140291434690480 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*climate*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434684272 [
+  label="crime"
+];
+140291434677680 [
+  label="*"
+];
+140291434686384 [
+  label="*"
+];
+140291434684528 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*crime***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434692016 [
+  label="overall"
+];
+140291434688432 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*overall*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140291434677744 [
+  label="temperate"
+];
+140291434678704 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*temperate*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140289730775920 -> 140289730781680 [
+
+];
+140289730780800 -> 140289730775920 [
+
+];
+140289730777760 -> 140289730780800 [
+
+];
+140289730777840 -> 140289730777760 [
+
+];
+140289730783760 -> 140289730777840 [
+
+];
+140289730780480 -> 140289730783760 [
+
+];
+140289730785360 -> 140289730780480 [
+
+];
+140289730783920 -> 140289730785360 [
+
+];
+140289730781040 -> 140289730783920 [
+
+];
+140289730783120 -> 140289730781040 [
+
+];
+140289730782320 -> 140289730783120 [
+
+];
+140289730782000 -> 140289730782320 [
+
+];
+140289730776800 -> 140289730782000 [
+
+];
+140289730782640 -> 140289730776800 [
+
+];
+140289730782160 -> 140289730782640 [
+
+];
+140291434338032 -> 140289730782160 [
+
+];
+140291434347760 -> 140291434338032 [
+
+];
+140291434336496 -> 140291434347760 [
+
+];
+140291434339376 -> 140291434336496 [
+
+];
+140291434343024 -> 140291434339376 [
+
+];
+140291434339440 -> 140291434343024 [
+
+];
+140291434338160 -> 140291434339440 [
+
+];
+140291434334384 -> 140291434338160 [
+
+];
+140291434346352 -> 140291434334384 [
+
+];
+140291434347824 -> 140291434346352 [
+
+];
+140291434347632 -> 140291434347824 [
+
+];
+140291434342000 -> 140291434347632 [
+
+];
+140291434343984 -> 140291434342000 [
+
+];
+140291434346544 -> 140291434343984 [
+
+];
+140291434343408 -> 140291434346544 [
+
+];
+140291954684784 -> 140291954618528 [
+
+];
+140291434343408 -> 140291954684784 [
+
+];
+140291434340592 -> 140291434343408 [
+
+];
+140291434339696 -> 140291434339312 [
+
+];
+140291434340592 -> 140291434339696 [
+
+];
+140291433445776 -> 140291434340592 [
+
+];
+140291433447168 -> 140291433445776 [
+
+];
+140291434345264 -> 140291434346608 [
+
+];
+140291433447168 -> 140291434345264 [
+
+];
+140291433443040 -> 140291433447168 [
+
+];
+140291434348080 -> 140291434340336 [
+
+];
+140291434347888 -> 140291434348080 [
+
+];
+140291434336240 -> 140291434347888 [
+
+];
+140291433443040 -> 140291434336240 [
+
+];
+140291434333936 -> 140291434342192 [
+
+];
+140291433443040 -> 140291434333936 [
+
+];
+140291433445872 -> 140291433443040 [
+
+];
+140291434341680 -> 140291434342640 [
+
+];
+140291434339056 -> 140291434341680 [
+
+];
+140291434339120 -> 140291434339056 [
+
+];
+140291433445872 -> 140291434339120 [
+
+];
+140291433446256 -> 140291433445872 [
+
+];
+140291434341296 -> 140291434347120 [
+
+];
+140291433446256 -> 140291434341296 [
+
+];
+140291434344048 -> 140291434342896 [
+
+];
+140291433446256 -> 140291434344048 [
+
+];
+140291433445440 -> 140291434337968 [
+
+];
+140291433446256 -> 140291433445440 [
+
+];
+140291434345392 -> 140294400129712 [
+
+];
+140291433446256 -> 140291434345392 [
+
+];
+140291433441744 -> 140291433446256 [
+
+];
+140294388864496 -> 140291953319024 [
+
+];
+140291433441744 -> 140294388864496 [
+
+];
+140291953322160 -> 140294034734384 [
+
+];
+140291433441744 -> 140291953322160 [
+
+];
+140291433439680 -> 140291953442480 [
+
+];
+140291433439824 -> 140291433439680 [
+
+];
+140291433441744 -> 140291433439824 [
+
+];
+140291953437360 -> 140291953431152 [
+
+];
+140291433441744 -> 140291953437360 [
+
+];
+140291953427440 -> 140291968849904 [
+
+];
+140291433441744 -> 140291953427440 [
+
+];
+140291968848624 -> 140291433174576 [
+
+];
+140291433441744 -> 140291968848624 [
+
+];
+140291433182960 -> 140291433172976 [
+
+];
+140291433441744 -> 140291433182960 [
+
+];
+140291433180592 -> 140291433184112 [
+
+];
+140291433441744 -> 140291433180592 [
+
+];
+140291433442368 -> 140291433435168 [
+
+];
+140291433441744 -> 140291433442368 [
+
+];
+140291433179248 -> 140291433181424 [
+
+];
+140291433446880 -> 140291433179248 [
+
+];
+140291433441744 -> 140291433446880 [
+
+];
+140291433181168 -> 140291433172016 [
+
+];
+140291433441744 -> 140291433181168 [
+
+];
+140291433179888 -> 140291433182384 [
+
+];
+140291433441744 -> 140291433179888 [
+
+];
+94165189609096 -> 140291433441744 [
+
+];
+94165189569744 -> 94165189609096 [
+
+];
+140289730776080 -> 140289730777920 [
+
+];
+140291433177200 -> 140289730776080 [
+
+];
+140291433178800 -> 140291433177200 [
+
+];
+140291433177584 -> 140291433178800 [
+
+];
+140291433181360 -> 140291433177584 [
+
+];
+140291433173616 -> 140291433181360 [
+
+];
+140291433171632 -> 140291433173616 [
+
+];
+140291433169648 -> 140291433171632 [
+
+];
+140291954617888 -> 140291954608368 [
+
+];
+140291433169648 -> 140291954617888 [
+
+];
+140291433174192 -> 140291433169648 [
+
+];
+140291433178544 -> 140291433174192 [
+
+];
+140291433175664 -> 140291433170672 [
+
+];
+140291433178544 -> 140291433175664 [
+
+];
+140291433173104 -> 140291433178544 [
+
+];
+140291433170160 -> 140291433173104 [
+
+];
+140291954616448 -> 140291954612608 [
+
+];
+140291433170160 -> 140291954616448 [
+
+];
+140291433170480 -> 140291433170160 [
+
+];
+140291433176304 -> 140291433183600 [
+
+];
+140291433170480 -> 140291433176304 [
+
+];
+140291433180400 -> 140291433170480 [
+
+];
+140291433177648 -> 140291433180400 [
+
+];
+140291433184624 -> 140291433184304 [
+
+];
+140291433177648 -> 140291433184624 [
+
+];
+140291433172720 -> 140291433176176 [
+
+];
+140291433177648 -> 140291433172720 [
+
+];
+140291433181552 -> 140291433174896 [
+
+];
+140291433177648 -> 140291433181552 [
+
+];
+140291433180912 -> 140291433177648 [
+
+];
+140291433175920 -> 140291433170736 [
+
+];
+140291433180912 -> 140291433175920 [
+
+];
+140291433177008 -> 140291433180912 [
+
+];
+140294642664512 -> 140291954685584 [
+
+];
+140291433177008 -> 140294642664512 [
+
+];
+140291433174000 -> 140291433175408 [
+
+];
+140291433177008 -> 140291433174000 [
+
+];
+140291433183920 -> 140291433184944 [
+
+];
+140291433177008 -> 140291433183920 [
+
+];
+140291433184048 -> 140291433177328 [
+
+];
+140291433177008 -> 140291433184048 [
+
+];
+140290928941104 -> 140291433177008 [
+
+];
+140291433176688 -> 140291433175984 [
+
+];
+140290928941104 -> 140291433176688 [
+
+];
+140291954354624 -> 140291954681904 [
+
+];
+140290928941104 -> 140291954354624 [
+
+];
+140291433174960 -> 140291433174256 [
+
+];
+140290928941104 -> 140291433174960 [
+
+];
+140291433171504 -> 140291433178224 [
+
+];
+140290928941104 -> 140291433171504 [
+
+];
+140291433170992 -> 140291433174448 [
+
+];
+140290928941104 -> 140291433170992 [
+
+];
+140290928940432 -> 140290928941104 [
+
+];
+140291433174768 -> 140291433171312 [
+
+];
+140291433176624 -> 140291433174768 [
+
+];
+140291433176624 -> 140291433176240 [
+
+];
+140291433175216 -> 140291433176624 [
+
+];
+140290928940432 -> 140291433175216 [
+
+];
+140291433180528 -> 140291433175856 [
+
+];
+140290928940432 -> 140291433180528 [
+
+];
+140291433181872 -> 140291433184560 [
+
+];
+140290928940432 -> 140291433181872 [
+
+];
+140291433172400 -> 140291433176432 [
+
+];
+140290928940432 -> 140291433172400 [
+
+];
+140291433184368 -> 140291433174384 [
+
+];
+140290928940432 -> 140291433184368 [
+
+];
+140291433178096 -> 140291433182256 [
+
+];
+140291433176752 -> 140291433178096 [
+
+];
+140290928940432 -> 140291433176752 [
+
+];
+140291433175280 -> 140291433181488 [
+
+];
+140291433172336 -> 140291433175280 [
+
+];
+140290928940432 -> 140291433172336 [
+
+];
+140291433171184 -> 140291434690480 [
+
+];
+140290928940432 -> 140291433171184 [
+
+];
+140291434686384 -> 140291434684528 [
+
+];
+140291434677680 -> 140291434686384 [
+
+];
+140291434684272 -> 140291434677680 [
+
+];
+140290928940432 -> 140291434684272 [
+
+];
+140291434692016 -> 140291434688432 [
+
+];
+140290928940432 -> 140291434692016 [
+
+];
+140291434677744 -> 140291434678704 [
+
+];
+140290928940432 -> 140291434677744 [
+
+];
+140291434829200 -> 140290928940432 [
+
+];
+94165189569744 -> 140291434829200 [
+
+];
+}

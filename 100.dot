@@ -1,0 +1,503 @@
+digraph {
+graph [
+  nodesep=0.25,
+  ranksep=0.3,
+  splines=line
+];
+node [
+  style=filled,
+  fillcolor=lightblue,
+  shape=circle
+];
+edge [
+  arrowsize=0.8,
+  color=black
+];
+
+139821386729680 [
+  label="None"
+];
+139824411022000 [
+  label="[SEP]"
+];
+139824712869808 [
+  label="token(*)"
+];
+139825614718656 [
+  label="token(*)"
+];
+139824410924160 [
+  label="token(*)"
+];
+139824429286000 [
+  label="token(*)"
+];
+139824278940880 [
+  label="token(*)"
+];
+139824429062096 [
+  label="token(*)"
+];
+139824429062208 [
+  label="token(*)"
+];
+139824407777968 [
+  label="token(*)"
+];
+139824407783216 [
+  label="token(*)"
+];
+139821386207648 [
+  label="token(*)"
+];
+139821386208512 [
+  label="token(*)"
+];
+139824410470288 [
+  label="token(*)"
+];
+139824410469648 [
+  label="token(*)"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139824429659952 [
+  label="token(*)"
+];
+139824429280656 [
+  label="token(*)"
+];
+139824407840112 [
+  label="token(*)"
+];
+139824407839728 [
+  label="token(*)"
+];
+139824407462560 [
+  label="token(*)"
+];
+139824407462768 [
+  label="psychiatrist"
+];
+139824718887856 [
+  label="token(*)"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)psychiatristtoken(*)</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139824407462352 [
+  label="token(*)"
+];
+139824407888816 [
+  label="token(*)"
+];
+139824407888144 [
+  label="token(*)"
+];
+139824729059328 [
+  label="token(*)"
+];
+139822460529248 [
+  label="token(*)"
+];
+139824428856112 [
+  label="token(*)"
+];
+139824428853040 [
+  label="token(*)"
+];
+139824428867872 [
+  label="token(*)"
+];
+139822460595680 [
+  label="token(*)"
+];
+139822459911696 [
+  label="token(*)"
+];
+139822459901904 [
+  label="token(*)"
+];
+139822460564592 [
+  label="token(*)"
+];
+139822460564288 [
+  label="token(*)"
+];
+139822460639536 [
+  label="token(*)"
+];
+139822460639216 [
+  label="token(*)"
+];
+139822460432240 [
+  label="token(*)"
+];
+139822460431568 [
+  label="token(*)"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139824430197104 [
+  label="token(*)"
+];
+139822459828368 [
+  label="token(*)"
+];
+139822460038704 [
+  label="token(*)"
+];
+139822460040544 [
+  label="token(*)"
+];
+139822460150448 [
+  label="token(*)"
+];
+139822460153520 [
+  label="token(*)"
+];
+139824429134384 [
+  label="token(*)"
+];
+139824429133984 [
+  label="token(*)"
+];
+139824428469552 [
+  label="token(*)"
+];
+139824428469136 [
+  label="token(*)"
+];
+139821386318304 [
+  label="token(*)"
+];
+139821386322624 [
+  label="token(*)"
+];
+139821386270960 [
+  label="token(*)"
+];
+139821386272752 [
+  label="token(*)"
+];
+139822460571776 [
+  label="token(*)"
+];
+139822460573168 [
+  label="token(*)"
+];
+139824429357680 [
+  label="token(*)"
+];
+139821387218992 [
+  label="token(*)"
+];
+139822500635408 [
+  label="token(*)"
+];
+139822500636896 [
+  label="token(*)"
+];
+139830308098096 [
+  label="token(*)"
+];
+139824429074992 [
+  label="token(*)"
+];
+94365442868800 [
+  label="token(*)"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139824407891056 [
+  label="there"
+];
+139822460530208 [
+  label="token(*)"
+];
+139822460533088 [
+  label="token(*)"
+];
+139822460632112 [
+  label="psychiatrist"
+];
+139822460595952 [
+  label="token(*)"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)theretoken(*)token(*)psychiatristtoken(*)</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139824429278544 [
+  label="government"
+];
+139824407839152 [
+  label="token(*)"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)governmenttoken(*)</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139821386209232 [
+  label="psychiatrist"
+];
+139821386211392 [
+  label="token(*)"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)psychiatristtoken(*)</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139824407805456 [
+  label="psychiatrist"
+];
+139822460501360 [
+  label="token(*)"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]token(*)token(*)token(*)token(*)psychiatristtoken(*)</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139824410931920 [
+  label="suicidal"
+];
+139824410922400 [
+  label="very"
+];
+139824410927040 [
+  label=","
+];
+139821386609920 [
+  label="token(*)"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]token(*)suicidalvery,token(*)</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139824407462768 -> 139824718887856 [
+
+];
+139824407462560 -> 139824407462768 [
+
+];
+139824429074992 -> 94365442868800 [
+
+];
+139830308098096 -> 139824429074992 [
+
+];
+139822500636896 -> 139830308098096 [
+
+];
+139822500635408 -> 139822500636896 [
+
+];
+139821387218992 -> 139822500635408 [
+
+];
+139824429357680 -> 139821387218992 [
+
+];
+139822460573168 -> 139824429357680 [
+
+];
+139822460571776 -> 139822460573168 [
+
+];
+139821386272752 -> 139822460571776 [
+
+];
+139821386270960 -> 139821386272752 [
+
+];
+139821386322624 -> 139821386270960 [
+
+];
+139821386318304 -> 139821386322624 [
+
+];
+139824428469136 -> 139821386318304 [
+
+];
+139824428469552 -> 139824428469136 [
+
+];
+139824429133984 -> 139824428469552 [
+
+];
+139824429134384 -> 139824429133984 [
+
+];
+139822460153520 -> 139824429134384 [
+
+];
+139822460150448 -> 139822460153520 [
+
+];
+139822460040544 -> 139822460150448 [
+
+];
+139822460038704 -> 139822460040544 [
+
+];
+139822459828368 -> 139822460038704 [
+
+];
+139824430197104 -> 139822459828368 [
+
+];
+139822460431568 -> 139824430197104 [
+
+];
+139822460432240 -> 139822460431568 [
+
+];
+139822460639216 -> 139822460432240 [
+
+];
+139822460639536 -> 139822460639216 [
+
+];
+139822460564288 -> 139822460639536 [
+
+];
+139822460564592 -> 139822460564288 [
+
+];
+139822459901904 -> 139822460564592 [
+
+];
+139822459911696 -> 139822459901904 [
+
+];
+139822460595680 -> 139822459911696 [
+
+];
+139824428867872 -> 139822460595680 [
+
+];
+139824428853040 -> 139824428867872 [
+
+];
+139824428856112 -> 139824428853040 [
+
+];
+139822460529248 -> 139824428856112 [
+
+];
+139824729059328 -> 139822460529248 [
+
+];
+139824407888144 -> 139824729059328 [
+
+];
+139822460632112 -> 139822460595952 [
+
+];
+139822460533088 -> 139822460632112 [
+
+];
+139822460530208 -> 139822460533088 [
+
+];
+139824407891056 -> 139822460530208 [
+
+];
+139824407888144 -> 139824407891056 [
+
+];
+139824407888816 -> 139824407888144 [
+
+];
+139824407462352 -> 139824407888816 [
+
+];
+139824407462560 -> 139824407462352 [
+
+];
+139824407839728 -> 139824407462560 [
+
+];
+139824407840112 -> 139824407839728 [
+
+];
+139824429280656 -> 139824407840112 [
+
+];
+139824429659952 -> 139824429280656 [
+
+];
+139824429278544 -> 139824407839152 [
+
+];
+139824429659952 -> 139824429278544 [
+
+];
+139824410469648 -> 139824429659952 [
+
+];
+139824410470288 -> 139824410469648 [
+
+];
+139821386208512 -> 139824410470288 [
+
+];
+139821386207648 -> 139821386208512 [
+
+];
+139824407783216 -> 139821386207648 [
+
+];
+139821386209232 -> 139821386211392 [
+
+];
+139824407783216 -> 139821386209232 [
+
+];
+139824407777968 -> 139824407783216 [
+
+];
+139824429062208 -> 139824407777968 [
+
+];
+139824429062096 -> 139824429062208 [
+
+];
+139824278940880 -> 139824429062096 [
+
+];
+139824429286000 -> 139824278940880 [
+
+];
+139824407805456 -> 139822460501360 [
+
+];
+139824429286000 -> 139824407805456 [
+
+];
+139824410924160 -> 139824429286000 [
+
+];
+139825614718656 -> 139824410924160 [
+
+];
+139824712869808 -> 139825614718656 [
+
+];
+139824410927040 -> 139821386609920 [
+
+];
+139824410922400 -> 139824410927040 [
+
+];
+139824410931920 -> 139824410922400 [
+
+];
+139824712869808 -> 139824410931920 [
+
+];
+139824411022000 -> 139824712869808 [
+
+];
+139821386729680 -> 139824411022000 [
+
+];
+}

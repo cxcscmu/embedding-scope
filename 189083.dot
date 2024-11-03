@@ -1,0 +1,2477 @@
+digraph {
+graph [
+  nodesep=0.25,
+  ranksep=0.3,
+  splines=line
+];
+node [
+  style=filled,
+  fillcolor=lightblue,
+  shape=circle
+];
+edge [
+  arrowsize=0.8,
+  color=black
+];
+
+94834211790032 [
+  label=""
+];
+140146496669232 [
+  label="[SEP]"
+];
+140139382732048 [
+  label="*"
+];
+140139382725712 [
+  label="*"
+];
+140146939084384 [
+  label="##°"
+];
+140146947336080 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]**##°*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139385951280 [
+  label="##f"
+];
+140146400018176 [
+  label="##°"
+];
+140146400014416 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]**##f##°*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139385957936 [
+  label="*"
+];
+140139385961328 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139385958192 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139385959984 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]******</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139385956976 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*******</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139385949232 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139385949936 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139385960496 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]**********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139385947376 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]***********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139385953968 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139385961072 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139385946480 [
+  label="*"
+];
+140146851406000 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]***************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140146851411760 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]****************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139377410288 [
+  label="*"
+];
+140146931365936 [
+  label="*"
+];
+140146946598240 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*******************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139385956592 [
+  label="cold"
+];
+140142239331248 [
+  label="*"
+];
+140142239324720 [
+  label="*"
+];
+140146400464528 [
+  label="*"
+];
+140146939232384 [
+  label="*"
+];
+140142237890032 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]************cold*****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142239334256 [
+  label="temperature"
+];
+140142239326512 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]******temperature*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142239325232 [
+  label="temperatures"
+];
+140144650577088 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]******temperatures*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142239333808 [
+  label="degrees"
+];
+140142239320496 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]******degrees*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142239319728 [
+  label="temperature"
+];
+140142239329584 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*****temperature*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142239331696 [
+  label="##ls"
+];
+140142239320368 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*****##ls*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142239327408 [
+  label="temperatures"
+];
+140142239319088 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*****temperatures*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142239330544 [
+  label="temperatures"
+];
+140142239327856 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]****temperatures*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142239322608 [
+  label="##ius"
+];
+140142239320048 [
+  label="##ls"
+];
+140142239325936 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]****##ius##ls*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142239327984 [
+  label="chilly"
+];
+140142239326128 [
+  label="*"
+];
+140142239319856 [
+  label="*"
+];
+140142239323376 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]****chilly***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142239332848 [
+  label="temperature"
+];
+140142239324208 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]****temperature*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142239320624 [
+  label="humidity"
+];
+140142239322736 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]****humidity*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142239324656 [
+  label="temperature"
+];
+140142239330928 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]***temperature*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140146400011456 [
+  label="##°"
+];
+140146400008976 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]***##°*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142239326768 [
+  label="heat"
+];
+140142239322160 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]**heat*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142239329520 [
+  label="weather"
+];
+140142239326192 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]**weather*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142239332720 [
+  label="temperature"
+];
+140142239326704 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]**temperature*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142239324848 [
+  label="temperature"
+];
+140142239332272 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*temperature*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142239331056 [
+  label="heat"
+];
+140142239332656 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*heat*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142239330416 [
+  label="##ius"
+];
+140142239318832 [
+  label="##ls"
+];
+140142239332784 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*##ius##ls*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142239321072 [
+  label="##f"
+];
+140146850955792 [
+  label="##°"
+];
+140146400014816 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*##f##°*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142239330288 [
+  label="weather"
+];
+140139386536048 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*weather*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386537968 [
+  label="warm"
+];
+140139386538736 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*warm*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386538032 [
+  label="plants"
+];
+140139386538800 [
+  label="*"
+];
+140139386547696 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*plants**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386540912 [
+  label="temps"
+];
+140139386548016 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*temps*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386547888 [
+  label="chilled"
+];
+140139386547376 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*chilled*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386540528 [
+  label="cool"
+];
+140139386537328 [
+  label="*"
+];
+140139386540080 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*cool**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386550960 [
+  label="temperatures"
+];
+140139386544368 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*temperatures*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386552240 [
+  label="warmer"
+];
+140139386543280 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*warmer*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386546160 [
+  label="days"
+];
+140139386549360 [
+  label="degree"
+];
+140139386546928 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*daysdegree*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386547760 [
+  label="planting"
+];
+140139386547632 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*planting*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386547568 [
+  label="##mp"
+];
+140139386537200 [
+  label="te"
+];
+140139386542000 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*##mpte*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386538928 [
+  label="degrees"
+];
+140139386549168 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*degrees*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386543984 [
+  label="oven"
+];
+140139386541232 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*oven*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386548784 [
+  label="climates"
+];
+140139386536560 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*climates*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+94834211829384 [
+  label="*"
+];
+140139383359072 [
+  label="*"
+];
+140139383359264 [
+  label="*"
+];
+140139386541168 [
+  label="temperature"
+];
+140139386546480 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***temperature*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139383359840 [
+  label="*"
+];
+140139386536752 [
+  label="##°"
+];
+140146850949168 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****##°*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139383361952 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139383360464 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139383361184 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386538992 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386546544 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386542192 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386543344 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386543728 [
+  label="climate"
+];
+140139386550896 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***********climate*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386546352 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386539760 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386543472 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386539376 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386540848 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386543408 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386542896 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386537008 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386544496 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">********************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386544432 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*********************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386548208 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**********************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386544880 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***********************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142237880992 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">************************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142237887472 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*************************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142237886512 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**************************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142237880032 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***************************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142237877552 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****************************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142237882032 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****************************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142237884432 [
+  label="*"
+];
+140142237877712 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******************************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142237882512 [
+  label="*"
+];
+140142237883712 [
+  label="*"
+];
+140142237889872 [
+  label="*"
+];
+140142237885792 [
+  label="*"
+];
+140142237881792 [
+  label="*"
+];
+140142237884912 [
+  label="*"
+];
+140142237886352 [
+  label="*"
+];
+140142237884512 [
+  label="*"
+];
+140139379627600 [
+  label="*"
+];
+140139379627312 [
+  label="*"
+];
+140139379626544 [
+  label="*"
+];
+140139379628560 [
+  label="*"
+];
+140139379628752 [
+  label="*"
+];
+140139379623184 [
+  label="*"
+];
+140139379623088 [
+  label="*"
+];
+140139379634320 [
+  label="*"
+];
+140139379623376 [
+  label="*"
+];
+140139380270096 [
+  label="temperature"
+];
+140139380268080 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">************************************************temperature*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142237888832 [
+  label="freeze"
+];
+140142237892032 [
+  label="*"
+];
+140142237890672 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***********************freeze**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386550128 [
+  label="##ius"
+];
+140142237889312 [
+  label="##ls"
+];
+140142237881072 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****************##ius##ls*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139386540656 [
+  label="degrees"
+];
+140139386536240 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**************degrees*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142237878112 [
+  label="temperature"
+];
+140142237883632 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**************temperature*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142237879072 [
+  label="##°"
+];
+140142237890352 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*************##°*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142237876752 [
+  label="##°"
+];
+140142237885232 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">************##°*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384933552 [
+  label="temperature"
+];
+140142237889232 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">************temperature*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384938032 [
+  label="temps"
+];
+140139384943344 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***********temps*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384938480 [
+  label="humidity"
+];
+140139384943088 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**********humidity*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384933360 [
+  label="temperatures"
+];
+140139384933936 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**********temperatures*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384943728 [
+  label="##eit"
+];
+140139384936432 [
+  label="##nh"
+];
+140139384932976 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*********##eit##nh*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384943600 [
+  label="temperature"
+];
+140139384934256 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*********temperature*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384937648 [
+  label="##ometer"
+];
+140139384932592 [
+  label="*"
+];
+140139384943792 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">********##ometer**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384946480 [
+  label="warmer"
+];
+140139384932464 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">********warmer*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384938544 [
+  label="climate"
+];
+140139384931696 [
+  label="*"
+];
+140139384930992 [
+  label="*"
+];
+140139384938352 [
+  label="*"
+];
+140139384936688 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">********climate****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384944624 [
+  label="temperatures"
+];
+140139384935792 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******temperatures*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384941296 [
+  label="cooler"
+];
+140139384935856 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******cooler*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384930928 [
+  label="fridge"
+];
+140139384937968 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******fridge*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384944752 [
+  label="##eit"
+];
+140139384933872 [
+  label="##nh"
+];
+140139384940464 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******##eit##nh*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384937776 [
+  label="humidity"
+];
+140139384945840 [
+  label="*"
+];
+140139384934448 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******humidity**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384934704 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******humidity***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384940848 [
+  label="weather"
+];
+140139384934192 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******weather*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384936880 [
+  label="warmer"
+];
+140139384933680 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******warmer*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384942640 [
+  label="heat"
+];
+140139384934512 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******heat*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384931568 [
+  label="temperatures"
+];
+140139384932784 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****temperatures*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140146500128080 [
+  label="##°"
+];
+140146400464128 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****##°*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384936240 [
+  label="cool"
+];
+140139384942896 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****cool*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384941232 [
+  label="year"
+];
+140139384944176 [
+  label="*"
+];
+140139384939120 [
+  label="*"
+];
+140139384944432 [
+  label="*"
+];
+140139384931312 [
+  label="*"
+];
+140139384944304 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****year*****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384939376 [
+  label="condition"
+];
+140139384935536 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****condition*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384612800 [
+  label="60"
+];
+140139384612992 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****60*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384939184 [
+  label="greenhouse"
+];
+140139384942512 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****greenhouse*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384943280 [
+  label="degrees"
+];
+140139384934320 [
+  label="6"
+];
+140139384930800 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****degrees6*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384938416 [
+  label="freeze"
+];
+140139384930544 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***freeze*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384946224 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***freeze**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384937840 [
+  label="temperatures"
+];
+140139384939824 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***temperatures*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384933488 [
+  label="##eit"
+];
+140139384946032 [
+  label="##nh"
+];
+140139384945776 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***##eit##nh*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384936560 [
+  label="temps"
+];
+140139384939248 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***temps*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384934768 [
+  label="degrees"
+];
+140139384942768 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***degrees*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384935088 [
+  label="frost"
+];
+140142238500144 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***frost*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142238499632 [
+  label="storing"
+];
+140142238514672 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***storing*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384617264 [
+  label="heat"
+];
+140142238502640 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***heat*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139384618080 [
+  label="warm"
+];
+140142238507120 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***warm*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142238511216 [
+  label="cooling"
+];
+140142238510768 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***cooling*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142238500016 [
+  label="heats"
+];
+140142238512944 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***heats*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142238511664 [
+  label="humidity"
+];
+140142238510064 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***humidity*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142238505520 [
+  label="temperature"
+];
+140142238512752 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**temperature*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142238499696 [
+  label="degrees"
+];
+140142238508464 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**degrees*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142238504048 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**degrees**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139382801584 [
+  label="##c"
+];
+140146400017216 [
+  label="##°"
+];
+140146500131040 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**##c##°*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140146498929248 [
+  label="##º"
+];
+140142237879152 [
+  label="*"
+];
+140142237891312 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**##c##º**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142238505904 [
+  label="cooler"
+];
+140142238505200 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**cooler*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139382803216 [
+  label="##eit"
+];
+140142238514224 [
+  label="##nh"
+];
+140142238508528 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**##eit##nh*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142238514160 [
+  label="garden"
+];
+140142238501232 [
+  label="*"
+];
+140142238501936 [
+  label="*"
+];
+140142238508720 [
+  label="*"
+];
+140142238505072 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**garden****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142238500272 [
+  label="colder"
+];
+140142238502320 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**colder*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139382805184 [
+  label=")"
+];
+140139382805376 [
+  label="*"
+];
+140142238500400 [
+  label="##°"
+];
+140142237884352 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**)*##°*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142238513648 [
+  label="##ometer"
+];
+140142238508272 [
+  label="*"
+];
+140142238499888 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**##ometer**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142238502064 [
+  label="moisture"
+];
+140142238514032 [
+  label="*"
+];
+140142238503472 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**moisture**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142238503792 [
+  label="growing"
+];
+140142238506096 [
+  label="*"
+];
+140142238509168 [
+  label="*"
+];
+140142238507760 [
+  label="*"
+];
+140142238503152 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**growing****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142238500464 [
+  label="weather"
+];
+140142238505648 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**weather*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142238511920 [
+  label="containers"
+];
+140142238512368 [
+  label="*"
+];
+140142238503216 [
+  label="*"
+];
+140142238507440 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**containers***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139382810080 [
+  label="frost"
+];
+140142238512112 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**frost*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142238512624 [
+  label="fridge"
+];
+140142238505584 [
+  label="*"
+];
+140142238504496 [
+  label="*"
+];
+140142238512560 [
+  label="*"
+];
+140142238507632 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**fridge****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142238509424 [
+  label="plants"
+];
+140142238512432 [
+  label="*"
+];
+140142238513392 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**plants**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142238507376 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**plants***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142238510320 [
+  label="temperatures"
+];
+140142238513264 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**temperatures*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142238508976 [
+  label="winter"
+];
+140142238506992 [
+  label="*"
+];
+140142238502960 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**winter**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139382808064 [
+  label="##f"
+];
+140142238499184 [
+  label="160"
+];
+140142238499056 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**##f160*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140142238506032 [
+  label="freeze"
+];
+140142238513776 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**freeze*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140139383359216 [
+  label="##f"
+];
+140139382814352 [
+  label="65"
+];
+140139382813920 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*##f65*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140146939084384 -> 140146947336080 [
+
+];
+140139382725712 -> 140146939084384 [
+
+];
+140146400018176 -> 140146400014416 [
+
+];
+140139385951280 -> 140146400018176 [
+
+];
+140139382725712 -> 140139385951280 [
+
+];
+140146931365936 -> 140146946598240 [
+
+];
+140139377410288 -> 140146931365936 [
+
+];
+140146851411760 -> 140139377410288 [
+
+];
+140146851406000 -> 140146851411760 [
+
+];
+140139385946480 -> 140146851406000 [
+
+];
+140139385961072 -> 140139385946480 [
+
+];
+140139385953968 -> 140139385961072 [
+
+];
+140146939232384 -> 140142237890032 [
+
+];
+140146400464528 -> 140146939232384 [
+
+];
+140142239324720 -> 140146400464528 [
+
+];
+140142239331248 -> 140142239324720 [
+
+];
+140139385956592 -> 140142239331248 [
+
+];
+140139385953968 -> 140139385956592 [
+
+];
+140139385947376 -> 140139385953968 [
+
+];
+140139385960496 -> 140139385947376 [
+
+];
+140139385949936 -> 140139385960496 [
+
+];
+140139385949232 -> 140139385949936 [
+
+];
+140139385956976 -> 140139385949232 [
+
+];
+140139385959984 -> 140139385956976 [
+
+];
+140142239334256 -> 140142239326512 [
+
+];
+140139385959984 -> 140142239334256 [
+
+];
+140142239325232 -> 140144650577088 [
+
+];
+140139385959984 -> 140142239325232 [
+
+];
+140142239333808 -> 140142239320496 [
+
+];
+140139385959984 -> 140142239333808 [
+
+];
+140139385958192 -> 140139385959984 [
+
+];
+140142239319728 -> 140142239329584 [
+
+];
+140139385958192 -> 140142239319728 [
+
+];
+140142239331696 -> 140142239320368 [
+
+];
+140139385958192 -> 140142239331696 [
+
+];
+140142239327408 -> 140142239319088 [
+
+];
+140139385958192 -> 140142239327408 [
+
+];
+140139385961328 -> 140139385958192 [
+
+];
+140142239330544 -> 140142239327856 [
+
+];
+140139385961328 -> 140142239330544 [
+
+];
+140142239320048 -> 140142239325936 [
+
+];
+140142239322608 -> 140142239320048 [
+
+];
+140139385961328 -> 140142239322608 [
+
+];
+140142239319856 -> 140142239323376 [
+
+];
+140142239326128 -> 140142239319856 [
+
+];
+140142239327984 -> 140142239326128 [
+
+];
+140139385961328 -> 140142239327984 [
+
+];
+140142239332848 -> 140142239324208 [
+
+];
+140139385961328 -> 140142239332848 [
+
+];
+140142239320624 -> 140142239322736 [
+
+];
+140139385961328 -> 140142239320624 [
+
+];
+140139385957936 -> 140139385961328 [
+
+];
+140142239324656 -> 140142239330928 [
+
+];
+140139385957936 -> 140142239324656 [
+
+];
+140146400011456 -> 140146400008976 [
+
+];
+140139385957936 -> 140146400011456 [
+
+];
+140139382725712 -> 140139385957936 [
+
+];
+140142239326768 -> 140142239322160 [
+
+];
+140139382725712 -> 140142239326768 [
+
+];
+140142239329520 -> 140142239326192 [
+
+];
+140139382725712 -> 140142239329520 [
+
+];
+140142239332720 -> 140142239326704 [
+
+];
+140139382725712 -> 140142239332720 [
+
+];
+140139382732048 -> 140139382725712 [
+
+];
+140142239324848 -> 140142239332272 [
+
+];
+140139382732048 -> 140142239324848 [
+
+];
+140142239331056 -> 140142239332656 [
+
+];
+140139382732048 -> 140142239331056 [
+
+];
+140142239318832 -> 140142239332784 [
+
+];
+140142239330416 -> 140142239318832 [
+
+];
+140139382732048 -> 140142239330416 [
+
+];
+140146850955792 -> 140146400014816 [
+
+];
+140142239321072 -> 140146850955792 [
+
+];
+140139382732048 -> 140142239321072 [
+
+];
+140142239330288 -> 140139386536048 [
+
+];
+140139382732048 -> 140142239330288 [
+
+];
+140139386537968 -> 140139386538736 [
+
+];
+140139382732048 -> 140139386537968 [
+
+];
+140139386538800 -> 140139386547696 [
+
+];
+140139386538032 -> 140139386538800 [
+
+];
+140139382732048 -> 140139386538032 [
+
+];
+140139386540912 -> 140139386548016 [
+
+];
+140139382732048 -> 140139386540912 [
+
+];
+140139386547888 -> 140139386547376 [
+
+];
+140139382732048 -> 140139386547888 [
+
+];
+140139386537328 -> 140139386540080 [
+
+];
+140139386540528 -> 140139386537328 [
+
+];
+140139382732048 -> 140139386540528 [
+
+];
+140139386550960 -> 140139386544368 [
+
+];
+140139382732048 -> 140139386550960 [
+
+];
+140139386552240 -> 140139386543280 [
+
+];
+140139382732048 -> 140139386552240 [
+
+];
+140139386549360 -> 140139386546928 [
+
+];
+140139386546160 -> 140139386549360 [
+
+];
+140139382732048 -> 140139386546160 [
+
+];
+140139386547760 -> 140139386547632 [
+
+];
+140139382732048 -> 140139386547760 [
+
+];
+140139386537200 -> 140139386542000 [
+
+];
+140139386547568 -> 140139386537200 [
+
+];
+140139382732048 -> 140139386547568 [
+
+];
+140139386538928 -> 140139386549168 [
+
+];
+140139382732048 -> 140139386538928 [
+
+];
+140139386543984 -> 140139386541232 [
+
+];
+140139382732048 -> 140139386543984 [
+
+];
+140139386548784 -> 140139386536560 [
+
+];
+140139382732048 -> 140139386548784 [
+
+];
+140146496669232 -> 140139382732048 [
+
+];
+94834211790032 -> 140146496669232 [
+
+];
+140139386541168 -> 140139386546480 [
+
+];
+140139383359264 -> 140139386541168 [
+
+];
+140139386536752 -> 140146850949168 [
+
+];
+140139383359840 -> 140139386536752 [
+
+];
+140139386543728 -> 140139386550896 [
+
+];
+140139386543344 -> 140139386543728 [
+
+];
+140139380270096 -> 140139380268080 [
+
+];
+140139379623376 -> 140139380270096 [
+
+];
+140139379634320 -> 140139379623376 [
+
+];
+140139379623088 -> 140139379634320 [
+
+];
+140139379623184 -> 140139379623088 [
+
+];
+140139379628752 -> 140139379623184 [
+
+];
+140139379628560 -> 140139379628752 [
+
+];
+140139379626544 -> 140139379628560 [
+
+];
+140139379627312 -> 140139379626544 [
+
+];
+140139379627600 -> 140139379627312 [
+
+];
+140142237884512 -> 140139379627600 [
+
+];
+140142237886352 -> 140142237884512 [
+
+];
+140142237884912 -> 140142237886352 [
+
+];
+140142237881792 -> 140142237884912 [
+
+];
+140142237885792 -> 140142237881792 [
+
+];
+140142237889872 -> 140142237885792 [
+
+];
+140142237883712 -> 140142237889872 [
+
+];
+140142237882512 -> 140142237883712 [
+
+];
+140142237877712 -> 140142237882512 [
+
+];
+140142237884432 -> 140142237877712 [
+
+];
+140142237882032 -> 140142237884432 [
+
+];
+140142237877552 -> 140142237882032 [
+
+];
+140142237880032 -> 140142237877552 [
+
+];
+140142237886512 -> 140142237880032 [
+
+];
+140142237887472 -> 140142237886512 [
+
+];
+140142237880992 -> 140142237887472 [
+
+];
+140139386544880 -> 140142237880992 [
+
+];
+140142237892032 -> 140142237890672 [
+
+];
+140142237888832 -> 140142237892032 [
+
+];
+140139386544880 -> 140142237888832 [
+
+];
+140139386548208 -> 140139386544880 [
+
+];
+140139386544432 -> 140139386548208 [
+
+];
+140139386544496 -> 140139386544432 [
+
+];
+140139386537008 -> 140139386544496 [
+
+];
+140139386542896 -> 140139386537008 [
+
+];
+140139386543408 -> 140139386542896 [
+
+];
+140142237889312 -> 140142237881072 [
+
+];
+140139386550128 -> 140142237889312 [
+
+];
+140139386543408 -> 140139386550128 [
+
+];
+140139386540848 -> 140139386543408 [
+
+];
+140139386539376 -> 140139386540848 [
+
+];
+140139386543472 -> 140139386539376 [
+
+];
+140139386540656 -> 140139386536240 [
+
+];
+140139386543472 -> 140139386540656 [
+
+];
+140142237878112 -> 140142237883632 [
+
+];
+140139386543472 -> 140142237878112 [
+
+];
+140139386539760 -> 140139386543472 [
+
+];
+140142237879072 -> 140142237890352 [
+
+];
+140139386539760 -> 140142237879072 [
+
+];
+140139386546352 -> 140139386539760 [
+
+];
+140142237876752 -> 140142237885232 [
+
+];
+140139386546352 -> 140142237876752 [
+
+];
+140139384933552 -> 140142237889232 [
+
+];
+140139386546352 -> 140139384933552 [
+
+];
+140139386543344 -> 140139386546352 [
+
+];
+140139384938032 -> 140139384943344 [
+
+];
+140139386543344 -> 140139384938032 [
+
+];
+140139386542192 -> 140139386543344 [
+
+];
+140139384938480 -> 140139384943088 [
+
+];
+140139386542192 -> 140139384938480 [
+
+];
+140139384933360 -> 140139384933936 [
+
+];
+140139386542192 -> 140139384933360 [
+
+];
+140139386546544 -> 140139386542192 [
+
+];
+140139384936432 -> 140139384932976 [
+
+];
+140139384943728 -> 140139384936432 [
+
+];
+140139386546544 -> 140139384943728 [
+
+];
+140139384943600 -> 140139384934256 [
+
+];
+140139386546544 -> 140139384943600 [
+
+];
+140139386538992 -> 140139386546544 [
+
+];
+140139384932592 -> 140139384943792 [
+
+];
+140139384937648 -> 140139384932592 [
+
+];
+140139386538992 -> 140139384937648 [
+
+];
+140139384946480 -> 140139384932464 [
+
+];
+140139386538992 -> 140139384946480 [
+
+];
+140139384938352 -> 140139384936688 [
+
+];
+140139384930992 -> 140139384938352 [
+
+];
+140139384931696 -> 140139384930992 [
+
+];
+140139384938544 -> 140139384931696 [
+
+];
+140139386538992 -> 140139384938544 [
+
+];
+140139383361184 -> 140139386538992 [
+
+];
+140139384944624 -> 140139384935792 [
+
+];
+140139383361184 -> 140139384944624 [
+
+];
+140139384941296 -> 140139384935856 [
+
+];
+140139383361184 -> 140139384941296 [
+
+];
+140139384930928 -> 140139384937968 [
+
+];
+140139383361184 -> 140139384930928 [
+
+];
+140139383360464 -> 140139383361184 [
+
+];
+140139384933872 -> 140139384940464 [
+
+];
+140139384944752 -> 140139384933872 [
+
+];
+140139383360464 -> 140139384944752 [
+
+];
+140139384934448 -> 140139384934704 [
+
+];
+140139384945840 -> 140139384934448 [
+
+];
+140139384937776 -> 140139384945840 [
+
+];
+140139383360464 -> 140139384937776 [
+
+];
+140139384940848 -> 140139384934192 [
+
+];
+140139383360464 -> 140139384940848 [
+
+];
+140139384936880 -> 140139384933680 [
+
+];
+140139383360464 -> 140139384936880 [
+
+];
+140139384942640 -> 140139384934512 [
+
+];
+140139383360464 -> 140139384942640 [
+
+];
+140139383361952 -> 140139383360464 [
+
+];
+140139384931568 -> 140139384932784 [
+
+];
+140139383361952 -> 140139384931568 [
+
+];
+140146500128080 -> 140146400464128 [
+
+];
+140139383361952 -> 140146500128080 [
+
+];
+140139384936240 -> 140139384942896 [
+
+];
+140139383361952 -> 140139384936240 [
+
+];
+140139383359840 -> 140139383361952 [
+
+];
+140139384931312 -> 140139384944304 [
+
+];
+140139384944432 -> 140139384931312 [
+
+];
+140139384939120 -> 140139384944432 [
+
+];
+140139384944176 -> 140139384939120 [
+
+];
+140139384941232 -> 140139384944176 [
+
+];
+140139383359840 -> 140139384941232 [
+
+];
+140139384939376 -> 140139384935536 [
+
+];
+140139383359840 -> 140139384939376 [
+
+];
+140139384612800 -> 140139384612992 [
+
+];
+140139383359840 -> 140139384612800 [
+
+];
+140139384939184 -> 140139384942512 [
+
+];
+140139383359840 -> 140139384939184 [
+
+];
+140139384934320 -> 140139384930800 [
+
+];
+140139384943280 -> 140139384934320 [
+
+];
+140139383359840 -> 140139384943280 [
+
+];
+140139383359264 -> 140139383359840 [
+
+];
+140139384930544 -> 140139384946224 [
+
+];
+140139384938416 -> 140139384930544 [
+
+];
+140139383359264 -> 140139384938416 [
+
+];
+140139384937840 -> 140139384939824 [
+
+];
+140139383359264 -> 140139384937840 [
+
+];
+140139384946032 -> 140139384945776 [
+
+];
+140139384933488 -> 140139384946032 [
+
+];
+140139383359264 -> 140139384933488 [
+
+];
+140139384936560 -> 140139384939248 [
+
+];
+140139383359264 -> 140139384936560 [
+
+];
+140139384934768 -> 140139384942768 [
+
+];
+140139383359264 -> 140139384934768 [
+
+];
+140139384935088 -> 140142238500144 [
+
+];
+140139383359264 -> 140139384935088 [
+
+];
+140142238499632 -> 140142238514672 [
+
+];
+140139383359264 -> 140142238499632 [
+
+];
+140139384617264 -> 140142238502640 [
+
+];
+140139383359264 -> 140139384617264 [
+
+];
+140139384618080 -> 140142238507120 [
+
+];
+140139383359264 -> 140139384618080 [
+
+];
+140142238511216 -> 140142238510768 [
+
+];
+140139383359264 -> 140142238511216 [
+
+];
+140142238500016 -> 140142238512944 [
+
+];
+140139383359264 -> 140142238500016 [
+
+];
+140142238511664 -> 140142238510064 [
+
+];
+140139383359264 -> 140142238511664 [
+
+];
+140139383359072 -> 140139383359264 [
+
+];
+140142238505520 -> 140142238512752 [
+
+];
+140139383359072 -> 140142238505520 [
+
+];
+140142238508464 -> 140142238504048 [
+
+];
+140142238499696 -> 140142238508464 [
+
+];
+140139383359072 -> 140142238499696 [
+
+];
+140146400017216 -> 140146500131040 [
+
+];
+140139382801584 -> 140146400017216 [
+
+];
+140142237879152 -> 140142237891312 [
+
+];
+140146498929248 -> 140142237879152 [
+
+];
+140139382801584 -> 140146498929248 [
+
+];
+140139383359072 -> 140139382801584 [
+
+];
+140142238505904 -> 140142238505200 [
+
+];
+140139383359072 -> 140142238505904 [
+
+];
+140142238514224 -> 140142238508528 [
+
+];
+140139382803216 -> 140142238514224 [
+
+];
+140139383359072 -> 140139382803216 [
+
+];
+140142238508720 -> 140142238505072 [
+
+];
+140142238501936 -> 140142238508720 [
+
+];
+140142238501232 -> 140142238501936 [
+
+];
+140142238514160 -> 140142238501232 [
+
+];
+140139383359072 -> 140142238514160 [
+
+];
+140142238500272 -> 140142238502320 [
+
+];
+140139383359072 -> 140142238500272 [
+
+];
+140142238500400 -> 140142237884352 [
+
+];
+140139382805376 -> 140142238500400 [
+
+];
+140139382805184 -> 140139382805376 [
+
+];
+140139383359072 -> 140139382805184 [
+
+];
+140142238508272 -> 140142238499888 [
+
+];
+140142238513648 -> 140142238508272 [
+
+];
+140139383359072 -> 140142238513648 [
+
+];
+140142238514032 -> 140142238503472 [
+
+];
+140142238502064 -> 140142238514032 [
+
+];
+140139383359072 -> 140142238502064 [
+
+];
+140142238507760 -> 140142238503152 [
+
+];
+140142238509168 -> 140142238507760 [
+
+];
+140142238506096 -> 140142238509168 [
+
+];
+140142238503792 -> 140142238506096 [
+
+];
+140139383359072 -> 140142238503792 [
+
+];
+140142238500464 -> 140142238505648 [
+
+];
+140139383359072 -> 140142238500464 [
+
+];
+140142238503216 -> 140142238507440 [
+
+];
+140142238512368 -> 140142238503216 [
+
+];
+140142238511920 -> 140142238512368 [
+
+];
+140139383359072 -> 140142238511920 [
+
+];
+140139382810080 -> 140142238512112 [
+
+];
+140139383359072 -> 140139382810080 [
+
+];
+140142238512560 -> 140142238507632 [
+
+];
+140142238504496 -> 140142238512560 [
+
+];
+140142238505584 -> 140142238504496 [
+
+];
+140142238512624 -> 140142238505584 [
+
+];
+140139383359072 -> 140142238512624 [
+
+];
+140142238513392 -> 140142238507376 [
+
+];
+140142238512432 -> 140142238513392 [
+
+];
+140142238509424 -> 140142238512432 [
+
+];
+140139383359072 -> 140142238509424 [
+
+];
+140142238510320 -> 140142238513264 [
+
+];
+140139383359072 -> 140142238510320 [
+
+];
+140142238506992 -> 140142238502960 [
+
+];
+140142238508976 -> 140142238506992 [
+
+];
+140139383359072 -> 140142238508976 [
+
+];
+140142238499184 -> 140142238499056 [
+
+];
+140139382808064 -> 140142238499184 [
+
+];
+140139383359072 -> 140139382808064 [
+
+];
+140142238506032 -> 140142238513776 [
+
+];
+140139383359072 -> 140142238506032 [
+
+];
+94834211829384 -> 140139383359072 [
+
+];
+140139382814352 -> 140139382813920 [
+
+];
+140139383359216 -> 140139382814352 [
+
+];
+94834211829384 -> 140139383359216 [
+
+];
+94834211790032 -> 94834211829384 [
+
+];
+}

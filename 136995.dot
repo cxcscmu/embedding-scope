@@ -1,0 +1,2771 @@
+digraph {
+graph [
+  nodesep=0.25,
+  ranksep=0.3,
+  splines=line
+];
+node [
+  style=filled,
+  fillcolor=lightblue,
+  shape=circle
+];
+edge [
+  arrowsize=0.8,
+  color=black
+];
+
+93924689693904 [
+  label=""
+];
+93924689733256 [
+  label="*"
+];
+139735017343856 [
+  label="*"
+];
+139735017342176 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017344000 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017344144 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017344288 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017344432 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017809584 [
+  label="symptoms"
+];
+139735017813872 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******symptoms*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017804720 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017803312 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017802928 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017805168 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017813552 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017811888 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017805552 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017815472 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017807408 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017813360 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017807472 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017814192 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017807600 [
+  label="*"
+];
+139735017803696 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*********************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017808176 [
+  label="*"
+];
+139735017813616 [
+  label="*"
+];
+139735050513792 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">************************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735050507152 [
+  label="*"
+];
+139735050505072 [
+  label="*"
+];
+139735050510992 [
+  label="*"
+];
+139735050511312 [
+  label="*"
+];
+139735050505792 [
+  label="*"
+];
+139735050512752 [
+  label="*"
+];
+139735050517312 [
+  label="*"
+];
+139735050512592 [
+  label="*"
+];
+139735050504032 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*********************************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735050511872 [
+  label="harmful"
+];
+139735050504912 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****************************harmful*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017808944 [
+  label="##gies"
+];
+139735017801456 [
+  label="*"
+];
+139739731859440 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****************##gies**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017815344 [
+  label="headache"
+];
+139735017807216 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*************headache*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017804464 [
+  label="fever"
+];
+139735164545776 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">************fever*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164546928 [
+  label="doctor"
+];
+139735164538608 [
+  label="*"
+];
+139735164538800 [
+  label="*"
+];
+139735164535792 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">************doctor***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164536560 [
+  label="injury"
+];
+139735164543152 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***********injury*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164535664 [
+  label="##ive"
+];
+139735164547312 [
+  label="##ort"
+];
+139739382122256 [
+  label="##pp"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**********##ive##ort##pp</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164540208 [
+  label="devi"
+];
+139735164546544 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*********devi*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164543664 [
+  label="hardship"
+];
+139735164547952 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">********hardship*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164544624 [
+  label="##zziness"
+];
+139735164551024 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">********##zziness*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164548656 [
+  label="syndrome"
+];
+139735164546608 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">********syndrome*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164537456 [
+  label="pain"
+];
+139735164537200 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">********pain*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164535024 [
+  label="inability"
+];
+139735164536304 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******inability*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164544944 [
+  label="caused"
+];
+139735164543984 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******caused*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164538096 [
+  label="not"
+];
+139735164544048 [
+  label="*"
+];
+139735164550384 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******not**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164549552 [
+  label="disorders"
+];
+139735164539312 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******disorders*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164535088 [
+  label="lack"
+];
+139735164538160 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******lack*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164550896 [
+  label="hazardous"
+];
+139735164542000 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******hazardous*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164536752 [
+  label="mistakes"
+];
+139735164541936 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******mistakes*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164549616 [
+  label="##ation"
+];
+139735164544688 [
+  label="*"
+];
+139735164542192 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******##ation**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164545648 [
+  label="pain"
+];
+139735164541360 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******pain*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164549360 [
+  label="burns"
+];
+139735164541040 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******burns*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164538672 [
+  label="illnesses"
+];
+139735164547376 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******illnesses*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164538480 [
+  label="injury"
+];
+139735164534960 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******injury*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164538352 [
+  label="fault"
+];
+139735164545840 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****fault*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164550192 [
+  label="disorder"
+];
+139735164545904 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****disorder*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164540912 [
+  label="lesions"
+];
+139735164539696 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****lesions*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164546032 [
+  label="injuries"
+];
+139735164544112 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****injuries*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164547696 [
+  label="problems"
+];
+139735164539568 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****problems*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164535536 [
+  label="trauma"
+];
+139735018308336 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****trauma*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018320112 [
+  label="lower"
+];
+139735018310064 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****lower*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018312624 [
+  label="tumors"
+];
+139735018308656 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****tumors*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017344240 [
+  label="no"
+];
+139735017427552 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****no*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018319920 [
+  label="diseases"
+];
+139735018314800 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****diseases*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017428224 [
+  label="ago"
+];
+139735018318832 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****ago*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018320048 [
+  label="problems"
+];
+139735018317680 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****problems*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018315056 [
+  label="poor"
+];
+139735018310192 [
+  label="*"
+];
+139735018311984 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****poor**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018314992 [
+  label="emergency"
+];
+139735018316272 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****emergency*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018320688 [
+  label="stress"
+];
+139735018317168 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****stress*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017428944 [
+  label="not"
+];
+139735018313200 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****not*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018322224 [
+  label="flare"
+];
+139735018320432 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****flare*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018315248 [
+  label="inappropriate"
+];
+139735018314352 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****inappropriate*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018322416 [
+  label="affect"
+];
+139735018323696 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****affect*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018311728 [
+  label="##otho"
+];
+139735018323888 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****##otho*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017344096 [
+  label="poor"
+];
+139735018311408 [
+  label="*"
+];
+139735018311600 [
+  label="*"
+];
+139735018308144 [
+  label="*"
+];
+139735018314224 [
+  label="*"
+];
+139735018316336 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***poor*****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018321328 [
+  label="injury"
+];
+139735018318256 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***injury*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017434704 [
+  label="harm"
+];
+139735018319152 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***harm*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017434320 [
+  label="##lm"
+];
+139735018316592 [
+  label="ai"
+];
+139735018320880 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***##lmai*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018315952 [
+  label="##rita"
+];
+139735018309808 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***##rita*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017428608 [
+  label="##ur"
+];
+139735018312176 [
+  label="*"
+];
+139735018313712 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***##ur**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018322352 [
+  label="damage"
+];
+139735018309936 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***damage*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017436864 [
+  label="sore"
+];
+139735018321648 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***sore*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018308720 [
+  label="alarm"
+];
+139735018322608 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***alarm*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018314096 [
+  label="burst"
+];
+139735018313392 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***burst*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018322544 [
+  label="lawsuits"
+];
+139735018309872 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***lawsuits*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018323504 [
+  label="claim"
+];
+139735018315376 [
+  label="*"
+];
+139735018320496 [
+  label="*"
+];
+139735018309744 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***claim***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018312048 [
+  label="##raine"
+];
+139735018313904 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***##raine*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018309424 [
+  label="damaged"
+];
+139735018322992 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***damaged*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016996912 [
+  label="risk"
+];
+139735018323184 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***risk*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018314736 [
+  label="causing"
+];
+139735018312496 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***causing*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016997728 [
+  label="too"
+];
+139735016997920 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***too*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018313136 [
+  label="disabled"
+];
+139735018311664 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***disabled*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018311472 [
+  label="problematic"
+];
+139735018307824 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***problematic*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018318192 [
+  label="##itis"
+];
+139735018319536 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**##itis*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018321776 [
+  label="swelling"
+];
+139735018317040 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**swelling*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735018310768 [
+  label="injury"
+];
+139735018318576 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**injury*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139739381295792 [
+  label="complaint"
+];
+139739381287536 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**complaint*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017000944 [
+  label="claim"
+];
+139739381289904 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**claim*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139739381289456 [
+  label="*"
+];
+139739381289712 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**claim***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017001040 [
+  label="##is"
+];
+139735017002048 [
+  label="*"
+];
+139739381289776 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**##is**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017002000 [
+  label="pain"
+];
+139735017002720 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**pain*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139739250535408 [
+  label="patient"
+];
+139739381882160 [
+  label="*"
+];
+139739381883184 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**patient**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139739381885552 [
+  label="disability"
+];
+139739383198960 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**disability*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139739378814128 [
+  label="accident"
+];
+139739378799472 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**accident*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017004256 [
+  label="abuse"
+];
+139739731273264 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**abuse*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139739731279408 [
+  label="occurred"
+];
+139739378982192 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**occurred*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017005312 [
+  label="worse"
+];
+139739378982640 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**worse*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139739378985968 [
+  label="painful"
+];
+139739984803952 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**painful*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139739986005488 [
+  label="flawed"
+];
+139739378843952 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**flawed*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139739378854384 [
+  label="cancers"
+];
+139739382195440 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**cancers*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139739382191344 [
+  label="problems"
+];
+139739381947888 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**problems*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139739381945520 [
+  label="paralyzed"
+];
+139731742501616 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**paralyzed*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139739992473776 [
+  label="syndrome"
+];
+139739382044656 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**syndrome*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139739382053680 [
+  label="negligence"
+];
+139739378911600 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**negligence*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139739378924912 [
+  label="##nosis"
+];
+139739380522160 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**##nosis*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139739380523568 [
+  label="symptoms"
+];
+139739380529520 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**symptoms*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139739380520944 [
+  label="insanity"
+];
+139739380520752 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**insanity*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139739380518064 [
+  label="pinched"
+];
+139739380522736 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**pinched*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017008576 [
+  label="fever"
+];
+139739380529264 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**fever*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139739380516080 [
+  label="causes"
+];
+139739380524144 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**causes*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139739380530352 [
+  label="##urity"
+];
+139739382233008 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**##urity*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139739382219184 [
+  label="treated"
+];
+139739382218992 [
+  label="*"
+];
+139739583491184 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**treated**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139739381992432 [
+  label="attack"
+];
+139735051309808 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**attack*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051315248 [
+  label="damage"
+];
+139735051313584 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**damage*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017011312 [
+  label="harm"
+];
+139735017012992 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**harm*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051320176 [
+  label="conditions"
+];
+139735051320240 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**conditions*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051308528 [
+  label="vomiting"
+];
+139735051311536 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**vomiting*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051310704 [
+  label="hardship"
+];
+139735051310640 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**hardship*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139734213509648 [
+  label="risk"
+];
+139734213509264 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**risk*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051309296 [
+  label="lawsuits"
+];
+139735051317296 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**lawsuits*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051314608 [
+  label="injuries"
+];
+139735051312560 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**injuries*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051312432 [
+  label="illness"
+];
+139735051305264 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**illness*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051311024 [
+  label="accidents"
+];
+139735051319024 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**accidents*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051313200 [
+  label="disease"
+];
+139735051310384 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**disease*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051317744 [
+  label="trauma"
+];
+139735051309680 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**trauma*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051306544 [
+  label="diabetes"
+];
+139735051316720 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**diabetes*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051314544 [
+  label="condition"
+];
+139735051317104 [
+  label="*"
+];
+139735051307568 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**condition**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051311216 [
+  label="disabled"
+];
+139735051316144 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**disabled*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051314288 [
+  label="problem"
+];
+139735051310128 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**problem*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051318256 [
+  label="##ation"
+];
+139735051305072 [
+  label="##for"
+];
+139735051305904 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**##ation##for*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051309232 [
+  label="complications"
+];
+139735051307440 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**complications*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051313712 [
+  label="infected"
+];
+139735051314416 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**infected*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051316080 [
+  label="injured"
+];
+139735051315888 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**injured*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051320304 [
+  label="doctor"
+];
+139735051317360 [
+  label="*"
+];
+139735051306416 [
+  label="*"
+];
+139735051318320 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**doctor***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051315824 [
+  label="suffering"
+];
+139735051319664 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**suffering*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139734213517568 [
+  label="##x"
+];
+139734213518192 [
+  label="*"
+];
+139734213517904 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**##x**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051311408 [
+  label="hazard"
+];
+139735051305648 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**hazard*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051310576 [
+  label="insurance"
+];
+139735051312752 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**insurance*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139734213518672 [
+  label="unfit"
+];
+139735051309936 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**unfit*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051320752 [
+  label="concern"
+];
+139735051306352 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**concern*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051321008 [
+  label="stinging"
+];
+139735051318192 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**stinging*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051318064 [
+  label="others"
+];
+139735051305200 [
+  label="*"
+];
+139735051315120 [
+  label="*"
+];
+139735051310896 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**others***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051309744 [
+  label="anxiety"
+];
+139735051312816 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**anxiety*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051314992 [
+  label="frightening"
+];
+139735051311088 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**frightening*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051318512 [
+  label="worrying"
+];
+139735051320112 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**worrying*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139734213522896 [
+  label="issue"
+];
+139735051307120 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**issue*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051315056 [
+  label="discomfort"
+];
+139735051316208 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**discomfort*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051309872 [
+  label="bleeding"
+];
+139735051309552 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**bleeding*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017342464 [
+  label="."
+];
+139735051309168 [
+  label="##itis"
+];
+139735051316464 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*.##itis*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735051312944 [
+  label="trouble"
+];
+139735016748272 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*trouble*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139734213524720 [
+  label="burns"
+];
+139734213524912 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*burns*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016735472 [
+  label="obesity"
+];
+139735016749296 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*obesity*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139734213510848 [
+  label="##gia"
+];
+139734213523088 [
+  label="*"
+];
+139735016743472 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*##gia**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735164468224 [
+  label="[SEP]"
+];
+139734213591232 [
+  label="*"
+];
+139734213591424 [
+  label="*"
+];
+139735016741744 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016742960 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016735536 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016748464 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]******</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016744816 [
+  label="##jure"
+];
+139735016740144 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]******##jure*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016747056 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*******</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016749424 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016744048 [
+  label="*"
+];
+139735016750832 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]**********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016738864 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]***********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016735152 [
+  label="violate"
+];
+139735016745136 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*****violate*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016736944 [
+  label="nor"
+];
+139735016737200 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*****nor*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016747568 [
+  label="causes"
+];
+139735016739120 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]****causes*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016737136 [
+  label="harm"
+];
+139735016737072 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]***harm*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016735344 [
+  label="distress"
+];
+139735016742448 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]***distress*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016739440 [
+  label="suicide"
+];
+139735016742768 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]**suicide*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016747760 [
+  label="risky"
+];
+139735016743344 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*risky*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016740976 [
+  label="damage"
+];
+139735016738416 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*damage*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016748656 [
+  label="rash"
+];
+139735016737328 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*rash*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016736368 [
+  label="disorders"
+];
+139735016735664 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*disorders*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016741104 [
+  label="abuse"
+];
+139735016749936 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*abuse*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016750320 [
+  label="harm"
+];
+139735016738352 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*harm*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016747824 [
+  label="accidents"
+];
+139735016747184 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*accidents*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735016739312 [
+  label="##itis"
+];
+139735016739888 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*##itis*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139735017809584 -> 139735017813872 [
+
+];
+139735017344432 -> 139735017809584 [
+
+];
+139735050512592 -> 139735050504032 [
+
+];
+139735050517312 -> 139735050512592 [
+
+];
+139735050512752 -> 139735050517312 [
+
+];
+139735050505792 -> 139735050512752 [
+
+];
+139735050511312 -> 139735050505792 [
+
+];
+139735050511872 -> 139735050504912 [
+
+];
+139735050511312 -> 139735050511872 [
+
+];
+139735050510992 -> 139735050511312 [
+
+];
+139735050505072 -> 139735050510992 [
+
+];
+139735050507152 -> 139735050505072 [
+
+];
+139735050513792 -> 139735050507152 [
+
+];
+139735017813616 -> 139735050513792 [
+
+];
+139735017808176 -> 139735017813616 [
+
+];
+139735017803696 -> 139735017808176 [
+
+];
+139735017807600 -> 139735017803696 [
+
+];
+139735017814192 -> 139735017807600 [
+
+];
+139735017807472 -> 139735017814192 [
+
+];
+139735017813360 -> 139735017807472 [
+
+];
+139735017807408 -> 139735017813360 [
+
+];
+139735017801456 -> 139739731859440 [
+
+];
+139735017808944 -> 139735017801456 [
+
+];
+139735017807408 -> 139735017808944 [
+
+];
+139735017815472 -> 139735017807408 [
+
+];
+139735017805552 -> 139735017815472 [
+
+];
+139735017811888 -> 139735017805552 [
+
+];
+139735017815344 -> 139735017807216 [
+
+];
+139735017811888 -> 139735017815344 [
+
+];
+139735017813552 -> 139735017811888 [
+
+];
+139735017804464 -> 139735164545776 [
+
+];
+139735017813552 -> 139735017804464 [
+
+];
+139735164538800 -> 139735164535792 [
+
+];
+139735164538608 -> 139735164538800 [
+
+];
+139735164546928 -> 139735164538608 [
+
+];
+139735017813552 -> 139735164546928 [
+
+];
+139735017805168 -> 139735017813552 [
+
+];
+139735164536560 -> 139735164543152 [
+
+];
+139735017805168 -> 139735164536560 [
+
+];
+139735017802928 -> 139735017805168 [
+
+];
+139735164547312 -> 139739382122256 [
+
+];
+139735164535664 -> 139735164547312 [
+
+];
+139735017802928 -> 139735164535664 [
+
+];
+139735017803312 -> 139735017802928 [
+
+];
+139735164540208 -> 139735164546544 [
+
+];
+139735017803312 -> 139735164540208 [
+
+];
+139735017804720 -> 139735017803312 [
+
+];
+139735164543664 -> 139735164547952 [
+
+];
+139735017804720 -> 139735164543664 [
+
+];
+139735164544624 -> 139735164551024 [
+
+];
+139735017804720 -> 139735164544624 [
+
+];
+139735164548656 -> 139735164546608 [
+
+];
+139735017804720 -> 139735164548656 [
+
+];
+139735164537456 -> 139735164537200 [
+
+];
+139735017804720 -> 139735164537456 [
+
+];
+139735017344432 -> 139735017804720 [
+
+];
+139735164535024 -> 139735164536304 [
+
+];
+139735017344432 -> 139735164535024 [
+
+];
+139735164544944 -> 139735164543984 [
+
+];
+139735017344432 -> 139735164544944 [
+
+];
+139735164544048 -> 139735164550384 [
+
+];
+139735164538096 -> 139735164544048 [
+
+];
+139735017344432 -> 139735164538096 [
+
+];
+139735164549552 -> 139735164539312 [
+
+];
+139735017344432 -> 139735164549552 [
+
+];
+139735164535088 -> 139735164538160 [
+
+];
+139735017344432 -> 139735164535088 [
+
+];
+139735164550896 -> 139735164542000 [
+
+];
+139735017344432 -> 139735164550896 [
+
+];
+139735017344288 -> 139735017344432 [
+
+];
+139735164536752 -> 139735164541936 [
+
+];
+139735017344288 -> 139735164536752 [
+
+];
+139735164544688 -> 139735164542192 [
+
+];
+139735164549616 -> 139735164544688 [
+
+];
+139735017344288 -> 139735164549616 [
+
+];
+139735164545648 -> 139735164541360 [
+
+];
+139735017344288 -> 139735164545648 [
+
+];
+139735164549360 -> 139735164541040 [
+
+];
+139735017344288 -> 139735164549360 [
+
+];
+139735164538672 -> 139735164547376 [
+
+];
+139735017344288 -> 139735164538672 [
+
+];
+139735164538480 -> 139735164534960 [
+
+];
+139735017344288 -> 139735164538480 [
+
+];
+139735017344144 -> 139735017344288 [
+
+];
+139735164538352 -> 139735164545840 [
+
+];
+139735017344144 -> 139735164538352 [
+
+];
+139735164550192 -> 139735164545904 [
+
+];
+139735017344144 -> 139735164550192 [
+
+];
+139735164540912 -> 139735164539696 [
+
+];
+139735017344144 -> 139735164540912 [
+
+];
+139735164546032 -> 139735164544112 [
+
+];
+139735017344144 -> 139735164546032 [
+
+];
+139735164547696 -> 139735164539568 [
+
+];
+139735017344144 -> 139735164547696 [
+
+];
+139735164535536 -> 139735018308336 [
+
+];
+139735017344144 -> 139735164535536 [
+
+];
+139735018320112 -> 139735018310064 [
+
+];
+139735017344144 -> 139735018320112 [
+
+];
+139735018312624 -> 139735018308656 [
+
+];
+139735017344144 -> 139735018312624 [
+
+];
+139735017344000 -> 139735017344144 [
+
+];
+139735017344240 -> 139735017427552 [
+
+];
+139735017344000 -> 139735017344240 [
+
+];
+139735018319920 -> 139735018314800 [
+
+];
+139735017344000 -> 139735018319920 [
+
+];
+139735017428224 -> 139735018318832 [
+
+];
+139735017344000 -> 139735017428224 [
+
+];
+139735018320048 -> 139735018317680 [
+
+];
+139735017344000 -> 139735018320048 [
+
+];
+139735018310192 -> 139735018311984 [
+
+];
+139735018315056 -> 139735018310192 [
+
+];
+139735017344000 -> 139735018315056 [
+
+];
+139735018314992 -> 139735018316272 [
+
+];
+139735017344000 -> 139735018314992 [
+
+];
+139735018320688 -> 139735018317168 [
+
+];
+139735017344000 -> 139735018320688 [
+
+];
+139735017428944 -> 139735018313200 [
+
+];
+139735017344000 -> 139735017428944 [
+
+];
+139735018322224 -> 139735018320432 [
+
+];
+139735017344000 -> 139735018322224 [
+
+];
+139735018315248 -> 139735018314352 [
+
+];
+139735017344000 -> 139735018315248 [
+
+];
+139735018322416 -> 139735018323696 [
+
+];
+139735017344000 -> 139735018322416 [
+
+];
+139735018311728 -> 139735018323888 [
+
+];
+139735017344000 -> 139735018311728 [
+
+];
+139735017342176 -> 139735017344000 [
+
+];
+139735018314224 -> 139735018316336 [
+
+];
+139735018308144 -> 139735018314224 [
+
+];
+139735018311600 -> 139735018308144 [
+
+];
+139735018311408 -> 139735018311600 [
+
+];
+139735017344096 -> 139735018311408 [
+
+];
+139735017342176 -> 139735017344096 [
+
+];
+139735018321328 -> 139735018318256 [
+
+];
+139735017342176 -> 139735018321328 [
+
+];
+139735017434704 -> 139735018319152 [
+
+];
+139735017342176 -> 139735017434704 [
+
+];
+139735018316592 -> 139735018320880 [
+
+];
+139735017434320 -> 139735018316592 [
+
+];
+139735017342176 -> 139735017434320 [
+
+];
+139735018315952 -> 139735018309808 [
+
+];
+139735017342176 -> 139735018315952 [
+
+];
+139735018312176 -> 139735018313712 [
+
+];
+139735017428608 -> 139735018312176 [
+
+];
+139735017342176 -> 139735017428608 [
+
+];
+139735018322352 -> 139735018309936 [
+
+];
+139735017342176 -> 139735018322352 [
+
+];
+139735017436864 -> 139735018321648 [
+
+];
+139735017342176 -> 139735017436864 [
+
+];
+139735018308720 -> 139735018322608 [
+
+];
+139735017342176 -> 139735018308720 [
+
+];
+139735018314096 -> 139735018313392 [
+
+];
+139735017342176 -> 139735018314096 [
+
+];
+139735018322544 -> 139735018309872 [
+
+];
+139735017342176 -> 139735018322544 [
+
+];
+139735018320496 -> 139735018309744 [
+
+];
+139735018315376 -> 139735018320496 [
+
+];
+139735018323504 -> 139735018315376 [
+
+];
+139735017342176 -> 139735018323504 [
+
+];
+139735018312048 -> 139735018313904 [
+
+];
+139735017342176 -> 139735018312048 [
+
+];
+139735018309424 -> 139735018322992 [
+
+];
+139735017342176 -> 139735018309424 [
+
+];
+139735016996912 -> 139735018323184 [
+
+];
+139735017342176 -> 139735016996912 [
+
+];
+139735018314736 -> 139735018312496 [
+
+];
+139735017342176 -> 139735018314736 [
+
+];
+139735016997728 -> 139735016997920 [
+
+];
+139735017342176 -> 139735016997728 [
+
+];
+139735018313136 -> 139735018311664 [
+
+];
+139735017342176 -> 139735018313136 [
+
+];
+139735018311472 -> 139735018307824 [
+
+];
+139735017342176 -> 139735018311472 [
+
+];
+139735017343856 -> 139735017342176 [
+
+];
+139735018318192 -> 139735018319536 [
+
+];
+139735017343856 -> 139735018318192 [
+
+];
+139735018321776 -> 139735018317040 [
+
+];
+139735017343856 -> 139735018321776 [
+
+];
+139735018310768 -> 139735018318576 [
+
+];
+139735017343856 -> 139735018310768 [
+
+];
+139739381295792 -> 139739381287536 [
+
+];
+139735017343856 -> 139739381295792 [
+
+];
+139739381289456 -> 139739381289712 [
+
+];
+139739381289904 -> 139739381289456 [
+
+];
+139735017000944 -> 139739381289904 [
+
+];
+139735017343856 -> 139735017000944 [
+
+];
+139735017002048 -> 139739381289776 [
+
+];
+139735017001040 -> 139735017002048 [
+
+];
+139735017343856 -> 139735017001040 [
+
+];
+139735017002000 -> 139735017002720 [
+
+];
+139735017343856 -> 139735017002000 [
+
+];
+139739381882160 -> 139739381883184 [
+
+];
+139739250535408 -> 139739381882160 [
+
+];
+139735017343856 -> 139739250535408 [
+
+];
+139739381885552 -> 139739383198960 [
+
+];
+139735017343856 -> 139739381885552 [
+
+];
+139739378814128 -> 139739378799472 [
+
+];
+139735017343856 -> 139739378814128 [
+
+];
+139735017004256 -> 139739731273264 [
+
+];
+139735017343856 -> 139735017004256 [
+
+];
+139739731279408 -> 139739378982192 [
+
+];
+139735017343856 -> 139739731279408 [
+
+];
+139735017005312 -> 139739378982640 [
+
+];
+139735017343856 -> 139735017005312 [
+
+];
+139739378985968 -> 139739984803952 [
+
+];
+139735017343856 -> 139739378985968 [
+
+];
+139739986005488 -> 139739378843952 [
+
+];
+139735017343856 -> 139739986005488 [
+
+];
+139739378854384 -> 139739382195440 [
+
+];
+139735017343856 -> 139739378854384 [
+
+];
+139739382191344 -> 139739381947888 [
+
+];
+139735017343856 -> 139739382191344 [
+
+];
+139739381945520 -> 139731742501616 [
+
+];
+139735017343856 -> 139739381945520 [
+
+];
+139739992473776 -> 139739382044656 [
+
+];
+139735017343856 -> 139739992473776 [
+
+];
+139739382053680 -> 139739378911600 [
+
+];
+139735017343856 -> 139739382053680 [
+
+];
+139739378924912 -> 139739380522160 [
+
+];
+139735017343856 -> 139739378924912 [
+
+];
+139739380523568 -> 139739380529520 [
+
+];
+139735017343856 -> 139739380523568 [
+
+];
+139739380520944 -> 139739380520752 [
+
+];
+139735017343856 -> 139739380520944 [
+
+];
+139739380518064 -> 139739380522736 [
+
+];
+139735017343856 -> 139739380518064 [
+
+];
+139735017008576 -> 139739380529264 [
+
+];
+139735017343856 -> 139735017008576 [
+
+];
+139739380516080 -> 139739380524144 [
+
+];
+139735017343856 -> 139739380516080 [
+
+];
+139739380530352 -> 139739382233008 [
+
+];
+139735017343856 -> 139739380530352 [
+
+];
+139739382218992 -> 139739583491184 [
+
+];
+139739382219184 -> 139739382218992 [
+
+];
+139735017343856 -> 139739382219184 [
+
+];
+139739381992432 -> 139735051309808 [
+
+];
+139735017343856 -> 139739381992432 [
+
+];
+139735051315248 -> 139735051313584 [
+
+];
+139735017343856 -> 139735051315248 [
+
+];
+139735017011312 -> 139735017012992 [
+
+];
+139735017343856 -> 139735017011312 [
+
+];
+139735051320176 -> 139735051320240 [
+
+];
+139735017343856 -> 139735051320176 [
+
+];
+139735051308528 -> 139735051311536 [
+
+];
+139735017343856 -> 139735051308528 [
+
+];
+139735051310704 -> 139735051310640 [
+
+];
+139735017343856 -> 139735051310704 [
+
+];
+139734213509648 -> 139734213509264 [
+
+];
+139735017343856 -> 139734213509648 [
+
+];
+139735051309296 -> 139735051317296 [
+
+];
+139735017343856 -> 139735051309296 [
+
+];
+139735051314608 -> 139735051312560 [
+
+];
+139735017343856 -> 139735051314608 [
+
+];
+139735051312432 -> 139735051305264 [
+
+];
+139735017343856 -> 139735051312432 [
+
+];
+139735051311024 -> 139735051319024 [
+
+];
+139735017343856 -> 139735051311024 [
+
+];
+139735051313200 -> 139735051310384 [
+
+];
+139735017343856 -> 139735051313200 [
+
+];
+139735051317744 -> 139735051309680 [
+
+];
+139735017343856 -> 139735051317744 [
+
+];
+139735051306544 -> 139735051316720 [
+
+];
+139735017343856 -> 139735051306544 [
+
+];
+139735051317104 -> 139735051307568 [
+
+];
+139735051314544 -> 139735051317104 [
+
+];
+139735017343856 -> 139735051314544 [
+
+];
+139735051311216 -> 139735051316144 [
+
+];
+139735017343856 -> 139735051311216 [
+
+];
+139735051314288 -> 139735051310128 [
+
+];
+139735017343856 -> 139735051314288 [
+
+];
+139735051305072 -> 139735051305904 [
+
+];
+139735051318256 -> 139735051305072 [
+
+];
+139735017343856 -> 139735051318256 [
+
+];
+139735051309232 -> 139735051307440 [
+
+];
+139735017343856 -> 139735051309232 [
+
+];
+139735051313712 -> 139735051314416 [
+
+];
+139735017343856 -> 139735051313712 [
+
+];
+139735051316080 -> 139735051315888 [
+
+];
+139735017343856 -> 139735051316080 [
+
+];
+139735051306416 -> 139735051318320 [
+
+];
+139735051317360 -> 139735051306416 [
+
+];
+139735051320304 -> 139735051317360 [
+
+];
+139735017343856 -> 139735051320304 [
+
+];
+139735051315824 -> 139735051319664 [
+
+];
+139735017343856 -> 139735051315824 [
+
+];
+139734213518192 -> 139734213517904 [
+
+];
+139734213517568 -> 139734213518192 [
+
+];
+139735017343856 -> 139734213517568 [
+
+];
+139735051311408 -> 139735051305648 [
+
+];
+139735017343856 -> 139735051311408 [
+
+];
+139735051310576 -> 139735051312752 [
+
+];
+139735017343856 -> 139735051310576 [
+
+];
+139734213518672 -> 139735051309936 [
+
+];
+139735017343856 -> 139734213518672 [
+
+];
+139735051320752 -> 139735051306352 [
+
+];
+139735017343856 -> 139735051320752 [
+
+];
+139735051321008 -> 139735051318192 [
+
+];
+139735017343856 -> 139735051321008 [
+
+];
+139735051315120 -> 139735051310896 [
+
+];
+139735051305200 -> 139735051315120 [
+
+];
+139735051318064 -> 139735051305200 [
+
+];
+139735017343856 -> 139735051318064 [
+
+];
+139735051309744 -> 139735051312816 [
+
+];
+139735017343856 -> 139735051309744 [
+
+];
+139735051314992 -> 139735051311088 [
+
+];
+139735017343856 -> 139735051314992 [
+
+];
+139735051318512 -> 139735051320112 [
+
+];
+139735017343856 -> 139735051318512 [
+
+];
+139734213522896 -> 139735051307120 [
+
+];
+139735017343856 -> 139734213522896 [
+
+];
+139735051315056 -> 139735051316208 [
+
+];
+139735017343856 -> 139735051315056 [
+
+];
+139735051309872 -> 139735051309552 [
+
+];
+139735017343856 -> 139735051309872 [
+
+];
+93924689733256 -> 139735017343856 [
+
+];
+139735051309168 -> 139735051316464 [
+
+];
+139735017342464 -> 139735051309168 [
+
+];
+93924689733256 -> 139735017342464 [
+
+];
+139735051312944 -> 139735016748272 [
+
+];
+93924689733256 -> 139735051312944 [
+
+];
+139734213524720 -> 139734213524912 [
+
+];
+93924689733256 -> 139734213524720 [
+
+];
+139735016735472 -> 139735016749296 [
+
+];
+93924689733256 -> 139735016735472 [
+
+];
+139734213523088 -> 139735016743472 [
+
+];
+139734213510848 -> 139734213523088 [
+
+];
+93924689733256 -> 139734213510848 [
+
+];
+93924689693904 -> 93924689733256 [
+
+];
+139735016744816 -> 139735016740144 [
+
+];
+139735016748464 -> 139735016744816 [
+
+];
+139735016750832 -> 139735016738864 [
+
+];
+139735016744048 -> 139735016750832 [
+
+];
+139735016749424 -> 139735016744048 [
+
+];
+139735016747056 -> 139735016749424 [
+
+];
+139735016748464 -> 139735016747056 [
+
+];
+139735016735536 -> 139735016748464 [
+
+];
+139735016735152 -> 139735016745136 [
+
+];
+139735016735536 -> 139735016735152 [
+
+];
+139735016736944 -> 139735016737200 [
+
+];
+139735016735536 -> 139735016736944 [
+
+];
+139735016742960 -> 139735016735536 [
+
+];
+139735016747568 -> 139735016739120 [
+
+];
+139735016742960 -> 139735016747568 [
+
+];
+139735016741744 -> 139735016742960 [
+
+];
+139735016737136 -> 139735016737072 [
+
+];
+139735016741744 -> 139735016737136 [
+
+];
+139735016735344 -> 139735016742448 [
+
+];
+139735016741744 -> 139735016735344 [
+
+];
+139734213591424 -> 139735016741744 [
+
+];
+139735016739440 -> 139735016742768 [
+
+];
+139734213591424 -> 139735016739440 [
+
+];
+139734213591232 -> 139734213591424 [
+
+];
+139735016747760 -> 139735016743344 [
+
+];
+139734213591232 -> 139735016747760 [
+
+];
+139735016740976 -> 139735016738416 [
+
+];
+139734213591232 -> 139735016740976 [
+
+];
+139735016748656 -> 139735016737328 [
+
+];
+139734213591232 -> 139735016748656 [
+
+];
+139735016736368 -> 139735016735664 [
+
+];
+139734213591232 -> 139735016736368 [
+
+];
+139735016741104 -> 139735016749936 [
+
+];
+139734213591232 -> 139735016741104 [
+
+];
+139735016750320 -> 139735016738352 [
+
+];
+139734213591232 -> 139735016750320 [
+
+];
+139735016747824 -> 139735016747184 [
+
+];
+139734213591232 -> 139735016747824 [
+
+];
+139735016739312 -> 139735016739888 [
+
+];
+139734213591232 -> 139735016739312 [
+
+];
+139735164468224 -> 139734213591232 [
+
+];
+93924689693904 -> 139735164468224 [
+
+];
+}

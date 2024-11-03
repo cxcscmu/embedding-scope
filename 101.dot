@@ -1,0 +1,383 @@
+digraph {
+graph [
+  nodesep=0.25,
+  ranksep=0.3,
+  splines=line
+];
+node [
+  style=filled,
+  fillcolor=lightblue,
+  shape=circle
+];
+edge [
+  arrowsize=0.8,
+  color=black
+];
+
+139821386733232 [
+  label="None"
+];
+139824674194416 [
+  label="[SEP]"
+];
+139824808845872 [
+  label="token(*)"
+];
+139824410924160 [
+  label="token(*)"
+];
+139824410931920 [
+  label="token(*)"
+];
+139824407674288 [
+  label="token(*)"
+];
+139824407863216 [
+  label="token(*)"
+];
+139824718503072 [
+  label="token(*)"
+];
+139822460501808 [
+  label="78"
+];
+139822460501248 [
+  label="token(*)"
+];
+139824407773872 [
+  label="token(*)"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]token(*)token(*)token(*)token(*)token(*)token(*)78token(*)token(*)</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139822460501584 [
+  label="token(*)"
+];
+139824407785136 [
+  label="token(*)"
+];
+139824407887408 [
+  label="token(*)"
+];
+139821386209664 [
+  label="token(*)"
+];
+139821386208080 [
+  label="token(*)"
+];
+139821386576912 [
+  label="token(*)"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139821386578352 [
+  label="token(*)"
+];
+139824429274320 [
+  label="token(*)"
+];
+139824429274144 [
+  label="token(*)"
+];
+139824407839536 [
+  label="token(*)"
+];
+139824407838768 [
+  label="token(*)"
+];
+139824407462768 [
+  label="token(*)"
+];
+139824407462560 [
+  label="token(*)"
+];
+139824407887920 [
+  label="token(*)"
+];
+139824407889040 [
+  label="token(*)"
+];
+139822460533808 [
+  label="token(*)"
+];
+139822460530448 [
+  label="token(*)"
+];
+139822460631344 [
+  label="token(*)"
+];
+139822460629808 [
+  label="token(*)"
+];
+139822460595408 [
+  label="token(*)"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139822460595952 [
+  label="token(*)"
+];
+139822459909968 [
+  label="token(*)"
+];
+139822459901904 [
+  label="token(*)"
+];
+139822460559424 [
+  label="token(*)"
+];
+139822460564288 [
+  label="token(*)"
+];
+139822460639216 [
+  label="token(*)"
+];
+139822460639536 [
+  label="token(*)"
+];
+139822460432576 [
+  label="token(*)"
+];
+139822460431568 [
+  label="token(*)"
+];
+139824430197104 [
+  label="token(*)"
+];
+139822459828368 [
+  label="token(*)"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139822460038704 [
+  label="token(*)"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139822459911696 [
+  label="california"
+];
+139821386442928 [
+  label="token(*)"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)californiatoken(*)</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139822460631088 [
+  label="statistics"
+];
+139822460630576 [
+  label="token(*)"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)statisticstoken(*)</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139824429277488 [
+  label="##bridge"
+];
+139824429279776 [
+  label="wood"
+];
+139824429280304 [
+  label="token(*)"
+];
+139824407841456 [
+  label="token(*)"
+];
+139824407839920 [
+  label="token(*)"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)token(*)##bridgewoodtoken(*)token(*)token(*)</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139821387107104 [
+  label="population"
+];
+139824407880496 [
+  label="token(*)"
+];
+139824407879984 [
+  label="token(*)"
+];
+139821386211392 [
+  label="campbell"
+];
+139821386209232 [
+  label="token(*)"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]token(*)token(*)token(*)token(*)token(*)token(*)populationtoken(*)token(*)campbelltoken(*)</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+139822460501248 -> 139824407773872 [
+
+];
+139822460501808 -> 139822460501248 [
+
+];
+139824718503072 -> 139822460501808 [
+
+];
+139822459828368 -> 139822460038704 [
+
+];
+139824430197104 -> 139822459828368 [
+
+];
+139822460431568 -> 139824430197104 [
+
+];
+139822460432576 -> 139822460431568 [
+
+];
+139822460639536 -> 139822460432576 [
+
+];
+139822460639216 -> 139822460639536 [
+
+];
+139822460564288 -> 139822460639216 [
+
+];
+139822460559424 -> 139822460564288 [
+
+];
+139822459901904 -> 139822460559424 [
+
+];
+139822459909968 -> 139822459901904 [
+
+];
+139822460595952 -> 139822459909968 [
+
+];
+139822459911696 -> 139821386442928 [
+
+];
+139822460595952 -> 139822459911696 [
+
+];
+139822460595408 -> 139822460595952 [
+
+];
+139822460629808 -> 139822460595408 [
+
+];
+139822460631344 -> 139822460629808 [
+
+];
+139822460530448 -> 139822460631344 [
+
+];
+139822460631088 -> 139822460630576 [
+
+];
+139822460530448 -> 139822460631088 [
+
+];
+139822460533808 -> 139822460530448 [
+
+];
+139824407889040 -> 139822460533808 [
+
+];
+139824407887920 -> 139824407889040 [
+
+];
+139824407462560 -> 139824407887920 [
+
+];
+139824407462768 -> 139824407462560 [
+
+];
+139824407838768 -> 139824407462768 [
+
+];
+139824407839536 -> 139824407838768 [
+
+];
+139824429274144 -> 139824407839536 [
+
+];
+139824429274320 -> 139824429274144 [
+
+];
+139821386578352 -> 139824429274320 [
+
+];
+139824407841456 -> 139824407839920 [
+
+];
+139824429280304 -> 139824407841456 [
+
+];
+139824429279776 -> 139824429280304 [
+
+];
+139824429277488 -> 139824429279776 [
+
+];
+139821386578352 -> 139824429277488 [
+
+];
+139821386576912 -> 139821386578352 [
+
+];
+139821386208080 -> 139821386576912 [
+
+];
+139821386209664 -> 139821386208080 [
+
+];
+139824407887408 -> 139821386209664 [
+
+];
+139824407785136 -> 139824407887408 [
+
+];
+139822460501584 -> 139824407785136 [
+
+];
+139824718503072 -> 139822460501584 [
+
+];
+139821386211392 -> 139821386209232 [
+
+];
+139824407879984 -> 139821386211392 [
+
+];
+139824407880496 -> 139824407879984 [
+
+];
+139821387107104 -> 139824407880496 [
+
+];
+139824718503072 -> 139821387107104 [
+
+];
+139824407863216 -> 139824718503072 [
+
+];
+139824407674288 -> 139824407863216 [
+
+];
+139824410931920 -> 139824407674288 [
+
+];
+139824410924160 -> 139824410931920 [
+
+];
+139824808845872 -> 139824410924160 [
+
+];
+139824674194416 -> 139824808845872 [
+
+];
+139821386733232 -> 139824674194416 [
+
+];
+}

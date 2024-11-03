@@ -1,0 +1,1973 @@
+digraph {
+graph [
+  nodesep=0.25,
+  ranksep=0.3,
+  splines=line
+];
+node [
+  style=filled,
+  fillcolor=lightblue,
+  shape=circle
+];
+edge [
+  arrowsize=0.8,
+  color=black
+];
+
+94011578465488 [
+  label=""
+];
+94011578504840 [
+  label="*"
+];
+140165587145744 [
+  label="*"
+];
+140165587145264 [
+  label="*"
+];
+140165587144016 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140165587145792 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140165587154672 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140165587141664 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286830768 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286827184 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286832048 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286826160 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286828656 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286819952 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286820400 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286820272 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286827248 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286826352 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286832752 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286829360 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286833328 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">********************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286830960 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*********************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286832880 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**********************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286823408 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***********************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160097291920 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">************************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160097292400 [
+  label="*"
+];
+140160097290160 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**************************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286819248 [
+  label="nord"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******************nord</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286825840 [
+  label="stock"
+];
+140160286827056 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**************stock*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286831344 [
+  label="buffet"
+];
+140160286824496 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**********buffet*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286820528 [
+  label="holdings"
+];
+140160286833264 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**********holdings*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286833072 [
+  label="gains"
+];
+140160286828208 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*********gains*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286824112 [
+  label="assets"
+];
+140160286831792 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">********assets*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286824560 [
+  label="##se"
+];
+140160286821296 [
+  label="*"
+];
+140160286821872 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">********##se**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286818736 [
+  label="virgin"
+];
+140160286819440 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******virgin*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286832816 [
+  label="corp"
+];
+140160286830064 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******corp*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286828144 [
+  label="ny"
+];
+140160286823728 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******ny*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286827696 [
+  label="stocks"
+];
+140160286822384 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******stocks*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286821744 [
+  label="stock"
+];
+140160286818544 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******stock*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286834160 [
+  label="shares"
+];
+140160286829232 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******shares*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286819376 [
+  label="investors"
+];
+140160286829168 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******investors*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286822640 [
+  label="financial"
+];
+140160286826096 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******financial*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286827824 [
+  label="sales"
+];
+140160286829296 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****sales*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286823152 [
+  label="##se"
+];
+140160286820144 [
+  label="ny"
+];
+140160286819696 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****##seny*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286834096 [
+  label="invested"
+];
+140160286831408 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****invested*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286830512 [
+  label="market"
+];
+140160286821680 [
+  label="*"
+];
+140160286821232 [
+  label="*"
+];
+140160286826672 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****market***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160286828336 [
+  label="share"
+];
+140160286821552 [
+  label="*"
+];
+140162905190832 [
+  label="*"
+];
+140162905187120 [
+  label="*"
+];
+140162905186928 [
+  label="*"
+];
+140162905194288 [
+  label="*"
+];
+140162905180080 [
+  label="*"
+];
+140162905183280 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****share*******</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905188016 [
+  label="brand"
+];
+140162905185328 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****brand*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140165587154720 [
+  label="##z"
+];
+140162905182896 [
+  label="*"
+];
+140162905184176 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****##z**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905178288 [
+  label="stocks"
+];
+140162905194352 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****stocks*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905184816 [
+  label="investing"
+];
+140162905184240 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****investing*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905184624 [
+  label="##se"
+];
+140162905189168 [
+  label="ny"
+];
+140162905181552 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****##seny*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905183664 [
+  label="fund"
+];
+140162905194160 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****fund*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905192048 [
+  label="fortune"
+];
+140162905190640 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****fortune*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905187760 [
+  label="brands"
+];
+140162905178736 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****brands*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166584407968 [
+  label="nas"
+];
+140162905191280 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****nas*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905180144 [
+  label="stock"
+];
+140162905179952 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****stock*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905184112 [
+  label="##ification"
+];
+140162905181744 [
+  label="divers"
+];
+140162905192624 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****##ificationdivers*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905180528 [
+  label="companies"
+];
+140162905181168 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****companies*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905188592 [
+  label="distribution"
+];
+140162905183344 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***distribution*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166584404320 [
+  label="##eb"
+];
+140162905192304 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***##eb*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905187568 [
+  label="wealth"
+];
+140162905183024 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***wealth*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905182192 [
+  label="diversified"
+];
+140162905193264 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***diversified*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905186224 [
+  label="richest"
+];
+140162905185520 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***richest*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905183472 [
+  label="investment"
+];
+140162905194096 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***investment*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905183600 [
+  label="market"
+];
+140162905191984 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***market*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166584415072 [
+  label="fund"
+];
+140162905193008 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***fund*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905185584 [
+  label="retail"
+];
+140162905192112 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***retail*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905189872 [
+  label="american"
+];
+140162905187632 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***american*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905180848 [
+  label="fortune"
+];
+140162905184944 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***fortune*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905190960 [
+  label="divers"
+];
+140162905184688 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***divers*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905191792 [
+  label="liquid"
+];
+140162905191216 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***liquid*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905186480 [
+  label="strategy"
+];
+140162905193072 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***strategy*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905185200 [
+  label="retailers"
+];
+140162905183792 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***retailers*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160285185904 [
+  label="##lf"
+];
+140162905191600 [
+  label="*"
+];
+140162905189680 [
+  label="*"
+];
+140162905178544 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***##lf***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905182320 [
+  label="banking"
+];
+140162905185072 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***banking*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160285186768 [
+  label="%"
+];
+140160285186336 [
+  label="*"
+];
+140160285185376 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***%**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905186992 [
+  label="bottom"
+];
+140162905179760 [
+  label="*"
+];
+140162905191472 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***bottom**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905183920 [
+  label="business"
+];
+140162905188080 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***business*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905188784 [
+  label="acquire"
+];
+140162905179888 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***acquire*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905193776 [
+  label="customer"
+];
+140162905190320 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***customer*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905181104 [
+  label="inventory"
+];
+140162905180976 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***inventory*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140162905191728 [
+  label="investors"
+];
+140162905180336 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***investors*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160285181584 [
+  label="##fs"
+];
+140168743328688 [
+  label="*"
+];
+140168743325360 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***##fs**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743329264 [
+  label="buyers"
+];
+140168743333424 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**buyers*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160285188448 [
+  label="##er"
+];
+140168743328752 [
+  label="##oc"
+];
+140168743327280 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**##er##oc*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743336560 [
+  label="business"
+];
+140168743337200 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**business*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743336112 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**business**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743332656 [
+  label="distribution"
+];
+140168743325296 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**distribution*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743330288 [
+  label="market"
+];
+140168743321968 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**market*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743329328 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**market**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743322224 [
+  label="profits"
+];
+140168743329776 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**profits*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160285182880 [
+  label="llc"
+];
+140160285183072 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**llc*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743329904 [
+  label="retailers"
+];
+140168743323376 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**retailers*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743324912 [
+  label="shares"
+];
+140168743324336 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**shares*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743324208 [
+  label="commercials"
+];
+140168743337072 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**commercials*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743325552 [
+  label="investing"
+];
+140168743334960 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**investing*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743327152 [
+  label="shareholders"
+];
+140168743326768 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**shareholders*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743329648 [
+  label="portfolio"
+];
+140168743332976 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**portfolio*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743335920 [
+  label="profitable"
+];
+140168743335344 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**profitable*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743332848 [
+  label="investors"
+];
+140168743332080 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**investors*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743337648 [
+  label="companies"
+];
+140168743331376 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**companies*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743333680 [
+  label="airlines"
+];
+140168743334704 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**airlines*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743333488 [
+  label="##ification"
+];
+140168743321840 [
+  label="divers"
+];
+140168743326448 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**##ificationdivers*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160285187680 [
+  label="stock"
+];
+140168743330864 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**stock*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743326384 [
+  label="revenue"
+];
+140168743337840 [
+  label="*"
+];
+140168743331120 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**revenue**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743322352 [
+  label="investments"
+];
+140168743337136 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**investments*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743332336 [
+  label="stocks"
+];
+140168743331312 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**stocks*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743327920 [
+  label="commodity"
+];
+140168743332272 [
+  label="*"
+];
+140168743329840 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**commodity**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166526982816 [
+  label="mart"
+];
+140166526984160 [
+  label="*"
+];
+140168743333104 [
+  label="*"
+];
+140168743336240 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**mart***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743329584 [
+  label="unions"
+];
+140168743328880 [
+  label="credit"
+];
+140168743333616 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**unionscredit*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166526989776 [
+  label="delta"
+];
+140168743337776 [
+  label="*"
+];
+140168743335152 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**delta**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743331056 [
+  label="transactions"
+];
+140168743322736 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**transactions*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166526984736 [
+  label="fargo"
+];
+140168743334256 [
+  label="wells"
+];
+140168743337008 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**fargowells*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743326832 [
+  label="invested"
+];
+140168743322672 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**invested*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743328112 [
+  label="customers"
+];
+140168743332912 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**customers*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140168743328304 [
+  label="acquisition"
+];
+140168743327024 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**acquisition*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166526989584 [
+  label="firms"
+];
+140168743334192 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**firms*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166584303664 [
+  label="journal"
+];
+140166584318256 [
+  label="street"
+];
+140166584315504 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*journalstreet*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166584124448 [
+  label="[SEP]"
+];
+140166526976960 [
+  label="*"
+];
+140166526981712 [
+  label="*"
+];
+140166584311088 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166584308016 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166584308400 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166584319664 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]******</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166584306480 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*******</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166584317872 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166584304304 [
+  label="*"
+];
+140166584310320 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]**********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166584319344 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]***********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166584318960 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166584305776 [
+  label="*"
+];
+140166584312240 [
+  label="*"
+];
+140166584318320 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]***************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166584310000 [
+  label="investors"
+];
+140160097292080 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*********investors*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166584304368 [
+  label="ltd"
+];
+140166584308272 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*******ltd*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166584304752 [
+  label="holdings"
+];
+140166584304816 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]****holdings*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166584311984 [
+  label="shareholders"
+];
+140166584307504 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*shareholders*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140166584304560 [
+  label="profitable"
+];
+140166584312432 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*profitable*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140160097292400 -> 140160097290160 [
+
+];
+140160097291920 -> 140160097292400 [
+
+];
+140160286823408 -> 140160097291920 [
+
+];
+140160286832880 -> 140160286823408 [
+
+];
+140160286830960 -> 140160286832880 [
+
+];
+140160286833328 -> 140160286830960 [
+
+];
+140160286829360 -> 140160286833328 [
+
+];
+140160286829360 -> 140160286819248 [
+
+];
+140160286832752 -> 140160286829360 [
+
+];
+140160286826352 -> 140160286832752 [
+
+];
+140160286827248 -> 140160286826352 [
+
+];
+140160286820272 -> 140160286827248 [
+
+];
+140160286820400 -> 140160286820272 [
+
+];
+140160286825840 -> 140160286827056 [
+
+];
+140160286820400 -> 140160286825840 [
+
+];
+140160286819952 -> 140160286820400 [
+
+];
+140160286828656 -> 140160286819952 [
+
+];
+140160286826160 -> 140160286828656 [
+
+];
+140160286832048 -> 140160286826160 [
+
+];
+140160286831344 -> 140160286824496 [
+
+];
+140160286832048 -> 140160286831344 [
+
+];
+140160286820528 -> 140160286833264 [
+
+];
+140160286832048 -> 140160286820528 [
+
+];
+140160286827184 -> 140160286832048 [
+
+];
+140160286833072 -> 140160286828208 [
+
+];
+140160286827184 -> 140160286833072 [
+
+];
+140160286830768 -> 140160286827184 [
+
+];
+140160286824112 -> 140160286831792 [
+
+];
+140160286830768 -> 140160286824112 [
+
+];
+140160286821296 -> 140160286821872 [
+
+];
+140160286824560 -> 140160286821296 [
+
+];
+140160286830768 -> 140160286824560 [
+
+];
+140165587141664 -> 140160286830768 [
+
+];
+140160286818736 -> 140160286819440 [
+
+];
+140165587141664 -> 140160286818736 [
+
+];
+140160286832816 -> 140160286830064 [
+
+];
+140165587141664 -> 140160286832816 [
+
+];
+140160286828144 -> 140160286823728 [
+
+];
+140165587141664 -> 140160286828144 [
+
+];
+140160286827696 -> 140160286822384 [
+
+];
+140165587141664 -> 140160286827696 [
+
+];
+140165587154672 -> 140165587141664 [
+
+];
+140160286821744 -> 140160286818544 [
+
+];
+140165587154672 -> 140160286821744 [
+
+];
+140160286834160 -> 140160286829232 [
+
+];
+140165587154672 -> 140160286834160 [
+
+];
+140160286819376 -> 140160286829168 [
+
+];
+140165587154672 -> 140160286819376 [
+
+];
+140160286822640 -> 140160286826096 [
+
+];
+140165587154672 -> 140160286822640 [
+
+];
+140165587145792 -> 140165587154672 [
+
+];
+140160286827824 -> 140160286829296 [
+
+];
+140165587145792 -> 140160286827824 [
+
+];
+140160286820144 -> 140160286819696 [
+
+];
+140160286823152 -> 140160286820144 [
+
+];
+140165587145792 -> 140160286823152 [
+
+];
+140160286834096 -> 140160286831408 [
+
+];
+140165587145792 -> 140160286834096 [
+
+];
+140160286821232 -> 140160286826672 [
+
+];
+140160286821680 -> 140160286821232 [
+
+];
+140160286830512 -> 140160286821680 [
+
+];
+140165587145792 -> 140160286830512 [
+
+];
+140162905180080 -> 140162905183280 [
+
+];
+140162905194288 -> 140162905180080 [
+
+];
+140162905186928 -> 140162905194288 [
+
+];
+140162905187120 -> 140162905186928 [
+
+];
+140162905190832 -> 140162905187120 [
+
+];
+140160286821552 -> 140162905190832 [
+
+];
+140160286828336 -> 140160286821552 [
+
+];
+140165587145792 -> 140160286828336 [
+
+];
+140162905188016 -> 140162905185328 [
+
+];
+140165587145792 -> 140162905188016 [
+
+];
+140165587144016 -> 140165587145792 [
+
+];
+140162905182896 -> 140162905184176 [
+
+];
+140165587154720 -> 140162905182896 [
+
+];
+140165587144016 -> 140165587154720 [
+
+];
+140162905178288 -> 140162905194352 [
+
+];
+140165587144016 -> 140162905178288 [
+
+];
+140162905184816 -> 140162905184240 [
+
+];
+140165587144016 -> 140162905184816 [
+
+];
+140162905189168 -> 140162905181552 [
+
+];
+140162905184624 -> 140162905189168 [
+
+];
+140165587144016 -> 140162905184624 [
+
+];
+140162905183664 -> 140162905194160 [
+
+];
+140165587144016 -> 140162905183664 [
+
+];
+140162905192048 -> 140162905190640 [
+
+];
+140165587144016 -> 140162905192048 [
+
+];
+140162905187760 -> 140162905178736 [
+
+];
+140165587144016 -> 140162905187760 [
+
+];
+140166584407968 -> 140162905191280 [
+
+];
+140165587144016 -> 140166584407968 [
+
+];
+140162905180144 -> 140162905179952 [
+
+];
+140165587144016 -> 140162905180144 [
+
+];
+140162905181744 -> 140162905192624 [
+
+];
+140162905184112 -> 140162905181744 [
+
+];
+140165587144016 -> 140162905184112 [
+
+];
+140162905180528 -> 140162905181168 [
+
+];
+140165587144016 -> 140162905180528 [
+
+];
+140165587145264 -> 140165587144016 [
+
+];
+140162905188592 -> 140162905183344 [
+
+];
+140165587145264 -> 140162905188592 [
+
+];
+140166584404320 -> 140162905192304 [
+
+];
+140165587145264 -> 140166584404320 [
+
+];
+140162905187568 -> 140162905183024 [
+
+];
+140165587145264 -> 140162905187568 [
+
+];
+140162905182192 -> 140162905193264 [
+
+];
+140165587145264 -> 140162905182192 [
+
+];
+140162905186224 -> 140162905185520 [
+
+];
+140165587145264 -> 140162905186224 [
+
+];
+140162905183472 -> 140162905194096 [
+
+];
+140165587145264 -> 140162905183472 [
+
+];
+140162905183600 -> 140162905191984 [
+
+];
+140165587145264 -> 140162905183600 [
+
+];
+140166584415072 -> 140162905193008 [
+
+];
+140165587145264 -> 140166584415072 [
+
+];
+140162905185584 -> 140162905192112 [
+
+];
+140165587145264 -> 140162905185584 [
+
+];
+140162905189872 -> 140162905187632 [
+
+];
+140165587145264 -> 140162905189872 [
+
+];
+140162905180848 -> 140162905184944 [
+
+];
+140165587145264 -> 140162905180848 [
+
+];
+140162905190960 -> 140162905184688 [
+
+];
+140165587145264 -> 140162905190960 [
+
+];
+140162905191792 -> 140162905191216 [
+
+];
+140165587145264 -> 140162905191792 [
+
+];
+140162905186480 -> 140162905193072 [
+
+];
+140165587145264 -> 140162905186480 [
+
+];
+140162905185200 -> 140162905183792 [
+
+];
+140165587145264 -> 140162905185200 [
+
+];
+140162905189680 -> 140162905178544 [
+
+];
+140162905191600 -> 140162905189680 [
+
+];
+140160285185904 -> 140162905191600 [
+
+];
+140165587145264 -> 140160285185904 [
+
+];
+140162905182320 -> 140162905185072 [
+
+];
+140165587145264 -> 140162905182320 [
+
+];
+140160285186336 -> 140160285185376 [
+
+];
+140160285186768 -> 140160285186336 [
+
+];
+140165587145264 -> 140160285186768 [
+
+];
+140162905179760 -> 140162905191472 [
+
+];
+140162905186992 -> 140162905179760 [
+
+];
+140165587145264 -> 140162905186992 [
+
+];
+140162905183920 -> 140162905188080 [
+
+];
+140165587145264 -> 140162905183920 [
+
+];
+140162905188784 -> 140162905179888 [
+
+];
+140165587145264 -> 140162905188784 [
+
+];
+140162905193776 -> 140162905190320 [
+
+];
+140165587145264 -> 140162905193776 [
+
+];
+140162905181104 -> 140162905180976 [
+
+];
+140165587145264 -> 140162905181104 [
+
+];
+140162905191728 -> 140162905180336 [
+
+];
+140165587145264 -> 140162905191728 [
+
+];
+140168743328688 -> 140168743325360 [
+
+];
+140160285181584 -> 140168743328688 [
+
+];
+140165587145264 -> 140160285181584 [
+
+];
+140165587145744 -> 140165587145264 [
+
+];
+140168743329264 -> 140168743333424 [
+
+];
+140165587145744 -> 140168743329264 [
+
+];
+140168743328752 -> 140168743327280 [
+
+];
+140160285188448 -> 140168743328752 [
+
+];
+140165587145744 -> 140160285188448 [
+
+];
+140168743337200 -> 140168743336112 [
+
+];
+140168743336560 -> 140168743337200 [
+
+];
+140165587145744 -> 140168743336560 [
+
+];
+140168743332656 -> 140168743325296 [
+
+];
+140165587145744 -> 140168743332656 [
+
+];
+140168743321968 -> 140168743329328 [
+
+];
+140168743330288 -> 140168743321968 [
+
+];
+140165587145744 -> 140168743330288 [
+
+];
+140168743322224 -> 140168743329776 [
+
+];
+140165587145744 -> 140168743322224 [
+
+];
+140160285182880 -> 140160285183072 [
+
+];
+140165587145744 -> 140160285182880 [
+
+];
+140168743329904 -> 140168743323376 [
+
+];
+140165587145744 -> 140168743329904 [
+
+];
+140168743324912 -> 140168743324336 [
+
+];
+140165587145744 -> 140168743324912 [
+
+];
+140168743324208 -> 140168743337072 [
+
+];
+140165587145744 -> 140168743324208 [
+
+];
+140168743325552 -> 140168743334960 [
+
+];
+140165587145744 -> 140168743325552 [
+
+];
+140168743327152 -> 140168743326768 [
+
+];
+140165587145744 -> 140168743327152 [
+
+];
+140168743329648 -> 140168743332976 [
+
+];
+140165587145744 -> 140168743329648 [
+
+];
+140168743335920 -> 140168743335344 [
+
+];
+140165587145744 -> 140168743335920 [
+
+];
+140168743332848 -> 140168743332080 [
+
+];
+140165587145744 -> 140168743332848 [
+
+];
+140168743337648 -> 140168743331376 [
+
+];
+140165587145744 -> 140168743337648 [
+
+];
+140168743333680 -> 140168743334704 [
+
+];
+140165587145744 -> 140168743333680 [
+
+];
+140168743321840 -> 140168743326448 [
+
+];
+140168743333488 -> 140168743321840 [
+
+];
+140165587145744 -> 140168743333488 [
+
+];
+140160285187680 -> 140168743330864 [
+
+];
+140165587145744 -> 140160285187680 [
+
+];
+140168743337840 -> 140168743331120 [
+
+];
+140168743326384 -> 140168743337840 [
+
+];
+140165587145744 -> 140168743326384 [
+
+];
+140168743322352 -> 140168743337136 [
+
+];
+140165587145744 -> 140168743322352 [
+
+];
+140168743332336 -> 140168743331312 [
+
+];
+140165587145744 -> 140168743332336 [
+
+];
+140168743332272 -> 140168743329840 [
+
+];
+140168743327920 -> 140168743332272 [
+
+];
+140165587145744 -> 140168743327920 [
+
+];
+140168743333104 -> 140168743336240 [
+
+];
+140166526984160 -> 140168743333104 [
+
+];
+140166526982816 -> 140166526984160 [
+
+];
+140165587145744 -> 140166526982816 [
+
+];
+140168743328880 -> 140168743333616 [
+
+];
+140168743329584 -> 140168743328880 [
+
+];
+140165587145744 -> 140168743329584 [
+
+];
+140168743337776 -> 140168743335152 [
+
+];
+140166526989776 -> 140168743337776 [
+
+];
+140165587145744 -> 140166526989776 [
+
+];
+140168743331056 -> 140168743322736 [
+
+];
+140165587145744 -> 140168743331056 [
+
+];
+140168743334256 -> 140168743337008 [
+
+];
+140166526984736 -> 140168743334256 [
+
+];
+140165587145744 -> 140166526984736 [
+
+];
+140168743326832 -> 140168743322672 [
+
+];
+140165587145744 -> 140168743326832 [
+
+];
+140168743328112 -> 140168743332912 [
+
+];
+140165587145744 -> 140168743328112 [
+
+];
+140168743328304 -> 140168743327024 [
+
+];
+140165587145744 -> 140168743328304 [
+
+];
+140166526989584 -> 140168743334192 [
+
+];
+140165587145744 -> 140166526989584 [
+
+];
+94011578504840 -> 140165587145744 [
+
+];
+140166584318256 -> 140166584315504 [
+
+];
+140166584303664 -> 140166584318256 [
+
+];
+94011578504840 -> 140166584303664 [
+
+];
+94011578465488 -> 94011578504840 [
+
+];
+140166584312240 -> 140166584318320 [
+
+];
+140166584305776 -> 140166584312240 [
+
+];
+140166584318960 -> 140166584305776 [
+
+];
+140166584319344 -> 140166584318960 [
+
+];
+140166584310320 -> 140166584319344 [
+
+];
+140166584304304 -> 140166584310320 [
+
+];
+140166584310000 -> 140160097292080 [
+
+];
+140166584304304 -> 140166584310000 [
+
+];
+140166584317872 -> 140166584304304 [
+
+];
+140166584306480 -> 140166584317872 [
+
+];
+140166584304368 -> 140166584308272 [
+
+];
+140166584306480 -> 140166584304368 [
+
+];
+140166584319664 -> 140166584306480 [
+
+];
+140166584308400 -> 140166584319664 [
+
+];
+140166584308016 -> 140166584308400 [
+
+];
+140166584304752 -> 140166584304816 [
+
+];
+140166584308016 -> 140166584304752 [
+
+];
+140166584311088 -> 140166584308016 [
+
+];
+140166526981712 -> 140166584311088 [
+
+];
+140166526976960 -> 140166526981712 [
+
+];
+140166584311984 -> 140166584307504 [
+
+];
+140166526976960 -> 140166584311984 [
+
+];
+140166584304560 -> 140166584312432 [
+
+];
+140166526976960 -> 140166584304560 [
+
+];
+140166584124448 -> 140166526976960 [
+
+];
+94011578465488 -> 140166584124448 [
+
+];
+}

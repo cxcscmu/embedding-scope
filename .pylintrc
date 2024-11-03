@@ -1,0 +1,8 @@
+[BASIC]
+
+[MESSAGES CONTROL]
+
+# Disable specific messages
+disable=consider-using-from-import,
+    too-few-public-methods,
+    invalid-name,

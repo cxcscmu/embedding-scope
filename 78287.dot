@@ -1,0 +1,892 @@
+digraph {
+graph [
+  nodesep=0.25,
+  ranksep=0.3,
+  splines=line
+];
+node [
+  style=filled,
+  fillcolor=lightblue,
+  shape=circle
+];
+edge [
+  arrowsize=0.8,
+  color=black
+];
+
+140327602279584 [
+  label="None"
+];
+140330620801776 [
+  label="*"
+];
+140330620801904 [
+  label="*"
+];
+140336317104336 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None***</FONT>>
+
+];
+140331952684960 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None****</FONT>>
+
+];
+140320522258064 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None*****</FONT>>
+
+];
+140320522257488 [
+  label="types"
+];
+140320523744320 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None*****types*</FONT>>
+
+];
+140320522262192 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None******</FONT>>
+
+];
+140320523742080 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None*******</FONT>>
+
+];
+140320523742192 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None********</FONT>>
+
+];
+140320521412656 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None*********</FONT>>
+
+];
+140320521420336 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**********</FONT>>
+
+];
+140320522348432 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None***********</FONT>>
+
+];
+140320522348576 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None************</FONT>>
+
+];
+140320523623504 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None*************</FONT>>
+
+];
+140320523622544 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**************</FONT>>
+
+];
+140336313108592 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None***************</FONT>>
+
+];
+140336313108240 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None****************</FONT>>
+
+];
+140336317803056 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None*****************</FONT>>
+
+];
+140336317802864 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None******************</FONT>>
+
+];
+140336318330736 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None*******************</FONT>>
+
+];
+140336318331568 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None********************</FONT>>
+
+];
+140336182823376 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None*********************</FONT>>
+
+];
+140336182822704 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**********************</FONT>>
+
+];
+140320535704272 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None***********************</FONT>>
+
+];
+140320535695392 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None************************</FONT>>
+
+];
+140336318417200 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None*************************</FONT>>
+
+];
+140336318427440 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**************************</FONT>>
+
+];
+140320524787184 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None***************************</FONT>>
+
+];
+140320524785280 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None****************************</FONT>>
+
+];
+140320528134864 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None*****************************</FONT>>
+
+];
+140320528129680 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None******************************</FONT>>
+
+];
+140336313039456 [
+  label="*"
+];
+140336313032464 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None********************************</FONT>>
+
+];
+140333233547312 [
+  label="*"
+];
+140333233543152 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**********************************</FONT>>
+
+];
+140333235419296 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None***********************************</FONT>>
+
+];
+140333235417280 [
+  label="*"
+];
+140336319802064 [
+  label="*"
+];
+140336316907920 [
+  label="*"
+];
+140333235040528 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None***************************************</FONT>>
+
+];
+140333235040896 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None****************************************</FONT>>
+
+];
+140333235169456 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None*****************************************</FONT>>
+
+];
+140333235170224 [
+  label="*"
+];
+140333233697328 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None*******************************************</FONT>>
+
+];
+140333233699728 [
+  label="*"
+];
+140334232614768 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None*********************************************</FONT>>
+
+];
+140334232615184 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**********************************************</FONT>>
+
+];
+140333233714304 [
+  label="*"
+];
+140333233710848 [
+  label="*"
+];
+140333233654000 [
+  label="*"
+];
+140333233666544 [
+  label="*"
+];
+140333233460720 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None***************************************************</FONT>>
+
+];
+140333233467680 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None****************************************************</FONT>>
+
+];
+140333234010224 [
+  label="*"
+];
+140333234004944 [
+  label="*"
+];
+140333234662592 [
+  label="*"
+];
+140333234665568 [
+  label="*"
+];
+140336318638640 [
+  label="*"
+];
+140333235086896 [
+  label="*"
+];
+93920997903584 [
+  label="*"
+];
+93920773632064 [
+  label="*"
+];
+93920762573696 [
+  label="*"
+];
+93920998262128 [
+  label="*"
+];
+93921030908480 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None***************************************************************</FONT>>
+
+];
+140336317803440 [
+  label="type"
+];
+140336317808048 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None****************type*</FONT>>
+
+];
+140320523742304 [
+  label="type"
+];
+140320522892080 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None*******type*</FONT>>
+
+];
+140320523742416 [
+  label="classified"
+];
+140320523742528 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None******classified*</FONT>>
+
+];
+140320522261904 [
+  label="mention"
+];
+140320523742640 [
+  label="*"
+];
+140320523742752 [
+  label="*"
+];
+140334231869744 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None*****mention***</FONT>>
+
+];
+140320522259504 [
+  label="types"
+];
+140320524091824 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None****types*</FONT>>
+
+];
+140320524092016 [
+  label="styles"
+];
+140320524103632 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None****styles*</FONT>>
+
+];
+140331952677920 [
+  label="each"
+];
+140320524104880 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None***each*</FONT>>
+
+];
+140331952673840 [
+  label="type"
+];
+140320524102480 [
+  label="*"
+];
+140320524105744 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None***type**</FONT>>
+
+];
+140331952670400 [
+  label="##urs"
+];
+140320524106128 [
+  label="*"
+];
+140320524106032 [
+  label="*"
+];
+140320523742976 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None***##urs***</FONT>>
+
+];
+140331952676080 [
+  label="##optera"
+];
+140320524105456 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None***##optera*</FONT>>
+
+];
+140331952680560 [
+  label="type"
+];
+140331952670320 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**type*</FONT>>
+
+];
+140320524103344 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**type**</FONT>>
+
+];
+140331952674880 [
+  label="levels"
+];
+140331952681680 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**levels*</FONT>>
+
+];
+140331950637808 [
+  label=")"
+];
+140331952673280 [
+  label="##es"
+];
+140331952672400 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**)##es*</FONT>>
+
+];
+140331952682480 [
+  label="##ams"
+];
+140331952669520 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**##ams*</FONT>>
+
+];
+140331952673040 [
+  label="infections"
+];
+140331952676880 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**infections*</FONT>>
+
+];
+140331952680480 [
+  label="types"
+];
+140331952683760 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**types*</FONT>>
+
+];
+140331952671120 [
+  label="cars"
+];
+140331952672240 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**cars*</FONT>>
+
+];
+140331952678480 [
+  label="ducks"
+];
+140331952674160 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**ducks*</FONT>>
+
+];
+140331952668880 [
+  label="examples"
+];
+140331952675520 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**examples*</FONT>>
+
+];
+140331952684080 [
+  label="##on"
+];
+140331952669840 [
+  label="*"
+];
+140320524106512 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**##on**</FONT>>
+
+];
+140331952684480 [
+  label="##nis"
+];
+140331952670880 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**##on##nis*</FONT>>
+
+];
+140331952684160 [
+  label="complexity"
+];
+140331952680080 [
+  label="*"
+];
+140320524104976 [
+  label="*"
+];
+140320524104208 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**complexity***</FONT>>
+
+];
+140331952682160 [
+  label="##te"
+];
+140331952681040 [
+  label="##ala"
+];
+140331952675040 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**##te##ala*</FONT>>
+
+];
+140331952681600 [
+  label="erie"
+];
+140331952671520 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**erie*</FONT>>
+
+];
+140331952680960 [
+  label="styles"
+];
+140331952672720 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**styles*</FONT>>
+
+];
+140331952679680 [
+  label="clubs"
+];
+140331952675120 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**clubs*</FONT>>
+
+];
+140331952673200 [
+  label="techniques"
+];
+140331952684880 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**techniques*</FONT>>
+
+];
+140331952674800 [
+  label="eggs"
+];
+140331952676400 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**eggs*</FONT>>
+
+];
+140331950643184 [
+  label="##s"
+];
+140331952673680 [
+  label="*"
+];
+140331952678720 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**##s**</FONT>>
+
+];
+140331952669200 [
+  label="mammoth"
+];
+140331952671840 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**mammoth*</FONT>>
+
+];
+140331952672640 [
+  label="goods"
+];
+140331952677760 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**goods*</FONT>>
+
+];
+140331952670480 [
+  label="combinations"
+];
+140320524104592 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**combinations*</FONT>>
+
+];
+140331952681120 [
+  label="##as"
+];
+140331952669760 [
+  label="*"
+];
+140320524104400 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**##as**</FONT>>
+
+];
+140331950644848 [
+  label="##8"
+];
+140331952675920 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**##8*</FONT>>
+
+];
+140331952669680 [
+  label="varieties"
+];
+140331952682320 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**varieties*</FONT>>
+
+];
+140331952684320 [
+  label="mammals"
+];
+140331952671600 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**mammals*</FONT>>
+
+];
+140331952680880 [
+  label="areas"
+];
+140331952676960 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**areas*</FONT>>
+
+];
+140331952681200 [
+  label="classifications"
+];
+140320524102864 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**classifications*</FONT>>
+
+];
+140331952677360 [
+  label="groups"
+];
+140331952681440 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**groups*</FONT>>
+
+];
+140331952684560 [
+  label="projects"
+];
+140331952683920 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**projects*</FONT>>
+
+];
+140331952677280 [
+  label="earrings"
+];
+140331952675600 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**earrings*</FONT>>
+
+];
+140331952683120 [
+  label="##ine"
+];
+140331952676560 [
+  label="*"
+];
+140320524102768 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**##ine**</FONT>>
+
+];
+140331952668720 [
+  label="contracts"
+];
+140331952669920 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**contracts*</FONT>>
+
+];
+140331952682560 [
+  label="jewelry"
+];
+140331952684240 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**jewelry*</FONT>>
+
+];
+140331952673600 [
+  label="tombs"
+];
+140331952682720 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**tombs*</FONT>>
+
+];
+140331952674320 [
+  label="included"
+];
+140331952674560 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**included*</FONT>>
+
+];
+140331952670800 [
+  label="##ks"
+];
+140331952680640 [
+  label="*"
+];
+140320524105840 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None**##ks**</FONT>>
+
+];
+140331950646640 [
+  label="."
+];
+140331950648304 [
+  label="##s"
+];
+140331952673440 [
+  label="*"
+];
+140331952681280 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None*.##s**</FONT>>
+
+];
+140331950650736 [
+  label="##idae"
+];
+140331952672160 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None*.##idae*</FONT>>
+
+];
+140331950649008 [
+  label="few"
+];
+140331950648816 [
+  label="a"
+];
+140331952678240 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None*.fewa*</FONT>>
+
+];
+140331950648112 [
+  label="##ics"
+];
+140331952684000 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None*.##ics*</FONT>>
+
+];
+140331950651376 [
+  label="minerals"
+];
+140331952673360 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None*minerals*</FONT>>
+
+];
+140331950641776 [
+  label="[SEP]"
+];
+140331950638704 [
+  label="*"
+];
+140331952676480 [
+  label="*"
+];
+140331952682880 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]***</FONT>>
+
+];
+140320524106224 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]****</FONT>>
+
+];
+140320524104496 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]*****</FONT>>
+
+];
+140320523743872 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]******</FONT>>
+
+];
+140320523743760 [
+  label="*"
+];
+140336316701744 [
+  label="*"
+];
+140336316703536 [
+  label="*"
+];
+140320522350304 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]**********</FONT>>
+
+];
+140320522350160 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]***********</FONT>>
+
+];
+140320523617424 [
+  label="*"
+];
+140320523629264 [
+  label="*"
+];
+140336313110880 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]**************</FONT>>
+
+];
+140336313110528 [
+  label="*"
+];
+140336317800944 [
+  label="*"
+];
+140336317806128 [
+  label="cables"
+];
+140336317806704 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]****************cables*</FONT>>
+
+];
+140320523743648 [
+  label="types"
+];
+140336316699824 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]*******types*</FONT>>
+
+];
+140320523743536 [
+  label="types"
+];
+140320523743424 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]******types*</FONT>>
+
+];
+140320524106320 [
+  label="types"
+];
+140320523743312 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]*****types*</FONT>>
+
+];
+140320524105936 [
+  label="types"
+];
+140320524105264 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]****types*</FONT>>
+
+];
+140331951572592 [
+  label="types"
+];
+140331952679440 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]*types*</FONT>>
+
+];
+140331951586224 [
+  label=":"
+];
+140331951578672 [
+  label="*"
+];
+140331952668800 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">None[SEP]:**</FONT>>
+
+];

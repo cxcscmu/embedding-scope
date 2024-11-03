@@ -1,0 +1,2981 @@
+digraph {
+graph [
+  nodesep=0.25,
+  ranksep=0.3,
+  splines=line
+];
+node [
+  style=filled,
+  fillcolor=lightblue,
+  shape=circle
+];
+edge [
+  arrowsize=0.8,
+  color=black
+];
+
+94528248495312 [
+  label=""
+];
+94528248534664 [
+  label="*"
+];
+140706163447712 [
+  label="*"
+];
+140706163447856 [
+  label="*"
+];
+140706163448000 [
+  label="*"
+];
+140706163448144 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706163448288 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706163448432 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357234288 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357235824 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357232048 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357232944 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357239536 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357363440 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357365040 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357364080 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357363376 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357368624 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357369456 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357371824 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357365104 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">********************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357375728 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*********************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357374000 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**********************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357364976 [
+  label="*"
+];
+140706162985280 [
+  label="*"
+];
+140706162986240 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*************************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706162986960 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**************************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706162983280 [
+  label="*"
+];
+140706162986000 [
+  label="*"
+];
+140706162987200 [
+  label="*"
+];
+140704979669584 [
+  label="*"
+];
+140704979669904 [
+  label="*"
+];
+140704979669504 [
+  label="*"
+];
+140704979667104 [
+  label="*"
+];
+140704979667904 [
+  label="*"
+];
+140704979673264 [
+  label="*"
+];
+140704979672384 [
+  label="*"
+];
+140704979675104 [
+  label="*"
+];
+140704979674384 [
+  label="*"
+];
+140704979671824 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***************************************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357372656 [
+  label="##ware"
+];
+140707357363632 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***************##ware*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357371568 [
+  label="computer"
+];
+140706162988800 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***************computer*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357375600 [
+  label="viruses"
+];
+140707357365232 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***************viruses*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357361392 [
+  label="computer"
+];
+140707357375920 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**********computer*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357368432 [
+  label="install"
+];
+140707357364208 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**********install*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357362480 [
+  label="##u"
+];
+140707357368560 [
+  label="##nt"
+];
+140707357372080 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**********##u##nt*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357362224 [
+  label="cpu"
+];
+140707357365360 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**********cpu*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357374640 [
+  label="windows"
+];
+140707357362736 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*********windows*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357363248 [
+  label="file"
+];
+140707357362096 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*********file*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357371184 [
+  label="stored"
+];
+140707357363888 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">********stored*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357365680 [
+  label="folder"
+];
+140707357368944 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">********folder*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357360432 [
+  label="information"
+];
+140707357366640 [
+  label="*"
+];
+140707357364144 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******information**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357367600 [
+  label="##erson"
+];
+140707357374448 [
+  label="*"
+];
+140707357370608 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******##erson**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357362864 [
+  label="files"
+];
+140707357371120 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******files*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357370928 [
+  label="system"
+];
+140707357367152 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*******system*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357367920 [
+  label="typing"
+];
+140707357360944 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******typing*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357372912 [
+  label="file"
+];
+140707357376048 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******file*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357362800 [
+  label="folder"
+];
+140707357361776 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******folder*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357376432 [
+  label="downloads"
+];
+140707357365744 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******downloads*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357372848 [
+  label="computer"
+];
+140707357366512 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******computer*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357361456 [
+  label="brows"
+];
+140707357360496 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******brows*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357366896 [
+  label="program"
+];
+140707357364272 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******program*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357369712 [
+  label="windows"
+];
+140707357374704 [
+  label="*"
+];
+140707357365488 [
+  label="*"
+];
+140707357370544 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******windows***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357375472 [
+  label="template"
+];
+140707357371632 [
+  label="*"
+];
+140707357373552 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">******template**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357369776 [
+  label="desktop"
+];
+140707357372400 [
+  label="*"
+];
+140707357361136 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****desktop**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357370096 [
+  label="folder"
+];
+140707357360176 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****folder*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357362928 [
+  label="drive"
+];
+140707356775472 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****drive*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357498496 [
+  label="ex"
+];
+140707356778928 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****ex*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356770992 [
+  label="files"
+];
+140707356777200 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****files*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357498640 [
+  label="pc"
+];
+140707356770736 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****pc*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356775984 [
+  label="computer"
+];
+140707356780976 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****computer*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356777328 [
+  label="file"
+];
+140707356772208 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****file*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356780400 [
+  label="software"
+];
+140707356779824 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****software*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356783472 [
+  label="internet"
+];
+140707356781872 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****internet*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356771504 [
+  label="domains"
+];
+140707356782064 [
+  label="*"
+];
+140707356772720 [
+  label="*"
+];
+140707356779632 [
+  label="*"
+];
+140707356785904 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*****domains****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356783024 [
+  label="folder"
+];
+140707356783728 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****folder*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356786608 [
+  label="image"
+];
+140707356780080 [
+  label="*"
+];
+140707356772976 [
+  label="*"
+];
+140707356784432 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****image***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356777520 [
+  label="file"
+];
+140707356782896 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****file*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356779696 [
+  label="software"
+];
+140707356782512 [
+  label="*"
+];
+140707356773680 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****software**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356774704 [
+  label="drive"
+];
+140707356782000 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****drive*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356781424 [
+  label="safe"
+];
+140707356770800 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">****safe*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356773616 [
+  label="installed"
+];
+140707356780592 [
+  label="*"
+];
+140707356784240 [
+  label="*"
+];
+140707356785392 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***installed***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356776176 [
+  label="restore"
+];
+140707356781232 [
+  label="system"
+];
+140707356775408 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***restoresystem*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356782640 [
+  label="address"
+];
+140707356784624 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***address*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356773232 [
+  label="registry"
+];
+140707356774640 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***registry*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357500032 [
+  label="file"
+];
+140707356784048 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***file*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356786352 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***file**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356780208 [
+  label="picture"
+];
+140707356777456 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***picture*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356780464 [
+  label="install"
+];
+140707356779056 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***install*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356780656 [
+  label="virus"
+];
+140707356782832 [
+  label="*"
+];
+140707356780912 [
+  label="*"
+];
+140707356779888 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***virus***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356771440 [
+  label="##tal"
+];
+140707356783216 [
+  label="*"
+];
+140707356772528 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***##tal**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356778736 [
+  label="click"
+];
+140707356779952 [
+  label="*"
+];
+140707356777136 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***click**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356770352 [
+  label="computer"
+];
+140707356778864 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***computer*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356775792 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***computer**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356785712 [
+  label="folder"
+];
+140707356775152 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***folder*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356770928 [
+  label="##ware"
+];
+140707356786288 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***##ware*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356785008 [
+  label="internet"
+];
+140707356784304 [
+  label="*"
+];
+140707356782960 [
+  label="*"
+];
+140707356771952 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***internet***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356782704 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***internet****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356778608 [
+  label="download"
+];
+140707356776304 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***download*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356774192 [
+  label="windows"
+];
+140707356780144 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***windows*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356781168 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***windows**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356780784 [
+  label="chrome"
+];
+140707356783280 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***chrome*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357671728 [
+  label="version"
+];
+140707357674224 [
+  label="*"
+];
+140707357677040 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***version**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357671984 [
+  label="search"
+];
+140707357677360 [
+  label="*"
+];
+140707357673904 [
+  label="*"
+];
+140707357685936 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***search***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357680304 [
+  label="backup"
+];
+140707357682224 [
+  label="*"
+];
+140707357680496 [
+  label="*"
+];
+140707357681392 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***backup***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357676016 [
+  label="security"
+];
+140707357675888 [
+  label="*"
+];
+140707357684656 [
+  label="*"
+];
+140707357679856 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***security***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357678064 [
+  label="mapping"
+];
+140707357672432 [
+  label="*"
+];
+140707357671664 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***mapping**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357672560 [
+  label="files"
+];
+140707357678704 [
+  label="*"
+];
+140707357672496 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***files**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357684528 [
+  label="media"
+];
+140707357678384 [
+  label="*"
+];
+140707357686704 [
+  label="*"
+];
+140707357681904 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***media***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357679344 [
+  label="application"
+];
+140707357686000 [
+  label="*"
+];
+140707357671600 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">***application**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357686832 [
+  label="computer"
+];
+140707357681072 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**computer*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357683696 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**computer**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357674160 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**computer***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357680240 [
+  label="windows"
+];
+140707357673008 [
+  label="*"
+];
+140707357682608 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**windows**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357684144 [
+  label="*"
+];
+140707357685744 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**windows****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357687472 [
+  label="explorer"
+];
+140707357683120 [
+  label="internet"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**explorerinternet</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357679920 [
+  label="windows"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**explorerwindows</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357161776 [
+  label="disk"
+];
+140707357161728 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**disk*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357161152 [
+  label="pc"
+];
+140707357162880 [
+  label="*"
+];
+140707357163072 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**pc**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357684080 [
+  label="folder"
+];
+140707357687088 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**folder*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357681520 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**folder**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357685296 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**folder***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357671920 [
+  label="programs"
+];
+140707357683568 [
+  label="*"
+];
+140707357672304 [
+  label="*"
+];
+140707357675376 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**programs***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357682032 [
+  label="laptop"
+];
+140707357671536 [
+  label="*"
+];
+140707357678640 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**laptop**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357684848 [
+  label="registry"
+];
+140707357681200 [
+  label="*"
+];
+140707357684464 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**registry**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706163426912 [
+  label="apps"
+];
+140706163427104 [
+  label="*"
+];
+140707357672112 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**apps**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357676272 [
+  label="processor"
+];
+140707357679216 [
+  label="*"
+];
+140707357682416 [
+  label="*"
+];
+140707357686896 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**processor***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706163428352 [
+  label="file"
+];
+140706163425424 [
+  label="*"
+];
+140707357686448 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**file**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357680944 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**file***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357673648 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**file****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706163429696 [
+  label="drive"
+];
+140707357671856 [
+  label="hard"
+];
+140707357685104 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**drivehard*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357683440 [
+  label="flash"
+];
+140707357674480 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**driveflash*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357675056 [
+  label="*"
+];
+140707357672240 [
+  label="*"
+];
+140707357686256 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**drive***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357673520 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**drive****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357677936 [
+  label="information"
+];
+140707357517616 [
+  label="*"
+];
+140707357509936 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**information**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357511600 [
+  label="internet"
+];
+140707357519088 [
+  label="*"
+];
+140707357519344 [
+  label="*"
+];
+140707357513136 [
+  label="*"
+];
+140707357519280 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**internet****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706163433632 [
+  label="rom"
+];
+140706163434592 [
+  label="*"
+];
+140706163434352 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**rom**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706163434112 [
+  label="in"
+];
+140707357518320 [
+  label="sign"
+];
+140707357510320 [
+  label="*"
+];
+140707357519408 [
+  label="*"
+];
+140707357522544 [
+  label="*"
+];
+140707357519536 [
+  label="*"
+];
+140707357508848 [
+  label="*"
+];
+140707357512624 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**insign******</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706163432432 [
+  label="files"
+];
+140707357519920 [
+  label="*"
+];
+140707357520112 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**files**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357517808 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**files***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357523248 [
+  label="websites"
+];
+140707357516656 [
+  label="*"
+];
+140707357522928 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**websites**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357512560 [
+  label="systems"
+];
+140707357519024 [
+  label="operating"
+];
+140707357509808 [
+  label="*"
+];
+140707357517424 [
+  label="*"
+];
+140707357508336 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**systemsoperating***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357509680 [
+  label="downloads"
+];
+140707357516208 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**downloads*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357523568 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**downloads**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357515248 [
+  label="database"
+];
+140707357513008 [
+  label="*"
+];
+140707357517360 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**database**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357523440 [
+  label="stored"
+];
+140707357509168 [
+  label="*"
+];
+140707357508080 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**stored**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357514224 [
+  label="application"
+];
+140707357513968 [
+  label="*"
+];
+140707357522032 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**application**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357509104 [
+  label="machine"
+];
+140707357519856 [
+  label="your"
+];
+140707357510832 [
+  label="*"
+];
+140707357516848 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**machineyour**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357517552 [
+  label="computers"
+];
+140707357522480 [
+  label="*"
+];
+140707357512112 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**computers**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706163431040 [
+  label="usb"
+];
+140706163439104 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**usb*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706163440832 [
+  label="task"
+];
+140707356917904 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**task*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357523376 [
+  label="interface"
+];
+140707357508592 [
+  label="*"
+];
+140707357522800 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**interface**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707356918768 [
+  label="##e"
+];
+140707356918960 [
+  label="ex"
+];
+140707357514544 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**##eex*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357518064 [
+  label="profiles"
+];
+140707357507888 [
+  label="*"
+];
+140707357518384 [
+  label="*"
+];
+140707357522096 [
+  label="*"
+];
+140707357517744 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">**profiles****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706163447808 [
+  label="."
+];
+140707357509616 [
+  label="attachment"
+];
+140707357521136 [
+  label="*"
+];
+140707357512688 [
+  label="*"
+];
+140707357510192 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">*.attachment***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707358456448 [
+  label="[SEP]"
+];
+140707356922368 [
+  label="*"
+];
+140707356922560 [
+  label="*"
+];
+140707357509552 [
+  label="*"
+];
+140707357513840 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357519472 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357512176 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]******</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357516592 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*******</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357516784 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357511152 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357508464 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]**********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357514160 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]***********</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357523056 [
+  label="*"
+];
+140707357523760 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357514352 [
+  label="*"
+];
+140707357508912 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]***************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357508208 [
+  label="*"
+];
+140707357521264 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*****************</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357513648 [
+  label="ex"
+];
+140707357515824 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]**********ex*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140707357519984 [
+  label="chrome"
+];
+140706161811952 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]**********chrome*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706161819504 [
+  label="computer"
+];
+140706161817584 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*******computer*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706161808432 [
+  label="##ware"
+];
+140706161804336 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]******##ware*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706161818992 [
+  label="pc"
+];
+140706161807664 [
+  label="*"
+];
+140706161807984 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*****pc**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706161813424 [
+  label="computer"
+];
+140706161813168 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*****computer*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706161805488 [
+  label="ex"
+];
+140706161809584 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*****ex*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706161814384 [
+  label="data"
+];
+140706161812528 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]***data*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706161808880 [
+  label="icon"
+];
+140706161803824 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]***icon*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706161812400 [
+  label="installed"
+];
+140706161814576 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]***installed*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706161806384 [
+  label="download"
+];
+140706161806512 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]**download*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706161819120 [
+  label="virus"
+];
+140706161810992 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]**virus*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706161808688 [
+  label="##ware"
+];
+140706161806064 [
+  label="*"
+];
+140706161814064 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]**##ware**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706161807216 [
+  label="drive"
+];
+140706161814768 [
+  label="*"
+];
+140706161815472 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*drive**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706161810544 [
+  label="pictures"
+];
+140706161808816 [
+  label="*"
+];
+140706161814640 [
+  label="*"
+];
+140706161818672 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*pictures***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706161808752 [
+  label="search"
+];
+140706161818928 [
+  label="*"
+];
+140706161815664 [
+  label="*"
+];
+140706161813104 [
+  label="*"
+];
+140706161815728 [
+  label="*"
+];
+140706161809776 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*search*****</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706161812976 [
+  label="windows"
+];
+140706161813552 [
+  label="*"
+];
+140706161803696 [
+  label="*"
+];
+140706161815024 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*windows***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706161817328 [
+  label="profiles"
+];
+140706161819312 [
+  label="*"
+];
+140706161818608 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*profiles**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706161803760 [
+  label="folder"
+];
+140706161804912 [
+  label="*"
+];
+140706161812656 [
+  label="*"
+];
+140706161815152 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*folder***</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706161807728 [
+  label="downloads"
+];
+140706161816304 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*downloads*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706161814128 [
+  label="file"
+];
+140706161807856 [
+  label="*"
+];
+140706161808368 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*file**</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140706161813040 [
+  label="programs"
+];
+140706161810736 [
+  label="unwanted"
+];
+140706161813616 [
+  label="*"
+  xlabel=<<FONT COLOR="grey25" POINT-SIZE="12">[SEP]*programsunwanted*</FONT>>
+  fillcolor="forestgreen"
+  color="black"
+];
+140704979674384 -> 140704979671824 [
+
+];
+140704979675104 -> 140704979674384 [
+
+];
+140704979672384 -> 140704979675104 [
+
+];
+140704979673264 -> 140704979672384 [
+
+];
+140704979667904 -> 140704979673264 [
+
+];
+140704979667104 -> 140704979667904 [
+
+];
+140704979669504 -> 140704979667104 [
+
+];
+140704979669904 -> 140704979669504 [
+
+];
+140704979669584 -> 140704979669904 [
+
+];
+140706162987200 -> 140704979669584 [
+
+];
+140706162986000 -> 140706162987200 [
+
+];
+140706162983280 -> 140706162986000 [
+
+];
+140706162986960 -> 140706162983280 [
+
+];
+140706162986240 -> 140706162986960 [
+
+];
+140706162985280 -> 140706162986240 [
+
+];
+140707357364976 -> 140706162985280 [
+
+];
+140707357374000 -> 140707357364976 [
+
+];
+140707357375728 -> 140707357374000 [
+
+];
+140707357365104 -> 140707357375728 [
+
+];
+140707357371824 -> 140707357365104 [
+
+];
+140707357369456 -> 140707357371824 [
+
+];
+140707357368624 -> 140707357369456 [
+
+];
+140707357363376 -> 140707357368624 [
+
+];
+140707357364080 -> 140707357363376 [
+
+];
+140707357372656 -> 140707357363632 [
+
+];
+140707357364080 -> 140707357372656 [
+
+];
+140707357371568 -> 140706162988800 [
+
+];
+140707357364080 -> 140707357371568 [
+
+];
+140707357375600 -> 140707357365232 [
+
+];
+140707357364080 -> 140707357375600 [
+
+];
+140707357365040 -> 140707357364080 [
+
+];
+140707357363440 -> 140707357365040 [
+
+];
+140707357239536 -> 140707357363440 [
+
+];
+140707357232944 -> 140707357239536 [
+
+];
+140707357232048 -> 140707357232944 [
+
+];
+140707357361392 -> 140707357375920 [
+
+];
+140707357232048 -> 140707357361392 [
+
+];
+140707357368432 -> 140707357364208 [
+
+];
+140707357232048 -> 140707357368432 [
+
+];
+140707357368560 -> 140707357372080 [
+
+];
+140707357362480 -> 140707357368560 [
+
+];
+140707357232048 -> 140707357362480 [
+
+];
+140707357362224 -> 140707357365360 [
+
+];
+140707357232048 -> 140707357362224 [
+
+];
+140707357235824 -> 140707357232048 [
+
+];
+140707357374640 -> 140707357362736 [
+
+];
+140707357235824 -> 140707357374640 [
+
+];
+140707357363248 -> 140707357362096 [
+
+];
+140707357235824 -> 140707357363248 [
+
+];
+140707357234288 -> 140707357235824 [
+
+];
+140707357371184 -> 140707357363888 [
+
+];
+140707357234288 -> 140707357371184 [
+
+];
+140707357365680 -> 140707357368944 [
+
+];
+140707357234288 -> 140707357365680 [
+
+];
+140706163448432 -> 140707357234288 [
+
+];
+140707357366640 -> 140707357364144 [
+
+];
+140707357360432 -> 140707357366640 [
+
+];
+140706163448432 -> 140707357360432 [
+
+];
+140707357374448 -> 140707357370608 [
+
+];
+140707357367600 -> 140707357374448 [
+
+];
+140706163448432 -> 140707357367600 [
+
+];
+140707357362864 -> 140707357371120 [
+
+];
+140706163448432 -> 140707357362864 [
+
+];
+140707357370928 -> 140707357367152 [
+
+];
+140706163448432 -> 140707357370928 [
+
+];
+140706163448288 -> 140706163448432 [
+
+];
+140707357367920 -> 140707357360944 [
+
+];
+140706163448288 -> 140707357367920 [
+
+];
+140707357372912 -> 140707357376048 [
+
+];
+140706163448288 -> 140707357372912 [
+
+];
+140707357362800 -> 140707357361776 [
+
+];
+140706163448288 -> 140707357362800 [
+
+];
+140707357376432 -> 140707357365744 [
+
+];
+140706163448288 -> 140707357376432 [
+
+];
+140707357372848 -> 140707357366512 [
+
+];
+140706163448288 -> 140707357372848 [
+
+];
+140707357361456 -> 140707357360496 [
+
+];
+140706163448288 -> 140707357361456 [
+
+];
+140707357366896 -> 140707357364272 [
+
+];
+140706163448288 -> 140707357366896 [
+
+];
+140707357365488 -> 140707357370544 [
+
+];
+140707357374704 -> 140707357365488 [
+
+];
+140707357369712 -> 140707357374704 [
+
+];
+140706163448288 -> 140707357369712 [
+
+];
+140707357371632 -> 140707357373552 [
+
+];
+140707357375472 -> 140707357371632 [
+
+];
+140706163448288 -> 140707357375472 [
+
+];
+140706163448144 -> 140706163448288 [
+
+];
+140707357372400 -> 140707357361136 [
+
+];
+140707357369776 -> 140707357372400 [
+
+];
+140706163448144 -> 140707357369776 [
+
+];
+140707357370096 -> 140707357360176 [
+
+];
+140706163448144 -> 140707357370096 [
+
+];
+140707357362928 -> 140707356775472 [
+
+];
+140706163448144 -> 140707357362928 [
+
+];
+140707357498496 -> 140707356778928 [
+
+];
+140706163448144 -> 140707357498496 [
+
+];
+140707356770992 -> 140707356777200 [
+
+];
+140706163448144 -> 140707356770992 [
+
+];
+140707357498640 -> 140707356770736 [
+
+];
+140706163448144 -> 140707357498640 [
+
+];
+140707356775984 -> 140707356780976 [
+
+];
+140706163448144 -> 140707356775984 [
+
+];
+140707356777328 -> 140707356772208 [
+
+];
+140706163448144 -> 140707356777328 [
+
+];
+140707356780400 -> 140707356779824 [
+
+];
+140706163448144 -> 140707356780400 [
+
+];
+140707356783472 -> 140707356781872 [
+
+];
+140706163448144 -> 140707356783472 [
+
+];
+140707356779632 -> 140707356785904 [
+
+];
+140707356772720 -> 140707356779632 [
+
+];
+140707356782064 -> 140707356772720 [
+
+];
+140707356771504 -> 140707356782064 [
+
+];
+140706163448144 -> 140707356771504 [
+
+];
+140706163448000 -> 140706163448144 [
+
+];
+140707356783024 -> 140707356783728 [
+
+];
+140706163448000 -> 140707356783024 [
+
+];
+140707356772976 -> 140707356784432 [
+
+];
+140707356780080 -> 140707356772976 [
+
+];
+140707356786608 -> 140707356780080 [
+
+];
+140706163448000 -> 140707356786608 [
+
+];
+140707356777520 -> 140707356782896 [
+
+];
+140706163448000 -> 140707356777520 [
+
+];
+140707356782512 -> 140707356773680 [
+
+];
+140707356779696 -> 140707356782512 [
+
+];
+140706163448000 -> 140707356779696 [
+
+];
+140707356774704 -> 140707356782000 [
+
+];
+140706163448000 -> 140707356774704 [
+
+];
+140707356781424 -> 140707356770800 [
+
+];
+140706163448000 -> 140707356781424 [
+
+];
+140706163447856 -> 140706163448000 [
+
+];
+140707356784240 -> 140707356785392 [
+
+];
+140707356780592 -> 140707356784240 [
+
+];
+140707356773616 -> 140707356780592 [
+
+];
+140706163447856 -> 140707356773616 [
+
+];
+140707356781232 -> 140707356775408 [
+
+];
+140707356776176 -> 140707356781232 [
+
+];
+140706163447856 -> 140707356776176 [
+
+];
+140707356782640 -> 140707356784624 [
+
+];
+140706163447856 -> 140707356782640 [
+
+];
+140707356773232 -> 140707356774640 [
+
+];
+140706163447856 -> 140707356773232 [
+
+];
+140707356784048 -> 140707356786352 [
+
+];
+140707357500032 -> 140707356784048 [
+
+];
+140706163447856 -> 140707357500032 [
+
+];
+140707356780208 -> 140707356777456 [
+
+];
+140706163447856 -> 140707356780208 [
+
+];
+140707356780464 -> 140707356779056 [
+
+];
+140706163447856 -> 140707356780464 [
+
+];
+140707356780912 -> 140707356779888 [
+
+];
+140707356782832 -> 140707356780912 [
+
+];
+140707356780656 -> 140707356782832 [
+
+];
+140706163447856 -> 140707356780656 [
+
+];
+140707356783216 -> 140707356772528 [
+
+];
+140707356771440 -> 140707356783216 [
+
+];
+140706163447856 -> 140707356771440 [
+
+];
+140707356779952 -> 140707356777136 [
+
+];
+140707356778736 -> 140707356779952 [
+
+];
+140706163447856 -> 140707356778736 [
+
+];
+140707356778864 -> 140707356775792 [
+
+];
+140707356770352 -> 140707356778864 [
+
+];
+140706163447856 -> 140707356770352 [
+
+];
+140707356785712 -> 140707356775152 [
+
+];
+140706163447856 -> 140707356785712 [
+
+];
+140707356770928 -> 140707356786288 [
+
+];
+140706163447856 -> 140707356770928 [
+
+];
+140707356771952 -> 140707356782704 [
+
+];
+140707356782960 -> 140707356771952 [
+
+];
+140707356784304 -> 140707356782960 [
+
+];
+140707356785008 -> 140707356784304 [
+
+];
+140706163447856 -> 140707356785008 [
+
+];
+140707356778608 -> 140707356776304 [
+
+];
+140706163447856 -> 140707356778608 [
+
+];
+140707356780144 -> 140707356781168 [
+
+];
+140707356774192 -> 140707356780144 [
+
+];
+140706163447856 -> 140707356774192 [
+
+];
+140707356780784 -> 140707356783280 [
+
+];
+140706163447856 -> 140707356780784 [
+
+];
+140707357674224 -> 140707357677040 [
+
+];
+140707357671728 -> 140707357674224 [
+
+];
+140706163447856 -> 140707357671728 [
+
+];
+140707357673904 -> 140707357685936 [
+
+];
+140707357677360 -> 140707357673904 [
+
+];
+140707357671984 -> 140707357677360 [
+
+];
+140706163447856 -> 140707357671984 [
+
+];
+140707357680496 -> 140707357681392 [
+
+];
+140707357682224 -> 140707357680496 [
+
+];
+140707357680304 -> 140707357682224 [
+
+];
+140706163447856 -> 140707357680304 [
+
+];
+140707357684656 -> 140707357679856 [
+
+];
+140707357675888 -> 140707357684656 [
+
+];
+140707357676016 -> 140707357675888 [
+
+];
+140706163447856 -> 140707357676016 [
+
+];
+140707357672432 -> 140707357671664 [
+
+];
+140707357678064 -> 140707357672432 [
+
+];
+140706163447856 -> 140707357678064 [
+
+];
+140707357678704 -> 140707357672496 [
+
+];
+140707357672560 -> 140707357678704 [
+
+];
+140706163447856 -> 140707357672560 [
+
+];
+140707357686704 -> 140707357681904 [
+
+];
+140707357678384 -> 140707357686704 [
+
+];
+140707357684528 -> 140707357678384 [
+
+];
+140706163447856 -> 140707357684528 [
+
+];
+140707357686000 -> 140707357671600 [
+
+];
+140707357679344 -> 140707357686000 [
+
+];
+140706163447856 -> 140707357679344 [
+
+];
+140706163447712 -> 140706163447856 [
+
+];
+140707357683696 -> 140707357674160 [
+
+];
+140707357681072 -> 140707357683696 [
+
+];
+140707357686832 -> 140707357681072 [
+
+];
+140706163447712 -> 140707357686832 [
+
+];
+140707357684144 -> 140707357685744 [
+
+];
+140707357682608 -> 140707357684144 [
+
+];
+140707357673008 -> 140707357682608 [
+
+];
+140707357680240 -> 140707357673008 [
+
+];
+140706163447712 -> 140707357680240 [
+
+];
+140707357687472 -> 140707357683120 [
+
+];
+140707357687472 -> 140707357679920 [
+
+];
+140706163447712 -> 140707357687472 [
+
+];
+140707357161776 -> 140707357161728 [
+
+];
+140706163447712 -> 140707357161776 [
+
+];
+140707357162880 -> 140707357163072 [
+
+];
+140707357161152 -> 140707357162880 [
+
+];
+140706163447712 -> 140707357161152 [
+
+];
+140707357681520 -> 140707357685296 [
+
+];
+140707357687088 -> 140707357681520 [
+
+];
+140707357684080 -> 140707357687088 [
+
+];
+140706163447712 -> 140707357684080 [
+
+];
+140707357672304 -> 140707357675376 [
+
+];
+140707357683568 -> 140707357672304 [
+
+];
+140707357671920 -> 140707357683568 [
+
+];
+140706163447712 -> 140707357671920 [
+
+];
+140707357671536 -> 140707357678640 [
+
+];
+140707357682032 -> 140707357671536 [
+
+];
+140706163447712 -> 140707357682032 [
+
+];
+140707357681200 -> 140707357684464 [
+
+];
+140707357684848 -> 140707357681200 [
+
+];
+140706163447712 -> 140707357684848 [
+
+];
+140706163427104 -> 140707357672112 [
+
+];
+140706163426912 -> 140706163427104 [
+
+];
+140706163447712 -> 140706163426912 [
+
+];
+140707357682416 -> 140707357686896 [
+
+];
+140707357679216 -> 140707357682416 [
+
+];
+140707357676272 -> 140707357679216 [
+
+];
+140706163447712 -> 140707357676272 [
+
+];
+140707357680944 -> 140707357673648 [
+
+];
+140707357686448 -> 140707357680944 [
+
+];
+140706163425424 -> 140707357686448 [
+
+];
+140706163428352 -> 140706163425424 [
+
+];
+140706163447712 -> 140706163428352 [
+
+];
+140707357671856 -> 140707357685104 [
+
+];
+140706163429696 -> 140707357671856 [
+
+];
+140707357683440 -> 140707357674480 [
+
+];
+140706163429696 -> 140707357683440 [
+
+];
+140707357686256 -> 140707357673520 [
+
+];
+140707357672240 -> 140707357686256 [
+
+];
+140707357675056 -> 140707357672240 [
+
+];
+140706163429696 -> 140707357675056 [
+
+];
+140706163447712 -> 140706163429696 [
+
+];
+140707357517616 -> 140707357509936 [
+
+];
+140707357677936 -> 140707357517616 [
+
+];
+140706163447712 -> 140707357677936 [
+
+];
+140707357513136 -> 140707357519280 [
+
+];
+140707357519344 -> 140707357513136 [
+
+];
+140707357519088 -> 140707357519344 [
+
+];
+140707357511600 -> 140707357519088 [
+
+];
+140706163447712 -> 140707357511600 [
+
+];
+140706163434592 -> 140706163434352 [
+
+];
+140706163433632 -> 140706163434592 [
+
+];
+140706163447712 -> 140706163433632 [
+
+];
+140707357508848 -> 140707357512624 [
+
+];
+140707357519536 -> 140707357508848 [
+
+];
+140707357522544 -> 140707357519536 [
+
+];
+140707357519408 -> 140707357522544 [
+
+];
+140707357510320 -> 140707357519408 [
+
+];
+140707357518320 -> 140707357510320 [
+
+];
+140706163434112 -> 140707357518320 [
+
+];
+140706163447712 -> 140706163434112 [
+
+];
+140707357520112 -> 140707357517808 [
+
+];
+140707357519920 -> 140707357520112 [
+
+];
+140706163432432 -> 140707357519920 [
+
+];
+140706163447712 -> 140706163432432 [
+
+];
+140707357516656 -> 140707357522928 [
+
+];
+140707357523248 -> 140707357516656 [
+
+];
+140706163447712 -> 140707357523248 [
+
+];
+140707357517424 -> 140707357508336 [
+
+];
+140707357509808 -> 140707357517424 [
+
+];
+140707357519024 -> 140707357509808 [
+
+];
+140707357512560 -> 140707357519024 [
+
+];
+140706163447712 -> 140707357512560 [
+
+];
+140707357516208 -> 140707357523568 [
+
+];
+140707357509680 -> 140707357516208 [
+
+];
+140706163447712 -> 140707357509680 [
+
+];
+140707357513008 -> 140707357517360 [
+
+];
+140707357515248 -> 140707357513008 [
+
+];
+140706163447712 -> 140707357515248 [
+
+];
+140707357509168 -> 140707357508080 [
+
+];
+140707357523440 -> 140707357509168 [
+
+];
+140706163447712 -> 140707357523440 [
+
+];
+140707357513968 -> 140707357522032 [
+
+];
+140707357514224 -> 140707357513968 [
+
+];
+140706163447712 -> 140707357514224 [
+
+];
+140707357510832 -> 140707357516848 [
+
+];
+140707357519856 -> 140707357510832 [
+
+];
+140707357509104 -> 140707357519856 [
+
+];
+140706163447712 -> 140707357509104 [
+
+];
+140707357522480 -> 140707357512112 [
+
+];
+140707357517552 -> 140707357522480 [
+
+];
+140706163447712 -> 140707357517552 [
+
+];
+140706163431040 -> 140706163439104 [
+
+];
+140706163447712 -> 140706163431040 [
+
+];
+140706163440832 -> 140707356917904 [
+
+];
+140706163447712 -> 140706163440832 [
+
+];
+140707357508592 -> 140707357522800 [
+
+];
+140707357523376 -> 140707357508592 [
+
+];
+140706163447712 -> 140707357523376 [
+
+];
+140707356918960 -> 140707357514544 [
+
+];
+140707356918768 -> 140707356918960 [
+
+];
+140706163447712 -> 140707356918768 [
+
+];
+140707357522096 -> 140707357517744 [
+
+];
+140707357518384 -> 140707357522096 [
+
+];
+140707357507888 -> 140707357518384 [
+
+];
+140707357518064 -> 140707357507888 [
+
+];
+140706163447712 -> 140707357518064 [
+
+];
+94528248534664 -> 140706163447712 [
+
+];
+140707357512688 -> 140707357510192 [
+
+];
+140707357521136 -> 140707357512688 [
+
+];
+140707357509616 -> 140707357521136 [
+
+];
+140706163447808 -> 140707357509616 [
+
+];
+94528248534664 -> 140706163447808 [
+
+];
+94528248495312 -> 94528248534664 [
+
+];
+140707357508208 -> 140707357521264 [
+
+];
+140707357508912 -> 140707357508208 [
+
+];
+140707357514352 -> 140707357508912 [
+
+];
+140707357523760 -> 140707357514352 [
+
+];
+140707357523056 -> 140707357523760 [
+
+];
+140707357514160 -> 140707357523056 [
+
+];
+140707357508464 -> 140707357514160 [
+
+];
+140707357513648 -> 140707357515824 [
+
+];
+140707357508464 -> 140707357513648 [
+
+];
+140707357519984 -> 140706161811952 [
+
+];
+140707357508464 -> 140707357519984 [
+
+];
+140707357511152 -> 140707357508464 [
+
+];
+140707357516784 -> 140707357511152 [
+
+];
+140707357516592 -> 140707357516784 [
+
+];
+140706161819504 -> 140706161817584 [
+
+];
+140707357516592 -> 140706161819504 [
+
+];
+140707357512176 -> 140707357516592 [
+
+];
+140706161808432 -> 140706161804336 [
+
+];
+140707357512176 -> 140706161808432 [
+
+];
+140707357519472 -> 140707357512176 [
+
+];
+140706161807664 -> 140706161807984 [
+
+];
+140706161818992 -> 140706161807664 [
+
+];
+140707357519472 -> 140706161818992 [
+
+];
+140706161813424 -> 140706161813168 [
+
+];
+140707357519472 -> 140706161813424 [
+
+];
+140706161805488 -> 140706161809584 [
+
+];
+140707357519472 -> 140706161805488 [
+
+];
+140707357513840 -> 140707357519472 [
+
+];
+140707357509552 -> 140707357513840 [
+
+];
+140706161814384 -> 140706161812528 [
+
+];
+140707357509552 -> 140706161814384 [
+
+];
+140706161808880 -> 140706161803824 [
+
+];
+140707357509552 -> 140706161808880 [
+
+];
+140706161812400 -> 140706161814576 [
+
+];
+140707357509552 -> 140706161812400 [
+
+];
+140707356922560 -> 140707357509552 [
+
+];
+140706161806384 -> 140706161806512 [
+
+];
+140707356922560 -> 140706161806384 [
+
+];
+140706161819120 -> 140706161810992 [
+
+];
+140707356922560 -> 140706161819120 [
+
+];
+140706161806064 -> 140706161814064 [
+
+];
+140706161808688 -> 140706161806064 [
+
+];
+140707356922560 -> 140706161808688 [
+
+];
+140707356922368 -> 140707356922560 [
+
+];
+140706161814768 -> 140706161815472 [
+
+];
+140706161807216 -> 140706161814768 [
+
+];
+140707356922368 -> 140706161807216 [
+
+];
+140706161814640 -> 140706161818672 [
+
+];
+140706161808816 -> 140706161814640 [
+
+];
+140706161810544 -> 140706161808816 [
+
+];
+140707356922368 -> 140706161810544 [
+
+];
+140706161815728 -> 140706161809776 [
+
+];
+140706161813104 -> 140706161815728 [
+
+];
+140706161815664 -> 140706161813104 [
+
+];
+140706161818928 -> 140706161815664 [
+
+];
+140706161808752 -> 140706161818928 [
+
+];
+140707356922368 -> 140706161808752 [
+
+];
+140706161803696 -> 140706161815024 [
+
+];
+140706161813552 -> 140706161803696 [
+
+];
+140706161812976 -> 140706161813552 [
+
+];
+140707356922368 -> 140706161812976 [
+
+];
+140706161819312 -> 140706161818608 [
+
+];
+140706161817328 -> 140706161819312 [
+
+];
+140707356922368 -> 140706161817328 [
+
+];
+140706161812656 -> 140706161815152 [
+
+];
+140706161804912 -> 140706161812656 [
+
+];
+140706161803760 -> 140706161804912 [
+
+];
+140707356922368 -> 140706161803760 [
+
+];
+140706161807728 -> 140706161816304 [
+
+];
+140707356922368 -> 140706161807728 [
+
+];
+140706161807856 -> 140706161808368 [
+
+];
+140706161814128 -> 140706161807856 [
+
+];
+140707356922368 -> 140706161814128 [
+
+];
+140706161810736 -> 140706161813616 [
+
+];
+140706161813040 -> 140706161810736 [
+
+];
+140707356922368 -> 140706161813040 [
+
+];
+140707358456448 -> 140707356922368 [
+
+];
+94528248495312 -> 140707358456448 [
+
+];
+}
