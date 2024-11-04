@@ -3,7 +3,7 @@ Specify the dataset interface.
 """
 
 from abc import ABC, abstractmethod
-from typing import Iterator, Tuple, Literal, Type
+from typing import Iterator, Tuple, Literal, Type, Dict, List
 import numpy as np
 from numpy import ndarray as NDArray
 from source.interface import TextEmbedding
@@ -68,5 +68,30 @@ class TextRetrievalDataset(Dataset):
         :param partition: The partition to get queries from.
         :param embedding: The embedding to use.
         :return: Iterator over query IDs and embeddings.
+        """
+        raise NotImplementedError
+
+    @abstractmethod
+    def getRelevantPassages(
+        self, partition: PartitionType
+    ) -> Dict[str, Dict[str, int]]:
+        """
+        Get the relevant passages for each query in the dataset.
+
+        :param partition: The partition to get relevant passages from.
+        :return: Mapping from query IDs to mapping from passage IDs to relevance.
+        """
+        raise NotImplementedError
+
+    @abstractmethod
+    def getNeighborPassages(
+        self, partition: PartitionType, k: int
+    ) -> Dict[str, List[str]]:
+        """
+        Get the k nearest neighbor passages for each query in the dataset.
+
+        :param partition: The partition to get neighbor passages from.
+        :param k: The number of neighbor passages to get.
+        :return: Mapping from query IDs to nearest passage IDs in descending order.
         """
         raise NotImplementedError

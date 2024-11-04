@@ -2,12 +2,12 @@
 Implementation of the MS MARCO dataset.
 """
 
+import pickle
 import argparse
 import subprocess
 from pathlib import Path
-from typing import Iterator, Tuple, List, Type
+from typing import List, Dict
 from hashlib import md5
-from numpy import ndarray as NDArray
 import requests
 import pyarrow as pa
 import pyarrow.parquet as pq
@@ -21,6 +21,7 @@ from source.dataset.utilities import (
     textRetrievalGetPassageEmbeddings,
     textRetrievalGetQueries,
     textRetrievalGetQueryEmbeddings,
+    textRetrievalGetRelevantPassages,
 )
 from source.embedding.miniCPM import MiniCPM
 from source.embedding.bgeBase import BgeBase
@@ -36,25 +37,32 @@ class MsMarco(TextRetrievalDataset):
     def __init__(self) -> None:
         pass
 
-    def getPassages(self) -> Iterator[Tuple[str, str]]:
+    def getPassages(self):
         base = GetPassagesInit.base
         return textRetrievalGetPassages(base)
 
-    def getPassageEmbeddings(
-        self, embedding: Type[TextEmbedding]
-    ) -> Iterator[Tuple[str, NDArray[np.float32]]]:
+    def getPassageEmbeddings(self, embedding):
         base = GetPassageEmbeddingsInit.base
-        return textRetrievalGetPassageEmbeddings(base / embedding.name)
+        base = Path(base, embedding.name)
+        return textRetrievalGetPassageEmbeddings(base)
 
-    def getQueries(self, partition: PartitionType) -> Iterator[Tuple[str, str]]:
+    def getQueries(self, partition):
         base = GetQueriesInit.base
-        return textRetrievalGetQueries(base / partition)
+        base = Path(base, partition)
+        return textRetrievalGetQueries(base)
 
-    def getQueryEmbeddings(
-        self, partition: PartitionType, embedding: Type[TextEmbedding]
-    ) -> Iterator[Tuple[str, NDArray[np.float32]]]:
+    def getQueryEmbeddings(self, partition, embedding):
         base = GetQueryEmbeddingsInit.base
-        return textRetrievalGetQueryEmbeddings(base / partition / embedding.name)
+        base = Path(base, partition, embedding.name)
+        return textRetrievalGetQueryEmbeddings(base)
+
+    def getRelevantPassages(self, partition):
+        base = GetRelevantPassagesInit.base
+        file = Path(base, f"{partition}.pkl")
+        return textRetrievalGetRelevantPassages(file)
+
+    def getNeighborPassages(self, partition, k):
+        raise NotImplementedError
 
 
 class GetPassagesInit:
@@ -317,6 +325,64 @@ class GetQueryEmbeddingsInit:
             )
 
 
+class GetRelevantPassagesInit:
+    """
+    Prepare the relevant passages in the dataset.
+
+    Attributes:
+        base: The base path for the relevant passages.
+    """
+
+    base = Path(workspace, "MsMarco/relevantPassages")
+
+    def __init__(self) -> None:
+        self.base.mkdir(mode=0o770, parents=True, exist_ok=True)
+        self.dispatch()
+
+    def step1(self) -> None:
+        """
+        Dispatch the download of the relevance.
+        """
+        console.log("Downloading the relevance")
+        host = "https://msmarco.z22.web.core.windows.net"
+        link = f"{host}/msmarcoranking/qrels.train.tsv"
+        with requests.get(link, stream=True, timeout=1800) as response:
+            with Path(self.base, "qrels.train.tsv").open("wb") as file:
+                for chunk in response.iter_content(chunk_size=8192):
+                    file.write(chunk)
+        link = f"{host}/msmarcoranking/qrels.dev.tsv"
+        with requests.get(link, stream=True, timeout=1800) as response:
+            with Path(self.base, "qrels.dev.tsv").open("wb") as file:
+                for chunk in response.iter_content(chunk_size=8192):
+                    file.write(chunk)
+
+    def step2(self) -> None:
+        """
+        Dispatch the extraction of the relevance.
+        """
+        console.log("Extracting the relevance")
+        choices: List[PartitionType] = ["train", "dev"]
+        for partition in choices:
+            data: Dict[str, Dict[str, int]] = {}
+            path = Path(self.base, f"qrels.{partition}.tsv")
+            with path.open("r", encoding="utf-8") as file:
+                for line in file:
+                    queryID, _, passageID, relevance = line.split()
+                    if queryID not in data:
+                        data[queryID] = {}
+                    data[queryID][passageID] = int(relevance)
+            with Path(self.base, f"{partition}.pkl").open("wb") as file:
+                pickle.dump(data, file)
+            path.unlink()
+
+    def dispatch(self) -> None:
+        """
+        Dispatch the steps.
+        """
+        self.step1()
+        self.step2()
+
+
 def main() -> None:
     """
     The entry point.
@@ -338,6 +404,7 @@ def main() -> None:
     getQueryEmbeddings.add_argument("--numPartitions", type=int, required=True)
     getQueryEmbeddings.add_argument("--partitionIndex", type=int, required=True)
     getQueryEmbeddings.add_argument("--batchSize", type=int, required=True)
+    subparsers.add_parser("getRelevantPassages")
 
     parsed = parser.parse_args()
     match parsed.command:
@@ -375,6 +442,8 @@ def main() -> None:
                 parsed.partitionIndex,
                 parsed.batchSize,
             )
+        case "getRelevantPassages":
+            GetRelevantPassagesInit()
 
 
 if __name__ == "__main__":

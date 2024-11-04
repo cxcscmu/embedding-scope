@@ -2,8 +2,9 @@
 Utilities for dataset module.
 """
 
+import pickle
 from pathlib import Path
-from typing import Iterator, Tuple
+from typing import Iterator, Tuple, Dict
 import pyarrow.parquet as pq
 import numpy as np
 from numpy import ndarray as NDArray
@@ -58,3 +59,16 @@ def textRetrievalGetQueryEmbeddings(
     :return: Iterator over query IDs and embeddings.
     """
     return textRetrievalGetPassageEmbeddings(base)
+
+
+def textRetrievalGetRelevantPassages(
+    file: Path,
+) -> Dict[str, Dict[str, int]]:
+    """
+    Getting relevant passages from a text retrieval dataset.
+
+    :param file: The file containing the relevant passages.
+    :return: Mapping from query IDs to mapping from passage IDs to relevance.
+    """
+    with file.open("rb") as f:
+        return pickle.load(f)
