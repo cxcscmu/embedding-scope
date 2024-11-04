@@ -3,7 +3,7 @@ Specify the dataset interface.
 """
 
 from abc import ABC, abstractmethod
-from typing import Iterator, Tuple, Literal, Type, Dict, List
+from typing import Iterator, Tuple, Literal, Type, Dict
 import numpy as np
 from numpy import ndarray as NDArray
 from source.interface import TextEmbedding
@@ -85,13 +85,15 @@ class TextRetrievalDataset(Dataset):
 
     @abstractmethod
     def getNeighborPassages(
-        self, partition: PartitionType, k: int
-    ) -> Dict[str, List[str]]:
+        self, partition: PartitionType, embedding: Type[TextEmbedding]
+    ) -> Dict[str, Dict[str, float]]:
         """
         Get the k nearest neighbor passages for each query in the dataset.
+        This method does not rely on relevance judgments but the embedding similarity.
+        At most 256 nearest neighbors, measured by dot product, are returned.
 
         :param partition: The partition to get neighbor passages from.
-        :param k: The number of neighbor passages to get.
-        :return: Mapping from query IDs to nearest passage IDs in descending order.
+        :param embedding: The embedding to use.
+        :return: Mapping from query IDs to mapping from passage IDs to embedding similarity.
         """
         raise NotImplementedError

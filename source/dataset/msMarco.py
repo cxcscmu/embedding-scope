@@ -61,7 +61,7 @@ class MsMarco(TextRetrievalDataset):
         file = Path(base, f"{partition}.pkl")
         return textRetrievalGetRelevantPassages(file)
 
-    def getNeighborPassages(self, partition, k):
+    def getNeighborPassages(self, partition, embedding):
         raise NotImplementedError
 
 
