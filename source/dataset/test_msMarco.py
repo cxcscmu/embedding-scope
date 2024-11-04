@@ -35,6 +35,17 @@ def test_msMarco_getPassages(setup: MsMarco):
     assert passageText.endswith("innocent lives obliterated.")
 
 
+def test_msMarco_getPassageEmbeddings(setup: MsMarco):
+    """
+    Test the getPassageEmbeddings method of the MsMarco class.
+    """
+    passageID, passageEmbedding = next(setup.getPassageEmbeddings(MiniCPM))
+    assert isinstance(passageID, str)
+    assert passageID == "0"
+    assert isinstance(passageEmbedding, np.ndarray)
+    assert passageEmbedding.shape == (MiniCPM.size,)
+
+
 def test_msMarco_getQueries(setup: MsMarco):
     """
     Test the getQueries method of the MsMarco class.
@@ -51,12 +62,17 @@ def test_msMarco_getQueries(setup: MsMarco):
     assert queryText == "cost of endless pools/swim spa"
 
 
-def test_msMarco_getPassageEmbeddings(setup: MsMarco):
+def test_msMarco_getQueryEmbeddings(setup: MsMarco):
     """
-    Test the getPassageEmbeddings method of the MsMarco class.
+    Test the getQueryEmbeddings method of the MsMarco class.
     """
-    passageID, passageEmbedding = next(setup.getPassageEmbeddings(MiniCPM))
-    assert isinstance(passageID, str)
-    assert passageID == "0"
-    assert isinstance(passageEmbedding, np.ndarray)
-    assert passageEmbedding.shape == (MiniCPM.size,)
+    queryID, queryEmbedding = next(setup.getQueryEmbeddings("train", MiniCPM))
+    assert isinstance(queryID, str)
+    assert queryID == "121352"
+    assert isinstance(queryEmbedding, np.ndarray)
+    assert queryEmbedding.shape == (MiniCPM.size,)
+    queryID, queryEmbedding = next(setup.getQueryEmbeddings("dev", MiniCPM))
+    assert isinstance(queryID, str)
+    assert queryID == "1048578"
+    assert isinstance(queryEmbedding, np.ndarray)
+    assert queryEmbedding.shape == (MiniCPM.size,)

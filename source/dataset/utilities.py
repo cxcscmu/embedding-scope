@@ -23,16 +23,6 @@ def textRetrievalGetPassages(base: Path) -> Iterator[Tuple[str, str]]:
                 yield x.as_py(), y.as_py()
 
 
-def textRetrievalGetQueries(base: Path) -> Iterator[Tuple[str, str]]:
-    """
-    Getting queries from a text retrieval dataset.
-
-    :param base: The base path for the queries.
-    :return: Iterator over query IDs and texts.
-    """
-    return textRetrievalGetPassages(base)
-
-
 def textRetrievalGetPassageEmbeddings(
     base: Path,
 ) -> Iterator[Tuple[str, NDArray[np.float32]]]:
@@ -46,6 +36,16 @@ def textRetrievalGetPassageEmbeddings(
         data = np.load(path)
         for x, y in zip(data["ids"], data["vectors"]):
             yield str(x), y
+
+
+def textRetrievalGetQueries(base: Path) -> Iterator[Tuple[str, str]]:
+    """
+    Getting queries from a text retrieval dataset.
+
+    :param base: The base path for the queries.
+    :return: Iterator over query IDs and texts.
+    """
+    return textRetrievalGetPassages(base)
 
 
 def textRetrievalGetQueryEmbeddings(

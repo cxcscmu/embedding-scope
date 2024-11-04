@@ -37,16 +37,6 @@ class TextRetrievalDataset(Dataset):
         """
 
     @abstractmethod
-    def getQueries(self, partition: PartitionType) -> Iterator[Tuple[str, str]]:
-        """
-        Get the queries in the dataset.
-
-        :param partition: The partition to get queries from.
-        :return: Iterator over query IDs and texts.
-        """
-        raise NotImplementedError
-
-    @abstractmethod
     def getPassageEmbeddings(
         self, embedding: Type[TextEmbedding]
     ) -> Iterator[Tuple[str, NDArray[np.float32]]]:
@@ -55,6 +45,16 @@ class TextRetrievalDataset(Dataset):
 
         :param embedding: The embedding to use.
         :return: Iterator over passage IDs and embeddings.
+        """
+        raise NotImplementedError
+
+    @abstractmethod
+    def getQueries(self, partition: PartitionType) -> Iterator[Tuple[str, str]]:
+        """
+        Get the queries in the dataset.
+
+        :param partition: The partition to get queries from.
+        :return: Iterator over query IDs and texts.
         """
         raise NotImplementedError
 

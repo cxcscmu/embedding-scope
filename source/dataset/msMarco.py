@@ -16,8 +16,12 @@ import numpy as np
 from source import console
 from source.interface import PartitionType, TextRetrievalDataset, TextEmbedding
 from source.dataset import workspace
-from source.dataset.utilities import textRetrievalGetPassages, textRetrievalGetQueries
-from source.dataset.utilities import textRetrievalGetPassageEmbeddings
+from source.dataset.utilities import (
+    textRetrievalGetPassages,
+    textRetrievalGetPassageEmbeddings,
+    textRetrievalGetQueries,
+    textRetrievalGetQueryEmbeddings,
+)
 from source.embedding.miniCPM import MiniCPM
 from source.embedding.bgeBase import BgeBase
 
@@ -36,21 +40,21 @@ class MsMarco(TextRetrievalDataset):
         base = GetPassagesInit.base
         return textRetrievalGetPassages(base)
 
-    def getQueries(self, partition: PartitionType) -> Iterator[Tuple[str, str]]:
-        base = GetQueriesInit.base
-        return textRetrievalGetQueries(base / partition)
-
     def getPassageEmbeddings(
         self, embedding: Type[TextEmbedding]
     ) -> Iterator[Tuple[str, NDArray[np.float32]]]:
         base = GetPassageEmbeddingsInit.base
         return textRetrievalGetPassageEmbeddings(base / embedding.name)
 
+    def getQueries(self, partition: PartitionType) -> Iterator[Tuple[str, str]]:
+        base = GetQueriesInit.base
+        return textRetrievalGetQueries(base / partition)
+
     def getQueryEmbeddings(
         self, partition: PartitionType, embedding: Type[TextEmbedding]
     ) -> Iterator[Tuple[str, NDArray[np.float32]]]:
         base = GetQueryEmbeddingsInit.base
-        return textRetrievalGetPassageEmbeddings(base / partition / embedding.name)
+        return textRetrievalGetQueryEmbeddings(base / partition / embedding.name)
 
 
 class GetPassagesInit:
