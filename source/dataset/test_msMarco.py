@@ -55,6 +55,7 @@ def test_msMarco_getQueries(setup: MsMarco):
     assert queryID == "121352"
     assert isinstance(queryText, str)
     assert queryText == "define extreme"
+
     queryID, queryText = next(setup.getQueries("dev"))
     assert isinstance(queryID, str)
     assert queryID == "1048578"
@@ -71,8 +72,38 @@ def test_msMarco_getQueryEmbeddings(setup: MsMarco):
     assert queryID == "121352"
     assert isinstance(queryEmbedding, np.ndarray)
     assert queryEmbedding.shape == (MiniCPM.size,)
+
     queryID, queryEmbedding = next(setup.getQueryEmbeddings("dev", MiniCPM))
     assert isinstance(queryID, str)
     assert queryID == "1048578"
     assert isinstance(queryEmbedding, np.ndarray)
     assert queryEmbedding.shape == (MiniCPM.size,)
+
+
+def test_msMarco_getRelevantPassages(setup: MsMarco):
+    """
+    Test the getRelevantPassages method of the MsMarco class.
+    """
+    data = setup.getRelevantPassages("train")
+    assert isinstance(data, dict)
+    queryID, relevantPassages = next(iter(data.items()))
+    assert isinstance(queryID, str)
+    assert queryID == "1185869"
+    assert isinstance(relevantPassages, dict)
+    passageID, relevance = next(iter(relevantPassages.items()))
+    assert isinstance(passageID, str)
+    assert passageID == "0"
+    assert isinstance(relevance, int)
+    assert relevance == 1
+
+    data = setup.getRelevantPassages("dev")
+    assert isinstance(data, dict)
+    queryID, relevantPassages = next(iter(data.items()))
+    assert isinstance(queryID, str)
+    assert queryID == "1102432"
+    assert isinstance(relevantPassages, dict)
+    passageID, relevance = next(iter(relevantPassages.items()))
+    assert isinstance(passageID, str)
+    assert passageID == "2026790"
+    assert isinstance(relevance, int)
+    assert relevance == 1
