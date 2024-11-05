@@ -44,7 +44,7 @@ class V2410(Trainer):
     ):
         self.dataset = dataset
         self.embedding = embedding
-        autoencoder = autoencoder.to(devices[0])
+        autoencoder.to(devices[0])
         self.autoencoder = nn.DataParallel(autoencoder, devices)
         self.optimizer = optimizer
         self.scheduler = scheduler
