@@ -3,7 +3,7 @@
 #SBATCH --partition=general
 #SBATCH --time=12:00:00
 #SBATCH --cpus-per-task=8
-#SBATCH --gres=gpu:A6000:1
+#SBATCH --gres=gpu:A6000:4
 #SBATCH --mem=128G
 
 ##############################################################################
@@ -38,3 +38,4 @@ entrypoint=source.dataset.msMarco
 # python3 -m $entrypoint getQueries --numPartitions 1
 # python3 -m $entrypoint getQueryEmbeddings --embedding MiniCPM --numPartitions 1 --partitionIndex 0 --batchSize 128
 # python3 -m $entrypoint getRelevantPassages
+python3 -m $entrypoint getNeighborPassages --embedding MiniCPM --devices 0 1 2 3

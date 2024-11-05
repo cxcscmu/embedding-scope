@@ -6,7 +6,7 @@ import pickle
 import argparse
 import subprocess
 from pathlib import Path
-from typing import List, Dict
+from typing import List, Dict, Type
 from hashlib import md5
 import requests
 import pyarrow as pa
@@ -25,6 +25,7 @@ from source.dataset.utilities import (
 )
 from source.embedding.miniCPM import MiniCPM
 from source.embedding.bgeBase import BgeBase
+from source.retriever.faiss import FaissRetriever
 
 
 class MsMarco(TextRetrievalDataset):
@@ -383,6 +384,58 @@ class GetRelevantPassagesInit:
         self.step2()
 
 
+class GetNeighborPassagesInit:
+    """
+    Prepare the neighbor passages in the dataset.
+
+    Attributes:
+        base: The base path for the neighbor passages.
+    """
+
+    base = Path(workspace, "MsMarco/neighborPassages")
+
+    def __init__(self, embedding: Type[TextEmbedding], devices: List[int]) -> None:
+        self.embedding = embedding
+        self.retriever = FaissRetriever(embedding.size, devices)
+        self.base.mkdir(mode=0o770, parents=True, exist_ok=True)
+        self.dispatch()
+
+    def dispatch(self) -> None:
+        """
+        Dispatch the steps.
+        """
+        console.log("Loading the passages")
+        dataset, topK = MsMarco(), 256
+        iterator = dataset.getPassageEmbeddings(self.embedding)
+        for passageID, passageEmbedding in iterator:
+            self.retriever.add([passageID], np.expand_dims(passageEmbedding, axis=0))
+        batchSize = 256
+        choices: List[PartitionType] = ["train", "dev"]
+        for partition in choices:
+            data: Dict[str, Dict[str, float]] = {}
+            console.log(f"Loading the queries from {partition}")
+            iterator = dataset.getQueryEmbeddings(partition, self.embedding)
+            ids: List[str] = []
+            vectors: List[np.ndarray] = []
+            for i, (queryID, queryEmbedding) in enumerate(iterator):
+                ids.append(queryID)
+                vectors.append(queryEmbedding)
+                if len(vectors) == batchSize:
+                    vectors = np.array(vectors)
+                    results, scores = self.retriever.search(vectors, topK)
+                    for j, (result, score) in enumerate(zip(results, scores)):
+                        data[ids[j]] = {r: s for r, s in zip(result, score)}
+                    ids = []
+                    vectors = []
+            if len(vectors) > 0:
+                vectors = np.array(vectors)
+                results, scores = self.retriever.search(vectors, topK)
+                for j, (result, score) in enumerate(zip(results, scores)):
+                    data[ids[j]] = {r: s for r, s in zip(result, score)}
+            with Path(self.base, f"{partition}.pkl").open("wb") as file:
+                pickle.dump(data, file)
+
+
 def main() -> None:
     """
     The entry point.
@@ -405,6 +458,9 @@ def main() -> None:
     getQueryEmbeddings.add_argument("--partitionIndex", type=int, required=True)
     getQueryEmbeddings.add_argument("--batchSize", type=int, required=True)
     subparsers.add_parser("getRelevantPassages")
+    getNeighborPassages = subparsers.add_parser("getNeighborPassages")
+    getNeighborPassages.add_argument("--embedding", type=str, required=True)
+    getNeighborPassages.add_argument("--devices", type=int, nargs="+", required=True)
 
     parsed = parser.parse_args()
     match parsed.command:
@@ -444,6 +500,15 @@ def main() -> None:
             )
         case "getRelevantPassages":
             GetRelevantPassagesInit()
+        case "getNeighborPassages":
+            match parsed.embedding:
+                case "MiniCPM":
+                    embedding = MiniCPM
+                case "BgeBase":
+                    embedding = BgeBase
+                case _:
+                    raise NotImplementedError(parsed.embedding)
+            GetNeighborPassagesInit(embedding, parsed.devices)
 
 
 if __name__ == "__main__":
