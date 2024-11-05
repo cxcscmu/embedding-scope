@@ -2,7 +2,7 @@
 Specify the trainer interface.
 """
 
-from abc import ABC
+from abc import ABC, abstractmethod
 
 
 class Trainer(ABC):
