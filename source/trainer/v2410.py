@@ -44,6 +44,7 @@ class V2410(Trainer):
     ):
         self.dataset = dataset
         self.embedding = embedding
+        autoencoder = autoencoder.to(devices[0])
         self.autoencoder = nn.DataParallel(autoencoder, devices)
         self.optimizer = optimizer
         self.scheduler = scheduler
@@ -81,9 +82,9 @@ class V2410(Trainer):
         console.log("Building the training dataset...")
         self.trainDataset: List[Tuple[NDArray[np.float32], NDArray[np.float32]]] = []
         for queryID, neighbors in self.trainNeighbors.items():
-            buffer = np.empty((len(neighbors), self.embedding.size), dtype=np.float32)
             neighbors = sorted(neighbors.items(), key=lambda x: x[1], reverse=True)
             neighbors = neighbors[: self.numNeighbors]
+            buffer = np.empty((len(neighbors), self.embedding.size), dtype=np.float32)
             for i, (passageID, _) in enumerate(neighbors):
                 buffer[i] = self.passages[passageID]
             queryEmbedding = self.trainQueries[queryID]
@@ -91,9 +92,9 @@ class V2410(Trainer):
         console.log("Building the validation dataset...")
         self.validDataset: List[Tuple[NDArray[np.float32], NDArray[np.float32]]] = []
         for queryID, neighbors in self.validNeighbors.items():
-            buffer = np.empty((len(neighbors), self.embedding.size), dtype=np.float32)
             neighbors = sorted(neighbors.items(), key=lambda x: x[1], reverse=True)
             neighbors = neighbors[: self.numNeighbors]
+            buffer = np.empty((len(neighbors), self.embedding.size), dtype=np.float32)
             for i, (passageID, _) in enumerate(neighbors):
                 buffer[i] = self.passages[passageID]
             queryEmbedding = self.validQueries[queryID]
@@ -143,14 +144,14 @@ class V2410(Trainer):
         indices = np.arange(len(self.trainDataset))
         np.random.shuffle(indices)
         batches = np.array_split(indices, len(indices) // self.batchSize)
-        for batch in batches:
-            console.log(f"Train    : {batch:08d}/{len(batches):08d}")
+        for i, batch in enumerate(batches):
+            console.log(f"Train    : {i:08d}/{len(batches):08d}")
             # combine queries and neighbors into buffers
             N, D, K = len(batch), self.numNeighbors, self.embedding.size
             qrys = np.empty((N, K), dtype=np.float32)
             docs = np.empty((N, D, K), dtype=np.float32)
-            for i, index in enumerate(batch):
-                qrys[i], docs[i] = self.trainDataset[index]
+            for j, index in enumerate(batch):
+                qrys[j], docs[j] = self.trainDataset[index]
             # convert to tensors on the device
             qrys = torch.from_numpy(qrys).to(self.devices[0])
             docs = torch.from_numpy(docs).to(self.devices[0])
@@ -173,14 +174,14 @@ class V2410(Trainer):
         indices = np.arange(len(self.validDataset))
         np.random.shuffle(indices)
         batches = np.array_split(indices, len(indices) // self.batchSize)
-        for batch in batches:
-            console.log(f"Validate : {batch:08d}/{len(batches):08d}")
+        for i, batch in enumerate(batches):
+            console.log(f"Validate : {i:08d}/{len(batches):08d}")
             # combine queries and neighbors into buffers
             N, D, K = len(batch), self.numNeighbors, self.embedding.size
             qrys = np.empty((N, K), dtype=np.float32)
             docs = np.empty((N, D, K), dtype=np.float32)
-            for i, index in enumerate(batch):
-                qrys[i], docs[i] = self.validDataset[index]
+            for j, index in enumerate(batch):
+                qrys[j], docs[j] = self.validDataset[index]
             # convert to tensors on the device
             qrys = torch.from_numpy(qrys).to(self.devices[0])
             docs = torch.from_numpy(docs).to(self.devices[0])
