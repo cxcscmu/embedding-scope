@@ -22,6 +22,7 @@ from source.dataset.utilities import (
     textRetrievalGetQueries,
     textRetrievalGetQueryEmbeddings,
     textRetrievalGetRelevantPassages,
+    textRetrievalGetNeighborPassages,
 )
 from source.embedding.miniCPM import MiniCPM
 from source.embedding.bgeBase import BgeBase
@@ -63,7 +64,9 @@ class MsMarco(TextRetrievalDataset):
         return textRetrievalGetRelevantPassages(file)
 
     def getNeighborPassages(self, partition, embedding):
-        raise NotImplementedError
+        base = GetNeighborPassagesInit.base
+        file = Path(base, f"{partition}.pkl")
+        return textRetrievalGetNeighborPassages(file)
 
 
 class GetPassagesInit:

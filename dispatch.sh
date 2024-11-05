@@ -4,7 +4,7 @@
 #SBATCH --time=12:00:00
 #SBATCH --cpus-per-task=8
 #SBATCH --gres=gpu:A6000:4
-#SBATCH --mem=128G
+#SBATCH --mem=256G
 
 ##############################################################################
 # Load the required modules.

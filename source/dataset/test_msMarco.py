@@ -107,3 +107,15 @@ def test_msMarco_getRelevantPassages(setup: MsMarco):
     assert passageID == "2026790"
     assert isinstance(relevance, int)
     assert relevance == 1
+
+
+def test_msMarco_getNeighborPassages(setup: MsMarco):
+    """
+    Test the getNeighborPassages method of the MsMarco class.
+    """
+    data = setup.getNeighborPassages("train", MiniCPM)
+    assert isinstance(data, dict)
+    queryID, neighborPassages = next(iter(data.items()))
+    assert isinstance(queryID, str)
+    assert queryID == "121352"
+    assert isinstance(neighborPassages, dict)

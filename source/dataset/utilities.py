@@ -72,3 +72,16 @@ def textRetrievalGetRelevantPassages(
     """
     with file.open("rb") as f:
         return pickle.load(f)
+
+
+def textRetrievalGetNeighborPassages(
+    file: Path,
+) -> Dict[str, Dict[str, float]]:
+    """
+    Getting neighbor passages from a text retrieval dataset.
+
+    :param file: The file containing the neighbor passages.
+    :return: Mapping from query IDs to mapping from passage IDs to relevance.
+    """
+    with file.open("rb") as f:
+        return pickle.load(f)
