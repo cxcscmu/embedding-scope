@@ -14,23 +14,23 @@ class KSparseAutoencoder(AutoEncoder, nn.Module):
     Implementation of the KSparseAutoencoder.
     """
 
-    def __init__(self, vectorSize: int, latentSize: int, topK: int) -> None:
+    def __init__(self, vectorSize: int, latentSize: int, latentTopK: int):
         """
         Initialize the KSparseAutoencoder.
 
         :param vectorSize: The size of the input vectors.
         :param latentSize: The size of the latent features.
-        :param topK: The number of non-zero elements in the latent features.
+        :param latentTopK: The number of top-k features to keep.
         """
         nn.Module.__init__(self)
         self.encoder = nn.Linear(vectorSize, latentSize)
         self.decoder = nn.Linear(latentSize, vectorSize)
-        self.topK = topK
+        self.latentTopK = latentTopK
 
     def forward(self, x: Tensor) -> Tuple[Tensor, Tensor]:
         xbar = x - self.decoder.bias
         a = self.encoder.forward(xbar)
-        pack = torch.topk(a, self.topK)
+        pack = torch.topk(a, self.latentTopK)
         f = torch.zeros_like(a)
         f.scatter_(1, pack.indices, F.relu(pack.values))
         xhat = self.decoder.forward(f)

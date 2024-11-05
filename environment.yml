@@ -15,6 +15,7 @@ dependencies:
   - protobuf==5.27.5
   - sentencepiece==0.2.0
   - faiss-gpu
+  - attrs
   - rich
   - pyarrow
   - pylint
