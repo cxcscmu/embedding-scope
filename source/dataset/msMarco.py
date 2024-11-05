@@ -407,8 +407,13 @@ class GetNeighborPassagesInit:
         console.log("Loading the passages")
         dataset, topK = MsMarco(), 256
         iterator = dataset.getPassageEmbeddings(self.embedding)
+        ids: List[str] = []
+        vectors: List[np.ndarray] = []
         for passageID, passageEmbedding in iterator:
-            self.retriever.add([passageID], np.expand_dims(passageEmbedding, axis=0))
+            ids.append(passageID)
+            vectors.append(passageEmbedding)
+        self.retriever.add(ids, np.array(vectors))
+
         batchSize = 256
         choices: List[PartitionType] = ["train", "dev"]
         for partition in choices:
