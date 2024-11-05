@@ -35,15 +35,6 @@ entrypoint=source.dataset.msMarco
 # python3 -m $entrypoint getPassageEmbeddings --embedding MiniCPM --numPartitions 16 --partitionIndex 13 --batchSize 128
 # python3 -m $entrypoint getPassageEmbeddings --embedding MiniCPM --numPartitions 16 --partitionIndex 14 --batchSize 128
 # python3 -m $entrypoint getPassageEmbeddings --embedding MiniCPM --numPartitions 16 --partitionIndex 15 --batchSize 128
-# python3 -m $entrypoint getPassageEmbeddings --embedding BgeBase --numPartitions 8 --partitionIndex 0 --batchSize 512
-# python3 -m $entrypoint getPassageEmbeddings --embedding BgeBase --numPartitions 8 --partitionIndex 1 --batchSize 512
-# python3 -m $entrypoint getPassageEmbeddings --embedding BgeBase --numPartitions 8 --partitionIndex 2 --batchSize 512
-# python3 -m $entrypoint getPassageEmbeddings --embedding BgeBase --numPartitions 8 --partitionIndex 3 --batchSize 512
-# python3 -m $entrypoint getPassageEmbeddings --embedding BgeBase --numPartitions 8 --partitionIndex 4 --batchSize 512
-# python3 -m $entrypoint getPassageEmbeddings --embedding BgeBase --numPartitions 8 --partitionIndex 5 --batchSize 512
-# python3 -m $entrypoint getPassageEmbeddings --embedding BgeBase --numPartitions 8 --partitionIndex 6 --batchSize 512
-# python3 -m $entrypoint getPassageEmbeddings --embedding BgeBase --numPartitions 8 --partitionIndex 7 --batchSize 512
 # python3 -m $entrypoint getQueries --numPartitions 1
 # python3 -m $entrypoint getQueryEmbeddings --embedding MiniCPM --numPartitions 1 --partitionIndex 0 --batchSize 128
-# python3 -m $entrypoint getQueryEmbeddings --embedding BgeBase --numPartitions 1 --partitionIndex 0 --batchSize 512
 # python3 -m $entrypoint getRelevantPassages

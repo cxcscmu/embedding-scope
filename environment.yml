@@ -10,10 +10,11 @@ dependencies:
   - pip
   - pytorch=2.4.0
   - pytorch-cuda=12.4
-  - numpy==2.1.2
+  - numpy==1.26.4
   - transformers=4.46.1
   - protobuf==5.27.5
   - sentencepiece==0.2.0
+  - faiss-gpu
   - rich
   - pyarrow
   - pylint
