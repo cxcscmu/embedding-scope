@@ -8,7 +8,7 @@ from torch.utils.data import DataLoader
 from source.interface.embedding import TextEmbedding
 
 
-PartitionType = Literal["train", "dev"]
+PartitionType = Literal["train", "dev", "eval"]
 
 
 class TextRetrievalDataset(ABC):
@@ -37,6 +37,21 @@ class TextRetrievalDataset(ABC):
         Create a new passage embedding loader.
 
         :param embedding: The embedding to use.
+        :param batchSize: The batch size.
+        :param shuffle: Whether to shuffle the data.
+        :param numWorkers: The number of workers.
+        """
+        raise NotImplementedError
+
+    @staticmethod
+    @abstractmethod
+    def newQueryLoader(
+        partition: PartitionType, batchSize: int, shuffle: bool, numWorkers: int
+    ) -> DataLoader:
+        """
+        Create a new query loader.
+
+        :param partition: The partition.
         :param batchSize: The batch size.
         :param shuffle: Whether to shuffle the data.
         :param numWorkers: The number of workers.
