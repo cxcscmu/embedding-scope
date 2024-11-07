@@ -287,7 +287,7 @@ def prepareQueryEmbeddings(
                 if i % numShards % numWorkers != workerSeed:
                     continue
                 batchI.append(i)
-                batchQ.append(query)
+                batchQ.append(f"Query: {query}")
                 if len(batchI) >= batchSize or i == len(loader.dataset) - 1:
                     vectors = embedding.forward(batchQ)
                     for j, x in zip(batchI, vectors):
