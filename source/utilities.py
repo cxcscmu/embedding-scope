@@ -2,6 +2,7 @@
 Utilities for the project.
 """
 
+from tqdm import tqdm as _tqdm
 from source import logger
 
 
@@ -23,3 +24,10 @@ class TqdmFile:
         """
         Flush the message.
         """
+
+
+def tqdm(**kwargs):
+    """
+    Wrapper for tqdm.
+    """
+    return _tqdm(**kwargs, file=TqdmFile, mininterval=3, ncols=80, ascii=False)

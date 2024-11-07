@@ -4,12 +4,11 @@ Utilities for text retrieval dataset.
 
 from typing import List, Tuple
 from pathlib import Path
-from tqdm import tqdm
 import pyarrow.parquet as pq
 import numpy as np
 from numpy.typing import NDArray
 from torch.utils.data import DataLoader, Dataset
-from source.utilities import TqdmFile
+from source.utilities import tqdm
 
 
 class PassageDataset(Dataset):
@@ -23,7 +22,7 @@ class PassageDataset(Dataset):
         self.passages: List[str] = []
 
         glob = list(base.iterdir())
-        with tqdm(total=len(glob), mininterval=3, ncols=80, file=TqdmFile) as progress:
+        with tqdm(total=len(glob)) as progress:
             for path in glob:
                 file = pq.read_table(path)
                 self.pids.extend(str(x) for x in file["pid"])
@@ -49,7 +48,7 @@ class PassageEmbeddingDataset(Dataset):
         glob = list(base.iterdir())
         self.numShards = len(glob)
         self.length = 0
-        with tqdm(total=len(glob), mininterval=3, ncols=80, file=TqdmFile) as progress:
+        with tqdm(total=len(glob)) as progress:
             for path in glob:
                 self.length += sum(1 for _ in path.iterdir())
                 progress.update()
@@ -98,51 +97,6 @@ def newPassageEmbeddingLoaderFrom(
     """
     return DataLoader(
         PassageEmbeddingDataset(base),
-        batch_size=batchSize,
-        shuffle=shuffle,
-        num_workers=numWorkers,
-    )
-
-
-class QueryDataset(Dataset):
-    """
-    Dataset for queries.
-    """
-
-    def __init__(self, base: Path) -> None:
-        super().__init__()
-        self.qids: List[str] = []
-        self.queries: List[str] = []
-
-        glob = list(base.iterdir())
-        with tqdm(total=len(glob), mininterval=3, ncols=80, file=TqdmFile) as progress:
-            for path in glob:
-                file = pq.read_table(path)
-                self.qids.extend(str(x) for x in file["qid"])
-                self.queries.extend(str(x) for x in file["query"])
-                progress.update()
-
-    def __len__(self) -> int:
-        return len(self.qids)
-
-    def __getitem__(self, index: int) -> Tuple[str, str]:
-        return self.qids[index], self.queries[index]
-
-
-def newQueryLoaderFrom(
-    base: Path, batchSize: int, shuffle: bool, numWorkers: int
-) -> DataLoader:
-    """
-    Create a new query loader from the base path.
-
-    :param base: The base path.
-    :param batchSize: The batch size.
-    :param shuffle: Whether to shuffle the data.
-    :param numWorkers: The number of workers.
-    :return: The query loader.
-    """
-    return DataLoader(
-        QueryDataset(base),
         batch_size=batchSize,
         shuffle=shuffle,
         num_workers=numWorkers,
