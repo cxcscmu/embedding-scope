@@ -245,6 +245,60 @@ def prepareQueries(numShards: int):
         path.unlink()
 
 
+def prepareQueryEmbeddings(
+    embedding: TextEmbedding,
+    numShards: int,
+    numWorkers: int,
+    workerSeed: int,
+    batchSize: int,
+):
+    """
+    Prepare the query embedding loader.
+    """
+    logger.info("Preparing the query embeddings")
+    base = Path(workspace, f"msMarco/queryEmbeddings/{embedding.name}")
+    base.mkdir(mode=0o770, parents=True, exist_ok=True)
+
+    choices: List[PartitionType] = ["train", "dev", "eval"]
+    for partition in choices:
+        partitionBase = Path(workspace, f"msMarco/queries/{partition}")
+        partitionBase.mkdir(mode=0o770, parents=True, exist_ok=True)
+
+        logger.info("Sharding the directories, %s", partition)
+        for i in range(numShards):
+            if i % numWorkers == workerSeed:
+                shardBase = Path(partitionBase, f"{i:08d}")
+                shardBase.mkdir(mode=0o770, parents=True, exist_ok=True)
+
+        logger.info("Loading the queries, %s", partition)
+        loader = MsMarco.newQueryLoader(partition, 1, False, 1)
+
+        logger.info("Computing the embeddings, %s", partition)
+        batchI: List[int] = []
+        batchQ: List[str] = []
+        with tqdm(
+            total=len(loader.dataset),
+            mininterval=3,
+            ncols=80,
+            file=TqdmFile,
+        ) as progress:
+            for i, (_, query) in enumerate(loader.dataset):
+                progress.update()
+                if i % numShards % numWorkers != workerSeed:
+                    continue
+                batchI.append(i)
+                batchQ.append(query)
+                if len(batchI) >= batchSize or i == len(loader.dataset) - 1:
+                    vectors = embedding.forward(batchQ)
+                    for j, x in zip(batchI, vectors):
+                        index = j % numShards
+                        shardBase = Path(partitionBase, f"{index:08d}")
+                        np.save(Path(shardBase, f"{j:08d}.npy"), x)
+                    batchI.clear()
+                    batchQ.clear()
+                    cuda.empty_cache()
+
+
 def main():
     """
     The entry point.
@@ -264,6 +318,13 @@ def main():
     preparePassageEmbeddingsParser.add_argument("--devices", type=int, nargs="+", required=True)
     prepareQueriesParser = subparsers.add_parser("prepareQueries")
     prepareQueriesParser.add_argument("--numShards", type=int, required=True)
+    prepareQueryEmbeddingsParser = subparsers.add_parser("prepareQueryEmbeddings")
+    prepareQueryEmbeddingsParser.add_argument("--embedding", type=str, required=True)
+    prepareQueryEmbeddingsParser.add_argument("--numShards", type=int, required=True)
+    prepareQueryEmbeddingsParser.add_argument("--numWorkers", type=int, required=True)
+    prepareQueryEmbeddingsParser.add_argument("--workerSeed", type=int, required=True)
+    prepareQueryEmbeddingsParser.add_argument("--batchSize", type=int, required=True)
+    prepareQueryEmbeddingsParser.add_argument("--devices", type=int, nargs="+", required=True)
     parsed = parser.parse_args()
     # fmt: on
 
@@ -285,6 +346,19 @@ def main():
             )
         case "prepareQueries":
             prepareQueries(parsed.numShards)
+        case "prepareQueryEmbeddings":
+            match parsed.embedding:
+                case "miniCPM":
+                    embedding = MiniCPM(parsed.devices)
+                case _:
+                    raise NotImplementedError
+            prepareQueryEmbeddings(
+                embedding,
+                parsed.numShards,
+                parsed.numWorkers,
+                parsed.workerSeed,
+                parsed.batchSize,
+            )
         case _:
             parser.print_help()
 
