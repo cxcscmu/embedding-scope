@@ -261,7 +261,7 @@ def prepareQueryEmbeddings(
 
     choices: List[PartitionType] = ["train", "dev", "eval"]
     for partition in choices:
-        partitionBase = Path(workspace, f"msMarco/queries/{partition}")
+        partitionBase = Path(base, partition)
         partitionBase.mkdir(mode=0o770, parents=True, exist_ok=True)
 
         logger.info("Sharding the directories, %s", partition)

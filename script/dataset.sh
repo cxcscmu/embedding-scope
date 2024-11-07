@@ -31,6 +31,6 @@ conda activate scope
 # SHAREDCMDS="--numShards 1"
 # python3 -m $ENTRYPOINT prepareQueries $SHAREDCMDS
 
-ENTRYPOINT="source.dataset.textRetrieval.msMarco"
-SHAREDCMDS="--embedding miniCPM --numShards 1024 --numWorkers $SLURM_ARRAY_TASK_COUNT --batchSize 128 --device 0"
-python3 -m $ENTRYPOINT prepareQueryEmbeddings $SHAREDCMDS --workerSeed $SLURM_ARRAY_TASK_ID
+# ENTRYPOINT="source.dataset.textRetrieval.msMarco"
+# SHAREDCMDS="--embedding miniCPM --numShards 1024 --numWorkers $SLURM_ARRAY_TASK_COUNT --batchSize 128 --device 0"
+# python3 -m $ENTRYPOINT prepareQueryEmbeddings $SHAREDCMDS --workerSeed $SLURM_ARRAY_TASK_ID
