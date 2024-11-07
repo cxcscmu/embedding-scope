@@ -9,7 +9,7 @@ import torch.nn.functional as F
 import numpy as np
 from numpy.typing import NDArray
 from transformers import AutoModel, AutoTokenizer
-from source.interface import TextEmbedding
+from source.interface.embedding import TextEmbedding
 from source.embedding import tokenizerKwargs
 
 
@@ -21,7 +21,7 @@ class MiniCPM(TextEmbedding):
         https://huggingface.co/openbmb/MiniCPM-Embedding
     """
 
-    name = "MiniCPM"
+    name = "miniCPM"
     size = 2304
 
     def __init__(self, devices: List[int]):

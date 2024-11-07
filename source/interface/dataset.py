@@ -3,97 +3,42 @@ Specify the dataset interface.
 """
 
 from abc import ABC, abstractmethod
-from typing import Iterator, Tuple, Literal, Type, Dict
-import numpy as np
-from numpy import ndarray as NDArray
-from source.interface import TextEmbedding
-
-
-class Dataset(ABC):
-    """
-    Base class for all datasets.
-
-    Attributes:
-        name: The name of the dataset.
-    """
-
-    name: str
+from typing import Type, Literal
+from torch.utils.data import DataLoader
+from source.interface.embedding import TextEmbedding
 
 
 PartitionType = Literal["train", "dev"]
 
 
-class TextRetrievalDataset(Dataset):
+class TextRetrievalDataset(ABC):
     """
     Base class for text retrieval datasets.
     """
 
+    @staticmethod
     @abstractmethod
-    def getPassages(self) -> Iterator[Tuple[str, str]]:
+    def newPassageLoader(batchSize: int, shuffle: bool, numWorkers: int) -> DataLoader:
         """
-        Get the passages in the dataset.
+        Create a new passage loader.
 
-        :return: Iterator over passage IDs and texts.
+        :param batchSize: The batch size.
+        :param shuffle: Whether to shuffle the data.
+        :param numWorkers: The number of workers.
         """
+        raise NotImplementedError
 
+    @staticmethod
     @abstractmethod
-    def getPassageEmbeddings(
-        self, embedding: Type[TextEmbedding]
-    ) -> Iterator[Tuple[str, NDArray[np.float32]]]:
+    def newPassageEmbeddingLoader(
+        embedding: Type[TextEmbedding], batchSize: int, shuffle: bool, numWorkers: int
+    ) -> DataLoader:
         """
-        Get the embeddings of the passages in the dataset.
+        Create a new passage embedding loader.
 
         :param embedding: The embedding to use.
-        :return: Iterator over passage IDs and embeddings.
-        """
-        raise NotImplementedError
-
-    @abstractmethod
-    def getQueries(self, partition: PartitionType) -> Iterator[Tuple[str, str]]:
-        """
-        Get the queries in the dataset.
-
-        :param partition: The partition to get queries from.
-        :return: Iterator over query IDs and texts.
-        """
-        raise NotImplementedError
-
-    @abstractmethod
-    def getQueryEmbeddings(
-        self, partition: PartitionType, embedding: Type[TextEmbedding]
-    ) -> Iterator[Tuple[str, NDArray[np.float32]]]:
-        """
-        Get the embeddings of the queries in the dataset.
-
-        :param partition: The partition to get queries from.
-        :param embedding: The embedding to use.
-        :return: Iterator over query IDs and embeddings.
-        """
-        raise NotImplementedError
-
-    @abstractmethod
-    def getRelevantPassages(
-        self, partition: PartitionType
-    ) -> Dict[str, Dict[str, int]]:
-        """
-        Get the relevant passages for each query in the dataset.
-
-        :param partition: The partition to get relevant passages from.
-        :return: Mapping from query IDs to mapping from passage IDs to relevance.
-        """
-        raise NotImplementedError
-
-    @abstractmethod
-    def getNeighborPassages(
-        self, partition: PartitionType, embedding: Type[TextEmbedding]
-    ) -> Dict[str, Dict[str, float]]:
-        """
-        Get the k nearest neighbor passages for each query in the dataset.
-        This method does not rely on relevance judgments but the embedding similarity.
-        At most 256 nearest neighbors, measured by dot product, are returned.
-
-        :param partition: The partition to get neighbor passages from.
-        :param embedding: The embedding to use.
-        :return: Mapping from query IDs to mapping from passage IDs to embedding similarity.
+        :param batchSize: The batch size.
+        :param shuffle: Whether to shuffle the data.
+        :param numWorkers: The number of workers.
         """
         raise NotImplementedError
