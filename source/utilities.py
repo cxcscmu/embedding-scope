@@ -26,8 +26,8 @@ class TqdmFile:
         """
 
 
-def tqdm(**kwargs):
+def tqdm(*args, **kwargs):
     """
     Wrapper for tqdm.
     """
-    return _tqdm(**kwargs, file=TqdmFile, mininterval=3, ncols=80, ascii=False)
+    return _tqdm(*args, **kwargs, file=TqdmFile, mininterval=3, ncols=80, ascii=False)

@@ -24,10 +24,11 @@ from source.embedding.bgeBase import BgeBase
 from source.dataset.textRetrieval.utilities import (
     newPassageLoaderFrom,
     newPassageEmbeddingLoaderFrom,
+    newQueryLoaderFrom,
 )
 
 
-class MsMarco(TextRetrievalDataset):
+class MsMarcoDataset(TextRetrievalDataset):
     """
     Implementation for the MS MARCO dataset.
     """
@@ -43,6 +44,13 @@ class MsMarco(TextRetrievalDataset):
     ) -> DataLoader:
         base = Path(workspace, f"msMarco/passageEmbeddings/{embedding.name}")
         return newPassageEmbeddingLoaderFrom(base, batchSize, shuffle, numWorkers)
+
+    @staticmethod
+    def newQueryLoader(
+        partition: PartitionType, batchSize: int, shuffle: bool, numWorkers: int
+    ) -> DataLoader:
+        file = Path(workspace, f"msMarco/queries/{partition}.parquet")
+        return newQueryLoaderFrom(file, batchSize, shuffle, numWorkers)
 
 
 def preparePassages(numShards: int):
@@ -121,7 +129,7 @@ def preparePassageEmbeddings(
     base.mkdir(mode=0o770, parents=True, exist_ok=True)
 
     logger.info("Load the passages")
-    loader = MsMarco.newPassageLoader(batchSize, shuffle=False, numWorkers=1)
+    loader = MsMarcoDataset.newPassageLoader(batchSize, shuffle=False, numWorkers=1)
 
     logger.info("Split the shards with co-workers")
     shards: List[List[NDArray[np.float32]]] = [[] for _ in range(numShards)]

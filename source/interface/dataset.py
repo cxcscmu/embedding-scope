@@ -43,17 +43,17 @@ class TextRetrievalDataset(ABC):
         """
         raise NotImplementedError
 
-    # @staticmethod
-    # @abstractmethod
-    # def newQueryLoader(
-    #     partition: PartitionType, batchSize: int, shuffle: bool, numWorkers: int
-    # ) -> DataLoader:
-    #     """
-    #     Create a new query loader.
+    @staticmethod
+    @abstractmethod
+    def newQueryLoader(
+        partition: PartitionType, batchSize: int, shuffle: bool, numWorkers: int
+    ) -> DataLoader:
+        """
+        Create a new query loader.
 
-    #     :param partition: The partition.
-    #     :param batchSize: The batch size.
-    #     :param shuffle: Whether to shuffle the data.
-    #     :param numWorkers: The number of workers.
-    #     """
-    #     raise NotImplementedError
+        :param partition: The partition.
+        :param batchSize: The batch size.
+        :param shuffle: Whether to shuffle the data.
+        :param numWorkers: The number of workers.
+        """
+        raise NotImplementedError

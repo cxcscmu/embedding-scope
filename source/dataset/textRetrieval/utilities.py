@@ -19,22 +19,22 @@ class PassageDataset(Dataset):
 
     def __init__(self, base: Path) -> None:
         super().__init__()
-        self.pids: List[str] = []
-        self.passages: List[str] = []
-
-        glob = list(base.iterdir())
-        with tqdm(total=len(glob)) as progress:
-            for path in glob:
-                file = pq.read_table(path)
-                self.pids.extend(str(x) for x in file["pid"])
-                self.passages.extend(str(x) for x in file["passage"])
-                progress.update()
+        self.shards = []
+        for file in sorted(base.glob("*.parquet")):
+            data = pq.read_table(file, memory_map=True)
+            self.shards.append(data)
+        self.length = sum(len(x) for x in self.shards)
 
     def __len__(self) -> int:
-        return len(self.pids)
+        return self.length
 
     def __getitem__(self, index: int) -> Tuple[str, str]:
-        return self.pids[index], self.passages[index]
+        for shard in self.shards:
+            if index < len(shard):
+                pid = shard["pid"][index].as_py()
+                passage = shard["passage"][index].as_py()
+                return pid, passage
+            index -= len(shard)
 
 
 def newPassageLoaderFrom(
@@ -64,7 +64,6 @@ class PassageEmbeddingDataset(Dataset):
 
     def __init__(self, base: Path) -> None:
         super().__init__()
-        logger.info("Loading passage embeddings")
         self.shards: List[NDArray[np.float32]] = []
         for file in sorted(base.glob("*.npy")):
             data = np.load(file, mmap_mode="r")
@@ -93,6 +92,44 @@ def newPassageEmbeddingLoaderFrom(
     """
     return DataLoader(
         PassageEmbeddingDataset(base),
+        batch_size=batchSize,
+        shuffle=shuffle,
+        num_workers=numWorkers,
+    )
+
+
+class QueryDataset(Dataset):
+    """
+    Dataset for queries.
+    """
+
+    def __init__(self, file: Path) -> None:
+        super().__init__()
+        self.file = pq.read_table(file, memory_map=True)
+
+    def __len__(self) -> int:
+        return len(self.file)
+
+    def __getitem__(self, index: int) -> Tuple[str, str]:
+        qid = self.file["qid"][index].as_py()
+        query = self.file["query"][index].as_py()
+        return qid, query
+
+
+def newQueryLoaderFrom(
+    file: Path, batchSize: int, shuffle: bool, numWorkers: int
+) -> DataLoader:
+    """
+    Create a new query loader from the file.
+
+    :param file: The file.
+    :param batchSize: The batch size.
+    :param shuffle: Whether to shuffle the data.
+    :param numWorkers: The number of workers.
+    :return: The query loader.
+    """
+    return DataLoader(
+        QueryDataset(file),
         batch_size=batchSize,
         shuffle=shuffle,
         num_workers=numWorkers,
