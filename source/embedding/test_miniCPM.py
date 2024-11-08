@@ -7,14 +7,14 @@ import numpy as np
 from source.embedding.miniCPM import MiniCPM
 
 
-def test_miniCPM_name():
+def test_name():
     """
     Test the name of the MiniCPM class.
     """
-    assert MiniCPM.name == "MiniCPM"
+    assert MiniCPM.name == "miniCPM"
 
 
-def test_miniCPM_size():
+def test_size():
     """
     Test the size of the MiniCPM class.
     """
@@ -29,7 +29,7 @@ def setup_fixture():
     return MiniCPM(devices=[0])
 
 
-def test_miniCPM_forward(setup: MiniCPM):
+def test_forward(setup: MiniCPM):
     """
     Test the forward method of the MiniCPM class.
     """

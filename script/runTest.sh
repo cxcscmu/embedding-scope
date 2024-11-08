@@ -17,7 +17,7 @@ source ~/miniconda3/etc/profile.d/conda.sh
 conda activate scope
 
 ####################################################################
-# Test the dataset module.
+# Run the test.
 ####################################################################
 
-python3 -m pytest -v source/dataset
+python3 -m pytest -v source

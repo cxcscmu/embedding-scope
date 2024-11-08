@@ -6,7 +6,7 @@ from typing import Tuple
 import torch
 from torch import Tensor, nn
 from torch.nn import functional as F
-from source.interface import AutoEncoder
+from source.interface.autoencoder import AutoEncoder
 
 
 class KSparseAutoencoder(AutoEncoder, nn.Module):

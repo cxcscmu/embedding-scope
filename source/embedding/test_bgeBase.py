@@ -7,14 +7,14 @@ import numpy as np
 from source.embedding.bgeBase import BgeBase
 
 
-def test_bgeBase_name():
+def test_name():
     """
     Test the name of the BgeBase class.
     """
-    assert BgeBase.name == "BgeBase"
+    assert BgeBase.name == "bgeBase"
 
 
-def test_bgeBase_size():
+def test_size():
     """
     Test the size of the BgeBase class.
     """
@@ -29,7 +29,7 @@ def setup_fixture():
     return BgeBase(devices=[0])
 
 
-def test_bgeBase_forward(setup: BgeBase):
+def test_forward(setup: BgeBase):
     """
     Test the forward method of the BgeBase class.
     """
