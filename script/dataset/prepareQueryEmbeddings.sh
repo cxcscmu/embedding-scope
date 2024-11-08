@@ -21,11 +21,11 @@ conda activate scope
 # Prepare the MS MARCO dataset.
 ####################################################################
 
-# ENTRYPOINT="source.dataset.textRetrieval.msMarco"
-# SHAREDCMDS="--embedding miniCPM --gpuDevice 0 --batchSize 128 --workerCnt $SLURM_ARRAY_TASK_COUNT"
-# python3 -m $ENTRYPOINT prepareQueryEmbeddings $SHAREDCMDS --numShards 16 --partition "train" --workerIdx $SLURM_ARRAY_TASK_ID
-# python3 -m $ENTRYPOINT prepareQueryEmbeddings $SHAREDCMDS --numShards 2 --partition "dev" --workerIdx $SLURM_ARRAY_TASK_ID
-# python3 -m $ENTRYPOINT prepareQueryEmbeddings $SHAREDCMDS --numShards 2 --partition "eval" --workerIdx $SLURM_ARRAY_TASK_ID
+ENTRYPOINT="source.dataset.textRetrieval.msMarco"
+SHAREDCMDS="--embedding miniCPM --gpuDevice 0 --batchSize 128 --workerCnt $SLURM_ARRAY_TASK_COUNT"
+python3 -m $ENTRYPOINT prepareQueryEmbeddings $SHAREDCMDS --numShards 16 --partition "train" --workerIdx $SLURM_ARRAY_TASK_ID
+python3 -m $ENTRYPOINT prepareQueryEmbeddings $SHAREDCMDS --numShards 2 --partition "dev" --workerIdx $SLURM_ARRAY_TASK_ID
+python3 -m $ENTRYPOINT prepareQueryEmbeddings $SHAREDCMDS --numShards 2 --partition "eval" --workerIdx $SLURM_ARRAY_TASK_ID
 
 ENTRYPOINT="source.dataset.textRetrieval.msMarco"
 SHAREDCMDS="--embedding bgeBase --gpuDevice 0 --batchSize 512 --workerCnt $SLURM_ARRAY_TASK_COUNT"
