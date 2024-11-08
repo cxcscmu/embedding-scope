@@ -145,7 +145,6 @@ def preparePassageEmbeddings(
             batchPsg.append(passage)
             if len(batchIdx) >= batchSize:
                 compute()
-    assert len(batchIdx) == len(batchPsg)
     if batchIdx:
         compute()
 
