@@ -2,10 +2,11 @@
 Implementation for the MS MARCO dataset.
 """
 
+import pickle
 import argparse
 import subprocess
 from hashlib import md5
-from typing import Type, List
+from typing import Type, List, Dict
 from pathlib import Path
 import requests
 import pyarrow as pa
@@ -63,6 +64,12 @@ class MsMarcoDataset(TextRetrievalDataset):
     ) -> DataLoader:
         base = Path(workspace, f"msMarco/queryEmbeddings/{embedding.name}/{partition}")
         return newQueryEmbeddingLoaderFrom(base, batchSize, shuffle, numWorkers)
+
+    @staticmethod
+    def getRelevance(partition: PartitionType) -> Dict[str, Dict[str, int]]:
+        base = Path(workspace, "msMarco/queryRelevance")
+        with Path(base, f"{partition}.pickle").open("rb") as file:
+            return pickle.load(file)
 
 
 def preparePassages(numShards: int):
@@ -281,6 +288,45 @@ def prepareQueryEmbeddings(
             np.save(Path(base, f"{i:08d}.npy"), buffer)
 
 
+def prepareRelevance(partition: PartitionType):
+    """
+    Prepare the relevance judgments.
+    """
+    base = Path(workspace, "msMarco/queryRelevance")
+    base.mkdir(mode=0o770, parents=True, exist_ok=True)
+
+    logger.info("Download the relevance judgments")
+    host = "https://msmarco.z22.web.core.windows.net"
+    link = f"{host}/msmarcoranking/qrels.{partition}.tsv"
+    path = Path(base, f"{partition}.tsv")
+    with requests.get(link, stream=True, timeout=1800) as response:
+        response.raise_for_status()
+        with tqdm(
+            total=int(response.headers["Content-Length"]),
+            unit="B",
+            unit_scale=True,
+            unit_divisor=1024,
+        ) as progress:
+            with path.open("wb") as file:
+                for chunk in response.iter_content(chunk_size=8192):
+                    file.write(chunk)
+                    progress.update(len(chunk))
+
+    logger.info("Refactor the relevance judgments")
+    data: Dict[str, Dict[str, int]] = {}
+    with path.open("r", encoding="utf-8") as file:
+        for line in file:
+            qid, _, pid, rel = line.split()
+            if qid not in data:
+                data[qid] = {}
+            data[qid][pid] = int(rel)
+
+    logger.info("Write the relevance judgments to disk")
+    with path.with_suffix(".pickle").open("wb") as file:
+        pickle.dump(data, file)
+    path.unlink()
+
+
 def main():
     """
     The entry point.
@@ -307,6 +353,8 @@ def main():
     prepareQueryEmbeddingsParser.add_argument("--numShards", type=int, required=True)
     prepareQueryEmbeddingsParser.add_argument("--workerCnt", type=int, required=True)
     prepareQueryEmbeddingsParser.add_argument("--workerIdx", type=int, required=True)
+    prepareRelevanceParser = subparsers.add_parser("prepareRelevance")
+    prepareRelevanceParser.add_argument("--partition", type=str, required=True)
     parsed = parser.parse_args()
     # fmt: on
 
@@ -346,6 +394,8 @@ def main():
                 parsed.workerCnt,
                 parsed.workerIdx,
             )
+        case "prepareRelevance":
+            prepareRelevance(parsed.partition)
         case _:
             parser.print_help()
 
