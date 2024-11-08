@@ -18,7 +18,7 @@ from source import logger
 from source.utilities import tqdm
 from source.dataset.textRetrieval import workspace
 from source.interface.embedding import TextEmbedding
-from source.interface.dataset import TextRetrievalDataset
+from source.interface.dataset import TextRetrievalDataset, PartitionType
 from source.embedding.miniCPM import MiniCPM
 from source.embedding.bgeBase import BgeBase
 from source.dataset.textRetrieval.utilities import (
@@ -49,11 +49,10 @@ def preparePassages(numShards: int):
     """
     Prepare the passage loader.
     """
-    logger.info("Preparing the passages")
     base = Path(workspace, "msMarco/passages")
     base.mkdir(mode=0o770, parents=True, exist_ok=True)
 
-    logger.info("Downloading the passages")
+    logger.info("Download the passages")
     host = "https://msmarco.z22.web.core.windows.net"
     link = f"{host}/msmarcoranking/collection.tar.gz"
     path = Path(base, "collection.tar.gz")
@@ -70,7 +69,7 @@ def preparePassages(numShards: int):
                     file.write(chunk)
                     progress.update(len(chunk))
 
-    logger.info("Extracting the passages")
+    logger.info("Extract the passages from tarball")
     subprocess.run(
         ["tar", "-xzvf", "collection.tar.gz"],
         cwd=base,
@@ -80,7 +79,7 @@ def preparePassages(numShards: int):
     )
     path.unlink()
 
-    logger.info("Sharding the passages")
+    logger.info("Split the passages into shards")
     path = Path(base, "collection.tsv")
     pids: List[List[str]] = [[] for _ in range(numShards)]
     passages: List[List[str]] = [[] for _ in range(numShards)]
@@ -98,7 +97,7 @@ def preparePassages(numShards: int):
                 passages[index].append(passage)
                 progress.update(len(line.encode()))
 
-    logger.info("Writing the shards")
+    logger.info("Write the shards to disk")
     with tqdm(total=numShards) as progress:
         for i in range(numShards):
             pidsShard, passagesShard = pids[i], passages[i]
@@ -156,6 +155,62 @@ def preparePassageEmbeddings(
             np.save(Path(base, f"{i:08d}.npy"), buffer)
 
 
+def prepareQueries():
+    """
+    Prepare the query loader.
+    """
+    base = Path(workspace, "msMarco/queries")
+    base.mkdir(mode=0o770, parents=True, exist_ok=True)
+
+    logger.info("Download the queries")
+    host = "https://msmarco.z22.web.core.windows.net"
+    link = f"{host}/msmarcoranking/queries.tar.gz"
+    path = Path(base, "queries.tar.gz")
+    with requests.get(link, stream=True, timeout=1800) as response:
+        response.raise_for_status()
+        with tqdm(
+            total=int(response.headers["Content-Length"]),
+            unit="B",
+            unit_scale=True,
+            unit_divisor=1024,
+        ) as progress:
+            with path.open("wb") as file:
+                for chunk in response.iter_content(chunk_size=8192):
+                    file.write(chunk)
+                    progress.update(len(chunk))
+
+    logger.info("Extract the queries from tarball")
+    subprocess.run(
+        ["tar", "-xzvf", "queries.tar.gz"],
+        cwd=base,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=True,
+    )
+    path.unlink()
+
+    choices: List[PartitionType] = ["train", "dev", "eval"]
+    for partition in choices:
+        logger.info("Refactor the %s queries", partition)
+        path = Path(base, f"queries.{partition}.tsv")
+        qids, queries = [], []
+        with tqdm(
+            total=path.stat().st_size,
+            unit="B",
+            unit_scale=True,
+            unit_divisor=1024,
+        ) as progress:
+            with path.open("r", encoding="utf-8") as file:
+                for line in file:
+                    pid, query = line.split("\t")
+                    qids.append(pid)
+                    queries.append(query)
+                    progress.update(len(line.encode()))
+        table = pa.Table.from_pydict({"qid": qids, "query": queries})
+        pq.write_table(table, Path(base, f"{partition}.parquet"))
+        path.unlink()
+
+
 def main():
     """
     The entry point.
@@ -173,6 +228,7 @@ def main():
     preparePassageEmbeddingsParser.add_argument("--numShards", type=int, required=True)
     preparePassageEmbeddingsParser.add_argument("--workerCnt", type=int, required=True)
     preparePassageEmbeddingsParser.add_argument("--workerIdx", type=int, required=True)
+    subparsers.add_parser("prepareQueries")
     parsed = parser.parse_args()
     # fmt: on
 
@@ -194,6 +250,8 @@ def main():
                 parsed.workerCnt,
                 parsed.workerIdx,
             )
+        case "prepareQueries":
+            prepareQueries()
         case _:
             parser.print_help()
 
