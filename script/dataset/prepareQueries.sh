@@ -4,7 +4,7 @@
 #SBATCH --time=12:00:00
 #SBATCH --cpus-per-task=4
 #SBATCH --gres=gpu:A6000:1
-#SBATCH --mem=128G
+#SBATCH --mem=32G
 #SBATCH --mail-type=END
 #SBATCH --mail-user=haok@andrew.cmu.edu
 #SBATCH --exclude=babel-1-31,babel-0-37

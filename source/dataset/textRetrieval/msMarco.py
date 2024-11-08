@@ -220,6 +220,7 @@ def prepareQueries():
 
 
 def prepareQueryEmbeddings(
+    partition: PartitionType,
     embedding: TextEmbedding,
     batchSize: int,
     numShards: int,
@@ -229,7 +230,7 @@ def prepareQueryEmbeddings(
     """
     Prepare the query embedding loader.
     """
-    base = Path(workspace, f"msMarco/queryEmbeddings/{embedding.name}")
+    base = Path(workspace, f"msMarco/queryEmbeddings/{embedding.name}/{partition}")
     base.mkdir(mode=0o770, parents=True, exist_ok=True)
 
     batchIdx, batchQry = [], []
@@ -243,34 +244,29 @@ def prepareQueryEmbeddings(
         batchQry.clear()
         cuda.empty_cache()
 
-    choices: List[PartitionType] = ["train", "dev", "eval"]
-    for partition in choices:
-        partitionBase = Path(base, partition)
-        partitionBase.mkdir(mode=0o770, parents=True, exist_ok=True)
+    logger.info("Load the queries")
+    loader = MsMarcoDataset.newQueryLoader(partition, 1, False, 1)
 
-        logger.info("Load the %s queries", partition)
-        loader = MsMarcoDataset.newQueryLoader(partition, 1, False, 1)
+    logger.info("Split the shards with co-workers")
+    shards: List[List[NDArray[np.float32]]] = [[] for _ in range(numShards)]
 
-        logger.info("Split the %s shards with co-workers", partition)
-        shards: List[List[NDArray[np.float32]]] = [[] for _ in range(numShards)]
+    logger.info("Generate the embeddings")
+    for i, (_, query) in enumerate(tqdm(iterable=loader.dataset)):
+        assert len(batchIdx) == len(batchQry)
+        _, shardIdx = divmod(i, numShards)
+        if shardIdx % workerCnt == workerIdx:
+            batchIdx.append(i)
+            batchQry.append(query)
+            if len(batchIdx) >= batchSize:
+                compute()
+    if batchIdx:
+        compute()
 
-        logger.info("Generate the %s embeddings", partition)
-        for i, (_, query) in enumerate(tqdm(iterable=loader.dataset)):
-            assert len(batchIdx) == len(batchQry)
-            _, shardIdx = divmod(i, numShards)
-            if shardIdx % workerCnt == workerIdx:
-                batchIdx.append(i)
-                batchQry.append(query)
-                if len(batchIdx) >= batchSize:
-                    compute()
-        if batchIdx:
-            compute()
-
-        logger.info("Write the %s shards to disk", partition)
-        for i, shard in enumerate(shards):
-            if i % workerCnt == workerIdx:
-                buffer = np.stack(shard, dtype=np.float32)
-                np.save(Path(partitionBase, f"{i:08d}.npy"), buffer)
+    logger.info("Write the shards to disk")
+    for i, shard in enumerate(shards):
+        if i % workerCnt == workerIdx:
+            buffer = np.stack(shard, dtype=np.float32)
+            np.save(Path(base, f"{i:08d}.npy"), buffer)
 
 
 def main():
@@ -292,6 +288,7 @@ def main():
     preparePassageEmbeddingsParser.add_argument("--workerIdx", type=int, required=True)
     subparsers.add_parser("prepareQueries")
     prepareQueryEmbeddingsParser = subparsers.add_parser("prepareQueryEmbeddings")
+    prepareQueryEmbeddingsParser.add_argument("--partition", type=str, required=True)
     prepareQueryEmbeddingsParser.add_argument("--embedding", type=str, required=True)
     prepareQueryEmbeddingsParser.add_argument("--gpuDevice", type=int, nargs="+", required=True)
     prepareQueryEmbeddingsParser.add_argument("--batchSize", type=int, required=True)
@@ -321,6 +318,22 @@ def main():
             )
         case "prepareQueries":
             prepareQueries()
+        case "prepareQueryEmbeddings":
+            match parsed.embedding:
+                case "miniCPM":
+                    embedding = MiniCPM(parsed.gpuDevice)
+                case "bgeBase":
+                    embedding = BgeBase(parsed.gpuDevice)
+                case _:
+                    raise NotImplementedError
+            prepareQueryEmbeddings(
+                parsed.partition,
+                embedding,
+                parsed.batchSize,
+                parsed.numShards,
+                parsed.workerCnt,
+                parsed.workerIdx,
+            )
         case _:
             parser.print_help()
 
