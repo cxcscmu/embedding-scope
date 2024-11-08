@@ -21,4 +21,4 @@ conda activate scope
 ##############################################################################
 
 ENTRYPOINT="source.dataset.textRetrieval.msMarco"
-python3 -m $ENTRYPOINT prepareQueries $SHAREDCMDS
+python3 -m $ENTRYPOINT prepareQueries
