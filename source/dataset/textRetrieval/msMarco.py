@@ -25,6 +25,7 @@ from source.dataset.textRetrieval.utilities import (
     newPassageLoaderFrom,
     newPassageEmbeddingLoaderFrom,
     newQueryLoaderFrom,
+    newQueryEmbeddingLoaderFrom,
 )
 
 
@@ -51,6 +52,17 @@ class MsMarcoDataset(TextRetrievalDataset):
     ) -> DataLoader:
         file = Path(workspace, f"msMarco/queries/{partition}.parquet")
         return newQueryLoaderFrom(file, batchSize, shuffle, numWorkers)
+
+    @staticmethod
+    def newQueryEmbeddingLoader(
+        partition: PartitionType,
+        embedding: Type[TextEmbedding],
+        batchSize: int,
+        shuffle: bool,
+        numWorkers: int,
+    ) -> DataLoader:
+        base = Path(workspace, f"msMarco/queryEmbeddings/{embedding.name}/{partition}")
+        return newQueryEmbeddingLoaderFrom(base, batchSize, shuffle, numWorkers)
 
 
 def preparePassages(numShards: int):

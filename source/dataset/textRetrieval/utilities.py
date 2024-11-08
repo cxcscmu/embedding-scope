@@ -8,8 +8,6 @@ import pyarrow.parquet as pq
 import numpy as np
 from numpy.typing import NDArray
 from torch.utils.data import DataLoader, Dataset
-from source import logger
-from source.utilities import tqdm
 
 
 class PassageDataset(Dataset):
@@ -130,6 +128,47 @@ def newQueryLoaderFrom(
     """
     return DataLoader(
         QueryDataset(file),
+        batch_size=batchSize,
+        shuffle=shuffle,
+        num_workers=numWorkers,
+    )
+
+
+class QueryEmbeddingDataset(Dataset):
+    """
+    Dataset for query embeddings.
+    """
+
+    def __init__(self, base: Path) -> None:
+        super().__init__()
+        self.shards: List[NDArray[np.float32]] = []
+        for file in sorted(base.glob("*.npy")):
+            data = np.load(file, mmap_mode="r")
+            self.shards.append(data)
+        self.length = sum(len(x) for x in self.shards)
+
+    def __len__(self) -> int:
+        return self.length
+
+    def __getitem__(self, index: int) -> NDArray[np.float32]:
+        shardOff, shardIdx = divmod(index, len(self.shards))
+        return self.shards[shardIdx][shardOff]
+
+
+def newQueryEmbeddingLoaderFrom(
+    base: Path, batchSize: int, shuffle: bool, numWorkers: int
+) -> DataLoader:
+    """
+    Create a new query embedding loader from the base path.
+
+    :param base: The base path.
+    :param batchSize: The batch size.
+    :param shuffle: Whether to shuffle the data.
+    :param numWorkers: The number of workers.
+    :return: The query embedding loader.
+    """
+    return DataLoader(
+        QueryEmbeddingDataset(base),
         batch_size=batchSize,
         shuffle=shuffle,
         num_workers=numWorkers,
