@@ -9,7 +9,7 @@ import torch.nn.functional as F
 import numpy as np
 from numpy.typing import NDArray
 from transformers import AutoModel, AutoTokenizer
-from source.interface import TextEmbedding
+from source.interface.embedding import TextEmbedding
 from source.embedding import tokenizerKwargs
 
 
@@ -21,7 +21,7 @@ class BgeBase(TextEmbedding):
         https://huggingface.co/BAAI/bge-base-en-v1.5
     """
 
-    name = "BgeBase"
+    name = "bgeBase"
     size = 768
 
     def __init__(self, devices: List[int]):

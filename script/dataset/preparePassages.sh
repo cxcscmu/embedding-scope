@@ -8,7 +8,6 @@
 #SBATCH --mail-type=END
 #SBATCH --mail-user=haok@andrew.cmu.edu
 #SBATCH --exclude=babel-1-31,babel-0-37
-#SBATCH --array=0-7
 
 ##############################################################################
 # Load the required modules.
@@ -21,10 +20,6 @@ conda activate scope
 # Prepare the MS MARCO dataset.
 ##############################################################################
 
-# ENTRYPOINT="source.dataset.textRetrieval.msMarco"
-# SHAREDCMDS="--embedding miniCPM --gpuDevice 0 --batchSize 128 --numShards 256 --workerCnt $SLURM_ARRAY_TASK_COUNT"
-# python3 -m $ENTRYPOINT preparePassageEmbeddings $SHAREDCMDS --workerIdx $SLURM_ARRAY_TASK_ID
-
 ENTRYPOINT="source.dataset.textRetrieval.msMarco"
-SHAREDCMDS="--embedding bgeBase --gpuDevice 0 --batchSize 512 --numShards 64 --workerCnt $SLURM_ARRAY_TASK_COUNT"
-python3 -m $ENTRYPOINT preparePassageEmbeddings $SHAREDCMDS --workerIdx $SLURM_ARRAY_TASK_ID
+SHAREDCMDS="--numShards 4"
+python3 -m $ENTRYPOINT preparePassages $SHAREDCMDS

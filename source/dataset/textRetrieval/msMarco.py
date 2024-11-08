@@ -20,6 +20,7 @@ from source.dataset.textRetrieval import workspace
 from source.interface.embedding import TextEmbedding
 from source.interface.dataset import TextRetrievalDataset
 from source.embedding.miniCPM import MiniCPM
+from source.embedding.bgeBase import BgeBase
 from source.dataset.textRetrieval.utilities import (
     newPassageLoaderFrom,
     newPassageEmbeddingLoaderFrom,
@@ -182,6 +183,8 @@ def main():
             match parsed.embedding:
                 case "miniCPM":
                     embedding = MiniCPM(parsed.gpuDevice)
+                case "bgeBase":
+                    embedding = BgeBase(parsed.gpuDevice)
                 case _:
                     raise NotImplementedError
             preparePassageEmbeddings(
