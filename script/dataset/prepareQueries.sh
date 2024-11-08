@@ -7,7 +7,7 @@
 #SBATCH --mem=32G
 #SBATCH --mail-type=END
 #SBATCH --mail-user=haok@andrew.cmu.edu
-#SBATCH --exclude=babel-1-31,babel-0-37
+#SBATCH --exclude=babel-1-31,babel-0-37,babel-15-32
 
 ##############################################################################
 # Load the required modules.
