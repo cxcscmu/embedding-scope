@@ -125,23 +125,28 @@ def preparePassageEmbeddings(
 
     logger.info("Split the shards with co-workers")
     shards: List[List[NDArray[np.float32]]] = [[] for _ in range(numShards)]
+    batchIdx, batchPsg = [], []
+
+    def compute():
+        vectors = embedding.forward(batchPsg)
+        for j, x in zip(batchIdx, vectors):
+            _, shardIdx = divmod(j, numShards)
+            shards[shardIdx].append(x)
+        batchIdx.clear()
+        batchPsg.clear()
+        cuda.empty_cache()
 
     logger.info("Generate the embeddings")
-    with tqdm(total=len(loader.dataset)) as progress:
-        batchIdx, batchPsg = [], []
-        for i, (_, passage) in enumerate(loader.dataset):
-            progress.update()
-            _, shardIdx = divmod(i, numShards)
-            if shardIdx % workerCnt == workerIdx:
-                batchIdx.append(i)
-                batchPsg.append(passage)
-                if len(batchIdx) >= batchSize or i == len(loader.dataset) - 1:
-                    vectors = embedding.forward(batchPsg)
-                    for j, x in zip(batchIdx, vectors):
-                        _, shardIdx = divmod(j, numShards)
-                        shards[shardIdx].append(x)
-                    batchIdx, batchPsg = [], []
-                cuda.empty_cache()
+    for i, (_, passage) in enumerate(tqdm(iterable=loader.dataset)):
+        _, shardIdx = divmod(i, numShards)
+        assert len(batchIdx) == len(batchPsg)
+        if shardIdx % workerCnt == workerIdx:
+            batchIdx.append(i)
+            batchPsg.append(passage)
+            if len(batchIdx) >= batchSize:
+                compute()
+    if batchIdx:
+        compute()
 
     logger.info("Write the shards to disk")
     for i, shard in enumerate(shards):
