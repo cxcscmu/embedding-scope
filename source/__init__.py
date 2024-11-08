@@ -6,6 +6,7 @@ import os
 import sys
 import socket
 import logging
+import warnings
 from pathlib import Path
 
 # Configure the workspace
@@ -23,6 +24,9 @@ formatter = logging.Formatter(
 handler = logging.StreamHandler(sys.stdout)
 handler.setFormatter(formatter)
 logger.addHandler(handler)
+
+# Configure the warnings
+warnings.filterwarnings("ignore", category=UserWarning)
 
 # Report the environment
 logger.info("Hostname  : %s", socket.gethostname())
