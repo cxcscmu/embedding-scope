@@ -61,8 +61,8 @@ class TextRetrievalDataset(ABC):
     @staticmethod
     @abstractmethod
     def newQueryEmbeddingLoader(
-        partition: PartitionType,
         embedding: Type[TextEmbedding],
+        partition: PartitionType,
         batchSize: int,
         shuffle: bool,
         numWorkers: int,
@@ -70,8 +70,8 @@ class TextRetrievalDataset(ABC):
         """
         Create a new query embedding loader.
 
-        :param partition: The partition.
         :param embedding: The embedding to use.
+        :param partition: The partition.
         :param batchSize: The batch size.
         :param shuffle: Whether to shuffle the data.
         :param numWorkers: The number of workers.

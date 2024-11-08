@@ -56,8 +56,8 @@ class MsMarcoDataset(TextRetrievalDataset):
 
     @staticmethod
     def newQueryEmbeddingLoader(
-        partition: PartitionType,
         embedding: Type[TextEmbedding],
+        partition: PartitionType,
         batchSize: int,
         shuffle: bool,
         numWorkers: int,
