@@ -138,13 +138,14 @@ def preparePassageEmbeddings(
 
     logger.info("Generate the embeddings")
     for i, (_, passage) in enumerate(tqdm(iterable=loader.dataset)):
-        _, shardIdx = divmod(i, numShards)
         assert len(batchIdx) == len(batchPsg)
+        _, shardIdx = divmod(i, numShards)
         if shardIdx % workerCnt == workerIdx:
             batchIdx.append(i)
             batchPsg.append(passage)
             if len(batchIdx) >= batchSize:
                 compute()
+    assert len(batchIdx) == len(batchPsg)
     if batchIdx:
         compute()
 
