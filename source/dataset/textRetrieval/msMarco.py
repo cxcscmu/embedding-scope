@@ -1,5 +1,5 @@
 """
-Implementation for the MS MARCO dataset.
+Implement the MS MARCO dataset.
 """
 
 import pickle

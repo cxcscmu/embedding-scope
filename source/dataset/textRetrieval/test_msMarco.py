@@ -1,10 +1,10 @@
 """
-Test the implementation for the MS MARCO dataset.
+Test the MsMarcoDataset class.
 """
 
 import torch
 from source.embedding.miniCPM import MiniCPM
-from source.dataset.textRetrieval.msMarco import MsMarcoDataset
+from source.dataset.textRetrieval import MsMarcoDataset
 
 
 def test_newPassageLoader():

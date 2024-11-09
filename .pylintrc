@@ -6,3 +6,4 @@
 disable=consider-using-from-import,
     too-few-public-methods,
     invalid-name,
+    wrong-import-position,
