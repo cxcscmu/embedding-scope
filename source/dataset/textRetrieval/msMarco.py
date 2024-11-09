@@ -342,7 +342,7 @@ def prepareQueryNeighbors(
     base.mkdir(mode=0o770, parents=True, exist_ok=True)
 
     logger.info("Load the passage embeddings")
-    loader = MsMarcoDataset.newPassageEmbeddingLoader(embedding, 4096, False, 4)
+    loader = MsMarcoDataset.newPassageEmbeddingLoader(embedding, batchSize, False, 4)
     for batch in tqdm(loader):
         retriever.add(batch)
 
