@@ -6,7 +6,7 @@ import pickle
 import argparse
 import subprocess
 from hashlib import md5
-from typing import Type, List, Dict
+from typing import Type, List, Dict, Tuple
 from pathlib import Path
 import requests
 import pyarrow as pa
@@ -20,6 +20,7 @@ from source.utilities import tqdm
 from source.dataset.textRetrieval import workspace
 from source.interface.embedding import TextEmbedding
 from source.interface.dataset import TextRetrievalDataset, PartitionType
+from source.retriever.dense import DotProductRetriever
 from source.embedding.miniCPM import MiniCPM
 from source.embedding.bgeBase import BgeBase
 from source.dataset.textRetrieval.utilities import (
@@ -164,7 +165,7 @@ def preparePassageEmbeddings(
         cuda.empty_cache()
 
     logger.info("Generate the embeddings")
-    for i, (_, passage) in enumerate(tqdm(iterable=loader.dataset)):
+    for i, (_, passage) in enumerate(tqdm(loader.dataset)):
         assert len(batchIdx) == len(batchPsg)
         _, shardIdx = divmod(i, numShards)
         if shardIdx % workerCnt == workerIdx:
@@ -270,7 +271,7 @@ def prepareQueryEmbeddings(
     shards: List[List[NDArray[np.float32]]] = [[] for _ in range(numShards)]
 
     logger.info("Generate the embeddings")
-    for i, (_, query) in enumerate(tqdm(iterable=loader.dataset)):
+    for i, (_, query) in enumerate(tqdm(loader.dataset)):
         assert len(batchIdx) == len(batchQry)
         _, shardIdx = divmod(i, numShards)
         if shardIdx % workerCnt == workerIdx:
@@ -327,6 +328,38 @@ def prepareQueryRelevance(partition: PartitionType):
     path.unlink()
 
 
+def prepareQueryNeighbors(
+    partition: PartitionType,
+    embedding: Type[TextEmbedding],
+    retriever: DotProductRetriever,
+    batchSize: int,
+    topK: int,
+):
+    """
+    Prepare the query neighbors.
+    """
+    base = Path(workspace, f"msMarco/queryNeighbors/{embedding.name}")
+    base.mkdir(mode=0o770, parents=True, exist_ok=True)
+
+    logger.info("Load the passage embeddings")
+    loader = MsMarcoDataset.newPassageEmbeddingLoader(embedding, 4096, False, 4)
+    for batch in tqdm(loader):
+        retriever.add(batch)
+
+    logger.info("Compute the query neighbors")
+    data: List[Tuple[List[int], List[float]]] = []
+    loader = MsMarcoDataset.newQueryEmbeddingLoader(
+        embedding, partition, batchSize, False, 4
+    )
+    for batch in tqdm(loader):
+        indices, scores = retriever.search(batch, topK)
+        data.extend(zip(indices, scores))
+
+    logger.info("Write the query neighbors to disk")
+    with Path(base, f"{partition}.pickle").open("wb") as file:
+        pickle.dump(data, file)
+
+
 def main():
     """
     The entry point.
@@ -355,6 +388,12 @@ def main():
     prepareQueryEmbeddingsParser.add_argument("--workerIdx", type=int, required=True)
     prepareQueryRelevanceParser = subparsers.add_parser("prepareQueryRelevance")
     prepareQueryRelevanceParser.add_argument("--partition", type=str, required=True)
+    prepareQueryNeighborsParser = subparsers.add_parser("prepareQueryNeighbors")
+    prepareQueryNeighborsParser.add_argument("--partition", type=str, required=True)
+    prepareQueryNeighborsParser.add_argument("--embedding", type=str, required=True)
+    prepareQueryNeighborsParser.add_argument("--gpuDevice", type=int, nargs="+", required=True)
+    prepareQueryNeighborsParser.add_argument("--batchSize", type=int, required=True)
+    prepareQueryNeighborsParser.add_argument("--topK", type=int, required=True)
     parsed = parser.parse_args()
     # fmt: on
 
@@ -396,6 +435,22 @@ def main():
             )
         case "prepareQueryRelevance":
             prepareQueryRelevance(parsed.partition)
+        case "prepareQueryNeighbors":
+            match parsed.embedding:
+                case "miniCPM":
+                    embedding = MiniCPM
+                case "bgeBase":
+                    embedding = BgeBase
+                case _:
+                    raise NotImplementedError
+            retriever = DotProductRetriever(embedding.size, parsed.gpuDevice)
+            prepareQueryNeighbors(
+                parsed.partition,
+                embedding,
+                retriever,
+                parsed.batchSize,
+                parsed.topK,
+            )
         case _:
             parser.print_help()
 

@@ -21,15 +21,13 @@ class DotProductRetriever(DenseRetriever):
         index = IndexFlatIP(size)
         options = GpuMultipleClonerOptions()
         options.shard = True
-        self.ids: List[str] = []
         self.index: IndexFlatIP = index_cpu_to_gpus_list(index, options, devices)
 
-    def add(self, ids: List[str], vectors: NDArray[np.float32]):
-        self.ids.extend(ids)
+    def add(self, vectors: NDArray[np.float32]):
         self.index.add(vectors)
 
     def search(
         self, vectors: NDArray[np.float32], topK: int
-    ) -> Tuple[List[List[str]], List[List[float]]]:
+    ) -> Tuple[List[List[int]], List[List[float]]]:
         scores, indices = self.index.search(vectors, topK)
-        return [[self.ids[i] for i in row] for row in indices], scores.tolist()
+        return indices.tolist(), scores.tolist()

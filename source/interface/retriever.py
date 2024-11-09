@@ -24,11 +24,10 @@ class DenseRetriever(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def add(self, ids: List[str], vectors: NDArray[np.float32]):
+    def add(self, vectors: NDArray[np.float32]):
         """
         Add the given vectors to the retriever.
 
-        :param ids: List of vector IDs.
         :param vectors: The vectors to add.
         """
         raise NotImplementedError
@@ -36,14 +35,13 @@ class DenseRetriever(ABC):
     @abstractmethod
     def search(
         self, vectors: NDArray[np.float32], topK: int
-    ) -> Tuple[List[List[str]], List[List[float]]]:
+    ) -> Tuple[List[List[int]], List[List[float]]]:
         """
         Search for the most similar vectors to the given query vectors.
         Note that once the search begins, no more vectors can be added.
 
         :param vectors: The query vectors.
         :param topK: The number of nearest neighbors to return.
-        :return: A tuple containing the IDs and scores of the most similar
-            vectors for each query vector.
+        :return: A tuple containing the offsets and the scores of the nearest neighbors.
         """
         raise NotImplementedError

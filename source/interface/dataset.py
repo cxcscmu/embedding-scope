@@ -3,8 +3,7 @@ Specify the dataset interface.
 """
 
 from abc import ABC, abstractmethod
-from typing import Type, Literal, Dict
-from collections import OrderedDict
+from typing import Type, Literal, Dict, List, Tuple
 from torch.utils.data import DataLoader
 from source.interface.embedding import TextEmbedding
 
@@ -94,12 +93,13 @@ class TextRetrievalDataset(ABC):
     @abstractmethod
     def getQueryNeighbors(
         embedding: Type[TextEmbedding], partition: PartitionType
-    ) -> Dict[str, OrderedDict[str, float]]:
+    ) -> List[Tuple[List[int], List[float]]]:
         """
         Get the query nearest neighbors using the embedding.
+        Depending on the dataset, the number of neighbors may vary.
 
         :param embedding: The embedding to use.
         :param partition: The partition.
-        :return: Mapping from query ID to mapping from passage ID to similarity.
+        :return: Mapping from query offset to ordered mapping from passage offset to similarity.
         """
         raise NotImplementedError
