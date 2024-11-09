@@ -288,9 +288,9 @@ def prepareQueryEmbeddings(
             np.save(Path(base, f"{i:08d}.npy"), buffer)
 
 
-def prepareRelevance(partition: PartitionType):
+def prepareQueryRelevance(partition: PartitionType):
     """
-    Prepare the relevance judgments.
+    Prepare the query relevance judgments.
     """
     base = Path(workspace, "msMarco/queryRelevance")
     base.mkdir(mode=0o770, parents=True, exist_ok=True)
@@ -353,8 +353,8 @@ def main():
     prepareQueryEmbeddingsParser.add_argument("--numShards", type=int, required=True)
     prepareQueryEmbeddingsParser.add_argument("--workerCnt", type=int, required=True)
     prepareQueryEmbeddingsParser.add_argument("--workerIdx", type=int, required=True)
-    prepareRelevanceParser = subparsers.add_parser("prepareRelevance")
-    prepareRelevanceParser.add_argument("--partition", type=str, required=True)
+    prepareQueryRelevanceParser = subparsers.add_parser("prepareQueryRelevance")
+    prepareQueryRelevanceParser.add_argument("--partition", type=str, required=True)
     parsed = parser.parse_args()
     # fmt: on
 
@@ -394,8 +394,8 @@ def main():
                 parsed.workerCnt,
                 parsed.workerIdx,
             )
-        case "prepareRelevance":
-            prepareRelevance(parsed.partition)
+        case "prepareQueryRelevance":
+            prepareQueryRelevance(parsed.partition)
         case _:
             parser.print_help()
 

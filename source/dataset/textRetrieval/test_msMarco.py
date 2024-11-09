@@ -71,11 +71,11 @@ def test_newQueryEmbeddingLoader():
     assert queryEmbeddings.dtype == torch.float32
 
 
-def test_getRelevance():
+def test_getQueryRelevance():
     """
     Test the getRelevance method.
     """
-    relevance = MsMarcoDataset.getRelevance("train")
+    relevance = MsMarcoDataset.getQueryRelevance("train")
 
     # Check the relevance.
     assert isinstance(relevance, dict)

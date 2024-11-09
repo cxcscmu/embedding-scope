@@ -21,5 +21,5 @@ conda activate scope
 ##############################################################################
 
 ENTRYPOINT="source.dataset.textRetrieval.msMarco"
-python3 -m $ENTRYPOINT prepareRelevance --partition "train"
-python3 -m $ENTRYPOINT prepareRelevance --partition "dev"
+python3 -m $ENTRYPOINT prepareQueryRelevance --partition "train"
+python3 -m $ENTRYPOINT prepareQueryRelevance --partition "dev"
