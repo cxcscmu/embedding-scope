@@ -66,7 +66,7 @@ class MsMarcoDataset(TextRetrievalDataset):
         return newQueryEmbeddingLoaderFrom(base, batchSize, shuffle, numWorkers)
 
     @staticmethod
-    def getRelevance(partition: PartitionType) -> Dict[str, Dict[str, int]]:
+    def getQueryRelevance(partition: PartitionType) -> Dict[str, Dict[str, int]]:
         base = Path(workspace, "msMarco/queryRelevance")
         with Path(base, f"{partition}.pickle").open("rb") as file:
             return pickle.load(file)

@@ -4,6 +4,7 @@ Specify the dataset interface.
 
 from abc import ABC, abstractmethod
 from typing import Type, Literal, Dict
+from collections import OrderedDict
 from torch.utils.data import DataLoader
 from source.interface.embedding import TextEmbedding
 
@@ -80,11 +81,25 @@ class TextRetrievalDataset(ABC):
 
     @staticmethod
     @abstractmethod
-    def getRelevance(partition: PartitionType) -> Dict[str, Dict[str, int]]:
+    def getQueryRelevance(partition: PartitionType) -> Dict[str, Dict[str, int]]:
         """
-        Get the relevance judgments.
+        Get the query relevance judgments.
 
         :param partition: The partition.
         :return: Mapping from query ID to mapping from passage ID to relevance.
+        """
+        raise NotImplementedError
+
+    @staticmethod
+    @abstractmethod
+    def getQueryNeighbors(
+        embedding: Type[TextEmbedding], partition: PartitionType
+    ) -> Dict[str, OrderedDict[str, float]]:
+        """
+        Get the query nearest neighbors using the embedding.
+
+        :param embedding: The embedding to use.
+        :param partition: The partition.
+        :return: Mapping from query ID to mapping from passage ID to similarity.
         """
         raise NotImplementedError
