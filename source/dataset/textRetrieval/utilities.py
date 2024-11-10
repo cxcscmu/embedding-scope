@@ -16,6 +16,11 @@ class PassageDataset(Dataset):
     """
 
     def __init__(self, base: Path) -> None:
+        """
+        Initialize the dataset.
+
+        :param base: The base path where all the passage shards are stored.
+        """
         super().__init__()
         self.shards = []
         for file in sorted(base.glob("*.parquet")):
@@ -27,12 +32,10 @@ class PassageDataset(Dataset):
         return self.length
 
     def __getitem__(self, index: int) -> Tuple[str, str]:
-        for shard in self.shards:
-            if index < len(shard):
-                pid = shard["pid"][index].as_py()
-                passage = shard["passage"][index].as_py()
-                return pid, passage
-            index -= len(shard)
+        shardOff, shardIdx = divmod(index, len(self.shards))
+        pid = self.shards[shardIdx]["pid"][shardOff].as_py()
+        passage = self.shards[shardIdx]["passage"][shardOff].as_py()
+        return pid, passage
 
 
 def newPassageLoaderFrom(

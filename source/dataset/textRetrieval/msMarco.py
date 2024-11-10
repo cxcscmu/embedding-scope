@@ -5,7 +5,6 @@ Implement the MS MARCO dataset.
 import pickle
 import argparse
 import subprocess
-from hashlib import md5
 from typing import Type, List, Dict, Tuple
 from pathlib import Path
 import requests
@@ -88,7 +87,8 @@ def preparePassages(numShards: int):
     base = Path(workspace, "msMarco/passages")
     base.mkdir(mode=0o770, parents=True, exist_ok=True)
 
-    logger.info("Download the passages")
+    ###########################################################################
+    logger.info("Download the passages from the official website")
     host = "https://msmarco.z22.web.core.windows.net"
     link = f"{host}/msmarcoranking/collection.tar.gz"
     path = Path(base, "collection.tar.gz")
@@ -104,8 +104,10 @@ def preparePassages(numShards: int):
                 for chunk in response.iter_content(chunk_size=8192):
                     file.write(chunk)
                     progress.update(len(chunk))
+    logger.info("Completed!")
 
-    logger.info("Extract the passages from tarball")
+    ###########################################################################
+    logger.info("Extract the passages from the tarball")
     subprocess.run(
         ["tar", "-xzvf", "collection.tar.gz"],
         cwd=base,
@@ -114,11 +116,12 @@ def preparePassages(numShards: int):
         check=True,
     )
     path.unlink()
+    logger.info("Completed!")
 
+    ###########################################################################
     logger.info("Split the passages into shards")
     path = Path(base, "collection.tsv")
-    pids: List[List[str]] = [[] for _ in range(numShards)]
-    passages: List[List[str]] = [[] for _ in range(numShards)]
+    shards = [([], []) for _ in range(numShards)]
     with tqdm(
         total=path.stat().st_size,
         unit="B",
@@ -126,21 +129,24 @@ def preparePassages(numShards: int):
         unit_divisor=1024,
     ) as progress:
         with path.open("r", encoding="utf-8") as file:
-            for line in file:
+            for i, line in enumerate(file):
                 pid, passage = line.split("\t")
-                index = int(md5(pid.encode()).hexdigest(), 16) % numShards
-                pids[index].append(pid)
-                passages[index].append(passage)
+                _, shardIdx = divmod(i, numShards)
+                shards[shardIdx][0].append(pid)
+                shards[shardIdx][1].append(passage)
                 progress.update(len(line.encode()))
+    logger.info("Completed!")
 
+    ###########################################################################
     logger.info("Write the shards to disk")
     with tqdm(total=numShards) as progress:
         for i in range(numShards):
-            pidsShard, passagesShard = pids[i], passages[i]
-            table = pa.Table.from_pydict({"pid": pidsShard, "passage": passagesShard})
+            pids, passages = shards[i]
+            table = pa.Table.from_pydict({"pid": pids, "passage": passages})
             pq.write_table(table, Path(base, f"{i:08d}.parquet"))
             progress.update()
     path.unlink()
+    logger.info("Completed!")
 
 
 def preparePassageEmbeddings(
