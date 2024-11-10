@@ -107,7 +107,7 @@ def preparePassages(numShards: int):
     logger.info("Completed!")
 
     ###########################################################################
-    logger.info("Extract the passages from the tarball")
+    logger.info("Extract the passages from the tarball.")
     subprocess.run(
         ["tar", "-xzvf", "collection.tar.gz"],
         cwd=base,
@@ -119,7 +119,7 @@ def preparePassages(numShards: int):
     logger.info("Completed!")
 
     ###########################################################################
-    logger.info("Split the passages into shards")
+    logger.info("Split the passages into shards.")
     path = Path(base, "collection.tsv")
     shards = [([], []) for _ in range(numShards)]
     with tqdm(
@@ -138,7 +138,7 @@ def preparePassages(numShards: int):
     logger.info("Completed!")
 
     ###########################################################################
-    logger.info("Write the shards to disk")
+    logger.info("Write the shards to disk.")
     with tqdm(total=numShards) as progress:
         for i in range(numShards):
             pids, passages = shards[i]
@@ -162,12 +162,19 @@ def preparePassageEmbeddings(
     base = Path(workspace, f"msMarco/passageEmbeddings/{embedding.name}")
     base.mkdir(mode=0o770, parents=True, exist_ok=True)
 
-    logger.info("Load the passages")
+    ###########################################################################
+    logger.info("Load the passages from disk.")
     loader = MsMarcoDataset.newPassageLoader(1, False, 1)
+    logger.info("Completed!")
 
-    logger.info("Split the shards with co-workers")
+    ###########################################################################
+    logger.info("Split the shards with co-workers.")
     shards: List[List[NDArray[np.float32]]] = [[] for _ in range(numShards)]
     batchIdx, batchPsg = [], []
+    logger.info("Completed!")
+
+    ###########################################################################
+    logger.info("Generate the embeddings for the assigned shards.")
 
     def compute():
         vectors = embedding.forward(batchPsg)
@@ -178,7 +185,6 @@ def preparePassageEmbeddings(
         batchPsg.clear()
         cuda.empty_cache()
 
-    logger.info("Generate the embeddings")
     for i, (_, passage) in enumerate(tqdm(loader.dataset)):
         assert len(batchIdx) == len(batchPsg)
         _, shardIdx = divmod(i, numShards)
@@ -189,12 +195,15 @@ def preparePassageEmbeddings(
                 compute()
     if batchIdx:
         compute()
+    logger.info("Completed!")
 
-    logger.info("Write the shards to disk")
+    ###########################################################################
+    logger.info("Write the shards to disk.")
     for i, shard in enumerate(shards):
         if i % workerCnt == workerIdx:
             buffer = np.stack(shard, dtype=np.float32)
             np.save(Path(base, f"{i:08d}.npy"), buffer)
+    logger.info("Completed!")
 
 
 def prepareQueries():

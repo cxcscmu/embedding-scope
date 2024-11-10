@@ -64,6 +64,11 @@ class PassageEmbeddingDataset(Dataset):
     """
 
     def __init__(self, base: Path) -> None:
+        """
+        Initialize the dataset.
+
+        :param base: The base path where all the passage embedding shards are stored.
+        """
         super().__init__()
         self.shards: List[NDArray[np.float32]] = []
         for file in sorted(base.glob("*.npy")):

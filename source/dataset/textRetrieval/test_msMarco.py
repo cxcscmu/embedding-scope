@@ -20,10 +20,10 @@ def test_newPassageLoader():
 
     # Check the unpacked
     pids, passages = batch
-    assert isinstance(pids, list)
+    assert isinstance(pids, tuple)
     assert len(pids) == 8
     assert all(isinstance(x, str) for x in pids)
-    assert isinstance(passages, list)
+    assert isinstance(passages, tuple)
     assert len(passages) == 8
     assert all(isinstance(x, str) for x in passages)
 
@@ -35,3 +35,6 @@ def test_newPassageLoader():
     assert passages[3].startswith("The Manhattan Project was the name")
     assert pids[6] == "6"
     assert passages[6].startswith("Nor will it attempt to substitute")
+
+    # Check the statistics
+    assert len(loader.dataset) == 8841823
