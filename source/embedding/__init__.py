@@ -8,3 +8,6 @@ tokenizerKwargs = {
     "truncation": True,
     "return_tensors": "pt",
 }
+
+from .miniCPM import MiniCPM
+from .bgeBase import BgeBase

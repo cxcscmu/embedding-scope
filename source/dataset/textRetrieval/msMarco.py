@@ -72,6 +72,14 @@ class MsMarcoDataset(TextRetrievalDataset):
         with Path(base, f"{partition}.pickle").open("rb") as file:
             return pickle.load(file)
 
+    @staticmethod
+    def getQueryNeighbors(
+        partition: PartitionType, embedding: Type[TextEmbedding]
+    ) -> List[Tuple[List[int], List[float]]]:
+        base = Path(workspace, f"msMarco/queryNeighbors/{embedding.name}")
+        with Path(base, f"{partition}.pickle").open("rb") as file:
+            return pickle.load(file)
+
 
 def preparePassages(numShards: int):
     """

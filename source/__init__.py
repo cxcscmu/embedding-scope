@@ -26,9 +26,7 @@ handler.setFormatter(formatter)
 logger.addHandler(handler)
 
 # Configure the warnings
-warnings.filterwarnings("ignore", category=UserWarning)
-warnings.filterwarnings("ignore", category=FutureWarning)
-warnings.filterwarnings("ignore", category=DeprecationWarning)
+warnings.filterwarnings("ignore")
 
 # Report the environment
 logger.info("Hostname  : %s", socket.gethostname())
