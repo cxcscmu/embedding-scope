@@ -87,7 +87,6 @@ def preparePassages(numShards: int):
     base = Path(workspace, "msMarco/passages")
     base.mkdir(mode=0o770, parents=True, exist_ok=True)
 
-    ###########################################################################
     logger.info("Download the passages from the official website")
     host = "https://msmarco.z22.web.core.windows.net"
     link = f"{host}/msmarcoranking/collection.tar.gz"
@@ -106,7 +105,6 @@ def preparePassages(numShards: int):
                     progress.update(len(chunk))
     logger.info("Completed!")
 
-    ###########################################################################
     logger.info("Extract the passages from the tarball.")
     subprocess.run(
         ["tar", "-xzvf", "collection.tar.gz"],
@@ -118,7 +116,6 @@ def preparePassages(numShards: int):
     path.unlink()
     logger.info("Completed!")
 
-    ###########################################################################
     logger.info("Split the passages into shards.")
     path = Path(base, "collection.tsv")
     shards = [([], []) for _ in range(numShards)]
@@ -130,14 +127,13 @@ def preparePassages(numShards: int):
     ) as progress:
         with path.open("r", encoding="utf-8") as file:
             for i, line in enumerate(file):
-                pid, passage = line.split("\t")
+                pid, passage = line.strip().split("\t")
                 _, shardIdx = divmod(i, numShards)
                 shards[shardIdx][0].append(pid)
                 shards[shardIdx][1].append(passage)
                 progress.update(len(line.encode()))
     logger.info("Completed!")
 
-    ###########################################################################
     logger.info("Write the shards to disk.")
     with tqdm(total=numShards) as progress:
         for i in range(numShards):
@@ -162,21 +158,18 @@ def preparePassageEmbeddings(
     base = Path(workspace, f"msMarco/passageEmbeddings/{embedding.name}")
     base.mkdir(mode=0o770, parents=True, exist_ok=True)
 
-    ###########################################################################
     logger.info("Load the passages from disk.")
     loader = MsMarcoDataset.newPassageLoader(1, False, 1)
     logger.info("Completed!")
 
-    ###########################################################################
     logger.info("Split the shards with co-workers.")
     shards: List[List[NDArray[np.float32]]] = [[] for _ in range(numShards)]
     batchIdx, batchPsg = [], []
     logger.info("Completed!")
 
-    ###########################################################################
-    logger.info("Generate the embeddings for the assigned shards.")
+    logger.info("Generate the embeddings.")
 
-    def compute():
+    def batchCompute():
         vectors = embedding.forward(batchPsg)
         for j, x in zip(batchIdx, vectors):
             _, shardIdx = divmod(j, numShards)
@@ -192,12 +185,11 @@ def preparePassageEmbeddings(
             batchIdx.append(i)
             batchPsg.append(passage)
             if len(batchIdx) >= batchSize:
-                compute()
+                batchCompute()
     if batchIdx:
-        compute()
+        batchCompute()
     logger.info("Completed!")
 
-    ###########################################################################
     logger.info("Write the shards to disk.")
     for i, shard in enumerate(shards):
         if i % workerCnt == workerIdx:
@@ -213,7 +205,7 @@ def prepareQueries():
     base = Path(workspace, "msMarco/queries")
     base.mkdir(mode=0o770, parents=True, exist_ok=True)
 
-    logger.info("Download the queries")
+    logger.info("Download the queries from the official website")
     host = "https://msmarco.z22.web.core.windows.net"
     link = f"{host}/msmarcoranking/queries.tar.gz"
     path = Path(base, "queries.tar.gz")
@@ -229,8 +221,9 @@ def prepareQueries():
                 for chunk in response.iter_content(chunk_size=8192):
                     file.write(chunk)
                     progress.update(len(chunk))
+    logger.info("Completed!")
 
-    logger.info("Extract the queries from tarball")
+    logger.info("Extract the queries from the tarball.")
     subprocess.run(
         ["tar", "-xzvf", "queries.tar.gz"],
         cwd=base,
@@ -239,10 +232,10 @@ def prepareQueries():
         check=True,
     )
     path.unlink()
+    logger.info("Completed!")
 
-    choices: List[PartitionType] = ["train", "dev", "eval"]
-    for partition in choices:
-        logger.info("Refactor the %s queries", partition)
+    logger.info("Refactor the queries into parquet files.")
+    for partition in ["train", "dev", "eval"]:
         path = Path(base, f"queries.{partition}.tsv")
         qids, queries = [], []
         with tqdm(
@@ -253,13 +246,14 @@ def prepareQueries():
         ) as progress:
             with path.open("r", encoding="utf-8") as file:
                 for line in file:
-                    pid, query = line.split("\t")
+                    pid, query = line.strip().split("\t")
                     qids.append(pid)
                     queries.append(query)
                     progress.update(len(line.encode()))
         table = pa.Table.from_pydict({"qid": qids, "query": queries})
         pq.write_table(table, Path(base, f"{partition}.parquet"))
         path.unlink()
+    logger.info("Completed!")
 
 
 def prepareQueryEmbeddings(

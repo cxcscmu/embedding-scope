@@ -110,6 +110,11 @@ class QueryDataset(Dataset):
     """
 
     def __init__(self, file: Path) -> None:
+        """
+        Initialize the dataset.
+
+        :param file: The parquet file with the queries.
+        """
         super().__init__()
         self.file = pq.read_table(file, memory_map=True)
 
