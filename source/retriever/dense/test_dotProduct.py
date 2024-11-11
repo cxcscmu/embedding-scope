@@ -10,23 +10,20 @@ def test_addSearch():
     """
     Test the add and search methods of the FaissRetriever class.
     """
-    size, devices = 64, [0]
-    retriever = DotProductRetriever(size, devices)
+    # Create a new retriever.
+    retriever = DotProductRetriever(64, [0])
+    vectors = np.random.rand(8, 64)
+    retriever.add(vectors)
 
-    # Add three vectors to the retriever.
-    ids = ["0", "1", "2"]
-    vectors = np.random.rand(len(ids), size)
-    retriever.add(ids, vectors)
-
-    # Search for the top-2 vectors given five queries.
-    queries, topK = np.random.rand(5, size), 2
+    # Perform a search.
+    queries, topK = np.random.rand(5, 64), 2
     results, scores = retriever.search(queries, topK)
 
     # Check the results.
     assert isinstance(results, list)
     assert all(isinstance(row, list) for row in results)
     assert all(len(row) == topK for row in results)
-    assert all(isinstance(item, str) for row in results for item in row)
+    assert all(isinstance(item, int) for row in results for item in row)
 
     # Check the scores.
     assert isinstance(scores, list)

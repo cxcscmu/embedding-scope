@@ -158,7 +158,7 @@ def test_newQueryEmbeddingLoader_train():
 
     # Check the numerical values
     embedding = MiniCPM(devices=[0])
-    queries = ["define extreme"]
+    queries = ["Query: define extreme"]
     vectors = torch.from_numpy(embedding.forward(queries))
     assert torch.allclose(batch[0], vectors[0], atol=1e-3)
 
@@ -178,7 +178,7 @@ def test_newQueryEmbeddingLoader_dev():
 
     # Check the numerical values
     embedding = MiniCPM(devices=[0])
-    queries = ["cost of endless pools/swim spa"]
+    queries = ["Query: cost of endless pools/swim spa"]
     vectors = torch.from_numpy(embedding.forward(queries))
     assert torch.allclose(batch[0], vectors[0], atol=1e-3)
 
@@ -198,6 +198,6 @@ def test_newQueryEmbeddingLoader_eval():
 
     # Check the numerical values
     embedding = MiniCPM(devices=[0])
-    queries = ["what is prescribed to treat thyroid storm"]
+    queries = ["Query: what is prescribed to treat thyroid storm"]
     vectors = torch.from_numpy(embedding.forward(queries))
     assert torch.allclose(batch[0], vectors[0], atol=1e-3)

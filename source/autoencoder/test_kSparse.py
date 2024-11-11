@@ -1,15 +1,16 @@
 """
-Unit tests for the KSparseAutoencoder class.
+Test the KSparseAutoencoder class.
 """
 
 import torch
 from source.autoencoder.kSparse import KSparseAutoencoder
 
 
-def test_kSparseAutoencoder_forward():
+def test_forward():
     """
     Test the forward method of the KSparseAutoencoder class.
     """
+    # Create a new autoencoder.
     x = torch.rand(8, 32, device="cuda")
     autoencoder = KSparseAutoencoder(32, 16, 4).cuda()
     f, xhat = autoencoder.forward(x)

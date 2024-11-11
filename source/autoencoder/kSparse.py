@@ -1,5 +1,5 @@
 """
-Implementation of the KSparseAutoencoder.
+Implement the k-sparce autoencoder.
 """
 
 from typing import Tuple
@@ -11,12 +11,12 @@ from source.interface.autoencoder import AutoEncoder
 
 class KSparseAutoencoder(AutoEncoder, nn.Module):
     """
-    Implementation of the KSparseAutoencoder.
+    Implementation of the k-sparse autoencoder.
     """
 
     def __init__(self, vectorSize: int, latentSize: int, latentTopK: int):
         """
-        Initialize the KSparseAutoencoder.
+        Initialize the autoencoder.
 
         :param vectorSize: The size of the input vectors.
         :param latentSize: The size of the latent features.
