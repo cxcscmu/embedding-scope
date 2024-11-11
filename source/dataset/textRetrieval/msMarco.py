@@ -73,7 +73,7 @@ class MsMarcoDataset(TextRetrievalDataset):
 
     @staticmethod
     def getQueryNeighbors(
-        partition: PartitionType, embedding: Type[TextEmbedding]
+        embedding: Type[TextEmbedding], partition: PartitionType
     ) -> List[Tuple[List[int], List[float]]]:
         base = Path(workspace, f"msMarco/queryNeighbors/{embedding.name}")
         with Path(base, f"{partition}.pickle").open("rb") as file:
@@ -287,13 +287,21 @@ def prepareQueryEmbeddings(
     logger.info("Split the shards with co-workers")
     shards: List[List[NDArray[np.float32]]] = [[] for _ in range(numShards)]
 
+    match embedding.name:
+        case "miniCPM":
+            instruction = "Query: {x}"
+        case "bgeBase":
+            instruction = "Represent this sentence for searching relevant passages: {x}"
+        case _:
+            instruction = "{x}"
+
     logger.info("Generate the embeddings")
     for i, (_, query) in enumerate(tqdm(loader.dataset)):
         assert len(batchIdx) == len(batchQry)
         _, shardIdx = divmod(i, numShards)
         if shardIdx % workerCnt == workerIdx:
             batchIdx.append(i)
-            batchQry.append(query)
+            batchQry.append(instruction.format(x=query))
             if len(batchIdx) >= batchSize:
                 compute()
     if batchIdx:
