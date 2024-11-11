@@ -2,6 +2,8 @@
 Test the MsMarcoDataset class.
 """
 
+import torch
+from source.embedding.miniCPM import MiniCPM
 from source.dataset.textRetrieval import MsMarcoDataset
 
 
@@ -139,3 +141,63 @@ def test_newQueryLoader_eval():
 
     # Check the statistics
     assert len(loader.dataset) == 101092
+
+
+def test_newQueryEmbeddingLoader_train():
+    """
+    Test the newQueryEmbeddingLoader method.
+    """
+    # Create a new query embedding loader
+    fn = MsMarcoDataset.newQueryEmbeddingLoader
+    loader = fn(MiniCPM, "train", batchSize=4, shuffle=False, numWorkers=4)
+
+    # Check the first batch
+    batch = next(iter(loader))
+    assert isinstance(batch, torch.Tensor)
+    assert batch.shape == (4, MiniCPM.size)
+
+    # Check the numerical values
+    embedding = MiniCPM(devices=[0])
+    queries = ["define extreme"]
+    vectors = torch.from_numpy(embedding.forward(queries))
+    assert torch.allclose(batch[0], vectors[0], atol=1e-3)
+
+
+def test_newQueryEmbeddingLoader_dev():
+    """
+    Test the newQueryEmbeddingLoader method.
+    """
+    # Create a new query embedding loader
+    fn = MsMarcoDataset.newQueryEmbeddingLoader
+    loader = fn(MiniCPM, "dev", batchSize=4, shuffle=False, numWorkers=4)
+
+    # Check the first batch
+    batch = next(iter(loader))
+    assert isinstance(batch, torch.Tensor)
+    assert batch.shape == (4, MiniCPM.size)
+
+    # Check the numerical values
+    embedding = MiniCPM(devices=[0])
+    queries = ["cost of endless pools/swim spa"]
+    vectors = torch.from_numpy(embedding.forward(queries))
+    assert torch.allclose(batch[0], vectors[0], atol=1e-3)
+
+
+def test_newQueryEmbeddingLoader_eval():
+    """
+    Test the newQueryEmbeddingLoader method.
+    """
+    # Create a new query embedding loader
+    fn = MsMarcoDataset.newQueryEmbeddingLoader
+    loader = fn(MiniCPM, "eval", batchSize=4, shuffle=False, numWorkers=4)
+
+    # Check the first batch
+    batch = next(iter(loader))
+    assert isinstance(batch, torch.Tensor)
+    assert batch.shape == (4, MiniCPM.size)
+
+    # Check the numerical values
+    embedding = MiniCPM(devices=[0])
+    queries = ["what is prescribed to treat thyroid storm"]
+    vectors = torch.from_numpy(embedding.forward(queries))
+    assert torch.allclose(batch[0], vectors[0], atol=1e-3)

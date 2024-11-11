@@ -281,7 +281,7 @@ def prepareQueryEmbeddings(
         batchQry.clear()
         cuda.empty_cache()
 
-    logger.info("Load the queries")
+    logger.info("Load the queries from disk")
     loader = MsMarcoDataset.newQueryLoader(partition, 1, False, 1)
 
     logger.info("Split the shards with co-workers")
