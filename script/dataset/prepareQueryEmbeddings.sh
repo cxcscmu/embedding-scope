@@ -27,8 +27,8 @@ python3 -m $ENTRYPOINT prepareQueryEmbeddings $SHAREDCMDS --numShards 14 --parti
 python3 -m $ENTRYPOINT prepareQueryEmbeddings $SHAREDCMDS --numShards 2 --partition "dev" --workerIdx $SLURM_ARRAY_TASK_ID
 python3 -m $ENTRYPOINT prepareQueryEmbeddings $SHAREDCMDS --numShards 2 --partition "eval" --workerIdx $SLURM_ARRAY_TASK_ID
 
-# ENTRYPOINT="source.dataset.textRetrieval.msMarco"
-# SHAREDCMDS="--embedding bgeBase --gpuDevice 0 --batchSize 512 --workerCnt $SLURM_ARRAY_TASK_COUNT"
-# python3 -m $ENTRYPOINT prepareQueryEmbeddings $SHAREDCMDS --numShards 8 --partition "train" --workerIdx $SLURM_ARRAY_TASK_ID
-# python3 -m $ENTRYPOINT prepareQueryEmbeddings $SHAREDCMDS --numShards 1 --partition "dev" --workerIdx $SLURM_ARRAY_TASK_ID
-# python3 -m $ENTRYPOINT prepareQueryEmbeddings $SHAREDCMDS --numShards 1 --partition "eval" --workerIdx $SLURM_ARRAY_TASK_ID
+ENTRYPOINT="source.dataset.textRetrieval.msMarco"
+SHAREDCMDS="--embedding bgeBase --gpuDevice 0 --batchSize 2048 --workerCnt $SLURM_ARRAY_TASK_COUNT"
+python3 -m $ENTRYPOINT prepareQueryEmbeddings $SHAREDCMDS --numShards 5 --partition "train" --workerIdx $SLURM_ARRAY_TASK_ID
+python3 -m $ENTRYPOINT prepareQueryEmbeddings $SHAREDCMDS --numShards 1 --partition "dev" --workerIdx $SLURM_ARRAY_TASK_ID
+python3 -m $ENTRYPOINT prepareQueryEmbeddings $SHAREDCMDS --numShards 1 --partition "eval" --workerIdx $SLURM_ARRAY_TASK_ID

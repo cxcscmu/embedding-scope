@@ -22,12 +22,12 @@ conda activate scope
 
 ENTRYPOINT="source.dataset.textRetrieval.msMarco"
 SHAREDCMDS="--embedding miniCPM --gpuDevice 0 1 --batchSize 2048 --topK 128"
-# python3 -m $ENTRYPOINT prepareQueryNeighbors $SHAREDCMDS --partition train
+python3 -m $ENTRYPOINT prepareQueryNeighbors $SHAREDCMDS --partition train
 python3 -m $ENTRYPOINT prepareQueryNeighbors $SHAREDCMDS --partition dev
 python3 -m $ENTRYPOINT prepareQueryNeighbors $SHAREDCMDS --partition eval
 
-# ENTRYPOINT="source.dataset.textRetrieval.msMarco"
-# SHAREDCMDS="--embedding bgeBase --gpuDevice 0 1 --batchSize 2048 --topK 128"
-# python3 -m $ENTRYPOINT prepareQueryNeighbors $SHAREDCMDS --partition train
-# python3 -m $ENTRYPOINT prepareQueryNeighbors $SHAREDCMDS --partition dev
-# python3 -m $ENTRYPOINT prepareQueryNeighbors $SHAREDCMDS --partition eval
+ENTRYPOINT="source.dataset.textRetrieval.msMarco"
+SHAREDCMDS="--embedding bgeBase --gpuDevice 0 1 --batchSize 2048 --topK 128"
+python3 -m $ENTRYPOINT prepareQueryNeighbors $SHAREDCMDS --partition train
+python3 -m $ENTRYPOINT prepareQueryNeighbors $SHAREDCMDS --partition dev
+python3 -m $ENTRYPOINT prepareQueryNeighbors $SHAREDCMDS --partition eval
