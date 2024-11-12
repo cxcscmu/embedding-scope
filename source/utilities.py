@@ -35,3 +35,16 @@ def tqdm(*args, **kwargs):
     kwargs.setdefault("ncols", 80)
     kwargs.setdefault("ascii", False)
     return _tqdm(*args, **kwargs)
+
+
+def parseInt(value: str) -> int:
+    """
+    Parse the integer.
+    """
+    if value.isdigit():
+        return int(value)
+    if value.endswith(("k", "K")):
+        return int(value[:-1]) * 1_000
+    if value.endswith(("m", "M")):
+        return int(value[:-1]) * 1_000_000
+    raise NotImplementedError()

@@ -2,7 +2,6 @@
 Dispatch the training.
 """
 
-import wandb
 import argparse
 from pathlib import Path
 from typing import DefaultDict, Dict
@@ -13,25 +12,13 @@ from torch.optim.lr_scheduler import CosineAnnealingLR
 from torch.nn import functional as F
 from torch import amp
 from torch import Tensor
+import wandb
 from source import logger
-from source.utilities import tqdm
+from source.utilities import tqdm, parseInt
 from source.trainer import workspace
 from source.autoencoder import KSparseAutoencoder
 from source.dataset.textRetrieval import MsMarcoDataset
 from source.embedding import MiniCPM, BgeBase
-
-
-def parseInt(value: str) -> int:
-    """
-    Parse the integer.
-    """
-    if value.isdigit():
-        return int(value)
-    if value.endswith(("k", "K")):
-        return int(value[:-1]) * 1_000
-    if value.endswith(("m", "M")):
-        return int(value[:-1]) * 1_000_000
-    raise NotImplementedError()
 
 
 class Trainer:
