@@ -30,4 +30,8 @@ def tqdm(*args, **kwargs):
     """
     Wrapper for tqdm.
     """
-    return _tqdm(*args, **kwargs, file=TqdmFile, mininterval=3, ncols=80, ascii=False)
+    kwargs.setdefault("file", TqdmFile)
+    kwargs.setdefault("mininterval", 3)
+    kwargs.setdefault("ncols", 80)
+    kwargs.setdefault("ascii", False)
+    return _tqdm(*args, **kwargs)

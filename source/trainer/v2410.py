@@ -1,259 +1,248 @@
 """
-Implementation of the trainer interface.
+Dispatch the training.
 """
 
+import wandb
 import argparse
-from typing import Type, Dict, Optional, List, Tuple
+from pathlib import Path
+from typing import DefaultDict, Dict
+from collections import defaultdict
 import torch
-from torch import nn, amp
-from torch.nn import functional as F
-from torch.optim import Optimizer
-from torch.optim.adam import Adam
-from torch.optim.lr_scheduler import LRScheduler
+from torch.optim import Adam
 from torch.optim.lr_scheduler import CosineAnnealingLR
+from torch.nn import functional as F
+from torch import amp
 from torch import Tensor
-import numpy as np
-from numpy.typing import NDArray
-from source import console
-from source.interface import Trainer
-from source.interface.dataset import TextRetrievalDataset
-from source.interface.embedding import TextEmbedding
-from source.autoencoder.kSparse import KSparseAutoencoder
-from source.dataset.msMarco import MsMarco
-from source.embedding.miniCPM import MiniCPM
+from source import logger
+from source.utilities import tqdm
+from source.trainer import workspace
+from source.autoencoder import KSparseAutoencoder
+from source.dataset.textRetrieval import MsMarcoDataset
+from source.embedding import MiniCPM, BgeBase
 
 
-class V2410(Trainer):
+def parseInt(value: str) -> int:
     """
-    Implementation of the trainer interface.
+    Parse the integer.
+    """
+    if value.isdigit():
+        return int(value)
+    if value.endswith(("k", "K")):
+        return int(value[:-1]) * 1_000
+    if value.endswith(("m", "M")):
+        return int(value[:-1]) * 1_000_000
+    raise NotImplementedError()
 
-    This trainer uses a combination of MSE and KLD loss.
+
+class Trainer:
+    """
+    Dispatch the training.
     """
 
-    def __init__(
-        self,
-        dataset: TextRetrievalDataset,
-        embedding: Type[TextEmbedding],
-        autoencoder: KSparseAutoencoder,
-        optimizer: Optimizer,
-        scheduler: LRScheduler,
-        numEpochs: int,
-        batchSize: int,
-        numNeighbors: int,
-        devices: List[int],
-    ):
-        self.dataset = dataset
-        self.embedding = embedding
-        autoencoder.to(devices[0])
-        self.autoencoder = nn.DataParallel(autoencoder, devices)
-        self.optimizer = optimizer
-        self.scheduler = scheduler
-        self.numEpochs = numEpochs
-        self.batchSize = batchSize
-        self.numNeighbors = numNeighbors
-        self.devices = devices
+    def __init__(self) -> None:
+        # Parse the arguments.
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--name", type=str, required=True)
+        parser.add_argument("--embedding", type=str, required=True)
+        parser.add_argument("--latentSize", type=parseInt, required=True)
+        parser.add_argument("--latentTopK", type=int, required=True)
+        parser.add_argument("--nearbyTopK", type=int, required=True)
+        parser.add_argument("--dataset", type=str, required=True)
+        parser.add_argument("--optimizer", type=str, required=True)
+        parser.add_argument("--learningRate", type=float, required=True)
+        parser.add_argument("--scheduler", type=str, required=True)
+        parser.add_argument("--numEpochs", type=int, required=True)
+        parser.add_argument("--batchSize", type=int, required=True)
+        parsed = parser.parse_args()
+        wandb.init(project="scope", name=parsed.name)
+
+        # Match the embedding.
+        match parsed.embedding:
+            case "miniCPM":
+                self.embedding = MiniCPM
+            case "bgeBase":
+                self.embedding = BgeBase
+            case _:
+                raise NotImplementedError()
+
+        # Match the dataset.
+        match parsed.dataset:
+            case "msMarco":
+                self.dataset = MsMarcoDataset
+            case _:
+                raise NotImplementedError()
+
+        # Create the embedding loader.
+        self.trainLoader = self.dataset.newMixEmbeddingLoader(
+            self.embedding,
+            "train",
+            parsed.nearbyTopK,
+            parsed.batchSize,
+            shuffle=True,
+            numWorkers=4,
+        )
+        self.devLoader = self.dataset.newMixEmbeddingLoader(
+            self.embedding,
+            "dev",
+            parsed.nearbyTopK,
+            parsed.batchSize,
+            shuffle=False,
+            numWorkers=4,
+        )
+
+        # Create the autoencoder.
+        self.model = KSparseAutoencoder(
+            self.embedding.size,
+            parsed.latentSize,
+            parsed.latentTopK,
+        )
+        self.model = self.model.cuda()
+
+        # Match the optimizer.
+        match parsed.optimizer:
+            case "Adam":
+                self.optimizer = Adam(self.model.parameters(), lr=parsed.learningRate)
+            case _:
+                raise NotImplementedError()
+
+        # Match the scheduler.
+        match parsed.scheduler:
+            case "CosineAnnealing":
+                self.scheduler = CosineAnnealingLR(self.optimizer, parsed.numEpochs)
+            case _:
+                raise NotImplementedError()
+
+        # Training parameters.
+        self.lastEpoch = 0
+        self.vLossBest = float("inf")
+        self.numEpochs = parsed.numEpochs
+        self.batchSize = parsed.batchSize
+
+        # Create the workspace.
+        self.workspace = Path(workspace, parsed.name)
+        self.workspace.mkdir(mode=0o770, parents=True, exist_ok=True)
+
+        # Create the scaler.
         self.scaler = amp.GradScaler()
 
-        console.log("Loading the passage embeddings...")
-        self.passages: Dict[str, NDArray[np.float32]] = {}
-        iterator = self.dataset.getPassageEmbeddings(self.embedding)
-        for passageID, passageEmbedding in iterator:
-            self.passages[passageID] = passageEmbedding
-        console.log("Loading the training queries...")
-        self.trainQueries: Dict[str, NDArray[np.float32]] = {}
-        iterator = self.dataset.getQueryEmbeddings("train", self.embedding)
-        for queryID, queryEmbedding in iterator:
-            self.trainQueries[queryID] = queryEmbedding
-        console.log("Loading the validation queries...")
-        self.validQueries: Dict[str, NDArray[np.float32]] = {}
-        iterator = self.dataset.getQueryEmbeddings("dev", self.embedding)
-        for queryID, queryEmbedding in iterator:
-            self.validQueries[queryID] = queryEmbedding
-        console.log("Loading the training neighbors...")
-        self.trainNeighbors: Dict[str, Dict[str, float]] = {}
-        iterator = self.dataset.getNeighborPassages("train", self.embedding)
-        for queryID, neighbors in iterator.items():
-            self.trainNeighbors[queryID] = neighbors
-        console.log("Loading the validation neighbors...")
-        self.validNeighbors: Dict[str, Dict[str, float]] = {}
-        iterator = self.dataset.getNeighborPassages("dev", self.embedding)
-        for queryID, neighbors in iterator.items():
-            self.validNeighbors[queryID] = neighbors
-        console.log("Building the training dataset...")
-        self.trainDataset: List[Tuple[NDArray[np.float32], NDArray[np.float32]]] = []
-        for queryID, neighbors in self.trainNeighbors.items():
-            neighbors = sorted(neighbors.items(), key=lambda x: x[1], reverse=True)
-            neighbors = neighbors[: self.numNeighbors]
-            buffer = np.empty((len(neighbors), self.embedding.size), dtype=np.float32)
-            for i, (passageID, _) in enumerate(neighbors):
-                buffer[i] = self.passages[passageID]
-            queryEmbedding = self.trainQueries[queryID]
-            self.trainDataset.append((queryEmbedding, buffer))
-        console.log("Building the validation dataset...")
-        self.validDataset: List[Tuple[NDArray[np.float32], NDArray[np.float32]]] = []
-        for queryID, neighbors in self.validNeighbors.items():
-            neighbors = sorted(neighbors.items(), key=lambda x: x[1], reverse=True)
-            neighbors = neighbors[: self.numNeighbors]
-            buffer = np.empty((len(neighbors), self.embedding.size), dtype=np.float32)
-            for i, (passageID, _) in enumerate(neighbors):
-                buffer[i] = self.passages[passageID]
-            queryEmbedding = self.validQueries[queryID]
-            self.validDataset.append((queryEmbedding, buffer))
+    def save(self, mode: str) -> None:
+        """
+        Save the last snapshot.
+        """
+        snapshot = dict()
+        snapshot["model"] = self.model.state_dict()
+        snapshot["optimizer"] = self.optimizer.state_dict()
+        snapshot["scheduler"] = self.scheduler.state_dict()
+        snapshot["lastEpoch"] = self.lastEpoch
+        snapshot["vLossBest"] = self.vLossBest
+        snapfile = Path(self.workspace, f"snapshot-{mode}.pth")
+        if snapfile.exists():
+            snapfile.rename(snapfile.with_suffix(".backup.pth"))
+        torch.save(snapshot, snapfile)
 
-    def computeLoss(
+    def load(self, mode: str) -> None:
+        """
+        Load the snapshot.
+        """
+        snapfile = Path(self.workspace, f"snapshot-{mode}.pth")
+        if snapfile.exists():
+            snapshot = torch.load(snapfile)
+            self.model.load_state_dict(snapshot["model"])
+            self.optimizer.load_state_dict(snapshot["optimizer"])
+            self.scheduler.load_state_dict(snapshot["scheduler"])
+            self.lastEpoch = snapshot["lastEpoch"] + 1
+            self.vLossBest = snapshot["vLossBest"]
+
+    def measure(
         self, qrys: Tensor, docs: Tensor, qryHat: Tensor, docsHat: Tensor
     ) -> Dict[str, Tensor]:
         """
-        Compute the loss for a batch, MSE + KLD.
-
-        :param qrys: the query embeddings
-        :param docs: the document embeddings
-        :param qryHat: the reconstructed query embeddings
-        :param docsHat: the reconstructed document embeddings
+        Measure the loss.
         """
         loss = dict()
-        prefix = "Train" if self.autoencoder.training else "Valid"
-        baseMSE = torch.tensor(0.0, requires_grad=self.autoencoder.training)
-        loss[f"{prefix}.MSE"] = baseMSE
-        loss[f"{prefix}.MSE"] = loss[f"{prefix}.MSE"] + F.mse_loss(qryHat, qrys)
-        loss[f"{prefix}.MSE"] = loss[f"{prefix}.MSE"] + F.mse_loss(docsHat, docs)
-        baseKLD = torch.tensor(0.0, requires_grad=self.autoencoder.training)
-        loss[f"{prefix}.KLD"] = baseKLD
-        buf = torch.exp(
-            torch.matmul(
-                qrys.unsqueeze(1),
-                docs.transpose(1, 2),
-            ).squeeze(1)
-        )
+        baseMSE = torch.tensor(0.0, requires_grad=self.model.training)
+        loss["MSE"] = baseMSE
+        loss["MSE"] = loss["MSE"] + F.mse_loss(qryHat, qrys)
+        loss["MSE"] = loss["MSE"] + F.mse_loss(docsHat, docs)
+        baseKLD = torch.tensor(0.0, requires_grad=self.model.training)
+        loss["KLD"] = baseKLD
+        mat = torch.matmul(qrys.unsqueeze(1), docs.transpose(1, 2)).squeeze(1)
+        buf = torch.exp(mat)
         bufSum = buf.sum(dim=1).view(-1, 1)
-        bufHat = torch.exp(
-            torch.matmul(
-                qryHat.unsqueeze(1),
-                docsHat.transpose(1, 2),
-            ).squeeze(1)
-        )
+        hatMat = torch.matmul(qryHat.unsqueeze(1), docsHat.transpose(1, 2)).squeeze(1)
+        bufHat = torch.exp(hatMat)
         bufHatSum = bufHat.sum(dim=1).view(-1, 1)
         tar = buf / (buf + bufSum)
         ins = torch.log(bufHat / (bufHat + bufHatSum))
-        loss[f"{prefix}.KLD"] = F.kl_div(ins, tar, reduction="batchmean")
+        loss["KLD"] = F.kl_div(ins, tar, reduction="batchmean")
         return loss
 
-    def train(self):
-        self.autoencoder.train()
-        # shuffle the indices then group into batches
-        indices = np.arange(len(self.trainDataset))
-        np.random.shuffle(indices)
-        batches = np.array_split(indices, len(indices) // self.batchSize)
-        for i, batch in enumerate(batches):
-            console.log(f"Train    : {i:08d}/{len(batches):08d}")
-            # combine queries and neighbors into buffers
-            N, D, K = len(batch), self.numNeighbors, self.embedding.size
-            qrys = np.empty((N, K), dtype=np.float32)
-            docs = np.empty((N, D, K), dtype=np.float32)
-            for j, index in enumerate(batch):
-                qrys[j], docs[j] = self.trainDataset[index]
-            # convert to tensors on the device
-            qrys = torch.from_numpy(qrys).to(self.devices[0])
-            docs = torch.from_numpy(docs).to(self.devices[0])
-            # clear the gradients
+    def train(self) -> DefaultDict[str, float]:
+        """
+        Train the model.
+        """
+        self.model.train()
+        tLoss: DefaultDict[str, float] = defaultdict(float)
+        for qrys, docs in tqdm(self.trainLoader, mininterval=10):
             self.optimizer.zero_grad()
-            # forward pass under autocast
             with amp.autocast("cuda"):
-                _, qryHat = self.autoencoder.forward(qrys)
-                _, docsHat = self.autoencoder.forward(docs.view(-1, docs.size(-1)))
-                loss = self.computeLoss(qrys, docs, qryHat, docsHat)
-            # backward pass
+                qrys, docs = qrys.cuda(), docs.cuda()
+                _, qrysHat = self.model.forward(qrys)
+                _, docsHat = self.model.forward(docs.view(-1, self.embedding.size))
+                loss = self.measure(qrys, docs, qrysHat, docsHat.view_as(docs))
             self.scaler.scale(sum(loss.values())).backward()
             self.scaler.step(self.optimizer)
             self.scaler.update()
+            for key, val in loss.items():
+                tLoss[key] += val.item()
+        for key, val in tLoss.items():
+            tLoss[key] = val / len(self.trainLoader)
+        return tLoss
 
-    @torch.no_grad()
-    def validate(self):
-        self.autoencoder.eval()
-        # shuffle the indices then group into batches
-        indices = np.arange(len(self.validDataset))
-        np.random.shuffle(indices)
-        batches = np.array_split(indices, len(indices) // self.batchSize)
-        for i, batch in enumerate(batches):
-            console.log(f"Validate : {i:08d}/{len(batches):08d}")
-            # combine queries and neighbors into buffers
-            N, D, K = len(batch), self.numNeighbors, self.embedding.size
-            qrys = np.empty((N, K), dtype=np.float32)
-            docs = np.empty((N, D, K), dtype=np.float32)
-            for j, index in enumerate(batch):
-                qrys[j], docs[j] = self.validDataset[index]
-            # convert to tensors on the device
-            qrys = torch.from_numpy(qrys).to(self.devices[0])
-            docs = torch.from_numpy(docs).to(self.devices[0])
-            # forward pass
-            _, qryHat = self.autoencoder.forward(qrys)
-            _, docsHat = self.autoencoder.forward(docs.view(-1, docs.size(-1)))
-            loss = self.computeLoss(qrys, docs, qryHat, docsHat)
+    def validate(self) -> DefaultDict[str, float]:
+        """
+        Validate the model.
+        """
+        self.model.eval()
+        vLoss: DefaultDict[str, float] = defaultdict(float)
+        with torch.no_grad():
+            for qrys, docs in tqdm(self.devLoader, mininterval=10):
+                qrys, docs = qrys.cuda(), docs.cuda()
+                _, qrysHat = self.model.forward(qrys)
+                _, docsHat = self.model.forward(docs.view(-1, self.embedding.size))
+                loss = self.measure(qrys, docs, qrysHat, docsHat.view_as(docs))
+                for key, val in loss.items():
+                    vLoss[key] += val.item()
+            for key, val in vLoss.items():
+                vLoss[key] = val / len(self.devLoader)
+        return vLoss
 
-
-def main():
-    """
-    The entrypoint.
-    """
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--dataset", type=str, required=True)
-    parser.add_argument("--embedding", type=str, required=True)
-    parser.add_argument("--latentSize", type=int, required=True)
-    parser.add_argument("--latentTopK", type=int, required=True)
-    parser.add_argument("--learnRate", type=float, required=True)
-    parser.add_argument("--optimizer", type=str, required=True)
-    parser.add_argument("--numEpochs", type=int, required=True)
-    parser.add_argument("--scheduler", type=str, required=True)
-    parser.add_argument("--batchSize", type=int, required=True)
-    parser.add_argument("--numNeighbors", type=int, required=True)
-    parser.add_argument("--devices", type=int, nargs="+", required=True)
-    parsed = parser.parse_args()
-
-    dataset: Optional[TextRetrievalDataset] = None
-    match parsed.dataset:
-        case "MsMarco":
-            dataset = MsMarco()
-    assert dataset is not None
-
-    embedding: Optional[Type[TextEmbedding]] = None
-    match parsed.embedding:
-        case "MiniCPM":
-            embedding = MiniCPM
-    assert embedding is not None
-
-    autoencoder = KSparseAutoencoder(
-        embedding.size,
-        parsed.latentSize,
-        parsed.latentTopK,
-    )
-
-    optimizer: Optional[Optimizer] = None
-    match parsed.optimizer:
-        case "Adam":
-            optimizer = Adam(autoencoder.parameters(), lr=parsed.learnRate)
-    assert optimizer is not None
-
-    scheduler: Optional[LRScheduler] = None
-    match parsed.scheduler:
-        case "CosineAnnealing":
-            scheduler = CosineAnnealingLR(optimizer, T_max=parsed.numEpochs)
-    assert scheduler is not None
-
-    trainer = V2410(
-        dataset,
-        embedding,
-        autoencoder,
-        optimizer,
-        scheduler,
-        parsed.numEpochs,
-        parsed.batchSize,
-        parsed.numNeighbors,
-        parsed.devices,
-    )
-
-    trainer.train()
-    trainer.validate()
+    def dispatch(self):
+        """
+        Dispatch the training.
+        """
+        self.load("last")
+        for epoch in range(self.lastEpoch, self.numEpochs):
+            self.lastEpoch = epoch
+            logger.info("Epoch: %03d/%03d", epoch, self.numEpochs)
+            tLoss = self.train()
+            logger.info("Train    : %s", tLoss)
+            vLoss = self.validate()
+            logger.info("Validate : %s", vLoss)
+            self.scheduler.step()
+            self.save("last")
+            if sum(vLoss.values()) < self.vLossBest:
+                self.vLossBest = sum(vLoss.values())
+                self.save("best")
+            health = dict()
+            for key, val in tLoss.items():
+                health[f"t{key}"] = val
+            for key, val in vLoss.items():
+                health[f"v{key}"] = val
+            health["lr"] = self.optimizer.param_groups[0]["lr"]
+            wandb.log(health)
 
 
 if __name__ == "__main__":
-    main()
+    T = Trainer()
+    T.dispatch()

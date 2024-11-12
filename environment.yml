@@ -7,13 +7,13 @@ channels:
 
 dependencies:
   - python=3.12
-  - pip
   - pytorch=2.4.0
   - pytorch-cuda=12.4
-  - numpy==1.26.4
-  - transformers=4.46.1
-  - protobuf==5.27.5
-  - sentencepiece==0.2.0
+  - numpy
+  - transformers
+  - protobuf
+  - sentencepiece
+  - wandb
   - tqdm
   - faiss-gpu
   - pyarrow
@@ -21,5 +21,6 @@ dependencies:
   - pytest
   - mypy
   - types-requests
+  - pip
   - pip:
-      - flash-attn==2.6.3
+      - flash-attn
