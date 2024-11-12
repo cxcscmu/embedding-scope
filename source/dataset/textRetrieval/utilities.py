@@ -186,3 +186,73 @@ def newQueryEmbeddingLoaderFrom(
         shuffle=shuffle,
         num_workers=numWorkers,
     )
+
+
+class MixEmbeddingDataset(Dataset):
+    """
+    Dataset for mix embeddings.
+    """
+
+    def __init__(
+        self, queryBase: Path, passageBase: Path, queryNeighbors: List[List[int]]
+    ):
+        """
+        Initialize the dataset.
+
+        :param queryBase: The base path where all the query embedding shards are stored.
+        :param passageBase: The base path where all the passage embedding shards are stored.
+        :param queryNeighbors: The neighbors for each query.
+        """
+        super().__init__()
+        self.queryShards: List[NDArray[np.float32]] = []
+        for file in sorted(queryBase.glob("*.npy")):
+            data = np.load(file, mmap_mode="r")
+            self.queryShards.append(data)
+        self.queryNeighbors = queryNeighbors
+        self.passageShards: List[NDArray[np.float32]] = []
+        for file in sorted(passageBase.glob("*.npy")):
+            data = np.load(file, mmap_mode="r")
+            self.passageShards.append(data)
+        self.length = len(queryNeighbors)
+
+    def __len__(self) -> int:
+        return self.length
+
+    def __getitem__(
+        self, index: int
+    ) -> Tuple[NDArray[np.float32], NDArray[np.float32]]:
+        shardOff, shardIdx = divmod(index, len(self.queryShards))
+        query = self.queryShards[shardIdx][shardOff]
+        neighbors = self.queryNeighbors[index]
+        passages = np.empty((len(neighbors), query.shape[0]), dtype=np.float32)
+        for i, n in enumerate(self.queryNeighbors[index]):
+            shardOff, shardIdx = divmod(n, len(self.passageShards))
+            passages[i] = self.passageShards[shardIdx][shardOff]
+        return query, passages
+
+
+def newMixEmbeddingLoaderFrom(
+    queryBase: Path,
+    passageBase: Path,
+    queryNeighbors: List[List[int]],
+    batchSize: int,
+    shuffle: bool,
+    numWorkers: int,
+) -> DataLoader:
+    """
+    Create a new mix embedding loader from the base paths.
+
+    :param queryBase: The base path for queries.
+    :param passageBase: The base path for passages.
+    :param queryNeighbors: The neighbors for each query.
+    :param batchSize: The batch size.
+    :param shuffle: Whether to shuffle the data.
+    :param numWorkers: The number of workers.
+    :return: The mix embedding loader.
+    """
+    return DataLoader(
+        MixEmbeddingDataset(queryBase, passageBase, queryNeighbors),
+        batch_size=batchSize,
+        shuffle=shuffle,
+        num_workers=numWorkers,
+    )

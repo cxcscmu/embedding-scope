@@ -103,3 +103,25 @@ class TextRetrievalDataset(ABC):
         :return: Mapping from query offset to ordered mapping from passage offset to similarity.
         """
         raise NotImplementedError
+
+    @staticmethod
+    @abstractmethod
+    def newMixEmbeddingLoader(
+        embedding: Type[TextEmbedding],
+        partition: PartitionType,
+        numPassages: int,
+        batchSize: int,
+        shuffle: bool,
+        numWorkers: int,
+    ) -> DataLoader:
+        """
+        Create a new loader over queries and their nearest neighbors.
+
+        :param embedding: The embedding to use.
+        :param partition: The partition.
+        :param numPassages: The number of passages to include.
+        :param batchSize: The batch size.
+        :param shuffle: Whether to shuffle the data.
+        :param numWorkers: The number of workers.
+        """
+        raise NotImplementedError

@@ -27,6 +27,7 @@ from source.dataset.textRetrieval.utilities import (
     newPassageEmbeddingLoaderFrom,
     newQueryLoaderFrom,
     newQueryEmbeddingLoaderFrom,
+    newMixEmbeddingLoaderFrom,
 )
 
 
@@ -78,6 +79,31 @@ class MsMarcoDataset(TextRetrievalDataset):
         base = Path(workspace, f"msMarco/queryNeighbors/{embedding.name}")
         with Path(base, f"{partition}.pickle").open("rb") as file:
             return pickle.load(file)
+
+    @staticmethod
+    def newMixEmbeddingLoader(
+        embedding: Type[TextEmbedding],
+        partition: PartitionType,
+        numPassages: int,
+        batchSize: int,
+        shuffle: bool,
+        numWorkers: int,
+    ) -> DataLoader:
+        queryBase = Path(
+            workspace,
+            f"msMarco/queryEmbeddings/{embedding.name}/{partition}",
+        )
+        passageBase = Path(
+            workspace,
+            f"msMarco/passageEmbeddings/{embedding.name}",
+        )
+        queryNeighbors = [
+            indices[:numPassages]
+            for indices, _ in MsMarcoDataset.getQueryNeighbors(embedding, partition)
+        ]
+        return newMixEmbeddingLoaderFrom(
+            queryBase, passageBase, queryNeighbors, batchSize, shuffle, numWorkers
+        )
 
 
 def preparePassages(numShards: int):
