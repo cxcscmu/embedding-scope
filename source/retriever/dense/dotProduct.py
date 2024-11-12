@@ -18,7 +18,7 @@ class DotProductRetriever(DenseRetriever):
     """
 
     def __init__(self, size: int, devices: List[int]):
-        self.start = False
+        self.built = False
         self.index = IndexFlatIP(size)
         self.devices = devices
 
@@ -28,8 +28,8 @@ class DotProductRetriever(DenseRetriever):
     def search(
         self, vectors: NDArray[np.float32], topK: int
     ) -> Tuple[List[List[int]], List[List[float]]]:
-        if not self.start:
-            self.start = True
+        if not self.built:
+            self.built = True
             options = GpuMultipleClonerOptions()
             options.shard = True
             self.index = index_cpu_to_gpus_list(self.index, options, self.devices)
