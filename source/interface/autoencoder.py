@@ -22,6 +22,15 @@ class AutoEncoder(ABC):
         """
 
     @abstractmethod
+    def decode(self, f: Tensor) -> Tensor:
+        """
+        Decode the latent features.
+
+        :param f: The latent features.
+        :return: The reconstructed tensor.
+        """
+
+    @abstractmethod
     def forward(self, x: Tensor) -> Tuple[Tensor, Tensor]:
         """
         Forward pass through the autoencoder.

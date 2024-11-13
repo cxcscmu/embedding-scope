@@ -27,6 +27,9 @@ class KSparseAutoencoder(AutoEncoder, nn.Module):
         self.decoder = nn.Linear(latentSize, vectorSize)
         self.latentTopK = latentTopK
 
+    def decode(self, f: Tensor) -> Tensor:
+        return self.decoder.forward(f)
+
     def forward(self, x: Tensor) -> Tuple[Tensor, Tensor]:
         xbar = x - self.decoder.bias
         a = self.encoder.forward(xbar)
