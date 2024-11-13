@@ -1,5 +1,5 @@
 """
-Implement pseduo relevance feedback.
+Implement baseline.
 """
 
 import argparse
@@ -15,15 +15,9 @@ from source.retriever.dense import DotProductRetriever
 from source.retriever.utilities import evaluateRetrieval
 
 
-class PseudoRelevanceFeedback:
+class Reconstructed:
     """
-    Implementation of pseudo relevance feedback using sparse representations
-    extracted from the dense embedding vectors of the documents.
-
-    The algorithm is as follows:
-    1. Find `feedbackTopK` passages using the reconstructed embeddings.
-    2. Using `feedbackAlpha` sparse features, extend the query by `feedbackDelta`.
-    3. Retrieve `retrieveTopK` passages using the modified query.
+    The reconstructed baseline.
     """
 
     def __init__(self):
@@ -36,10 +30,7 @@ class PseudoRelevanceFeedback:
         parser.add_argument("--latentTopK", type=int, required=True)
         parser.add_argument("--modelGpuDevice", type=int, required=True)
         parser.add_argument("--modelName", type=str, required=True)
-        parser.add_argument("--feedbackTopK", type=int, required=True)
         parser.add_argument("--retrieveTopK", type=int, required=True)
-        parser.add_argument("--feedbackAlpha", type=int, required=True)
-        parser.add_argument("--feedbackDelta", type=float, required=True)
         parsed = parser.parse_args()
 
         # Match the embedding model.
@@ -68,7 +59,7 @@ class PseudoRelevanceFeedback:
         # Load back the weights.
         snapFile = Path(trainerWorkspace, parsed.modelName, "snapshot-best.pth")
         snapShot = torch.load(snapFile)
-        logger.info("%s Iteration: %d", parsed.modelName, snapShot["lastEpoch"])
+        logger.info(f"{parsed.modelName} Iteration: {snapShot['lastEpoch']}")
         self.model.load_state_dict(snapShot["model"])
         self.model = self.model.to(parsed.modelGpuDevice)
 
@@ -117,30 +108,8 @@ class PseudoRelevanceFeedback:
                 i += 1
 
         # Set the attributes.
-        self.passages = self.passageLoader.dataset
-        self.feedbackTopK = parsed.feedbackTopK
         self.retrieveTopK = parsed.retrieveTopK
         self.modelGpuDevice = parsed.modelGpuDevice
-        self.feedbackAlpha = parsed.feedbackAlpha
-        self.feedbackDelta = parsed.feedbackDelta
-
-    def expand(self, queries: torch.Tensor, passages: torch.Tensor) -> torch.Tensor:
-        """
-        Expand the queries using the pseudo relevance feedback.
-        """
-        # fmt: off
-        with torch.no_grad():
-            queries = queries.to(self.modelGpuDevice)
-            queryLatents, _ = self.model.forward(queries)
-            passages = passages.to(self.modelGpuDevice)
-            passageLatents, _ = self.model.forward(passages.view(-1, self.embedding.size))
-            passageLatents = passageLatents.view(passages.size(0), passages.size(1), -1)
-            _, indices = torch.topk(passageLatents, self.feedbackAlpha, dim=-1, largest=True)
-            for i in range(queries.size(0)):
-                uniques = torch.unique(indices[i].view(-1)).cpu()
-                queryLatents[i, uniques] += self.feedbackDelta
-            queries = self.model.decode(queryLatents)
-            return queries
 
     def dispatch(self):
         """
@@ -149,27 +118,21 @@ class PseudoRelevanceFeedback:
         # fmt: off
         relevance = self.dataset.getQueryRelevance("dev")
         retrieved, i = dict(), 0
-        logger.info("Retrieve with pseudo relevance.")
+        logger.info("Retrieve with reconstructed.")
         with torch.no_grad():
             for queries in tqdm(self.queryLoader):
                 # Retrieve initial passages for query expansion.
                 queries = queries.to(self.modelGpuDevice)
                 _, queries = self.model.forward(queries)
                 queries = queries.detach().cpu()
-                indices, _ = self.retriever.search(queries, self.feedbackTopK)
-                passages = torch.tensor([[self.passages[x] for x in xs] for xs in indices])
-                queries = self.expand(queries, passages)
-                # Retrieve the final passages for evaluation.
-                queries = queries.detach().cpu()
                 indices, _ = self.retriever.search(queries, self.retrieveTopK)
                 for xs in indices:
                     retrieved[self.queryLookup[i]] = [self.passageLookup[x] for x in xs]
                     i += 1
-        # evaluated = Path("evaluated.log")
-        evaluated = Path(f"{self.feedbackTopK}-{self.feedbackAlpha}-{self.feedbackDelta}.log")
+        evaluated = Path("evaluated_baseline.log")
         evaluateRetrieval(relevance, retrieved, evaluated)
 
 
 if __name__ == "__main__":
-    P = PseudoRelevanceFeedback()
-    P.dispatch()
+    R = Reconstructed()
+    R.dispatch()
