@@ -9,6 +9,7 @@
 #SBATCH --mail-user=haok@andrew.cmu.edu
 #SBATCH --array=0-135
 #SBATCH --requeue
+#SBATCH --exclude=babel-1-31,babel-0-37,babel-15-32,babel-11-9,babel-4-33,babel-1-23
 
 ##############################################################################
 # Load the required modules.
