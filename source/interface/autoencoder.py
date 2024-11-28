@@ -22,6 +22,15 @@ class AutoEncoder(ABC):
         """
 
     @abstractmethod
+    def encode(self, x: Tensor) -> Tensor:
+        """
+        Encode the original tensor.
+
+        :param x: The original tensor.
+        :return: The latent features.
+        """
+
+    @abstractmethod
     def decode(self, f: Tensor) -> Tensor:
         """
         Decode the latent features.

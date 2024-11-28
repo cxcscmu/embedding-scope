@@ -3,8 +3,8 @@
 #SBATCH --partition=general
 #SBATCH --time=12:00:00
 #SBATCH --cpus-per-task=8
-#SBATCH --gres=gpu:A6000:3
-#SBATCH --mem=128G
+#SBATCH --gres=gpu:A6000:4
+#SBATCH --mem=256G
 #SBATCH --exclude=babel-1-31,babel-0-37,babel-15-32,babel-11-9
 #SBATCH --array=0-3
 
@@ -23,7 +23,7 @@ latentTopKPool=(32 64 128 256)
 latentTopKPick=${latentTopKPool[$SLURM_ARRAY_TASK_ID]}
 
 ENTRYPOINT="source.evaluator.retrieval.reconstructed"
-SHAREDCMDS="--embedding miniCPM --dataset msMarco --indexGpuDevice 0 1"
+SHAREDCMDS="--embedding miniCPM --dataset msMarco --indexGpuDevice 0 1 2"
 SHAREDCMDS="$SHAREDCMDS --latentSize 196K --latentTopK $latentTopKPick --retrieveTopK 100"
-SHAREDCMDS="$SHAREDCMDS --modelName miniCPM-196K-$latentTopKPick --modelGpuDevice 2"
+SHAREDCMDS="$SHAREDCMDS --modelName miniCPM-196K-$latentTopKPick --modelGpuDevice 3"
 python3 -m $ENTRYPOINT $SHAREDCMDS
