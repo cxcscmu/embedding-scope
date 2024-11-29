@@ -213,9 +213,11 @@ class Trainer:
             self.lastEpoch = epoch
             logger.info("Epoch: %03d/%03d", epoch, self.numEpochs)
             tLoss = self.train()
-            logger.info("Train    : %s", tLoss)
+            tLossStr = ", ".join(f"{key}={val:.7f}" for key, val in tLoss.items())
+            logger.info("Train    : %s", tLossStr)
             vLoss = self.validate()
-            logger.info("Validate : %s", vLoss)
+            vLossStr = ", ".join(f"{key}={val:.7f}" for key, val in vLoss.items())
+            logger.info("Validate : %s", vLossStr)
             self.scheduler.step()
             self.save("last")
             if sum(vLoss.values()) < self.vLossBest:
