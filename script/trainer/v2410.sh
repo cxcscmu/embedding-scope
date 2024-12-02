@@ -20,26 +20,26 @@ conda activate scope
 # Train the autoencoder with MiniCPM.
 ##############################################################################
 
+# ENTRYPOINT="python3 -m source.trainer.v2410"
+# SHAREDCMDS="--embedding miniCPM --dataset msMarco"
+# SHAREDCMDS="$SHAREDCMDS --latentSize 196K --nearbyTopK 8"
+# SHAREDCMDS="$SHAREDCMDS --optimizer Adam --scheduler CosineAnnealing"
+# SHAREDCMDS="$SHAREDCMDS --learningRate 3e-4 --numEpochs 128 --batchSize 512"
+
+# latentTopkPool=(32 64 128)
+# latentTopKPick=${latentTopkPool[$SLURM_ARRAY_TASK_ID]}
+# $ENTRYPOINT $SHAREDCMDS --name "miniCPM-196K-$latentTopKPick" --latentTopK $latentTopKPick
+
+##############################################################################
+# Train the autoencoder with BgeBase.
+##############################################################################
+
 ENTRYPOINT="python3 -m source.trainer.v2410"
-SHAREDCMDS="--embedding miniCPM --dataset msMarco"
+SHAREDCMDS="--embedding bgeBase --dataset msMarco"
 SHAREDCMDS="$SHAREDCMDS --latentSize 196K --nearbyTopK 8"
 SHAREDCMDS="$SHAREDCMDS --optimizer Adam --scheduler CosineAnnealing"
 SHAREDCMDS="$SHAREDCMDS --learningRate 3e-4 --numEpochs 128 --batchSize 512"
 
 latentTopkPool=(32 64 128)
 latentTopKPick=${latentTopkPool[$SLURM_ARRAY_TASK_ID]}
-$ENTRYPOINT $SHAREDCMDS --name "miniCPM-196K-$latentTopKPick" --latentTopK $latentTopKPick
-
-##############################################################################
-# Train the autoencoder with BgeBase.
-##############################################################################
-
-# ENTRYPOINT="python3 -m source.trainer.v2410"
-# SHAREDCMDS="--embedding bgeBase --dataset msMarco"
-# SHAREDCMDS="$SHAREDCMDS --latentSize 196K --nearbyTopK 8"
-# SHAREDCMDS="$SHAREDCMDS --optimizer Adam --scheduler CosineAnnealing"
-# SHAREDCMDS="$SHAREDCMDS --learningRate 1e-3 --numEpochs 128 --batchSize 512"
-
-# latentTopkPool=(32 64 128)
-# latentTopKPick=${latentTopkPool[$SLURM_ARRAY_TASK_ID]}
-# $ENTRYPOINT $SHAREDCMDS --name "bgeBase-196K-$latentTopKPick" --latentTopK $latentTopKPick
+$ENTRYPOINT $SHAREDCMDS --name "bgeBase-196K-$latentTopKPick" --latentTopK $latentTopKPick
