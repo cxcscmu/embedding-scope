@@ -37,7 +37,7 @@ conda activate scope
 ENTRYPOINT="python3 -m source.trainer.v2410"
 SHAREDCMDS="--embedding bgeBase --dataset msMarco"
 SHAREDCMDS="$SHAREDCMDS --latentSize 196K --nearbyTopK 8"
-SHAREDCMDS="$SHAREDCMDS --optimizer Adam --scheduler CosineAnnealing"
+SHAREDCMDS="$SHAREDCMDS --optimizer Adam"
 SHAREDCMDS="$SHAREDCMDS --learningRate 3e-4 --numEpochs 128 --batchSize 512"
 
 latentTopkPool=(32 64 128)
