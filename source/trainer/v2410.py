@@ -97,7 +97,7 @@ class Trainer:
             case "CosineAnnealing":
                 self.scheduler = CosineAnnealingLR(self.optimizer, parsed.numEpochs)
             case _:
-                self.scheduler = None
+                raise NotImplementedError()
 
         # Training parameters.
         self.lastEpoch = 0
@@ -119,8 +119,7 @@ class Trainer:
         snapshot = dict()
         snapshot["model"] = self.model.state_dict()
         snapshot["optimizer"] = self.optimizer.state_dict()
-        if self.scheduler is not None:
-            snapshot["scheduler"] = self.scheduler.state_dict()
+        snapshot["scheduler"] = self.scheduler.state_dict()
         snapshot["lastEpoch"] = self.lastEpoch
         snapshot["vLossBest"] = self.vLossBest
         snapfile = Path(self.workspace, f"snapshot-{mode}.pth")
@@ -137,8 +136,7 @@ class Trainer:
             snapshot = torch.load(snapfile)
             self.model.load_state_dict(snapshot["model"])
             self.optimizer.load_state_dict(snapshot["optimizer"])
-            if self.scheduler is not None:
-                self.scheduler.load_state_dict(snapshot["scheduler"])
+            self.scheduler.load_state_dict(snapshot["scheduler"])
             self.lastEpoch = snapshot["lastEpoch"] + 1
             self.vLossBest = snapshot["vLossBest"]
 
@@ -220,8 +218,7 @@ class Trainer:
             vLoss = self.validate()
             vLossStr = ", ".join(f"{key}={val:.7f}" for key, val in vLoss.items())
             logger.info("Validate : %s", vLossStr)
-            if self.scheduler is not None:
-                self.scheduler.step()
+            self.scheduler.step()
             self.save("last")
             if sum(vLoss.values()) < self.vLossBest:
                 self.vLossBest = sum(vLoss.values())
