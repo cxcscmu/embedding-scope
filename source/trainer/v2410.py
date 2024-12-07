@@ -88,14 +88,18 @@ class Trainer:
         # Match the optimizer.
         match parsed.optimizer:
             case "Adam":
-                self.optimizer = Adam(self.model.parameters(), lr=parsed.learningRate)
+                self.optimizer = Adam(
+                    self.model.parameters(), lr=parsed.learningRate
+                )
             case _:
                 raise NotImplementedError()
 
         # Match the scheduler.
         match parsed.scheduler:
             case "CosineAnnealing":
-                self.scheduler = CosineAnnealingLR(self.optimizer, parsed.numEpochs)
+                self.scheduler = CosineAnnealingLR(
+                    self.optimizer, parsed.numEpochs
+                )
             case _:
                 raise NotImplementedError()
 
@@ -123,8 +127,6 @@ class Trainer:
         snapshot["lastEpoch"] = self.lastEpoch
         snapshot["vLossBest"] = self.vLossBest
         snapfile = Path(self.workspace, f"snapshot-{mode}.pth")
-        if snapfile.exists():
-            snapfile.rename(snapfile.with_suffix(".backup.pth"))
         torch.save(snapshot, snapfile)
 
     def load(self, mode: str) -> None:
@@ -156,12 +158,14 @@ class Trainer:
         mat = torch.matmul(qrys.unsqueeze(1), docs.transpose(1, 2)).squeeze(1)
         buf = torch.exp(mat)
         bufSum = buf.sum(dim=1).view(-1, 1)
-        hatMat = torch.matmul(qryHat.unsqueeze(1), docsHat.transpose(1, 2)).squeeze(1)
+        hatMat = torch.matmul(
+            qryHat.unsqueeze(1), docsHat.transpose(1, 2)
+        ).squeeze(1)
         bufHat = torch.exp(hatMat)
         bufHatSum = bufHat.sum(dim=1).view(-1, 1)
         tar = buf / (buf + bufSum)
         ins = torch.log(bufHat / (bufHat + bufHatSum))
-        loss["KLD"] = F.kl_div(ins, tar)
+        loss["KLD"] = F.kl_div(ins, tar, reduction="batchmean")
         return loss
 
     def train(self) -> DefaultDict[str, float]:
@@ -175,7 +179,9 @@ class Trainer:
             with amp.autocast("cuda"):
                 qrys, docs = qrys.cuda(), docs.cuda()
                 _, qrysHat = self.model.forward(qrys)
-                _, docsHat = self.model.forward(docs.view(-1, self.embedding.size))
+                _, docsHat = self.model.forward(
+                    docs.view(-1, self.embedding.size)
+                )
                 loss = self.measure(qrys, docs, qrysHat, docsHat.view_as(docs))
             self.scaler.scale(sum(loss.values())).backward()
             self.scaler.step(self.optimizer)
@@ -196,7 +202,9 @@ class Trainer:
             for qrys, docs in tqdm(self.devLoader, mininterval=10):
                 qrys, docs = qrys.cuda(), docs.cuda()
                 _, qrysHat = self.model.forward(qrys)
-                _, docsHat = self.model.forward(docs.view(-1, self.embedding.size))
+                _, docsHat = self.model.forward(
+                    docs.view(-1, self.embedding.size)
+                )
                 loss = self.measure(qrys, docs, qrysHat, docsHat.view_as(docs))
                 for key, val in loss.items():
                     vLoss[key] += val.item()
@@ -213,10 +221,14 @@ class Trainer:
             self.lastEpoch = epoch
             logger.info("Epoch: %03d/%03d", epoch, self.numEpochs)
             tLoss = self.train()
-            tLossStr = ", ".join(f"{key}={val:.7f}" for key, val in tLoss.items())
+            tLossStr = ", ".join(
+                f"{key}={val:.7f}" for key, val in tLoss.items()
+            )
             logger.info("Train    : %s", tLossStr)
             vLoss = self.validate()
-            vLossStr = ", ".join(f"{key}={val:.7f}" for key, val in vLoss.items())
+            vLossStr = ", ".join(
+                f"{key}={val:.7f}" for key, val in vLoss.items()
+            )
             logger.info("Validate : %s", vLossStr)
             self.scheduler.step()
             self.save("last")
