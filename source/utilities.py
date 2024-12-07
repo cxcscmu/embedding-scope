@@ -2,6 +2,8 @@
 Utilities for the project.
 """
 
+import requests
+from pathlib import Path
 from tqdm import tqdm as _tqdm
 from source import logger
 
@@ -60,3 +62,31 @@ def parseInt(value: str) -> int:
     if value.endswith(("m", "M")):
         return int(value[:-1]) * 1_000_000
     raise NotImplementedError()
+
+
+def download_file(link: str, path: Path, timeout: int = 60 * 60):
+    """
+    Download the file.
+
+    Parameters
+    ----------
+    link : str
+        The link to the file.
+    path : Path
+        The path to save the file.
+    timeout : int
+        The timeout for the download. Default is 1 hour.
+    """
+
+    with requests.get(
+        link, stream=True, allow_redirects=True, timeout=timeout
+    ) as response:
+        response.raise_for_status()
+        with path.open("wb") as file, tqdm(
+            total=int(response.headers.get("Content-Length", 0)),
+            unit="B",
+            unit_scale=True,
+        ) as progress:
+            for chunk in response.iter_content(chunk_size=8192):
+                file.write(chunk)
+                progress.update(len(chunk))
