@@ -1,3 +1,0 @@
-"""
-The retriever module.
-"""

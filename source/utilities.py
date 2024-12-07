@@ -9,6 +9,8 @@ from source import logger
 class TqdmFile:
     """
     A file-like object for tqdm.
+
+    This is helpful for redirecting the output of tqdm to a file on disk.
     """
 
     @staticmethod
@@ -24,11 +26,16 @@ class TqdmFile:
         """
         Flush the message.
         """
+        pass
 
 
 def tqdm(*args, **kwargs):
     """
-    Wrapper for tqdm.
+    Wrapper for tqdm with logger.
+
+    This wrapper redirects the output of tqdm to the logger. We've also set the
+    default parameters for tqdm, such as the update interval, to make it more
+    suitable for logging.
     """
     kwargs.setdefault("file", TqdmFile)
     kwargs.setdefault("mininterval", 3)
@@ -40,6 +47,11 @@ def tqdm(*args, **kwargs):
 def parseInt(value: str) -> int:
     """
     Parse the integer.
+
+    This function parses the integer from the string. The string could be in
+    the format of "123", "123k", or "123m". The function will convert them to
+    the corresponding integer. The function will raise an error if the format
+    is not recognized.
     """
     if value.isdigit():
         return int(value)

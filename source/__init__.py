@@ -29,6 +29,7 @@ logger.addHandler(handler)
 warnings.filterwarnings("ignore")
 
 # Report the environment
-logger.info("Hostname  : %s", socket.gethostname())
+hostname = socket.gethostname()
+logger.info("Hostname  : %s", hostname)
 logger.info("Workspace : %s", workspace)
 logger.info("Command   : %s", " ".join(sys.argv))
