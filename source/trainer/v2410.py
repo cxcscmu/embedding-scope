@@ -143,29 +143,32 @@ class Trainer:
             self.vLossBest = snapshot["vLossBest"]
 
     def measure(
-        self, qrys: Tensor, docs: Tensor, qryHat: Tensor, docsHat: Tensor
+        self, qrys: Tensor, docs: Tensor, qrys_hat: Tensor, docs_hat: Tensor
     ) -> Dict[str, Tensor]:
         """
         Measure the loss.
         """
         loss = dict()
-        baseMSE = torch.tensor(0.0, requires_grad=self.model.training)
-        loss["MSE"] = baseMSE
-        loss["MSE"] = loss["MSE"] + F.mse_loss(qryHat, qrys)
-        loss["MSE"] = loss["MSE"] + F.mse_loss(docsHat, docs)
-        baseKLD = torch.tensor(0.0, requires_grad=self.model.training)
-        loss["KLD"] = baseKLD
-        mat = torch.matmul(qrys.unsqueeze(1), docs.transpose(1, 2)).squeeze(1)
-        buf = torch.exp(mat)
-        bufSum = buf.sum(dim=1).view(-1, 1)
-        hatMat = torch.matmul(
-            qryHat.unsqueeze(1), docsHat.transpose(1, 2)
-        ).squeeze(1)
-        bufHat = torch.exp(hatMat)
-        bufHatSum = bufHat.sum(dim=1).view(-1, 1)
-        tar = buf / (buf + bufSum)
-        ins = torch.log(bufHat / (bufHat + bufHatSum))
-        loss["KLD"] = F.kl_div(ins, tar, reduction="batchmean")
+        loss["MSE"] = F.mse_loss(qrys_hat, qrys) + F.mse_loss(docs_hat, docs)
+
+        lhs = qrys.unsqueeze(1)  # (N, 1, D)
+        rhs = docs.transpose(1, 2)  # (N, D, K)
+        mat = torch.matmul(lhs, rhs).squeeze(1)  # (N, K)
+        mat = mat / qrys.size(1) ** 0.5  # (N, K)
+        score = torch.exp(mat)  # (N, K)
+        norms = score.sum(dim=1, keepdim=True)  # (N, 1)
+
+        lhs_hat = qrys_hat.unsqueeze(1)  # (N, 1, D)
+        rhs_hat = docs_hat.transpose(1, 2)  # (N, D, K)
+        mat_hat = torch.matmul(lhs_hat, rhs_hat).squeeze(1)  # (N, K)
+        mat_hat = mat_hat / qrys.size(1) ** 0.5  # (N, K)
+        score_hat = torch.exp(mat_hat)  # (N, K)
+        norms_hat = score_hat.sum(dim=1, keepdim=True)  # (N, 1)
+
+        tar = score / (score + norms)  # (N, K)
+        ins = torch.log(score_hat / (score_hat + norms_hat))  # (N, K)
+        loss["KLD"] = F.kl_div(ins, tar, reduction="sum")
+
         return loss
 
     def train(self) -> DefaultDict[str, float]:

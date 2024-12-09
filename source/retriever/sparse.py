@@ -1,5 +1,5 @@
 """
-The sparse retriever using dot product similarity.
+The sparse retriever using Elasticsearch.
 """
 
 import os
@@ -12,7 +12,7 @@ from typing import Dict, List
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk
 
-from source import hostname, logger
+from source import hostname
 from source.retriever import workspace
 
 
@@ -26,14 +26,15 @@ class Retriever:
     backend for indexing and querying the vectors. The Elasticsearch server is
     started when entering the context and terminated when exiting the context
     to avoid resource leakage. The retriever supports batch indexing and
-    querying for efficiency.
+    querying for efficiency. By default, the retriever uses all available CPU
+    cores for parallel processing.
     """
 
     def __init__(self):
         """
         Initialize the sparse retriever.
         """
-        self.ncpu = os.cpu_count()
+        self.ncpu = os.environ.get("SLURM_CPUS_PER_TASK", os.cpu_count())
         self.workspace = Path(workspace, hostname, "sparse")
         shutil.rmtree(self.workspace, ignore_errors=True)
         self.workspace.mkdir(mode=0o770, parents=True)
