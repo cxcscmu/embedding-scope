@@ -8,9 +8,6 @@
 #SBATCH --mail-type=END
 #SBATCH --mail-user=haok@andrew.cmu.edu
 #SBATCH --array=0-2
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --exclusive
 
 ##############################################################################
 # Load the required modules.
