@@ -8,7 +8,7 @@ from typing import DefaultDict, Dict
 from collections import defaultdict
 import torch
 from torch.optim import Adam
-from torch.optim.lr_scheduler import CosineAnnealingLR
+from torch.optim.lr_scheduler import CosineAnnealingLR, ReduceLROnPlateau
 from torch.nn import functional as F
 from torch import amp
 from torch import Tensor
@@ -99,6 +99,10 @@ class Trainer:
             case "CosineAnnealing":
                 self.scheduler = CosineAnnealingLR(
                     self.optimizer, parsed.numEpochs
+                )
+            case "ReduceLROnPlateau":
+                self.scheduler = ReduceLROnPlateau(
+                    self.optimizer, mode="min", factor=0.5, patience=5
                 )
             case _:
                 raise NotImplementedError()
@@ -229,7 +233,10 @@ class Trainer:
             vLoss = self.validate()
             for key, val in vLoss.items():
                 logger.info(f"Validate : {key}={val:.7f}")
-            self.scheduler.step()
+            if isinstance(self.scheduler, CosineAnnealingLR):
+                self.scheduler.step()
+            elif isinstance(self.scheduler, ReduceLROnPlateau):
+                self.scheduler.step(sum(vLoss.values()))
             self.save("last")
             if sum(vLoss.values()) < self.vLossBest:
                 self.vLossBest = sum(vLoss.values())
