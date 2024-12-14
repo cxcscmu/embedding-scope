@@ -12,7 +12,7 @@ from source.dataset.textRetrieval import MsMarcoDataset
 from source.utilities import parseInt, tqdm
 from source.autoencoder import KSparseAutoencoder
 from source.trainer import workspace as trainerWorkspace
-from source.retriever.utilities import evaluateRetrieval
+from source.evaluator.utilities import evaluateRetrieval
 
 
 class Evaluator:

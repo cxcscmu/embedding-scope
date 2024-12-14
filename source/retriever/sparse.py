@@ -1,5 +1,5 @@
 """
-The sparse retriever using Elasticsearch.
+The sparse retriever.
 """
 
 import os
