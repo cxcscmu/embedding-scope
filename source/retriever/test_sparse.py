@@ -1,15 +1,18 @@
 """
 Test the sparse retriever.
+
+@author: Hao Kang <haok@andrew.cmu.edu>
+@date: December 15, 2024
 """
 
 from source.retriever.sparse import Retriever
 
 
-def test_similarity():
+def test_basic():
     """
-    Test the sparse retriever, which uses dot product for similarity.
+    Test the index and query functions.
     """
-    with Retriever() as retriever:
+    with Retriever(name="test") as retriever:
         retriever.batch_index(
             {
                 "1": {"a": 1.0, "b": 2.0},
