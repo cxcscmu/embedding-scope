@@ -18,7 +18,7 @@ import time
 import shutil
 import subprocess
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Tuple
 
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk
@@ -55,11 +55,10 @@ class Retriever:
         ----------
         name : str
             The name of the retriever. It is used to isolate the workspace
-            from other retrievers and to identify the Elasticsearch index.
+            from other retrievers.
         """
-        self.name = name.lower()
         self.ncpu = os.environ.get("SLURM_CPUS_PER_TASK", os.cpu_count())
-        self.workspace = Path(workspace, name, "sparse")
+        self.workspace = Path(workspace, name)
         shutil.rmtree(self.workspace, ignore_errors=True)
         self.workspace.mkdir(mode=0o770, parents=True)
 
@@ -165,7 +164,7 @@ class Retriever:
 
     def batch_query(
         self, payload: List[Dict[str, float]], top_k: int
-    ) -> List[List[str]]:
+    ) -> Tuple[List[List[str]], List[List[float]]]:
         """
         Query a batch of sparse vectors.
 
