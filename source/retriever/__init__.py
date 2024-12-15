@@ -14,3 +14,7 @@ from source import workspace
 
 workspace = Path(workspace, "retriever")
 workspace.mkdir(mode=0o770, exist_ok=True)
+
+from .sparse import Retriever as SparseRetriever
+
+__all__ = ["SparseRetriever"]
