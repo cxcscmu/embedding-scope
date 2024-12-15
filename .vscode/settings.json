@@ -5,11 +5,5 @@
     "files.exclude": {
         "**/.git": true,
         "**/__pycache__": true,
-        "**/.pytest_cache": true,
-        "**/.mypy_cache": true,
     },
-    "black-formatter.args": [
-        "--line-length",
-        "80",
-    ]
 }

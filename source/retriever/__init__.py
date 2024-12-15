@@ -1,9 +1,12 @@
 """
 The retriever module.
 
-This module implements the information retrieval system on the sparse features
-and the dense embeddings. The sparse retriever relies on the Elasticsearch
-engine while the dense retriever relies on the faiss library.
+This module implements information retrieval system on the sparse features and
+the dense embeddings. The sparse retriever relies on the Elasticsearch engine
+while the dense retriever relies on the faiss library.
+
+@author: Hao Kang <haok@andrew.cmu.edu>
+@date: December 15, 2024
 """
 
 from pathlib import Path

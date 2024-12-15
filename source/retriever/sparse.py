@@ -1,5 +1,16 @@
 """
 The sparse retriever.
+
+This file implements the sparse retriever. The similarity between two sparse
+vectors is calculated using the dot product. The retriever supports batch
+indexing and querying for efficiency.
+
+The Elasticsearch server must be installed properly on the local machine
+before using this retriever. In particular, `elasticsearch` must be available
+in the system PATH.
+
+@author: Hao Kang <haok@andrew.cmu.edu>
+@date: December 15, 2024
 """
 
 import os
@@ -18,30 +29,50 @@ from source.retriever import workspace
 
 class Retriever:
     """
-    The sparse retriever using Elasticsearch.
+    The sparse retriever.
 
     This retriever is designed for sparse vectors, where each vector is a
     dictionary of feature values. The similarity between two vectors is
-    calculated using the dot product. The retriever uses Elasticsearch as the
-    backend for indexing and querying the vectors. The Elasticsearch server is
-    started when entering the context and terminated when exiting the context
-    to avoid resource leakage. The retriever supports batch indexing and
-    querying for efficiency. By default, the retriever uses all available CPU
-    cores for parallel processing.
+    calculated using the dot product.
+
+    The retriever uses Elasticsearch as the backend for indexing and querying
+    the vectors. The Elasticsearch server is started when entering the context
+    and terminated when exiting the context to avoid resource leakage. It must
+    be installed properly on the local machine before using this retriever. In
+    particular, `elasticsearch` must be available in the system PATH.
+
+    The retriever supports batch indexing and querying for efficiency. By
+    default, the retriever uses all available CPU cores for parallel
+    processing, which is determined by the SLURM environment variable, or the
+    number of CPU cores otherwise.
     """
 
-    def __init__(self):
+    def __init__(self, name: str) -> None:
         """
         Initialize the sparse retriever.
+
+        Parameters
+        ----------
+        name : str
+            The name of the retriever. It is used to isolate the workspace
+            from other retrievers and to identify the Elasticsearch index.
         """
+        self.name = name.lower()
         self.ncpu = os.environ.get("SLURM_CPUS_PER_TASK", os.cpu_count())
-        self.workspace = Path(workspace, hostname, "sparse")
+        self.workspace = Path(workspace, name, "sparse")
         shutil.rmtree(self.workspace, ignore_errors=True)
         self.workspace.mkdir(mode=0o770, parents=True)
 
     def _run_server(self) -> subprocess.Popen:
         """
-        Run an Elasticsearch server.
+        Run the Elasticsearch server.
+
+        The server is started in the background and the standard output and
+        error are redirected to /dev/null. The server is ready when the ping
+        method of the Elasticsearch client returns True.
+
+        We assume the compute nodes are secure and reliable, so we disable the
+        security features of Elasticsearch for simplicity.
 
         Returns
         -------
@@ -118,10 +149,6 @@ class Retriever:
         payload : Dict[str, Dict[str, float]]
             A dictionary of sparse vectors, where the key is the document ID
             and the value is a dictionary of feature values.
-
-        Returns
-        -------
-        None
         """
         bulk(
             self.client,
@@ -142,6 +169,9 @@ class Retriever:
         """
         Query a batch of sparse vectors.
 
+        The similarity between two sparse vectors is calculated using the dot
+        product. See the references for more details.
+
         Parameters
         ----------
         payload : List[Dict[str, float]]
@@ -155,6 +185,11 @@ class Retriever:
         List[List[str]]
             A list of lists of document IDs, where each inner list contains
             the IDs of the most similar documents for the corresponding query.
+
+        References
+        ----------
+        - https://www.elastic.co/guide/en/elasticsearch/reference/current/sparse-vector.html
+        - https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-sparse-vector-query.html
         """
         batch = []
         for features in payload:
