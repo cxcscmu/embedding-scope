@@ -209,7 +209,12 @@ class Retriever:
             body=batch,
             max_concurrent_searches=self.ncpu,
         )
-        return [
+        indices = [
             [x["_id"] for x in result["hits"]["hits"]]
             for result in response["responses"]
         ]
+        scores = [
+            [x["_score"] for x in result["hits"]["hits"]]
+            for result in response["responses"]
+        ]
+        return indices, scores

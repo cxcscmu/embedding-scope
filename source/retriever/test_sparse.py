@@ -19,8 +19,15 @@ def test_basic():
                 "2": {"a": 2.0, "b": 3.0},
             }
         )
-        result = retriever.batch_query(
+        indices, scores = retriever.batch_query(
             [{"a": 1.0, "b": 2.0}, {"a": 2.0, "b": 3.0}],
             top_k=2,
         )
-        assert result == [["2", "1"], ["2", "1"]]
+        assert indices == [
+            ["2", "1"],
+            ["2", "1"],
+        ]
+        assert scores == [
+            [2.0 * 1.0 + 3.0 * 2.0, 1.0 * 1.0 + 2.0 * 2.0],
+            [2.0 * 2.0 + 3.0 * 3.0, 1.0 * 2.0 + 2.0 * 3.0],
+        ]
