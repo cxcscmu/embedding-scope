@@ -21,7 +21,7 @@ conda activate scope
 ##############################################################################
 
 topKPool=(32 64 128)
-topKPick=${latentTopkPool[$SLURM_ARRAY_TASK_ID]}
+topKPick=${topKPool[$SLURM_ARRAY_TASK_ID]}
 
 ##############################################################################
 # Dispatch the evaluation.
@@ -34,7 +34,7 @@ command="$command --latentSize 196K --latentTopK $topKPick"
 command="$command --modelName bgeBase-196K-$topKPick --modelDevice 0"
 python3 -m $entry $command
 
-# command="--dataset msMarco --embedding miniCPM"
-# command="$command --latentSize 196K --latentTopK $topKPick"
-# command="$command --modelName miniCPM-196K-$topKPick --modelDevice 0"
-# python3 -m $entry $command
+command="--dataset msMarco --embedding miniCPM"
+command="$command --latentSize 196K --latentTopK $topKPick"
+command="$command --modelName miniCPM-196K-$topKPick --modelDevice 0"
+python3 -m $entry $command
