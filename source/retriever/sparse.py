@@ -61,6 +61,7 @@ class Retriever:
         self.workspace = Path(workspace, name)
         shutil.rmtree(self.workspace, ignore_errors=True)
         self.workspace.mkdir(mode=0o770, parents=True)
+        self.refreshed = False
 
     def _run_server(self) -> subprocess.Popen:
         """
@@ -160,7 +161,6 @@ class Retriever:
                 for pid, features in payload.items()
             ],
         )
-        self.client.indices.refresh(index="sparse")
 
     def batch_query(
         self, payload: List[Dict[str, float]], top_k: int
@@ -190,6 +190,10 @@ class Retriever:
         - https://www.elastic.co/guide/en/elasticsearch/reference/current/sparse-vector.html
         - https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-sparse-vector-query.html
         """
+        if not self.refreshed:
+            self.client.indices.refresh(index="sparse")
+            self.refreshed = True
+
         batch = []
         for features in payload:
             batch.append({"index": "sparse"})
