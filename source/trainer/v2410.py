@@ -8,7 +8,7 @@ from typing import DefaultDict, Dict
 from collections import defaultdict
 import torch
 from torch.optim import Adam
-from torch.optim.lr_scheduler import CosineAnnealingLR
+from torch.optim.lr_scheduler import CosineAnnealingLR, ReduceLROnPlateau
 from torch.nn import functional as F
 from torch import amp
 from torch import Tensor
@@ -88,14 +88,22 @@ class Trainer:
         # Match the optimizer.
         match parsed.optimizer:
             case "Adam":
-                self.optimizer = Adam(self.model.parameters(), lr=parsed.learningRate)
+                self.optimizer = Adam(
+                    self.model.parameters(), lr=parsed.learningRate
+                )
             case _:
                 raise NotImplementedError()
 
         # Match the scheduler.
         match parsed.scheduler:
             case "CosineAnnealing":
-                self.scheduler = CosineAnnealingLR(self.optimizer, parsed.numEpochs)
+                self.scheduler = CosineAnnealingLR(
+                    self.optimizer, parsed.numEpochs
+                )
+            case "ReduceLROnPlateau":
+                self.scheduler = ReduceLROnPlateau(
+                    self.optimizer, mode="min", factor=0.5, patience=5
+                )
             case _:
                 raise NotImplementedError()
 
@@ -123,8 +131,6 @@ class Trainer:
         snapshot["lastEpoch"] = self.lastEpoch
         snapshot["vLossBest"] = self.vLossBest
         snapfile = Path(self.workspace, f"snapshot-{mode}.pth")
-        if snapfile.exists():
-            snapfile.rename(snapfile.with_suffix(".backup.pth"))
         torch.save(snapshot, snapfile)
 
     def load(self, mode: str) -> None:
@@ -141,27 +147,32 @@ class Trainer:
             self.vLossBest = snapshot["vLossBest"]
 
     def measure(
-        self, qrys: Tensor, docs: Tensor, qryHat: Tensor, docsHat: Tensor
+        self, qrys: Tensor, docs: Tensor, qrys_hat: Tensor, docs_hat: Tensor
     ) -> Dict[str, Tensor]:
         """
         Measure the loss.
         """
         loss = dict()
-        baseMSE = torch.tensor(0.0, requires_grad=self.model.training)
-        loss["MSE"] = baseMSE
-        loss["MSE"] = loss["MSE"] + F.mse_loss(qryHat, qrys)
-        loss["MSE"] = loss["MSE"] + F.mse_loss(docsHat, docs)
-        baseKLD = torch.tensor(0.0, requires_grad=self.model.training)
-        loss["KLD"] = baseKLD
-        mat = torch.matmul(qrys.unsqueeze(1), docs.transpose(1, 2)).squeeze(1)
-        buf = torch.exp(mat)
-        bufSum = buf.sum(dim=1).view(-1, 1)
-        hatMat = torch.matmul(qryHat.unsqueeze(1), docsHat.transpose(1, 2)).squeeze(1)
-        bufHat = torch.exp(hatMat)
-        bufHatSum = bufHat.sum(dim=1).view(-1, 1)
-        tar = buf / (buf + bufSum)
-        ins = torch.log(bufHat / (bufHat + bufHatSum))
-        loss["KLD"] = F.kl_div(ins, tar)
+        loss["MSE"] = F.mse_loss(qrys_hat, qrys) + F.mse_loss(docs_hat, docs)
+
+        lhs = qrys.unsqueeze(1)  # (N, 1, D)
+        rhs = docs.transpose(1, 2)  # (N, D, K)
+        mat = torch.matmul(lhs, rhs).squeeze(1)  # (N, K)
+        mat = mat / qrys.size(1) ** 0.5  # (N, K)
+        score = torch.exp(mat)  # (N, K)
+        norms = score.sum(dim=1, keepdim=True)  # (N, 1)
+
+        lhs_hat = qrys_hat.unsqueeze(1)  # (N, 1, D)
+        rhs_hat = docs_hat.transpose(1, 2)  # (N, D, K)
+        mat_hat = torch.matmul(lhs_hat, rhs_hat).squeeze(1)  # (N, K)
+        mat_hat = mat_hat / qrys.size(1) ** 0.5  # (N, K)
+        score_hat = torch.exp(mat_hat)  # (N, K)
+        norms_hat = score_hat.sum(dim=1, keepdim=True)  # (N, 1)
+
+        tar = score / (score + norms)  # (N, K)
+        ins = torch.log(score_hat / (score_hat + norms_hat))  # (N, K)
+        loss["KLD"] = F.kl_div(ins, tar, reduction="sum")
+
         return loss
 
     def train(self) -> DefaultDict[str, float]:
@@ -175,7 +186,9 @@ class Trainer:
             with amp.autocast("cuda"):
                 qrys, docs = qrys.cuda(), docs.cuda()
                 _, qrysHat = self.model.forward(qrys)
-                _, docsHat = self.model.forward(docs.view(-1, self.embedding.size))
+                _, docsHat = self.model.forward(
+                    docs.view(-1, self.embedding.size)
+                )
                 loss = self.measure(qrys, docs, qrysHat, docsHat.view_as(docs))
             self.scaler.scale(sum(loss.values())).backward()
             self.scaler.step(self.optimizer)
@@ -196,7 +209,9 @@ class Trainer:
             for qrys, docs in tqdm(self.devLoader, mininterval=10):
                 qrys, docs = qrys.cuda(), docs.cuda()
                 _, qrysHat = self.model.forward(qrys)
-                _, docsHat = self.model.forward(docs.view(-1, self.embedding.size))
+                _, docsHat = self.model.forward(
+                    docs.view(-1, self.embedding.size)
+                )
                 loss = self.measure(qrys, docs, qrysHat, docsHat.view_as(docs))
                 for key, val in loss.items():
                     vLoss[key] += val.item()
@@ -213,12 +228,15 @@ class Trainer:
             self.lastEpoch = epoch
             logger.info("Epoch: %03d/%03d", epoch, self.numEpochs)
             tLoss = self.train()
-            tLossStr = ", ".join(f"{key}={val:.7f}" for key, val in tLoss.items())
-            logger.info("Train    : %s", tLossStr)
+            for key, val in tLoss.items():
+                logger.info(f"Train : {key}={val:.7f}")
             vLoss = self.validate()
-            vLossStr = ", ".join(f"{key}={val:.7f}" for key, val in vLoss.items())
-            logger.info("Validate : %s", vLossStr)
-            self.scheduler.step()
+            for key, val in vLoss.items():
+                logger.info(f"Validate : {key}={val:.7f}")
+            if isinstance(self.scheduler, CosineAnnealingLR):
+                self.scheduler.step()
+            elif isinstance(self.scheduler, ReduceLROnPlateau):
+                self.scheduler.step(sum(vLoss.values()))
             self.save("last")
             if sum(vLoss.values()) < self.vLossBest:
                 self.vLossBest = sum(vLoss.values())

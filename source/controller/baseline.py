@@ -12,7 +12,7 @@ from source.utilities import parseInt, tqdm
 from source.embedding import MiniCPM, BgeBase
 from source.dataset.textRetrieval import MsMarcoDataset
 from source.retriever.dense import DotProductRetriever
-from source.retriever.utilities import evaluateRetrieval
+from source.evaluator.utilities import evaluateRetrieval
 
 
 class Reconstructed:

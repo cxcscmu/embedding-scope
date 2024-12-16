@@ -1,5 +1,5 @@
 """
-Configure the project.
+Initialize the project.
 """
 
 import os
@@ -9,26 +9,24 @@ import logging
 import warnings
 from pathlib import Path
 
-# Configure the workspace
+# Setup the workspace
 workspace = Path("/data/group_data/cx_group/scope")
 workspace.mkdir(mode=0o770, parents=True, exist_ok=True)
 os.environ["HF_HOME"] = Path(workspace, "hfhome").as_posix()
 
-# Configure the logger
+# Setup the logger
 logger = logging.getLogger("scope")
 logger.setLevel(logging.INFO)
-formatter = logging.Formatter(
-    fmt="%(asctime)s | %(message)s",
-    datefmt="%Y-%m-%d %H:%M:%S",
-)
+formatter = logging.Formatter(fmt="%(asctime)s | %(message)s")
 handler = logging.StreamHandler(sys.stdout)
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 
-# Configure the warnings
+# Suppress the warnings
 warnings.filterwarnings("ignore")
 
 # Report the environment
-logger.info("Hostname  : %s", socket.gethostname())
+hostname = socket.gethostname()
+logger.info("Hostname  : %s", hostname)
 logger.info("Workspace : %s", workspace)
 logger.info("Command   : %s", " ".join(sys.argv))

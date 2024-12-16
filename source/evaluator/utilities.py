@@ -1,12 +1,13 @@
 """
-Utilities for retriever.
+The evaluator utilities.
 """
 
 import os
 import subprocess
 from pathlib import Path
-from tempfile import NamedTemporaryFile
+from tempfile import NamedTemporaryFile as TempFile
 from typing import Dict, List
+
 from source import logger
 
 
@@ -22,7 +23,7 @@ def evaluateRetrieval(
     :param retrieved: The retrieved passages for each query.
     :param evaluated: The file to write the evaluation results.
     """
-    with NamedTemporaryFile(mode="w") as qrel, NamedTemporaryFile(mode="w") as qret:
+    with TempFile(mode="w") as qrel, TempFile(mode="w") as qret:
         logger.info("Writing relevance and retrieved files.")
         for queryID, results in relevance.items():
             for passageID, score in results.items():
@@ -30,6 +31,7 @@ def evaluateRetrieval(
         for queryID, results in retrieved.items():
             for rank, passageID in enumerate(results):
                 qret.write(f"{queryID} 0 {passageID} 0 {-rank} 0\n")
+
         qrel.flush()
         os.fsync(qrel.fileno())
         qret.flush()
