@@ -19,7 +19,8 @@ from source.utilities import tqdm
 from source.dataset.textRetrieval import workspace
 from source.interface.embedding import TextEmbedding
 from source.interface.dataset import TextRetrievalDataset, PartitionType
-from source.retriever.dense import DotProductRetriever
+# from source.retriever import DenseRetriever TODO: fix this import
+from source.retriever import DenseRetriever
 from source.embedding.miniCPM import MiniCPM
 from source.embedding.bgeBase import BgeBase
 from source.dataset.textRetrieval.utilities import (
@@ -382,7 +383,7 @@ def prepareQueryRelevance(partition: PartitionType):
 def prepareQueryNeighbors(
     partition: PartitionType,
     embedding: Type[TextEmbedding],
-    retriever: DotProductRetriever,
+    retriever: DenseRetriever,
     batchSize: int,
     topK: int,
 ):

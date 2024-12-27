@@ -181,9 +181,10 @@ class Retriever:
 
         Returns
         -------
-        List[List[str]]
-            A list of lists of document IDs, where each inner list contains
-            the IDs of the most similar documents for the corresponding query.
+        Tuple[List[List[str]], List[List[float]]]
+            A tuple of two lists. The first list contains the IDs of the most
+            similar documents for each query, and the second list contains the
+            corresponding similarity scores.
 
         References
         ----------

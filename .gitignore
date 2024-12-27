@@ -1,4 +1,4 @@
-**/__pycache__
-
 **/wandb
-**/slurm-*
+**/logging
+**/__pycache__
+**/slurm-*.out
