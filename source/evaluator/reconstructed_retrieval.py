@@ -148,10 +148,7 @@ class Pipeline:
 
             # Map from query ID to top-k retrieved passage IDs.
             indices, _ = self.retriever.batch_query(
-                [
-                    xhat[i].cpu().numpy()
-                    for i in range(len(qids))
-                ],
+                xhat.cpu().numpy(),
                 top_k=100,
             )
             for qid, idx in zip(qids, indices):

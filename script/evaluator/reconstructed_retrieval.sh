@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH --mem=128G
-#SBATCH --cpus-per-task=8
+#SBATCH --mem=196G
+#SBATCH --cpus-per-task=16
 #SBATCH --gres=gpu:A6000:2
 #SBATCH --time=48:00:00
 #SBATCH --job-name=evaluator
@@ -28,6 +28,12 @@ topKPick=${topKPool[$SLURM_ARRAY_TASK_ID]}
 ##############################################################################
 
 entry="source.evaluator.reconstructed_retrieval"
+
+command="--dataset msMarco --embedding bgeBase"
+command="$command --latentSize 196K --latentTopK $topKPick"
+command="$command --modelName bgeBase-196K-$topKPick --modelDevice 0"
+command="$command --indexDevice 0 1"
+python3 -m $entry $command
 
 command="--dataset msMarco --embedding miniCPM"
 command="$command --latentSize 196K --latentTopK $topKPick"
