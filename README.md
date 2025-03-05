@@ -25,15 +25,16 @@ export DATASET_DIR=$WORKSPACE/dataset
 export WEIGHTS_DIR=$WORKSPACE/weights
 ```
 
-If you do not have SLURM installed, you can run the following scripts using `bash` instead of `sbatch`. This would behave as if only one worker is available.
+If you do not have SLURM installed, you can run the following scripts using `bash` instead of `sbatch`. This would behave as if only one worker is available. Make sure to wait for each script to complete before submitting the next one.
 
 ### 1. Prepare the Dataset
 
 **MS MARCO**
 
 ```bash
-sbatch scripts/download_msmarco.sh
-sbatch scripts/transform_msmarco.sh
+sbatch scripts/download_msmarco.sh  # Download MS MARCO
+sbatch scripts/transform_msmarco.sh # Split into chunks
+sbatch scripts/embed_msmarco.sh     # Compute embeddings
 ```
 
 ### 2. Train the k-Sparse Autoencoders
