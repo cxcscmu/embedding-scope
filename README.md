@@ -1,6 +1,6 @@
 # Embedding Scope
 
-This repository contains the released work for the paper "[Interpret and Control Dense Retrieval with Sparse Latent Features](https://arxiv.org/abs/2411.00786)" presented at NAACL 2025.
+This repository contains the official released work for the paper "[Interpret and Control Dense Retrieval with Sparse Latent Features](https://arxiv.org/abs/2411.00786)" presented at NAACL 2025.
 
 The paper introduces a novel approach using sparse autoencoders (SAE) to interpret and control dense embeddings via learned latent sparse features. The key contribution is a retrieval-oriented contrastive loss that ensures the sparse latent features remain effective for retrieval tasks. Experimental results show that the learned latent sparse features and their reconstructed embeddings retain nearly the same retrieval accuracy as the original dense vectors, allowing for meaningful interpretation and control of retrieval behaviors.
 
